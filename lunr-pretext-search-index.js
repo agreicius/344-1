@@ -595,6 +595,33 @@ var ptx_lunr_docs = [
   "body": " Comparing trivial, discrete, cofinite topologies   Let be a set, and let be the trivial, discrete, and cofinite topologies on , respectively. Compare these topologies.    First observe that in general the trivial topology on is coarser than any other topology, since by definition a topology must contain and . Similarly the discrete topology is finer than any other topology, since by definition any topology is a subset of . Thus we always have . The question naturally arises, whether and\/or when these inclusions are strict. We consider a number of cases.   Case:  In this case or (a singleton), in which case it is easy to see that . (Note: when , we have .)    Case: finite, . Since is finite, it follows that all subsets of are cofinite, and hence that . Since , we have . It follows that in this case we have .    Case: infinite  Let be any finite nonempty subset of . Since is infinite and , it follows that must be infinite, and hence that is not cofinite. We conclude that and . Thus in this case. Next, fix in any element and let . It is clear (a) that is cofinite, and (b) that is not equal to or . Thus and , proving that . We conclude that in this case.    "
 },
 {
+  "id": "s_bases_top",
+  "level": "1",
+  "url": "s_bases_top.html",
+  "type": "Section",
+  "number": "1.2",
+  "title": "Topological bases",
+  "body": " Topological bases   When defining a topology for a set it is often convenient to specify instead a more manageable subset of that we can use to generate the entire topology using arbitrary unions and\/or finite intersections (our open set operators). A topological basis is a particularly nice example of this ( ) as the open sets of the topology it generates can be expressed as (arbitrary) unions of the basis elements. Bases will also provide a convenient way of comparing different topologies and (later on) determining whether relevant topological properties are satisfied by a given space.    Topological basis  Let be a set. A topological basis on is a collection of subsets of satisfying the following axioms:   Covers  For each there is a set such that .    Intersections covered by basis elements  If , then for all there is a such that .   When the context is clear, we usually shorten topological basis to basis .     Order topology  Let be a set equipped with a total ordering : , a binary relation satisfying the following four axioms:   Reflexive  For all , we have .    Transitive  For all , if and , then .    Antisymmetric  For all , if and , then .    Comparability  For all , we have or .   Given the total ordering on , we define the relation as if and . A smallest element of is an element satisfying for all ; a largest element of is an element satisfying for all . Lastly, given elements we define the following subsets of : . An set of the form is called an open interval and a set of the form is called a closed interval ; sets of the form or are called half-open intervals .  With this notation in place, we define to be the collection of all subsets satisfying one of the following properties:    for some .     for some , and some smallest element .     for some and some largest element .   The collection is a topological basis and the topology it generates is called the order topology of with respect to the total ordering .   The proof is left as an exercise.    "
+},
+{
+  "id": "d_basis",
+  "level": "2",
+  "url": "s_bases_top.html#d_basis",
+  "type": "Definition",
+  "number": "1.2.1",
+  "title": "Topological basis.",
+  "body": " Topological basis  Let be a set. A topological basis on is a collection of subsets of satisfying the following axioms:   Covers  For each there is a set such that .    Intersections covered by basis elements  If , then for all there is a such that .   When the context is clear, we usually shorten topological basis to basis .  "
+},
+{
+  "id": "top_eg_order_topology",
+  "level": "2",
+  "url": "s_bases_top.html#top_eg_order_topology",
+  "type": "Topological specimen",
+  "number": "4",
+  "title": "Order topology.",
+  "body": " Order topology  Let be a set equipped with a total ordering : , a binary relation satisfying the following four axioms:   Reflexive  For all , we have .    Transitive  For all , if and , then .    Antisymmetric  For all , if and , then .    Comparability  For all , we have or .   Given the total ordering on , we define the relation as if and . A smallest element of is an element satisfying for all ; a largest element of is an element satisfying for all . Lastly, given elements we define the following subsets of : . An set of the form is called an open interval and a set of the form is called a closed interval ; sets of the form or are called half-open intervals .  With this notation in place, we define to be the collection of all subsets satisfying one of the following properties:    for some .     for some , and some smallest element .     for some and some largest element .   The collection is a topological basis and the topology it generates is called the order topology of with respect to the total ordering .   The proof is left as an exercise.   "
+},
+{
   "id": "appendix-notation",
   "level": "1",
   "url": "appendix-notation.html",
