@@ -1,0 +1,469 @@
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_bases_top">
+  <title>Topological bases</title>
+  <introduction>
+    <p>
+    When defining a topology <m>\mathcal{T}</m> for a set <m>X</m> it is often convenient to specify instead a more manageable subset of <m> \mathcal{T}</m> that we can use to <em>generate</em> the entire topology using arbitrary unions and/or finite intersections (our open set operators). A <em>topological basis</em> is a particularly nice example of this (<xref ref="d_basis" text="global"/>) as the open sets of the topology it generates can be expressed as (arbitrary) unions of the basis elements. Bases will also provide a convenient way of comparing different topologies and (later on) determining whether relevant topological properties are satisfied by a given space.
+    </p>
+</introduction>
+<definition xml:id="d_basis">
+  <title>Topological basis</title>
+  <statement>
+    Let <m>X</m> be a set. A <term>topological basis</term> on <m>X</m> is a collection <m>\mathcal{B}</m> of subsets of <m>X</m> satisfying the following axioms:
+    <ol>
+      <li>
+        <title>Covers <m>X</m></title>
+        <p>
+          For each <m>x\in X</m> there is a set <m>B\in \mathcal{B}</m> such that <m>x\in B</m>.
+        </p>
+      </li>
+      <li>
+        <title>Intersections covered by basis elements</title>
+        <p>
+          If <m>B_1, B_2\in \mathcal{B}</m>, then for all <m>x\in B_1\cap B_2</m> there is a <m>B\in \mathcal{B}</m> such that <m>x\in B\subseteq B_1\cap B_2</m>.
+        </p>
+      </li>
+    </ol>
+    When the context is clear, we usually shorten <sq>topological basis</sq> to <sq>basis</sq>. 
+  </statement>
+</definition>
+  <!-- <remark xml:id="rm_alt_axiom2">
+  <title>Equivalent alternative to axiom (2)</title>
+  <statement>
+    <p>
+      Axiom (2) in <xref ref="d_basis"/> is equivalent to saying that <m>B_1\cap B_2</m> is equal to a union of elements of <m>\mathcal{B}</m>. In other words, we could replace (2) with the equivalent statement
+      <me>
+        (2') \ B_1, B_2\in \mathcal{B}\implies B_1\cap B_2=\bigcup_{\alpha\in I} B_\alpha \text{ for some } B_\alpha\in \mathcal{B}
+      </me>.
+      This is a consequence of the more general fact expressed in <xref ref="lemma_covering_principle"/>.
+    </p>
+  </statement>
+</remark>
+
+<lemma xml:id="lemma_covering_principle">
+<title>Covering principle</title>
+<statement>
+  <p>
+    Let <m>\mathcal{A}</m> be a collection of subsets of <m>X</m>, and let <m>Y\subseteq X</m>. The following statements are equivalent.
+  </p>
+  <ol>
+    <li>
+      <p>
+        <m>Y=\bigcup_{i\in I}A_i</m> for some sets <m>A_i\in \mathcal{A}</m>. (In other words, <m>Y</m> is a union of elements of <m>\mathcal{A}</m>.)
+      </p>
+    </li>
+    <li>
+      <p>
+        For all <m>y\in Y</m> there exists a set <m>A\in \mathcal{A}</m> such that <m>y\in A\subseteq Y</m>.
+      </p>
+    </li>
+  </ol>
+</statement>
+<proof>
+  <case>
+    <title>Implication: <m>(1)\implies (2)</m></title>
+    <p>
+      Suppose <m>Y=\bigcup_{i\in I}A_i</m> for some sets <m>A_i\in \mathcal{A}</m>. Given any <m>y\in Y</m> we have <m>y\in A_i</m> for some <m>i\in I</m>. Since <m>A_i\subseteq Y</m>, we are done.
+    </p>
+  </case>
+  <case>
+    <title>Implication: <m>(2)\implies (1)</m></title>
+    <p>
+      By assumption, for all <m>y\in Y</m> we can find a set <m>A_y\in \mathcal{A}</m> such that <m>y\in A_y\subseteq Y</m>. It follows that <m>Y=\bigcup_{y\in Y}A_y</m>, showing that <m>Y</m> is a union of elements of <m>\mathcal{A}</m>.
+    </p>
+  </case>
+</proof>
+
+</lemma>
+
+<example xml:id="eg_basis_R">
+  <title>Some bases for <m>\R</m></title>
+  <statement>
+    <p>
+      Show that the given collections <m>\mathcal{B}</m> are topological bases of <m>\R</m>.
+    </p>
+    <ol>
+      <li>
+        <p>
+          <m>\mathcal{B}_1=\{(x-\epsilon, x+\epsilon)\colon x,\epsilon\in \R, \epsilon&gt; 0\}=\{(a,b)\colon a,b\in\R, a&lt; b\}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\mathcal{B}_2=\{ (p,q)\colon p,q\in \Q, p&lt; q\} </m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\mathcal{B}_3=\{[a,b)\colon a,b\in \R, a&lt; b\}</m>
+        </p>
+      </li>
+    </ol>
+  </statement>
+  <solution>
+    <p>
+      It is clear that each collection of interval types covers <m>\R</m> in the sense of axiom (1). As for axiom (2), for each <m>\mathcal{B}_i</m>, <m>1\leq i\leq 3</m>, note that intersection of these types of intervals are either empty, or another interval of the same type. This is a result of the fact that
+      <md>
+        <mrow> (a,b)\cap (c,d)\amp = \left(\max\{a,c\},\min\{b,d\}\right) </mrow>
+        <mrow> [a,b)\cap [c,d) \amp = \left [\max\{a,c\}, \min\{b,d\}\right) </mrow>
+      </md>,
+      where the interval described on the right is understood to be the empty set if <m>\max(a,c)\geq \min(b,d)</m>.
+    </p>
+  </solution>
+</example>
+
+<theorem xml:id="th_basis_generated">
+  <title>Topology generated by basis</title>
+  <statement>
+    <p>
+      Let <m>\mathcal{B}\subseteq \mathcal{P}(X)</m> be a topological basis of the set <m>X</m>.
+     <ol>
+      <li>
+        <p>
+          The set
+          <me>
+            \mathcal{T} = \{U\subseteq X\colon \text{for all } x\in U \ \text{ there exists } B\in \mathcal{B} \text{ s.t. } x\in B\subseteq U\} 
+          </me>
+          is a topology on <m>X</m>. 
+        </p>
+      </li>
+      <li>
+        <p>
+          We have 
+          <me>
+            \mathcal{T}=\{U\subseteq X\colon U=\bigcup_{i\in I}B_i \text{ for some elements } B_i\in \mathcal{B}\}
+          </me>.
+        </p>
+      </li>
+     </ol>
+    </p>
+  </statement>
+  <proof>
+    <p>
+      Note: it is somewhat easier to show that <m>\mathcal{T}</m> is a topology using the description of <m>\mathcal{T}</m> in statement (1), and then to show that the description in statement (2) also holds. (This is how Munkres does it, and how I did it in class.) I've decided to go the hard way here as an alternative proof that puts us through some useful set theory calisthenics.
+  </p>
+  <p>
+    First we show that <m>\mathcal{T}</m> as defined in (2) is a topology. We treat each axiom separately.
+  </p>
+    <ol>
+      <li>
+        <p>
+          The empty set is the <q>empty union</q> of elements of <m>\mathcal{B}</m>; thus <m>\emptyset\in \mathcal{T}</m>. The covering axiom for bases implies that for all <m>x\in X</m> there is a <m>B_x\in\mathcal{B}</m> such that <m>x\in B_x</m>. It follows that <m>X=\bigcup_{x\in X}B_x</m> is a union of elements of <m>\mathcal{B}</m>, and thus that <m>X\in \mathcal{T}</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          In plain English, a union of unions of elements of <m>\mathcal{B}</m> is a union of elements of <m>\mathcal{B}</m>. More rigorously, assume we have a collection of <m>U_i\in \mathcal{T}</m>. By definition, for each <m>i\in I</m> we have <m>U_i=\bigcup_{j\in J_i} B_{i,j}</m>, where <m>B_{i,j}\in \mathcal{B}</m> for each <m>j\in J</m>. Thus
+          <md>
+            <mrow>\bigcup_{i\in I} U_i \amp = \bigcup_{i\in I}\bigcup_{j\in J_i} B_{i,j} </mrow>
+            <mrow> \amp \bigcup_{(i,j)\in K} B_{i,j} </mrow>
+          </md>,
+          where <m>K</m> is the set of all pairs of the form <m>(i,j)</m> for <m>i\in I</m> and <m>j\in I_j</m>. Thus <m>U=\bigcup_{i\in I} U_i</m> is a union of basis elements, and hence an element of <m>\mathcal{T}</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          It is enough to show that <m>U, V\in \mathcal{T}\implies U\cap V\in \mathcal{T}</m>. (See <xref ref="rm_def_top"/>.) Assume <m>U=\bigcup_{i\in I}B_i</m>, <m>V=\bigcup_{j\in J}B_j</m>, where <m>B_i, B_j\in \mathcal{B}</m> for all <m>i\in I, j\in J</m>. We have
+          <md>
+            <mrow>U\cap V \amp= \left(\bigcup_{i\in I}B_i \right) \cap \left( \bigcup_{j\in J}B_j\right) </mrow>
+            <mrow> \amp = \bigcup_{(i,j)\in I\times J} B_i\cap B_j </mrow>
+          </md>.
+          Now by axiom (2') for bases (see <xref ref="rm_alt_axiom2"/>), each <m>B_i\cap B_j</m> is a union of basis elements, and hence is an element <m>U_{i,j}\in \mathcal{T}</m>. We have already shown that <m>\mathcal{T}</m> is closed under arbitrary unions. Thus <m>U\cap V</m> is an element of <m>\mathcal{T}</m>.
+        </p>
+      </li>
+    </ol>
+    <p>
+      This shows that <m>\mathcal{T}</m>, as defined in statement (2) of the theorem, is a topology. Statement (1) now follows from the general claim made in <xref ref="rm_alt_axiom2"/>.
+    </p>
+  </proof>
+</theorem>
+<definition xml:id="d_basis_generated">
+  <title>Topology generated by basis</title>
+  <statement>
+    <p>
+      Let <m>\mathcal{B}</m> be a topological basis of the set <m>X</m>. The topology
+      <mdn>
+        <mrow xml:id="eq_top_generated2"> \mathcal{T} \amp = \{U\subseteq X\colon \text{for all } x\in U \text{ there exists } B\in \mathcal{B} \text{ s.t. } x\in B\subseteq U\}
+        </mrow>
+        
+        <mrow xml:id="eq_top_generated1"> \amp =\{U\subseteq X\colon U=\bigcup_{i\in I}B_i \text{ for some elements } B_i\in \mathcal{B}\} 
+        </mrow>
+        
+      </mdn>
+      is called the <term>topology generated</term> by the basis <m>\mathcal{B}</m>. Similarly, we call <m>\mathcal{B}</m> a basis for <m>\mathcal{T}</m>.
+    </p>
+  </statement>
+</definition>
+
+<theorem xml:id="th_compare_basis">
+  <title>Comparing topologies via basis</title>
+  <statement>
+    <p>
+      Let <m>\mathcal{T}</m> and <m>\mathcal{T}'</m> be topologies on <m>X</m> and assume that <m>\mathcal{T}</m> is generated by the basis <m>\mathcal{B}</m>.    
+         We have
+          <men xml:id="eq_compare_basis_top">
+            \mathcal{T}\subseteq \mathcal{T}'\iff B\in \mathcal{T}' \text{ for all } B\in \mathcal{B}
+          </men>.
+        </p>
+  </statement>
+  <proof>
+        <p>
+          Observe first that basis elements are open in the topology <m>\mathcal{T}</m>, essentially by definition: <ie />, we have <m>\mathcal{B}\subseteq \mathcal{T}</m>. The forward implication <m>(\implies)</m> follows easily, since <m>\mathcal{T}\subseteq \mathcal{T}'</m> and <m>\mathcal{B}\subseteq \mathcal{T}</m> implies <m>\mathcal{B}\subseteq \mathcal{T}'</m>.
+        </p>
+        <p>
+          Now consider the reverse implication <m>(\impliedby)</m>. Assume <m>\mathcal{B}\subseteq \mathcal{T}'</m>. Given an open set <m>U\in \mathcal{T}</m> we have <m>U=\bigcup_{i\in I} B_i</m> for some <m>B_i\in \mathcal{B}</m> by <xref ref="eq_top_generated1"/>.
+          Since <m>B_i\in \mathcal{T}'</m> for all <m>i\in I</m> (by assumption), and since <m>\mathcal{T}'</m> is closed under arbitrary unions, we conclude <m>U\in \mathcal{T}'</m>. This proves <m>\mathcal{T}\subseteq \mathcal{T}'</m>, as desired.
+        </p>
+  </proof>
+
+</theorem>
+<example xml:id="eg_basis_standard_R">
+<title>A basis for the standard topology on <m>\R</m></title>
+<statement>
+  <p>
+    Show that the <xref ref="top_eq_standard_R" text='custom'>standard topology on <m>\R</m> </xref> is the topology generated by the basis <m>\mathcal{B}_1</m> in <xref ref="eg_basis_R"/>.
+  </p>
+</statement>
+<solution>
+  <p>
+    Let <m>\mathcal{T}</m> be the topology generated by <m>\mathcal{B}_1</m> and let <m>\mathcal{T}'</m> be the <xref ref="top_eq_standard_R" text='custom'>standard topology on <m>\R</m> </xref>. Since every open interval <m>(a,b)</m> is open in <m>\mathcal{T}'</m> each element of <m>\mathcal{B}_1</m> is an element of <m>\mathcal{T}'</m>. By <xref ref="th_compare_basis"/>, we have <m>\mathcal{T}\subseteq \mathcal{T}'</m>.
+    Next, take any open set <m>U\in\mathcal{T}'</m>; then by definition for all <m>x\in U</m> there exists <m>\epsilon_x&gt; 0</m> such that <m>(x-\epsilon_x, x+\epsilon_x)\subseteq U</m>. It follows that <m>U\in \mathcal{T}</m> by <xref ref="eq_top_generated2"/>. This proves <m>\mathcal{T}'\subseteq \mathcal{T}</m>, and thus that <m>\mathcal{T}=\mathcal{T}'</m>, as desired.
+  </p>
+</solution>
+</example>
+<example xml:id="eg_multiple_bases_standard_R">
+  <title>Multiple bases for the standard real topology</title>
+  <statement>
+    <p>
+      Show that the bases <m>\mathcal{B}_1, \mathcal{B}_2</m> from <xref ref="eg_basis_R"/> both generate the standard topology on <m>\R</m>.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      Let <m>\mathcal{T}_i</m> be the topology generated by <m>\mathcal{B}_i</m>, <m>1\leq i\leq 2</m>.
+      We must show that <m>\mathcal{T}_1\subseteq \mathcal{T}_2</m> and <m>\mathcal{T}_2\subseteq \mathcal{T}_1</m>. Clearly any <m>(p,q)\in \mathcal{B}_2</m> is an element of <m>\mathcal{B}_1</m>, and hence an element of <m>\mathcal{T}_1</m>. It follows from <xref ref="eq_compare_basis_top"/> that <m>\mathcal{T}_2\subseteq \mathcal{T}_1</m>.
+       Next, take any <m>(a,b)\in \mathcal{B}_1</m>. Since the rational numbers are dense in <m>\R</m>, for any <m>x\in (a,b)</m> we can find <m>p,q\in\R</m> satisfying <m>x\in (p,q)\subseteq (a,b)</m>. From <xref ref="eq_top_generated2"/> it follows that <m>(a,b)\in \mathcal{T}_2</m> for all <m>(a,b)\in \mathcal{B}_1</m> and hence that <m>\mathcal{T}_1\subseteq \mathcal{T}_2</m> by <xref ref="th_compare_basis"/>.
+    </p>
+  </solution>
+</example>
+<p>
+  As it turns out, the basis <m>B_3</m> of <xref ref="eg_basis_R"/> generates a nonstandard topology of <m>\R</m>. Accordingly, we give this basis (and its corresponding topology) an official name. 
+</p>
+<project xml:id="top_eg_lower_limit">
+  <title>Lower limit topology</title>
+  <p>
+    The collection <m>\mathcal{B}_l=\{([a,b)\colon a,b\in \R, a&lt; b\}</m> is a topological basis of <m>\R</m> called the <term>lower limit basis</term>, and the topology <m>\mathcal{T}_l</m> it generates is called the <term>lower limit topology</term>  on <m>\R</m>. We denote the topological space <m>(\R, \mathcal{T}_l)</m> as <m>\R_l</m>.
+  </p>
+</project>
+
+<example xml:id="eg_lower_limit_finer">
+  <title>Lower limit is finer than standard</title>
+  <statement>
+    <p>
+      Show that the lower limit topology on <m>\R</m> is strictly finer than the standard one.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      Let <m>\mathcal{T}, \mathcal{T}'</m> be the Euclidean and lower limit topologies, respectively. According to <xref ref="th_compare_basis"/>, to show <m>\mathcal{T}\subseteq \mathcal{T}'</m> we must show that for any basis element <m>B=(a,b)\in \mathcal{T}</m> and any <m>x\in B</m>, there is a basis element <m>[c,d)\in \mathcal{T}'</m> satisfying <m>x\in [c,d)\subseteq (a,b)</m>. Since <m>x\in (a,b)</m>, we have <m>a &lt; x &lt; b</m>,
+      and thus we have <m>x\in [x,b)\subseteq (a,b)</m>, as desired.
+    </p>
+    <p>
+      To show <m>\mathcal{T}'</m> is strictly finer than <m>\mathcal{T}</m> it suffices to find a basis element <m>[a,b)\in \mathcal{T}'</m> that cannot be written as a union of basis elements of <m>\mathcal{T}</m>. Consider the half-open interval <m>[0,1)</m>. To show this is not a union of open intervals <m>(a,b)</m> it is enough to show that for the element <m>0\in [0,1)</m> there is no open interval <m>(a,b)</m> satisfying <m>x\in (a,b)\subseteq [0,1]</m>. This is clear since any interval <m>(a,b)</m> containing <m>0</m> must also contain negative numbers, and hence cannot be a subset of <m>[0,1)</m>.
+    </p>
+  </solution>
+</example>
+<project xml:id="top_eq_K_top">
+  <title><m>K</m>-topology</title>
+  <p>
+    Let <m>K=\{1/n\colon n\in \Z_+\}=\{1, 1/2, 1/3,\dots\}</m>, and define
+    <me>
+      \mathcal{B}_K=\{(a,b)\colon a,b\in \R, a&lt; b\}\cup \{ (a,b)-K\colon a,b\in \R, a&lt; b\}
+    </me>.
+    The collection <m>\mathcal{B}_K</m> is a basis in <m>\R</m>. The topology <m>\mathcal{T}_K</m> it generates is called the <term><m>K</m>-topology</term> on <m>\R</m>. We denote the topological space <m>(\R, \mathcal{T}_K)</m> as <m>\R_K</m>.
+  </p>
+  <proof>
+    <p>
+      We show that <m>\mathcal{B}_K</m> is a basis, treating each axiom separately.
+      <ol>
+        <li>
+          <p>
+            Since by definition <m>\mathcal{B}_K</m> contains all finite open intervals, it clearly covers <m>\R</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            We claim that in fact given <m>B_1, B_2\in \mathcal{B}_K</m>, their intersection <m>B_1\cap B_2</m> is either empty or another element of <m>\mathcal{B}_K</m>. Axiom (2) follows directly from this claim.
+          </p>
+          <p>
+             Why is the claim true? An element of <m>\mathcal{B}</m> is either of the form <m>I</m> or <m>I-K</m>, where <m>I=(a,b)</m> is an open interval. There are then three different cases describing intersections of two elements, as shown below. Here <m>I_1, I_2</m> denote finite open intervals.
+             <md>
+               <mrow> I_1\cap I_2 \amp </mrow>
+               <mrow> (I_1-K)\cap I_2\amp =I_1\cap I_2-K\cap I_2=I_1\cap I_2-K </mrow>
+               <mrow> (I_1-K)\cap (I_2-K) \amp= (I_1-K)\cap I_2 - K\cap (I_2-K)</mrow>
+               <mrow>  \amp = I_1\cap I_2-K</mrow>
+             </md>.
+             As we have already remarked, <m>I_1\cap I_2</m> is either empty or a finite open interval <m>I</m>. The claim now follows easily.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </proof>
+
+</project>
+<example xml:id="eg_Ktop_lower_stand">
+  <title>Comparing standard, lower limit, and <m>K</m>-topology</title>
+  <statement>
+    <ol>
+      <li>
+        <p>
+          Show that the <m>K</m>-topology is strictly finer than the standard topology on <m>\R</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Show that the lower limit topology and <m>K</m>-topology are incomparable.
+        </p>
+      </li>
+    </ol>
+  </statement>
+  <solution>
+    <p>
+      Let <m>\mathcal{T}, \mathcal{T}', \mathcal{T}''</m> be the Euclidean, lower limit, and <m>K</m>-topologies, respectively.
+    </p>
+    <ol>
+      <li>
+        <p>
+          By definition, the basis for the <m>K</m>-topology contains all finite open intervals. It follows from <xref ref="eq_compare_basis_top"/> that <m>\mathcal{T}\subseteq \mathcal{T}''</m>. Next, using an argument similar to the one in <xref ref="eg_lower_limit_finer"/>, we show that the basis element <m>(0,1)-K\in \mathcal{T}''</m> cannot be covered by open intervals <m>(a,b)</m>. Indeed, consider the element <m>0\in (0,1)-K</m>. Any open interval <m>(a,b)</m> containing <m>0</m> must contain an element of the form <m>1/N</m> for some positive integer <m>N &gt; 1</m>. Since <m>1/N\notin (0,1)-K</m>, it follows that <m>(a,b)\not\subseteq (0,1)-K</m>. We conclude that <m>(0,1)-K</m> is not covered by open intervals <m>(a,b)</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          This is left as an exercise.
+        </p>
+      </li>
+    </ol>
+  </solution>
+</example>
+<theorem xml:id="th_basis_criterion">
+  <title>Basis criterion</title>
+  <statement>
+    <p>
+      Let <m>\mathcal{T}</m> be a topology on the set <m>X</m>. A subset <m>\mathcal{B}\subseteq \mathcal{T}</m> is a basis of <m>\mathcal{T}</m> if and only if for all <m>U\in \mathcal{T}</m> and <m>x\in U</m> there is an element <m>B\in \mathcal{B}</m> such that <m>x\in B\subseteq U</m>.
+    </p>
+  </statement>
+  <proof>
+    <p>
+      We prove both implications of the given <q>if and only if</q> statement separately.
+    </p>
+    <case>
+     <title>Case: <m>(\implies)</m></title>
+    <p>
+    Assume <m>\mathcal{T}</m> is generated by <m>\mathcal{B}</m>. According to the description of <m>\mathcal{T}</m> in <xref ref="eq_top_generated2"/>, for all <m>U\in \mathcal{T}</m> and <m>x\in U</m> there is an element <m>B\in \mathcal{B}</m> such that <m>x\in B\subseteq U</m>.
+    </p>
+    </case>
+    <case>
+     <title>Case: <m>(\impliedby)</m></title>
+    <p>
+     Assume for that for all <m>U\in \mathcal{T}</m> and <m>x\in U</m> there is an element <m>B\in \mathcal{B}</m> such that <m>x\in B\subseteq U</m>. Taking <m>U=X</m> we see in particular that for all <m>x\in X</m> there is a <m>B\in \mathcal{B}</m> such that <m>x\in B</m>. Thus <m>\mathcal{B}</m> satisfies axiom (1) for a basis. Next, let <m>B_1, B_2\in \mathcal{B}</m> and take <m>x\in B_1\cap B_2</m>.
+     Since <m>B_1, B_2\in \mathcal{T}</m> are open, so is <m>U=B_1\cap B_2</m>. Our assumption now implies that there is a <m>B\in \mathcal{B}</m> such that <m>x\in B\subseteq U=B_1\cap B_2</m>. Thus axiom (2) of <xref ref="d_basis"/> holds, and we condlude <m>\mathcal{B}</m> is a basis.
+    </p>
+    </case>
+  </proof>
+
+</theorem>
+<example xml:id="eg_basis_discrete">
+  <title>Bases for discrete topology</title>
+  <statement>
+    <p>
+      Let <m>X</m> be a set, and let <m>\mathcal{T}</m> be the discrete topology on <m>X</m>. Show the following:
+      <ol>
+        <li>
+          <p>
+            <m>\mathcal{B}=\{ \{x\}\colon x\in X\}</m> is a basis for <m>\mathcal{T}</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            If <m>\mathcal{B}'</m> is a basis for <m>\mathcal{T}</m>, then <m>\mathcal{B}\subseteq \mathcal{B}'</m>. In other words, <m>\mathcal{B}</m> is the minimal basis of the discrete topology.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </statement>
+  <solution>
+    <p>
+      This is left as an exercise. 
+    </p>
+  </solution>
+</example> -->
+
+<project xml:id="top_eg_order_topology">
+  <title>Order topology</title>
+  <p>
+    Let <m>X</m> be a set equipped with a <term>total ordering</term>: <ie/>, a binary relation <m>\leq</m> satisfying the following four axioms: 
+    <ul>
+      <li>
+          <title>Reflexive</title>
+          <p>
+             For all <m>x\in X</m>, we have <m>x\leq x</m>. 
+          </p>
+      </li>
+      <li>
+          <title>Transitive</title>
+          <p>
+              For all <m>x,y,z\in X</m>, if <m>x\leq y</m> and <m>y\leq z</m>, then <m>x\leq z</m>. 
+          </p>
+      </li>
+      <li>
+          <title>Antisymmetric</title>
+          <p>
+             For all <m>x,y\in X</m>, if <m>x\leq y</m> and <m>y\leq x</m>, then <m>x=y</m>.
+          </p>
+      </li>
+      <li>
+        <title>Comparability</title>
+        <p>
+          For all <m>x,y\in X</m>, we have <m>x\leq y</m> or <m>y\leq x</m>. 
+        </p>
+      </li>
+  </ul>
+  Given the total ordering <m>\leq</m> on <m>X</m>, we define the relation <m>&lt;</m> as <m>x&lt; y</m> if <m>x\leq y </m> and <m>x\ne y</m>. A <term>smallest element</term> of <m>X</m> is an element <m>x_0\in X</m> satisfying <m>x_0\leq y</m> for all <m>y\in Y</m>; a <term>largest element</term> of <m>X</m> is an element <m>y_0\in X</m> satisfying <m>x\leq y_0</m> for all <m>x\in X</m>.  Lastly, given elements <m>x,y\in X</m> we define the following subsets of <m>X</m>:
+  <md>
+    <mrow>(x,y) \amp =\{z\in X\colon x&lt; z \text{ and } z&lt; y\}  </mrow>
+    <mrow>[x,y] \amp =\{z\in X\colon x\leq z \text{ and } z\leq y\}  </mrow>
+    <mrow>[x,y) \amp =\{z\in X\colon x\leq z \text{ and } z&lt; y\}  </mrow>
+    <mrow>(x,y] \amp =\{z\in X\colon x&lt; z \text{ and } z\leq y\}  </mrow>
+  </md>.
+  An set of the form <m>(x,y)</m> is called an <term>open interval</term> and a set of the form <m>[x,y]</m> is called a <term>closed interval</term>; sets of the form <m>[x,y)</m> or <m>(x,y]</m> are called <term>half-open intervals</term>. 
+</p>
+<p>With this notation in place, we define <m>\mathcal{B}</m> to be the collection of all subsets <m>B\subseteq X</m> satisfying one of the following properties: 
+  <ol>
+    <li>
+      <p>
+        <m>B=(x,y)</m> for some <m>x,y\in X</m>.
+      </p>
+    </li>
+    <li>
+      <p>
+        <m>B=[x_0, y)</m> for some <m>y\in X</m>, and some smallest element <m>x_0\ in X</m>. 
+      </p>
+    </li>
+    <li>
+      <p>
+        <m>B=(x,y_0]</m> for some <m>x\in X</m> and some largest element <m>y_0\in X</m>. 
+      </p>
+    </li>
+  </ol>
+  The collection <m>\mathcal{B}</m> is a topological basis and the topology <m>\mathcal{T}</m> it generates is called the <term>order topology</term> of <m>X</m> with respect to the total ordering <m>\leq</m>. 
+  </p>
+  <proof>
+    <p>
+      The proof is left as an exercise. 
+    </p>
+  </proof>
+</project>
+
+
+
+
+</section>
