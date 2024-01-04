@@ -40,7 +40,7 @@
   </statement>
 </definition>
     <remark xml:id="rm_def_top">
-      <title>Finite intersection</title>
+      <title>Finite intersection of open sets</title>
     <p>
       Let <m>(X,\mathcal{T})</m> be a topological space. Axiom (3) of <xref ref="d_top"/> says that the intersection of any two open sets of <m>X</m> is again open. It follows easily by induction that the intersection of any <em>finite</em> list of open sets is open. In other words: 
       <me>
@@ -53,8 +53,9 @@
   <title>Standard topology on <m>\R</m></title>
   <statement>
     <p>
-      Let <m>X=\R</m> and define <m>\mathcal{T}</m> to be the set of open sets as defined above: that is, <m>U\in \mathcal{T}</m> if and only if for all <m>x\in U</m> there is an <m>\epsilon &gt; 0</m> such that the entire open interval <m>(x-\epsilon, x+\epsilon)</m> is contained in <m>U</m>. Show that <m>\mathcal{T}</m> is a topology on <m>\R</m>
+      Let <m>X=\R</m> and define <m>\mathcal{T}</m> to be the collection of subsets <m>U\subseteq \R</m> satisfying the following property: for all <m>x\in U</m> there is an <m>\epsilon &gt; 0</m> such that <m>(x-\epsilon, x+\epsilon)\subseteq U</m>. The collection <m>\mathcal{T}</m> is a topology, called the <term>standard topology</term> on <m>\R</m>. 
     </p>
+    
   </statement>
   <proof>
     <p>
