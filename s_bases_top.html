@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Topological basis</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Math 344-1">
+<meta property="book:author" content="Aaron Greicius">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "https://pretextbook.org/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.33/pretext_search.js"></script><link href="https://pretextbook.org/css/0.83/pretext_search.css" rel="stylesheet" type="text/css">
+<script>js_version = 0.33</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.33/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.33/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.33/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+<link href="https://pretextbook.org/css/0.83/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/shell_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
+<h1 class="heading"><a href="kursobjekt.html"><span class="title">Math 344-1:</span> <span class="subtitle">Kursobjekt</span></a></h1>
+<p class="byline">Aaron Greicius</p>
+</div>
+</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><a class="index-button button" href="kursobjekt-6-6.html" title="Index"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span><span class="name">Index</span></a><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="s_top_spaces.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="c_top_spaces.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="kursobjekt-6.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\Z}{{\mathbb Z}}
+  \newcommand{\Q}{{\mathbb Q}}
+  \newcommand{\R}{{\mathbb R}}
+  \newcommand{\C}{{\mathbb C}}
+  \newcommand{\T}{{\mathbb T}}
+  \newcommand{\F}{{\mathbb F}}
+  \newcommand{\PP}{{\mathbb P}}
+  \newcommand{\HH}{{\mathbb H}}
+  \newcommand{\compose}{\circ}
+  \newcommand{\bolda}{{\mathbf a}}
+  \newcommand{\boldb}{{\mathbf b}}
+  \newcommand{\boldc}{{\mathbf c}}
+  \newcommand{\boldd}{{\mathbf d}}
+  \newcommand{\bolde}{{\mathbf e}}
+  \newcommand{\boldi}{{\mathbf i}}
+  \newcommand{\boldj}{{\mathbf j}}
+  \newcommand{\boldk}{{\mathbf k}}
+  \newcommand{\boldn}{{\mathbf n}}
+  \newcommand{\boldp}{{\mathbf p}}
+  \newcommand{\boldq}{{\mathbf q}}
+  \newcommand{\boldr}{{\mathbf r}}
+  \newcommand{\bolds}{{\mathbf s}}
+  \newcommand{\boldt}{{\mathbf t}}
+  \newcommand{\boldu}{{\mathbf u}}
+  \newcommand{\boldv}{{\mathbf v}}
+  \newcommand{\boldw}{{\mathbf w}}
+  \newcommand{\boldx}{{\mathbf x}}
+  \newcommand{\boldy}{{\mathbf y}}
+  \newcommand{\boldz}{{\mathbf z}}
+  \newcommand{\boldzero}{{\mathbf 0}}
+  \newcommand{\boldmod}{\boldsymbol{ \bmod }}
+  \newcommand{\boldT}{{\mathbf T}}
+  \newcommand{\boldN}{{\mathbf N}}
+  \newcommand{\boldB}{{\mathbf B}}
+  \newcommand{\boldF}{{\mathbf F}}
+  \newcommand{\boldS}{{\mathbf S}}
+  \newcommand{\boldE}{{\mathbf E}}
+  \newcommand{\boldG}{{\mathbf G}}
+  \newcommand{\boldK}{{\mathbf K}}
+  \newcommand{\boldL}{{\mathbf L}}
+  \DeclareMathOperator{\lns}{lns}
+  \DeclareMathOperator{\lcm}{lcm}
+  \DeclareMathOperator{\Span}{span}
+  \DeclareMathOperator{\tr}{tr}
+  \DeclareMathOperator{\NS}{null}
+  \DeclareMathOperator{\RS}{row}
+  \DeclareMathOperator{\CS}{col}
+  \DeclareMathOperator{\im}{im}
+  \DeclareMathOperator{\range}{range}
+  \DeclareMathOperator{\rank}{rank}
+  \DeclareMathOperator{\nullity}{nullity}
+  \DeclareMathOperator{\sign}{sign}
+  \DeclareMathOperator{\Fix}{Fix}
+  \DeclareMathOperator{\Aff}{Aff}
+  \DeclareMathOperator{\Frac}{Frac}
+  \DeclareMathOperator{\Ann}{Ann}
+  \DeclareMathOperator{\Tor}{Tor}
+  \DeclareMathOperator{\id}{id}
+  \DeclareMathOperator{\mdeg}{mdeg}
+  \DeclareMathOperator{\Lt}{Lt}
+  \DeclareMathOperator{\Lc}{Lc}
+  \DeclareMathOperator{\disc}{disc}
+  \DeclareMathOperator{\Frob}{Frob}
+  \DeclareMathOperator{\adj}{adj}
+  \DeclareMathOperator{\curl}{curl}
+  \DeclareMathOperator{\grad}{grad}
+  \DeclareMathOperator{\diver}{div}
+  \DeclareMathOperator{\flux}{flux}
+  \DeclareMathOperator{\Hom}{Hom}
+  \DeclareMathOperator{\ab}{ab}
+
+
+  \newcommand{\surjects}{\twoheadrightarrow}
+  \newcommand{\injects}{\hookrightarrow}
+  \newcommand{\bijects}{\leftrightarrow}
+  \newcommand{\isomto}{\overset{\sim}{\rightarrow}}
+  \newcommand{\floor}[1]{\lfloor#1\rfloor}
+  \newcommand{\ceiling}[1]{\left\lceil#1\right\rceil}
+  \newcommand{\mclass}[2][m]{[#2]_{#1}}
+  \newcommand{\val}[2][]{\left\lvert #2\right\rvert_{#1}}
+  \newcommand{\abs}[2][]{\left\lvert #2\right\rvert_{#1}}
+  \newcommand{\valuation}[2][]{\left\lvert #2\right\rvert_{#1}}
+  \newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+  \newcommand{\anpoly}{a_nx^n+a_{n-1}x^{n-1}\cdots +a_1x+a_0}
+  \newcommand{\anmonic}{x^n+a_{n-1}x^{n-1}\cdots +a_1x+a_0}
+  \newcommand{\bmpoly}{b_mx^m+b_{m-1}x^{m-1}\cdots +b_1x+b_0}
+  \newcommand{\pder}[2]{\frac{\partial#1}{\partial#2}}
+  \newcommand{\normalin}{\trianglelefteq}
+  \newcommand{\angvec}[1]{\langle #1\rangle}
+  \newcommand{\varpoly}[2]{#1_{#2}x^{#2}+#1_{#2-1}x^{#2-1}\cdots +#1_1x+#1_0}
+  \newcommand{\varpower}[1][a]{#1_0+#1_1x+#1_1x^2+\cdots}
+  \newcommand{\limasto}[2][x]{\lim_{#1\rightarrow #2}}
+  \newenvironment{linsys}[2][m]{
+  \begin{array}[#1]{@{}*{#2}{rc}r@{}}
+  }{
+  \end{array}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural contains-active toc-item-list">
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="meta_frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="c_foundations.html" class="internal"><span class="codenumber">0</span> <span class="title">Foundations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_sets_functions.html" class="internal"><span class="codenumber">0.1</span> <span class="title">Sets and functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_sets_functions.html#ss_sets" class="internal"><span class="title">Sets</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_sets_functions.html#ss_functions" class="internal"><span class="title">Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_sets_functions.html#subsec-" class="internal"><span class="title">Cardinality and countability</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_logic.html" class="internal"><span class="codenumber">0.2</span> <span class="title">Logic</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_logic.html#ss_propositional_calculus" class="internal"><span class="title">Propositional logic</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_logic.html#ss_predicate_logic" class="internal"><span class="title">Predicate logic</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_proof_technique.html" class="internal"><span class="codenumber">0.3</span> <span class="title">Proof techniques</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="s_proof_technique.html#ss_logical_structure" class="internal"><span class="title">Logical structure</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_implication" class="internal"><span class="title">Implication</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_disjunction" class="internal"><span class="title">Disjunction</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_equivalence" class="internal"><span class="title">Equivalence</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_logical_chains" class="internal"><span class="title">Chains of implications/equivalences</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_proof_by_contradiction" class="internal"><span class="title">Proof by contradiction</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="s_proof_technique.html#ss_Equalities" class="internal"><span class="title">Equalities</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_chain_equalities" class="internal"><span class="title">Chain of equalities</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="s_proof_technique.html#ss_set_properties" class="internal"><span class="title">Basic set properties</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_set_inclusion" class="internal"><span class="title">Set inclusion</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_set_equality" class="internal"><span class="title">Set equality</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="s_proof_technique.html#ss_function_properties" class="internal"><span class="title">Basic function properties</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_function_equality" class="internal"><span class="title">Function equality</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_injective_surjective_bijective" class="internal"><span class="title">Injective, surjective, bijective</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="s_proof_technique.html#ss_mathematical_induction" class="internal"><span class="title">Mathematical induction</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_weak_induction" class="internal"><span class="title">Proof by induction</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_strong_induction" class="internal"><span class="title">Proof by strong induction</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="c_top_spaces.html" class="internal"><span class="codenumber">1</span> <span class="title">Point-set topology</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_top_spaces.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Topological spaces</span></a></div></li>
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="s_bases_top.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Topological basis</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="kursobjekt-6.html" class="internal"><span class="title">Back Matter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-notation.html" class="internal"><span class="codenumber">A</span> <span class="title">Notation</span></a></div></li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-defs.html" class="internal"><span class="codenumber">B</span> <span class="title">Definitions</span></a></div></li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-thms.html" class="internal"><span class="codenumber">C</span> <span class="title">Theory</span></a></div></li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-specimens.html" class="internal"><span class="codenumber">D</span> <span class="title">Topological specimens</span></a></div></li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-egs.html" class="internal"><span class="codenumber">E</span> <span class="title">Examples</span></a></div></li>
+<li class="toc-item toc-index"><div class="toc-title-box"><a href="kursobjekt-6-6.html" class="internal"><span class="title">Index</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="s_bases_top"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">1.2</span><span class="space"> </span><span class="title">Topological basis</span>
+</h2>
+<section class="introduction" id="s_bases_top-2"><div class="para" id="s_bases_top-2-1">When defining a topology <span class="process-math">\(\mathcal{T}\)</span> for a set <span class="process-math">\(X\)</span> it is often convenient to specify instead a more manageable subset of <span class="process-math">\(\mathcal{T}\)</span> that we can use to <em class="emphasis">generate</em> the entire topology using arbitrary unions and/or finite intersections (our open set operators). A <em class="emphasis">topological basis</em> is a particularly nice example of this (<a href="" class="xref" data-knowl="./knowl/xref/d_basis.html" title="Definition 1.2.1: Topological basis">1.2.1</a>) as the open sets of the topology it generates can be expressed as (arbitrary) unions of the basis elements. Bases will also provide a convenient way of comparing different topologies and (later on) determining whether relevant topological properties are satisfied by a given space.</div></section><article class="definition definition-like" id="d_basis"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.2.1</span><span class="period">.</span><span class="space"> </span><span class="title">Topological basis.</span>
+</h3> Let <span class="process-math">\(X\)</span> be a set. A <dfn class="terminology">topological basis</dfn> on <span class="process-math">\(X\)</span> is a collection <span class="process-math">\(\mathcal{B}\)</span> of subsets of <span class="process-math">\(X\)</span> satisfying the following axioms: <ol class="decimal">
+<li id="d_basis-2-6-1">
+<span class="heading"><span class="title">Covers <span class="process-math">\(X\)</span>.</span></span><div class="para" id="d_basis-2-6-1-2">For each <span class="process-math">\(x\in X\)</span> there is a set <span class="process-math">\(B\in \mathcal{B}\)</span> such that <span class="process-math">\(x\in B\text{.}\)</span>
+</div>
+</li>
+<li id="d_basis-2-6-2">
+<span class="heading"><span class="title">Intersections covered by basis elements.</span></span><div class="para" id="d_basis-2-6-2-2">If <span class="process-math">\(B_1, B_2\in \mathcal{B}\text{,}\)</span> then for all <span class="process-math">\(x\in B_1\cap B_2\)</span> there is a <span class="process-math">\(B\in \mathcal{B}\)</span> such that <span class="process-math">\(x\in B\subseteq B_1\cap B_2\text{.}\)</span>
+</div>
+</li>
+</ol> When the context is clear, we usually shorten ‘topological basis’ to ‘basis’.</article><article class="remark remark-like" id="rm_alt_axiom2"><h3 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.2.2</span><span class="period">.</span><span class="space"> </span><span class="title">Equivalent alternative to axiom (2).</span>
+</h3> <div class="para logical" id="rm_alt_axiom2-2-1">
+<div class="para">Axiom (2) in <a href="" class="xref" data-knowl="./knowl/xref/d_basis.html" title="Definition 1.2.1: Topological basis">Definition 1.2.1</a> is equivalent to saying that <span class="process-math">\(B_1\cap B_2\)</span> is equal to a union of elements of <span class="process-math">\(\mathcal{B}\text{.}\)</span> In other words, we could replace (2) with the equivalent statement</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/d_basis.html ./knowl/xref/lemma_covering_principle.html">
+\begin{equation*}
+(2') \ B_1, B_2\in \mathcal{B}\implies B_1\cap B_2=\bigcup_{\alpha\in I} B_\alpha \text{ for some } B_\alpha\in \mathcal{B}\text{.}
+\end{equation*}
+</div>
+<div class="para">This is a consequence of the more general fact expressed in <a href="" class="xref" data-knowl="./knowl/xref/lemma_covering_principle.html" title="Lemma 1.2.3: Covering principle">Lemma 1.2.3</a>.</div>
+</div></article><article class="lemma theorem-like" id="lemma_covering_principle"><h3 class="heading">
+<span class="type">Lemma</span><span class="space"> </span><span class="codenumber">1.2.3</span><span class="period">.</span><span class="space"> </span><span class="title">Covering principle.</span>
+</h3>
+<div class="para" id="lemma_covering_principle-2-1">Let <span class="process-math">\(\mathcal{A}\)</span> be a collection of subsets of <span class="process-math">\(X\text{,}\)</span> and let <span class="process-math">\(Y\subseteq X\text{.}\)</span> The following statements are equivalent.</div> <ol class="decimal">
+<li id="lemma_covering_principle-2-2-1"><div class="para" id="lemma_covering_principle-2-2-1-1">
+<span class="process-math">\(Y=\bigcup_{i\in I}A_i\)</span> for some sets <span class="process-math">\(A_i\in \mathcal{A}\text{.}\)</span> (In other words, <span class="process-math">\(Y\)</span> is a union of elements of <span class="process-math">\(\mathcal{A}\text{.}\)</span>)</div></li>
+<li id="lemma_covering_principle-2-2-2"><div class="para" id="lemma_covering_principle-2-2-2-1">For all <span class="process-math">\(y\in Y\)</span> there exists a set <span class="process-math">\(A\in \mathcal{A}\)</span> such that <span class="process-math">\(y\in A\subseteq Y\text{.}\)</span>
+</div></li>
+</ol></article><details id="lemma_covering_principle-3" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><article class="case" id="lemma_covering_principle-3-1"><h4 class="heading">Implication: <span class="process-math">\((1)\implies (2)\)</span>.</h4> <div class="para" id="lemma_covering_principle-3-1-2">Suppose <span class="process-math">\(Y=\bigcup_{i\in I}A_i\)</span> for some sets <span class="process-math">\(A_i\in \mathcal{A}\text{.}\)</span> Given any <span class="process-math">\(y\in Y\)</span> we have <span class="process-math">\(y\in A_i\)</span> for some <span class="process-math">\(i\in I\text{.}\)</span> Since <span class="process-math">\(A_i\subseteq Y\text{,}\)</span> we are done.</div></article> <article class="case" id="lemma_covering_principle-3-2"><h4 class="heading">Implication: <span class="process-math">\((2)\implies (1)\)</span>.</h4> <div class="para" id="lemma_covering_principle-3-2-2">By assumption, for all <span class="process-math">\(y\in Y\)</span> we can find a set <span class="process-math">\(A_y\in \mathcal{A}\)</span> such that <span class="process-math">\(y\in A_y\subseteq Y\text{.}\)</span> It follows that <span class="process-math">\(Y=\bigcup_{y\in Y}A_y\text{,}\)</span> showing that <span class="process-math">\(Y\)</span> is a union of elements of <span class="process-math">\(\mathcal{A}\text{.}\)</span>
+</div></article></article></details><article class="example example-like" id="eg_basis_R"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.2.4</span><span class="period">.</span><span class="space"> </span><span class="title">Some bases for <span class="process-math">\(\R\)</span>.</span>
+</h3>
+<div class="para" id="eg_basis_R-2-1">Show that the given collections <span class="process-math">\(\mathcal{B}\)</span> are topological bases of <span class="process-math">\(\R\text{.}\)</span>
+</div> <ol class="decimal">
+<li id="eg_basis_R-2-2-1"><div class="para" id="eg_basis_R-2-2-1-1"><span class="process-math">\(\displaystyle \mathcal{B}_1=\{(x-\epsilon, x+\epsilon)\colon x,\epsilon\in \R, \epsilon&gt; 0\}=\{(a,b)\colon a,b\in\R, a&lt; b\}\)</span></div></li>
+<li id="eg_basis_R-2-2-2"><div class="para" id="eg_basis_R-2-2-2-1"><span class="process-math">\(\displaystyle \mathcal{B}_2=\{ (p,q)\colon p,q\in \Q, p&lt; q\} \)</span></div></li>
+<li id="eg_basis_R-2-2-3"><div class="para" id="eg_basis_R-2-2-3-1"><span class="process-math">\(\displaystyle \mathcal{B}_3=\{[a,b)\colon a,b\in \R, a&lt; b\}\)</span></div></li>
+</ol>
+<div class="solutions"><details id="eg_basis_R-3" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like"><div class="para logical" id="eg_basis_R-3-1">
+<div class="para">It is clear that each collection of interval types covers <span class="process-math">\(\R\)</span> in the sense of axiom (1). As for axiom (2), for each <span class="process-math">\(\mathcal{B}_i\text{,}\)</span> <span class="process-math">\(1\leq i\leq 3\text{,}\)</span> note that intersection of these types of intervals are either empty, or another interval of the same type. This is a result of the fact that</div>
+<div class="displaymath process-math" id="eg_basis_R-3-1-4">
+\begin{align*}
+(a,b)\cap (c,d)\amp = \left(\max\{a,c\},\min\{b,d\}\right) \\
+[a,b)\cap [c,d) \amp = \left [\max\{a,c\}, \min\{b,d\}\right) \text{,}
+\end{align*}
+</div>
+<div class="para">where the interval described on the right is understood to be the empty set if <span class="process-math">\(\max(a,c)\geq \min(b,d)\text{.}\)</span>
+</div>
+</div></div></details></div></article><article class="theorem theorem-like" id="th_basis_generated"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.2.5</span><span class="period">.</span><span class="space"> </span><span class="title">Topology generated by basis.</span>
+</h3>
+<div class="para logical" id="th_basis_generated-2-1">
+<div class="para">Let <span class="process-math">\(\mathcal{B}\subseteq \mathcal{P}(X)\)</span> be a topological basis of the set <span class="process-math">\(X\text{.}\)</span>
+</div>
+<ol class="decimal">
+<li id="th_basis_generated-2-1-3-1"><div class="para logical" id="th_basis_generated-2-1-3-1-1">
+<div class="para">The set</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathcal{T} = \{U\subseteq X\colon \text{for all } x\in U \ \text{ there exists } B\in \mathcal{B} \text{ s.t. } x\in B\subseteq U\} 
+\end{equation*}
+</div>
+<div class="para">is a topology on <span class="process-math">\(X\text{.}\)</span>
+</div>
+</div></li>
+<li id="th_basis_generated-2-1-3-2"><div class="para logical" id="th_basis_generated-2-1-3-2-1">
+<div class="para">We have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathcal{T}=\{U\subseteq X\colon U=\bigcup_{i\in I}B_i \text{ for some elements } B_i\in \mathcal{B}\}\text{.}
+\end{equation*}
+</div>
+</div></li>
+</ol>
+</div></article><details id="th_basis_generated-3" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para" id="th_basis_generated-3-1">Note: it is somewhat easier to show that <span class="process-math">\(\mathcal{T}\)</span> is a topology using the description of <span class="process-math">\(\mathcal{T}\)</span> in statement (1), and then to show that the description in statement (2) also holds. (This is how Munkres does it, and how I did it in class.) I’ve decided to go the hard way here as an alternative proof that puts us through some useful set theory calisthenics.</div> <div class="para" id="th_basis_generated-3-2">First we show that <span class="process-math">\(\mathcal{T}\)</span> as defined in (2) is a topology. We treat each axiom separately.</div> <ol class="decimal">
+<li id="th_basis_generated-3-3-1"><div class="para" id="th_basis_generated-3-3-1-1">The empty set is the “empty union” of elements of <span class="process-math">\(\mathcal{B}\text{;}\)</span> thus <span class="process-math">\(\emptyset\in \mathcal{T}\text{.}\)</span> The covering axiom for bases implies that for all <span class="process-math">\(x\in X\)</span> there is a <span class="process-math">\(B_x\in\mathcal{B}\)</span> such that <span class="process-math">\(x\in B_x\text{.}\)</span> It follows that <span class="process-math">\(X=\bigcup_{x\in X}B_x\)</span> is a union of elements of <span class="process-math">\(\mathcal{B}\text{,}\)</span> and thus that <span class="process-math">\(X\in \mathcal{T}\text{.}\)</span>
+</div></li>
+<li id="th_basis_generated-3-3-2"><div class="para logical" id="th_basis_generated-3-3-2-1">
+<div class="para">In plain English, a union of unions of elements of <span class="process-math">\(\mathcal{B}\)</span> is a union of elements of <span class="process-math">\(\mathcal{B}\text{.}\)</span> More rigorously, assume we have a collection of <span class="process-math">\(U_i\in \mathcal{T}\text{.}\)</span> By definition, for each <span class="process-math">\(i\in I\)</span> we have <span class="process-math">\(U_i=\bigcup_{j\in J_i} B_{i,j}\text{,}\)</span> where <span class="process-math">\(B_{i,j}\in \mathcal{B}\)</span> for each <span class="process-math">\(j\in J\text{.}\)</span> Thus</div>
+<div class="displaymath process-math" id="th_basis_generated-3-3-2-1-8">
+\begin{align*}
+\bigcup_{i\in I} U_i \amp = \bigcup_{i\in I}\bigcup_{j\in J_i} B_{i,j} \\
+\amp \bigcup_{(i,j)\in K} B_{i,j} \text{,}
+\end{align*}
+</div>
+<div class="para">where <span class="process-math">\(K\)</span> is the set of all pairs of the form <span class="process-math">\((i,j)\)</span> for <span class="process-math">\(i\in I\)</span> and <span class="process-math">\(j\in I_j\text{.}\)</span> Thus <span class="process-math">\(U=\bigcup_{i\in I} U_i\)</span> is a union of basis elements, and hence an element of <span class="process-math">\(\mathcal{T}\text{.}\)</span>
+</div>
+</div></li>
+<li id="th_basis_generated-3-3-3"><div class="para logical" id="th_basis_generated-3-3-3-1">
+<div class="para">It is enough to show that <span class="process-math">\(U, V\in \mathcal{T}\implies U\cap V\in \mathcal{T}\text{.}\)</span> (See <a href="" class="xref" data-knowl="./knowl/xref/rm_def_top.html" title="Remark 1.1.2: Finite intersection of open sets">Remark 1.1.2</a>.) Assume <span class="process-math">\(U=\bigcup_{i\in I}B_i\text{,}\)</span> <span class="process-math">\(V=\bigcup_{j\in J}B_j\text{,}\)</span> where <span class="process-math">\(B_i, B_j\in \mathcal{B}\)</span> for all <span class="process-math">\(i\in I, j\in J\text{.}\)</span> We have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/rm_def_top.html ./knowl/xref/rm_alt_axiom2.html" id="th_basis_generated-3-3-3-1-7">
+\begin{align*}
+U\cap V \amp= \left(\bigcup_{i\in I}B_i \right) \cap \left( \bigcup_{j\in J}B_j\right) \\
+\amp = \bigcup_{(i,j)\in I\times J} B_i\cap B_j \text{.}
+\end{align*}
+</div>
+<div class="para">Now by axiom (2’) for bases (see <a href="" class="xref" data-knowl="./knowl/xref/rm_alt_axiom2.html" title="Remark 1.2.2: Equivalent alternative to axiom (2)">Remark 1.2.2</a>), each <span class="process-math">\(B_i\cap B_j\)</span> is a union of basis elements, and hence is an element <span class="process-math">\(U_{i,j}\in \mathcal{T}\text{.}\)</span> We have already shown that <span class="process-math">\(\mathcal{T}\)</span> is closed under arbitrary unions. Thus <span class="process-math">\(U\cap V\)</span> is an element of <span class="process-math">\(\mathcal{T}\text{.}\)</span>
+</div>
+</div></li>
+</ol> <div class="para" id="th_basis_generated-3-4">This shows that <span class="process-math">\(\mathcal{T}\text{,}\)</span> as defined in statement (2) of the theorem, is a topology. Statement (1) now follows from the general claim made in <a href="" class="xref" data-knowl="./knowl/xref/rm_alt_axiom2.html" title="Remark 1.2.2: Equivalent alternative to axiom (2)">Remark 1.2.2</a>.</div></article></details><article class="definition definition-like" id="d_basis_generated"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.2.6</span><span class="period">.</span><span class="space"> </span><span class="title">Topology generated by basis.</span>
+</h3> <div class="para logical" id="d_basis_generated-2-1">
+<div class="para">Let <span class="process-math">\(\mathcal{B}\)</span> be a topological basis of the set <span class="process-math">\(X\text{.}\)</span> The topology</div>
+<div class="displaymath process-math" id="d_basis_generated-2-1-3">
+\begin{align}
+\mathcal{T} \amp = \{U\subseteq X\colon \text{for all } x\in U \text{ there exists } B\in \mathcal{B} \text{ s.t. } x\in B\subseteq U\}\tag{1.2.1}\\
+\amp =\{U\subseteq X\colon U=\bigcup_{i\in I}B_i \text{ for some elements } B_i\in \mathcal{B}\} \tag{1.2.2}
+\end{align}
+</div>
+<div class="para">is called the <dfn class="terminology">topology generated</dfn> by the basis <span class="process-math">\(\mathcal{B}\text{.}\)</span> Similarly, we call <span class="process-math">\(\mathcal{B}\)</span> a basis for <span class="process-math">\(\mathcal{T}\text{.}\)</span>
+</div>
+</div></article><article class="theorem theorem-like" id="th_compare_basis"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.2.7</span><span class="period">.</span><span class="space"> </span><span class="title">Comparing topologies via basis.</span>
+</h3>
+<div class="para logical" id="th_compare_basis-2-1">
+<div class="para">Let <span class="process-math">\(\mathcal{T}\)</span> and <span class="process-math">\(\mathcal{T}'\)</span> be topologies on <span class="process-math">\(X\)</span> and assume that <span class="process-math">\(\mathcal{T}\)</span> is generated by the basis <span class="process-math">\(\mathcal{B}\text{.}\)</span> We have</div>
+<div class="displaymath process-math" id="eq_compare_basis_top">
+\begin{equation}
+\mathcal{T}\subseteq \mathcal{T}'\iff B\in \mathcal{T}' \text{ for all } B\in \mathcal{B}\text{.}\tag{1.2.3}
+\end{equation}
+</div>
+</div></article><details id="th_compare_basis-3" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para" id="th_compare_basis-3-1">Observe first that basis elements are open in the topology <span class="process-math">\(\mathcal{T}\text{,}\)</span> essentially by definition: i.e., we have <span class="process-math">\(\mathcal{B}\subseteq \mathcal{T}\text{.}\)</span> The forward implication <span class="process-math">\((\implies)\)</span> follows easily, since <span class="process-math">\(\mathcal{T}\subseteq \mathcal{T}'\)</span> and <span class="process-math">\(\mathcal{B}\subseteq \mathcal{T}\)</span> implies <span class="process-math">\(\mathcal{B}\subseteq \mathcal{T}'\text{.}\)</span>
+</div> <div class="para" id="th_compare_basis-3-2">Now consider the reverse implication <span class="process-math">\((\impliedby)\text{.}\)</span> Assume <span class="process-math">\(\mathcal{B}\subseteq \mathcal{T}'\text{.}\)</span> Given an open set <span class="process-math">\(U\in \mathcal{T}\)</span> we have <span class="process-math">\(U=\bigcup_{i\in I} B_i\)</span> for some <span class="process-math">\(B_i\in \mathcal{B}\)</span> by <a href="" class="xref" data-knowl="./knowl/xref/eq_top_generated1.html" title="Equation 1.2.2">(1.2.2)</a>. Since <span class="process-math">\(B_i\in \mathcal{T}'\)</span> for all <span class="process-math">\(i\in I\)</span> (by assumption), and since <span class="process-math">\(\mathcal{T}'\)</span> is closed under arbitrary unions, we conclude <span class="process-math">\(U\in \mathcal{T}'\text{.}\)</span> This proves <span class="process-math">\(\mathcal{T}\subseteq \mathcal{T}'\text{,}\)</span> as desired.</div></article></details><article class="example example-like" id="eg_basis_standard_R"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.2.8</span><span class="period">.</span><span class="space"> </span><span class="title">A basis for the standard topology on <span class="process-math">\(\R\)</span>.</span>
+</h3>
+<div class="para" id="eg_basis_standard_R-2-1">Show that the <a href="" class="xref" data-knowl="./knowl/xref/top_eq_standard_R.html" title="Topological specimen 1: Standard topology on \R">standard topology on <span class="process-math">\(\R\)</span></a> is the topology generated by the basis <span class="process-math">\(\mathcal{B}_1\)</span> in <a href="" class="xref" data-knowl="./knowl/xref/eg_basis_R.html" title="Example 1.2.4: Some bases for \R">Example 1.2.4</a>.</div>
+<div class="solutions"><details id="eg_basis_standard_R-3" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like"><div class="para" id="eg_basis_standard_R-3-1">Let <span class="process-math">\(\mathcal{T}\)</span> be the topology generated by <span class="process-math">\(\mathcal{B}_1\)</span> and let <span class="process-math">\(\mathcal{T}'\)</span> be the <a href="" class="xref" data-knowl="./knowl/xref/top_eq_standard_R.html" title="Topological specimen 1: Standard topology on \R">standard topology on <span class="process-math">\(\R\)</span></a>. Since every open interval <span class="process-math">\((a,b)\)</span> is open in <span class="process-math">\(\mathcal{T}'\)</span> each element of <span class="process-math">\(\mathcal{B}_1\)</span> is an element of <span class="process-math">\(\mathcal{T}'\text{.}\)</span> By <a href="" class="xref" data-knowl="./knowl/xref/th_compare_basis.html" title="Theorem 1.2.7: Comparing topologies via basis">Theorem 1.2.7</a>, we have <span class="process-math">\(\mathcal{T}\subseteq \mathcal{T}'\text{.}\)</span> Next, take any open set <span class="process-math">\(U\in\mathcal{T}'\text{;}\)</span> then by definition for all <span class="process-math">\(x\in U\)</span> there exists <span class="process-math">\(\epsilon_x&gt; 0\)</span> such that <span class="process-math">\((x-\epsilon_x, x+\epsilon_x)\subseteq U\text{.}\)</span> It follows that <span class="process-math">\(U\in \mathcal{T}\)</span> by <a href="" class="xref" data-knowl="./knowl/xref/eq_top_generated2.html" title="Equation 1.2.1">(1.2.1)</a>. This proves <span class="process-math">\(\mathcal{T}'\subseteq \mathcal{T}\text{,}\)</span> and thus that <span class="process-math">\(\mathcal{T}=\mathcal{T}'\text{,}\)</span> as desired.</div></div></details></div></article><article class="example example-like" id="eg_multiple_bases_standard_R"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.2.9</span><span class="period">.</span><span class="space"> </span><span class="title">Multiple bases for the standard real topology.</span>
+</h3>
+<div class="para" id="eg_multiple_bases_standard_R-2-1">Show that the bases <span class="process-math">\(\mathcal{B}_1, \mathcal{B}_2\)</span> from <a href="" class="xref" data-knowl="./knowl/xref/eg_basis_R.html" title="Example 1.2.4: Some bases for \R">Example 1.2.4</a> both generate the standard topology on <span class="process-math">\(\R\text{.}\)</span>
+</div>
+<div class="solutions"><details id="eg_multiple_bases_standard_R-3" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like"><div class="para" id="eg_multiple_bases_standard_R-3-1">Let <span class="process-math">\(\mathcal{T}_i\)</span> be the topology generated by <span class="process-math">\(\mathcal{B}_i\text{,}\)</span> <span class="process-math">\(1\leq i\leq 2\text{.}\)</span> We must show that <span class="process-math">\(\mathcal{T}_1\subseteq \mathcal{T}_2\)</span> and <span class="process-math">\(\mathcal{T}_2\subseteq \mathcal{T}_1\text{.}\)</span> Clearly any <span class="process-math">\((p,q)\in \mathcal{B}_2\)</span> is an element of <span class="process-math">\(\mathcal{B}_1\text{,}\)</span> and hence an element of <span class="process-math">\(\mathcal{T}_1\text{.}\)</span> It follows from <a href="" class="xref" data-knowl="./knowl/xref/eq_compare_basis_top.html" title="Equation 1.2.3">(1.2.3)</a> that <span class="process-math">\(\mathcal{T}_2\subseteq \mathcal{T}_1\text{.}\)</span> Next, take any <span class="process-math">\((a,b)\in \mathcal{B}_1\text{.}\)</span> Since the rational numbers are dense in <span class="process-math">\(\R\text{,}\)</span> for any <span class="process-math">\(x\in (a,b)\)</span> we can find <span class="process-math">\(p,q\in\R\)</span> satisfying <span class="process-math">\(x\in (p,q)\subseteq (a,b)\text{.}\)</span> From <a href="" class="xref" data-knowl="./knowl/xref/eq_top_generated2.html" title="Equation 1.2.1">(1.2.1)</a> it follows that <span class="process-math">\((a,b)\in \mathcal{T}_2\)</span> for all <span class="process-math">\((a,b)\in \mathcal{B}_1\)</span> and hence that <span class="process-math">\(\mathcal{T}_1\subseteq \mathcal{T}_2\)</span> by <a href="" class="xref" data-knowl="./knowl/xref/th_compare_basis.html" title="Theorem 1.2.7: Comparing topologies via basis">Theorem 1.2.7</a>.</div></div></details></div></article><div class="para" id="s_bases_top-12">As it turns out, the basis <span class="process-math">\(B_3\)</span> of <a href="" class="xref" data-knowl="./knowl/xref/eg_basis_R.html" title="Example 1.2.4: Some bases for \R">Example 1.2.4</a> generates a nonstandard topology of <span class="process-math">\(\R\text{.}\)</span> Accordingly, we give this basis (and its corresponding topology) an official name.</div>
+<article class="project project-like" id="top_eg_lower_limit"><h3 class="heading">
+<span class="type">Topological specimen</span><span class="space"> </span><span class="codenumber">4</span><span class="period">.</span><span class="space"> </span><span class="title">Lower limit topology.</span>
+</h3> <div class="para" id="top_eg_lower_limit-2">The collection <span class="process-math">\(\mathcal{B}_l=\{([a,b)\colon a,b\in \R, a&lt; b\}\)</span> is a topological basis of <span class="process-math">\(\R\)</span> called the <dfn class="terminology">lower limit basis</dfn>, and the topology <span class="process-math">\(\mathcal{T}_l\)</span> it generates is called the <dfn class="terminology">lower limit topology</dfn>  on <span class="process-math">\(\R\text{.}\)</span> We denote the topological space <span class="process-math">\((\R, \mathcal{T}_l)\)</span> as <span class="process-math">\(\R_l\text{.}\)</span>
+</div></article><article class="example example-like" id="eg_lower_limit_finer"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.2.10</span><span class="period">.</span><span class="space"> </span><span class="title">Lower limit is finer than standard.</span>
+</h3>
+<div class="para" id="eg_lower_limit_finer-2-1">Show that the lower limit topology on <span class="process-math">\(\R\)</span> is strictly finer than the standard one.</div>
+<div class="solutions"><details id="eg_lower_limit_finer-3" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like">
+<div class="para" id="eg_lower_limit_finer-3-1">Let <span class="process-math">\(\mathcal{T}, \mathcal{T}'\)</span> be the Euclidean and lower limit topologies, respectively. According to <a href="" class="xref" data-knowl="./knowl/xref/th_compare_basis.html" title="Theorem 1.2.7: Comparing topologies via basis">Theorem 1.2.7</a>, to show <span class="process-math">\(\mathcal{T}\subseteq \mathcal{T}'\)</span> we must show that for any basis element <span class="process-math">\(B=(a,b)\in \mathcal{T}\)</span> and any <span class="process-math">\(x\in B\text{,}\)</span> there is a basis element <span class="process-math">\([c,d)\in \mathcal{T}'\)</span> satisfying <span class="process-math">\(x\in [c,d)\subseteq (a,b)\text{.}\)</span> Since <span class="process-math">\(x\in (a,b)\text{,}\)</span> we have <span class="process-math">\(a &lt; x &lt; b\text{,}\)</span> and thus we have <span class="process-math">\(x\in [x,b)\subseteq (a,b)\text{,}\)</span> as desired.</div> <div class="para logical" id="eg_lower_limit_finer-3-2">
+<div class="para">To show <span class="process-math">\(\mathcal{T}'\)</span> is strictly finer than <span class="process-math">\(\mathcal{T}\)</span> it suffices to find a basis element <span class="process-math">\([a,b)\in \mathcal{T}'\)</span> that is not an element of <span class="process-math">\(\mathcal{T}\text{.}\)</span> I claim <span class="process-math">\([0,1)\notin\mathcal{T}\text{.}\)</span> Indeed, consider <span class="process-math">\(0\in [0,1)\text{.}\)</span> Any open set <span class="process-math">\((a,b)\)</span> containing <span class="process-math">\(0\)</span> must contain negative numbers, and hence does not satisfy <span class="process-math">\((a,b)\subseteq [0,1)\text{.}\)</span> It follows that <span class="process-math">\([0,1)\)</span> is not an element of</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathcal{T}=\{U\subseteq X\colon \text{for all } x\in U \text{ there exists } (a,b) \text{ s.t. } x\in (a,b)\subseteq U \}\text{.}
+\end{equation*}
+</div>
+</div>
+</div></details></div></article><article class="project project-like" id="top_eq_K_top"><h3 class="heading">
+<span class="type">Topological specimen</span><span class="space"> </span><span class="codenumber">5</span><span class="period">.</span><span class="space"> </span><span class="title"><span class="process-math">\(K\)</span>-topology.</span>
+</h3> <div class="para logical" id="top_eq_K_top-2">
+<div class="para">Let <span class="process-math">\(K=\{1/n\colon n\in \Z_+\}=\{1, 1/2, 1/3,\dots\}\text{,}\)</span> and define</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathcal{B}_K=\{(a,b)\colon a,b\in \R, a&lt; b\}\cup \{ (a,b)-K\colon a,b\in \R, a&lt; b\}\text{.}
+\end{equation*}
+</div>
+<div class="para">The collection <span class="process-math">\(\mathcal{B}_K\)</span> is a basis in <span class="process-math">\(\R\text{.}\)</span> The topology <span class="process-math">\(\mathcal{T}_K\)</span> it generates is called the <dfn class="terminology"><span class="process-math">\(K\)</span>-topology</dfn> on <span class="process-math">\(\R\text{.}\)</span> We denote the topological space <span class="process-math">\((\R, \mathcal{T}_K)\)</span> as <span class="process-math">\(\R_K\text{.}\)</span>
+</div>
+</div> <details id="top_eq_K_top-3" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para logical" id="top_eq_K_top-3-1">
+<div class="para">We show that <span class="process-math">\(\mathcal{B}_K\)</span> is a basis, treating each axiom separately.</div>
+<ol class="decimal">
+<li id="top_eq_K_top-3-1-2-1"><div class="para" id="top_eq_K_top-3-1-2-1-1">Since by definition <span class="process-math">\(\mathcal{B}_K\)</span> contains all finite open intervals, it clearly covers <span class="process-math">\(\R\text{.}\)</span>
+</div></li>
+<li id="top_eq_K_top-3-1-2-2">
+<div class="para" id="top_eq_K_top-3-1-2-2-1">We claim that in fact given <span class="process-math">\(B_1, B_2\in \mathcal{B}_K\text{,}\)</span> their intersection <span class="process-math">\(B_1\cap B_2\)</span> is either empty or another element of <span class="process-math">\(\mathcal{B}_K\text{.}\)</span> Axiom (2) follows directly from this claim.</div>
+<div class="para logical" id="top_eq_K_top-3-1-2-2-2">
+<div class="para">Why is the claim true? An element of <span class="process-math">\(\mathcal{B}\)</span> is either of the form <span class="process-math">\(I\)</span> or <span class="process-math">\(I-K\text{,}\)</span> where <span class="process-math">\(I=(a,b)\)</span> is an open interval. There are then three different cases describing intersections of two elements, as shown below. Here <span class="process-math">\(I_1, I_2\)</span> denote finite open intervals.</div>
+<div class="displaymath process-math" id="top_eq_K_top-3-1-2-2-2-6">
+\begin{align*}
+I_1\cap I_2 \amp \\
+(I_1-K)\cap I_2\amp =I_1\cap I_2-K\cap I_2=I_1\cap I_2-K \\
+(I_1-K)\cap (I_2-K) \amp= (I_1-K)\cap I_2 - K\cap (I_2-K)\\
+\amp = I_1\cap I_2-K\text{.}
+\end{align*}
+</div>
+<div class="para">As we have already remarked, <span class="process-math">\(I_1\cap I_2\)</span> is either empty or a finite open interval <span class="process-math">\(I\text{.}\)</span> The claim now follows easily.</div>
+</div>
+</li>
+</ol>
+</div></article></details></article><article class="example example-like" id="eg_Ktop_lower_stand"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.2.11</span><span class="period">.</span><span class="space"> </span><span class="title">Comparing standard, lower limit, and <span class="process-math">\(K\)</span>-topology.</span>
+</h3>
+<ol class="decimal">
+<li id="eg_Ktop_lower_stand-2-1-1"><div class="para" id="eg_Ktop_lower_stand-2-1-1-1">Show that the <span class="process-math">\(K\)</span>-topology is strictly finer than the standard topology on <span class="process-math">\(\R\text{.}\)</span>
+</div></li>
+<li id="eg_Ktop_lower_stand-2-1-2"><div class="para" id="eg_Ktop_lower_stand-2-1-2-1">Show that the lower limit topology and <span class="process-math">\(K\)</span>-topology are incomparable.</div></li>
+</ol>
+<div class="solutions"><details id="eg_Ktop_lower_stand-3" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like">
+<div class="para" id="eg_Ktop_lower_stand-3-1">Let <span class="process-math">\(\mathcal{T}, \mathcal{T}', \mathcal{T}''\)</span> be the Euclidean, lower limit, and <span class="process-math">\(K\)</span>-topologies, respectively.</div> <ol class="decimal">
+<li id="eg_Ktop_lower_stand-3-2-1"><div class="para" id="eg_Ktop_lower_stand-3-2-1-1">By definition, the basis for the <span class="process-math">\(K\)</span>-topology contains all finite open intervals. It follows from <a href="" class="xref" data-knowl="./knowl/xref/eq_compare_basis_top.html" title="Equation 1.2.3">(1.2.3)</a> that <span class="process-math">\(\mathcal{T}\subseteq \mathcal{T}''\text{.}\)</span> Next, using an argument similar to the one in <a href="" class="xref" data-knowl="./knowl/xref/eg_lower_limit_finer.html" title="Example 1.2.10: Lower limit is finer than standard">Example 1.2.10</a>, we show that the basis element <span class="process-math">\((-1,1)-K\in \mathcal{T}''\)</span> is not open in the standard topology. Indeed, consider the element <span class="process-math">\(0\in (-1,1)-K\text{.}\)</span> For any <span class="process-math">\(\epsilon &gt; 0\)</span> the open interval <span class="process-math">\((-\epsilon,\epsilon)\)</span> containing <span class="process-math">\(0\)</span> must contain an element of the form <span class="process-math">\(1/N\)</span> for some positive integer <span class="process-math">\(N &gt; 1\text{.}\)</span> Since <span class="process-math">\(1/N\notin (-1,1)-K\text{,}\)</span> it follows that <span class="process-math">\((-\epsilon, \epsilon)\not\subseteq (-1,1)-K\text{.}\)</span> We conclude that <span class="process-math">\((-1,1)-K\)</span> is not open in the standard topology.</div></li>
+<li id="eg_Ktop_lower_stand-3-2-2"><div class="para" id="eg_Ktop_lower_stand-3-2-2-1">This is left as an exercise.</div></li>
+</ol>
+</div></details></div></article><article class="theorem theorem-like" id="th_basis_criterion"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.2.12</span><span class="period">.</span><span class="space"> </span><span class="title">Basis criterion.</span>
+</h3>
+<div class="para" id="th_basis_criterion-2-1">Let <span class="process-math">\(\mathcal{T}\)</span> be a topology on the set <span class="process-math">\(X\text{.}\)</span> A subset <span class="process-math">\(\mathcal{B}\subseteq \mathcal{T}\)</span> is a basis of <span class="process-math">\(\mathcal{T}\)</span> if and only if for all <span class="process-math">\(U\in \mathcal{T}\)</span> and <span class="process-math">\(x\in U\)</span> there is an element <span class="process-math">\(B\in \mathcal{B}\)</span> such that <span class="process-math">\(x\in B\subseteq U\text{.}\)</span>
+</div></article><details id="th_basis_criterion-3" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para" id="th_basis_criterion-3-1">We prove both implications of the given “if and only if” statement separately.</div> <article class="case" id="th_basis_criterion-3-2"><h4 class="heading">Case: <span class="process-math">\((\implies)\)</span>.</h4> <div class="para" id="th_basis_criterion-3-2-2">Assume <span class="process-math">\(\mathcal{T}\)</span> is generated by <span class="process-math">\(\mathcal{B}\text{.}\)</span> According to the description of <span class="process-math">\(\mathcal{T}\)</span> in <a href="" class="xref" data-knowl="./knowl/xref/eq_top_generated2.html" title="Equation 1.2.1">(1.2.1)</a>, for all <span class="process-math">\(U\in \mathcal{T}\)</span> and <span class="process-math">\(x\in U\)</span> there is an element <span class="process-math">\(B\in \mathcal{B}\)</span> such that <span class="process-math">\(x\in B\subseteq U\text{.}\)</span>
+</div></article> <article class="case" id="th_basis_criterion-3-3"><h4 class="heading">Case: <span class="process-math">\((\impliedby)\)</span>.</h4> <div class="para" id="th_basis_criterion-3-3-2">Assume for that for all <span class="process-math">\(U\in \mathcal{T}\)</span> and <span class="process-math">\(x\in U\)</span> there is an element <span class="process-math">\(B\in \mathcal{B}\)</span> such that <span class="process-math">\(x\in B\subseteq U\text{.}\)</span> Taking <span class="process-math">\(U=X\)</span> we see in particular that for all <span class="process-math">\(x\in X\)</span> there is a <span class="process-math">\(B\in \mathcal{B}\)</span> such that <span class="process-math">\(x\in B\text{.}\)</span> Thus <span class="process-math">\(\mathcal{B}\)</span> satisfies axiom (1) for a basis. Next, let <span class="process-math">\(B_1, B_2\in \mathcal{B}\)</span> and take <span class="process-math">\(x\in B_1\cap B_2\text{.}\)</span> Since <span class="process-math">\(B_1, B_2\in \mathcal{T}\)</span> are open, so is <span class="process-math">\(U=B_1\cap B_2\text{.}\)</span> Our assumption now implies that there is a <span class="process-math">\(B\in \mathcal{B}\)</span> such that <span class="process-math">\(x\in B\subseteq U=B_1\cap B_2\text{.}\)</span> Thus axiom (2) of <a href="" class="xref" data-knowl="./knowl/xref/d_basis.html" title="Definition 1.2.1: Topological basis">Definition 1.2.1</a> holds, and we condlude <span class="process-math">\(\mathcal{B}\)</span> is a basis.</div></article></article></details><article class="example example-like" id="eg_basis_discrete"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.2.13</span><span class="period">.</span><span class="space"> </span><span class="title">Bases for discrete topology.</span>
+</h3>
+<div class="para logical" id="eg_basis_discrete-2-1">
+<div class="para">Let <span class="process-math">\(X\)</span> be a set, and let <span class="process-math">\(\mathcal{T}\)</span> be the discrete topology on <span class="process-math">\(X\text{.}\)</span> Show the following:</div>
+<ol class="decimal">
+<li id="eg_basis_discrete-2-1-4-1"><div class="para" id="eg_basis_discrete-2-1-4-1-1">
+<span class="process-math">\(\mathcal{B}=\{ \{x\}\colon x\in X\}\)</span> is a basis for <span class="process-math">\(\mathcal{T}\text{.}\)</span>
+</div></li>
+<li id="eg_basis_discrete-2-1-4-2"><div class="para" id="eg_basis_discrete-2-1-4-2-1">If <span class="process-math">\(\mathcal{B}'\)</span> is a basis for <span class="process-math">\(\mathcal{T}\text{,}\)</span> then <span class="process-math">\(\mathcal{B}\subseteq \mathcal{B}'\text{.}\)</span> In other words, <span class="process-math">\(\mathcal{B}\)</span> is the minimal basis of the discrete topology.</div></li>
+</ol>
+</div>
+<div class="solutions"><details id="eg_basis_discrete-3" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like"><div class="para" id="eg_basis_discrete-3-1">This is left as an exercise.</div></div></details></div></article><article class="project project-like" id="top_eg_order_topology"><h3 class="heading">
+<span class="type">Topological specimen</span><span class="space"> </span><span class="codenumber">6</span><span class="period">.</span><span class="space"> </span><span class="title">Order topology.</span>
+</h3> <div class="para logical" id="top_eg_order_topology-2">
+<div class="para">Let <span class="process-math">\(X\)</span> be a set equipped with a <dfn class="terminology">total ordering</dfn>: i.e., a binary relation <span class="process-math">\(\leq\)</span> satisfying the following four axioms:</div>
+<ul class="disc">
+<li id="top_eg_order_topology-2-5-1">
+<span class="heading"><span class="title">Reflexive.</span></span><div class="para" id="top_eg_order_topology-2-5-1-2">For all <span class="process-math">\(x\in X\text{,}\)</span> we have <span class="process-math">\(x\leq x\text{.}\)</span>
+</div>
+</li>
+<li id="top_eg_order_topology-2-5-2">
+<span class="heading"><span class="title">Transitive.</span></span><div class="para" id="top_eg_order_topology-2-5-2-2">For all <span class="process-math">\(x,y,z\in X\text{,}\)</span> if <span class="process-math">\(x\leq y\)</span> and <span class="process-math">\(y\leq z\text{,}\)</span> then <span class="process-math">\(x\leq z\text{.}\)</span>
+</div>
+</li>
+<li id="top_eg_order_topology-2-5-3">
+<span class="heading"><span class="title">Antisymmetric.</span></span><div class="para" id="top_eg_order_topology-2-5-3-2">For all <span class="process-math">\(x,y\in X\text{,}\)</span> if <span class="process-math">\(x\leq y\)</span> and <span class="process-math">\(y\leq x\text{,}\)</span> then <span class="process-math">\(x=y\text{.}\)</span>
+</div>
+</li>
+<li id="top_eg_order_topology-2-5-4">
+<span class="heading"><span class="title">Comparability.</span></span><div class="para" id="top_eg_order_topology-2-5-4-2">For all <span class="process-math">\(x,y\in X\text{,}\)</span> we have <span class="process-math">\(x\leq y\)</span> or <span class="process-math">\(y\leq x\text{.}\)</span>
+</div>
+</li>
+</ul>
+<div class="para">Given the total ordering <span class="process-math">\(\leq\)</span> on <span class="process-math">\(X\text{,}\)</span> we define the relation <span class="process-math">\(&lt;\)</span> as <span class="process-math">\(x&lt; y\)</span> if <span class="process-math">\(x\leq y \)</span> and <span class="process-math">\(x\ne y\text{.}\)</span> A <dfn class="terminology">smallest element</dfn> of <span class="process-math">\(X\)</span> is an element <span class="process-math">\(x_0\in X\)</span> satisfying <span class="process-math">\(x_0\leq y\)</span> for all <span class="process-math">\(y\in X\text{;}\)</span> a <dfn class="terminology">largest element</dfn> of <span class="process-math">\(X\)</span> is an element <span class="process-math">\(y_0\in X\)</span> satisfying <span class="process-math">\(x\leq y_0\)</span> for all <span class="process-math">\(x\in X\text{.}\)</span>  Lastly, given elements <span class="process-math">\(x,y\in X\)</span> we define the following subsets of <span class="process-math">\(X\text{:}\)</span>
+</div>
+<div class="displaymath process-math" id="top_eg_order_topology-2-24">
+\begin{align*}
+(x,y) \amp =\{z\in X\colon x&lt; z \text{ and } z&lt; y\}  \\
+[x,y] \amp =\{z\in X\colon x\leq z \text{ and } z\leq y\}  \\
+[x,y) \amp =\{z\in X\colon x\leq z \text{ and } z&lt; y\}  \\
+(x,y] \amp =\{z\in X\colon x&lt; z \text{ and } z\leq y\}  \text{.}
+\end{align*}
+</div>
+<div class="para">An set of the form <span class="process-math">\((x,y)\)</span> is called an <dfn class="terminology">open interval</dfn> and a set of the form <span class="process-math">\([x,y]\)</span> is called a <dfn class="terminology">closed interval</dfn>; sets of the form <span class="process-math">\([x,y)\)</span> or <span class="process-math">\((x,y]\)</span> are called <dfn class="terminology">half-open intervals</dfn>.</div>
+</div> <div class="para logical" id="top_eg_order_topology-3">
+<div class="para">With this notation in place, we define <span class="process-math">\(\mathcal{B}\)</span> to be the collection of all subsets <span class="process-math">\(B\subseteq X\)</span> satisfying one of the following properties:</div>
+<ol class="decimal">
+<li id="top_eg_order_topology-3-3-1"><div class="para" id="top_eg_order_topology-3-3-1-1">
+<span class="process-math">\(B=(x,y)\)</span> for some <span class="process-math">\(x,y\in X\text{.}\)</span>
+</div></li>
+<li id="top_eg_order_topology-3-3-2"><div class="para" id="top_eg_order_topology-3-3-2-1">
+<span class="process-math">\(B=[x_0, y)\)</span> for some <span class="process-math">\(y\in X\text{,}\)</span> and some smallest element <span class="process-math">\(x_0\ in X\text{.}\)</span>
+</div></li>
+<li id="top_eg_order_topology-3-3-3"><div class="para" id="top_eg_order_topology-3-3-3-1">
+<span class="process-math">\(B=(x,y_0]\)</span> for some <span class="process-math">\(x\in X\)</span> and some largest element <span class="process-math">\(y_0\in X\text{.}\)</span>
+</div></li>
+</ol>
+<div class="para">The collection <span class="process-math">\(\mathcal{B}\)</span> is a topological basis and the topology <span class="process-math">\(\mathcal{T}\)</span> it generates is called the <dfn class="terminology">order topology</dfn> of <span class="process-math">\(X\)</span> with respect to the total ordering <span class="process-math">\(\leq\text{.}\)</span>
+</div>
+</div> <details id="top_eg_order_topology-4" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para" id="top_eg_order_topology-4-1">The proof is left as an exercise.</div></article></details></article></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="s_top_spaces.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="kursobjekt-6.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+</div>
+</body>
+</html>
