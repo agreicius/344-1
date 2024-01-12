@@ -1,0 +1,351 @@
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_closed_closure_interior">
+  <title>Closed sets, closure, and interior</title>
+  
+<definition xml:id="d_closed_set">
+  <title>Closed sets</title>
+  <statement>
+    <p>
+      Let <m>(X,\mathcal{T})</m> be a topological space. A subset <m>A\subseteq X</m> is <term>closed</term> if its complement <m>A^c=X-A</m> is open. Equivalently, a subset <m>A</m> is closed if and only if <m>A=U^c</m> for some open set <m>U\in \mathcal{T}</m>.
+    </p>
+  </statement>
+
+</definition>
+<theorem xml:id="th_closed_props">
+  <title>Property of closed sets</title>
+  <statement>
+    <p>
+      Let <m>X</m> be a topological space.
+    
+  <ol>
+    <li>
+      <title>Trivial sets</title>
+      <p>
+       Both <m>\emptyset</m> and <m>X</m> are closed sets.
+      </p>
+    </li>
+    <li>
+      <title>Finite union</title>
+      <p>
+        If <m>C_1</m> and <m>C_2</m> are closed, then <m>C_1\cap C_2</m> is closed.
+      </p>
+    </li>
+    <li>
+      <title>Arbitrary intersection</title>
+      <p>
+        If <m>\{C_i\}_{i\in I}</m> is a collection of closed sets, then <m>\bigcap_{i\in I}C_i</m> is closed.
+      </p>
+    </li>
+  </ol>
+</p>
+  </statement>
+  <proof>
+    <p>
+      Statement (1) follows from the observation that <m>\emptyset^c=X</m>, and <m>X^c=\emptyset</m>.
+    </p>
+    <p>
+      Assume <m>C_i</m> is closed for <m>1\leq i\leq 2</m>; then by De Morgan's law
+      <me>
+        (C_1\cup C_2)^c=C_1^c\cap C_2^c
+      </me>,
+      which is open since <m>C_i^c</m> is open for  <m>1\leq i\leq 2</m> and finite intersections of open sets are open. This proves (2).
+    </p>
+    <p>
+      Lastly, assume <m>C_i</m> is closed for all <m>i\in I</m>. By De Morgan's law we have
+      <me>
+        \left(\bigcap_{i\in I}C_i\right)^c=\bigcup_{i\in I}C_i^c
+      </me>,
+      which is open since <m>C_i^c</m> is open and arbitrary unions of open sets are open.
+
+    </p>
+  </proof>
+
+</theorem>
+<remark xml:id="rm_equiv_open_closed">
+<title>Closed sets determine topology</title>
+    <p>
+      In general, given a set <m>X</m> the set complement operation <m>Y\mapsto Y^c=X-Y</m> is defines a bijection
+      <md>
+        <mrow> \mathcal{P}(X) \amp \leftrightarrow \mathcal{P}(X) </mrow>
+        <mrow> Y \amp \mapsto Y^c </mrow>
+      </md>,
+      that is self-inverse: <ie />, we have <m>(Y^c)^c=Y</m> for all subsets <m>Y\subseteq X</m>. It follows from the <xref ref="d_closed_set"/> that the closed sets of <m>X</m> are in bijective correspondence with the open sets, and thus that a topology on <m>X</m> is uniquely determined by specifying any collection of sets satisfying (1)-(3) from <xref ref="th_closed_props"/>. In other words, a topology is determined by specifying either its open sets or its closed sets.
+    </p>
+</remark>
+<definition xml:id="d_closed_axioms">
+  <title>Closed sets axioms</title>
+  <statement>
+    <p>
+      Let <m>X</m> be a set. A collection of subsets <m>\mathcal{C}\subseteq \mathcal{P}(X)</m> is said to satisfy the <term>closed sets axioms</term> if the following properties hold. 
+      <ol>
+        <li>
+          <title>Trivial sets</title>
+          <p>
+            <m>\emptyset\in \mathcal{C}</m> and <m>X\in \mathcal{C}</m>. 
+          </p>
+        </li>
+        <li>
+          <title>Finite union</title>
+          <p>
+            If <m>C_1, C_2\in \mathcal{C}</m>, then <m>\mathcal{C}_1\cup \mathcal{C}_2\in \mathcal{C}</m>.
+          </p>
+        </li>
+        <li>
+          <title>Arbitrary intersection</title>
+          <p>
+            Given any collection <m>\{C_i\}_{i\in I}</m> of elements <m>C_i\in \mathcal{C}</m>, we have <m>C=\bigcap_{i\in I}C_i\in \mathcal{C}</m>. 
+          </p>
+        </li>
+      </ol> 
+    </p>
+  </statement>
+</definition>
+<theorem xml:id="th_closed_axioms">
+  <title>Closed sets axioms</title>
+  <statement>
+    <p>
+      Given a set <m>X</m> and collection <m>\mathcal{C}\subseteq \mathcal{P}(X)</m> satisfying the <xref ref="d_closed_axioms" text="custom">closed sets axioms</xref>, the set 
+      <me>
+        \mathcal{T}=\{C^c\colon C\in \mathcal{C}\}
+      </me>
+      is a topology on <m>X</m> whose closed sets are precisely the elements of <m>\mathcal{C}</m>.   
+    </p>
+  </statement>
+  <proof>
+    <p>
+      The proof, which is essentially an application of De Morgan's laws, is left to the reader. 
+    </p>
+  </proof>
+</theorem>
+
+<example xml:id="eg_closed_trivial_discrete">
+  <title>Closed in trivial and discrete topologies</title>
+    <p>
+      <ol>
+        <li>
+          <p>
+            If <m>X</m> has the trivial topology, then the only open sets of <m>X</m> are <m>\emptyset, X</m>. Hence the only closed sets are <m>\emptyset^c=X</m> and <m>X^c=\emptyset</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            If <m>X</m> has the discrete topology, then every subset of <m>X</m> is open. It follows that any subset of <m>X</m> is closed, since its complement is open. We conclude that al subsets of <m>X</m> are both open and closed in the discrete topology.
+          </p>
+        </li>
+      </ol>
+    </p>
+</example>
+
+<example xml:id="eg_closed_cofinite">
+  <title>Closed in the cofinite topology</title>
+  <statement>
+    <p>
+      Let <m>X</m> be a set endowed with the cofinite topology. An set <m>U</m> is open in <m>X</m> if and only if (a) <m>U=\emptyset</m> or (b) <m>U^c</m> is finite. It follows that a set <m>A</m> is closed if and only if (a) <m>A=\emptyset^c=X</m> or (b) <m>A=U^c</m> for a cofinite set <m>U</m> if and only if (a) <m>A=X</m> or (b) <m>A</m> is finite.
+    </p>
+  </statement>
+</example>
+<lemma xml:id="lemma_basis_closed">
+<title>Basis description of closed sets</title>
+<statement>
+<p>Let <m>X</m> be a topological space with basis <m> \mathcal{B} </m>. A set <m>C\subseteq X</m> is closed if and only if for all <m>x\in X-C</m>, there is a basis element <m>B\in \mathcal{B} </m> satisfying <m>x\in B\subseteq X-C</m>.
+</p>
+</statement>
+<proof>
+  <p>
+    By definition a set <m>C</m> is closed if and only if its complement <m>X-C</m> is open. Using <xref ref="eq_top_generated2"/>, we see that <m>X-C</m> is open if and only if for all <m>x</m> there is a basis element <m>B\in \mathcal{B} </m> satisfying <m>x\in B\subseteq X-C</m>.
+  </p>
+</proof>
+
+</lemma>
+<example>
+  <title>Closed sets in Euclidean metric topology</title>
+  <statement>
+    <p>
+      Let <m>X=\R^2</m> with the Euclidean metric topology. Decide whether the given subset is open and whether it is closed.
+    <ol>
+      <li>
+        <p>
+          <m>A=\{(x,y)\colon x\geq 0, y\geq 0\}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>A=\{(x,y)\colon x\geq 0, y &gt; 0\}</m>
+        </p>
+      </li>
+    </ol>
+  </p>
+  </statement>
+  <solution>
+    <p>
+      <ol>
+        <li>
+          <p>
+            The set <m>A</m> is not open: any open ball containing the point <m>(0,1)</m> contains points with negative <m>x</m>-coordinate. Hence there is no open ball containing <m>(0,1)</m> that is contained in <m>A</m>.
+          </p>
+          <p>
+            The set <m>A</m> is closed. If <m>P=(x,y)\in A^c</m>, then either <m>x&lt; 0</m> or <m>y&lt; 0</m>. Let <m>\epsilon=\min\{\abs{x},\abs{y}\}</m>. Every element of <m>B_\epsilon(P)</m> has either a negative <m>x</m>-coordinate or a negative <m>y</m>-coordinate. Hence <m> P\in B_{\epsilon}(P)\subseteq A^c</m>. This proves <m>A</m> is closed, using <xref ref="lemma_basis_closed"/>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Again, the set <m>A</m> is not open, as witnessed by <m>(0,1)\in A</m>.
+          </p>
+          <p>
+            The set <m>A^c</m> is also not open. Take <m>P=(1,0)\in A^c</m>. Any open ball containing <m>P</m> contains points with positive <m>y</m>-coordinate. Thus there is no open ball containing <m>P</m> and contained in <m>A^c</m>. We conclude that <m>A</m> is not closed, using <xref ref="lemma_basis_closed"/>.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </solution>
+</example>
+<definition xml:id="d_interior_closure">
+  <title>Interior and closure of a set</title>
+  <statement>
+    <p>
+      Let <m>A</m> be a subset of the topological space <m>X</m>.
+    <ol>
+      <li>
+        <title>Interior</title>
+        <p>
+          The <term>interior</term> <m>A^\circ</m> of <m>A</m> is the union of all open subsets contained in <m>A</m>: <ie />,
+          <me>
+            A^\circ=\bigcup_{U\subseteq A}U, \text{ } U \text{ open}
+          </me>.
+        </p>
+      </li>
+      <li>
+        <title>Closure</title>
+        <p>
+          The <term>closure</term> <m>\overline{A}</m> is the ntersection of all closed sets containing <m>A</m>: <ie />,
+          <me>
+          \overline{A}=\bigcap_{A\subseteq C}C, \ C \text{ closed}
+          </me>.
+        </p>
+      </li>
+    </ol>
+  </p>
+  </statement>
+</definition>
+<theorem xml:id="th_equivalent_interior_closure">
+  <title>Equivalent notions of interior and closure</title>
+  <statement>
+    <p>
+      Let <m>A</m> be a subset of the topological space <m>X</m>. Let <m>\mathcal{B}</m> be a basis for the topology of <m>X</m>.
+    
+    <ol>
+      <li>
+        <p>
+          <m>A^\circ</m> is the unique largest open set contained in <m>A</m>. In other words, <m>A^\circ</m> is the unique set satisfying the following property: if <m>U</m> is open and <m>U\subseteq A</m>, then <m>U\subseteq A^\circ</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\overline{A}</m> is the unique smallest closed set containing <m>A</m>. In other words, <m>\overline{A}</m> is the unique set satisfying the following property: if <m>C</m> is closed and <m>A\subseteq C</m>, then <m>\overline{A}\subseteq C</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          We have
+          <md>
+            <mrow>x \in A^\circ  \amp\iff x\in U\subseteq A \text{ for some open } U </mrow>
+            <mrow> \amp \iff x\in B\subseteq A \text{ for some basis element } B\in \mathcal{B} </mrow>
+          </md>.
+        </p>
+      </li>
+      <li>
+        <p>
+          We have
+          <md>
+            <mrow>x \in \overline{A}  \amp\iff \text{ for all open sets } U, x\in U \implies U\cap A\ne \emptyset</mrow>
+            <mrow> \amp \iff \text{ for all } B\in \mathcal{B}, x\in B \implies B\cap A\ne \emptyset</mrow>
+          </md>.
+        </p>
+      </li>
+    </ol>
+  </p>
+  </statement>
+  <proof>
+    <p>
+      Statements (1)-(2): properties of open (resp. closed) sets imply that <m>A^\circ</m> is open and <m>\overline{A}</m> is closed. Furthermore, by definition of <m>A^\circ</m> (resp. <m>\overline{A}</m>) along with simple properties of union/intersection it follows that if <m>U</m> is open and <m>U\subseteq A</m>, then <m>U\subseteq A^\circ</m>; and if <m>C</m> is closed containing <m>A</m>, then <m>\overline{A}\subseteq C</m>.
+    </p>
+    <p>
+      The first equivalence in (3) follows from the definition of <m>A^\circ</m> as a union. The second equivalence follows from the fact that any <m>U</m> is covered by basis elements.
+    </p>
+    <p>
+      We prove (4) as a chain of equivalences. Call the three statements (i), (ii), (iii).
+    </p>
+    <p>
+      Assume <m>x\in \overline{A}</m>.  If <m>U</m> is an open set satisfying <m>U\cap A=\emptyset</m>, then <m>C=U^c</m> is a closed set containing <m>A</m>, and hence contains <m>x</m>. It follows that any open set containing <m>x</m> intersects <m>A</m> nontrivially. This proves (i) <m>\implies</m> (ii).
+    </p>
+    <p>
+      Clearly (ii) implies (iii), since any basis element is an open set.
+    </p>
+    <p>
+      Assume (iii). If <m>C</m> is a closed set containing <m>A</m>, then <m>U=C^c</m> is an open set satisfying <m>U\cap A=\emptyset</m>. It follows from (iii) that <m>x\notin U</m>, and hence that <m>x\in C</m> for all closed sets <m>C</m> containing <m>A</m>. It follows that <m>x\in \overline{A}</m>, the intersection of these sets.
+    </p>
+  </proof>
+
+</theorem>
+<remark xml:id="rm_">
+<title>Using smallest/largest characterization of interior/closure</title>
+    <p>
+      Statements (1)-(2) of <xref ref="th_equivalent_interior_closure"/> provide a potentially useful indirect way of computing the interior or closure of a set <m>A</m>.
+      <ol>
+        <li>
+          <title>Interior</title>
+          <p>
+            Find an open set <m>U</m> contained in <m>A</m> and show that for any other open set <m>U'\subseteq A</m> we have <m>U'\subseteq U</m>. It follows that <m>U=A^\circ</m>.
+          </p>
+        </li>
+        <li>
+          <title>Closure</title>
+          <p>
+            Find a closed set <m>C</m> containing <m>A</m> and show that for any other closed set <m>C'</m> containing <m>A</m> we have <m>C'\subseteq C</m>. It follows that <m>C=\overline{A}</m>.
+          </p>
+        </li>
+      </ol>
+    </p>
+</remark>
+<example xml:id="eg_closure_interior_K">
+  <title>Interior and closure of <m>K</m></title>
+    <statement><p>
+      Let <m>X=\R</m> and let <m>K=\{1, 1/2, 1/3,\dots,\}=\{1/N\colon N\in\Z_+\}</m>. Compute the interior and closure of <m>K</m> with respect to (a) the standard topology on <m>\R</m> and (b) the <m>K</m>-topology on <m>\R</m>.
+    </p></statement>
+  <solution>
+    <p><ol marker="(a)">
+      <li>
+        <p>
+          First consider <m>\R</m> with the standard topology. The interior of <m>K</m> is empty in this case: <ie />, <m>K^\circ=\emptyset</m>. To see this, note that given any <m>x=1/N\in K</m> and any open interval <m>(a,b)</m> containing <m>x</m>, we can choose an <m>\epsilon\leq 1/N-1/(N+1)</m> such that <m>(x-\epsilon, x+\epsilon)\subseteq (a,b)</m>; by design <em>all</em> elements of <m>(x-\epsilon, x+\epsilon)-\{x\}</m> lie outside <m>K</m>. Thus <m>x\notin K^\circ</m>, and <m>K^\circ=\emptyset</m>.
+        </p>
+        <p>
+          Next. I claim <m>\overline{K}=K\cup \{0\}</m>. To see this, note first that <m>K\cup \{0\}</m> is closed: it is easy to see that for any <m>x\notin K\cup\{0\}</m> we can find an <m>\epsilon</m> such that <m>(x-\epsilon, x+\epsilon)\cap (K\cup \{0\})=\emptyset</m>. By (2) of <xref ref="th_equivalent_interior_closure"/> we have <m>\overline{K}\subseteq K\cup \{0\}</m>.
+          Since furthermore <m>K\subseteq \overline{K}\subseteq K\cup \{0\}</m> and since <m>K</m> itself is not closed, it follows that <m>\overline{K}=K\cup \{0\}</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Now consider the <m>K</m>-topology on <m>\R</m>. We still have <m>K^\circ=\emptyset</m>. Indeed, fix any  <m>x=1/N\in K</m>, and take any basis element <m>B</m> containing <m>x</m>. We have <m>B=(a,b)</m> or <m>B=(a,b)-K</m> for some open interval <m>(a,b)</m>. In either case, the same argument as above shows that <m>B</m> contains a basis element <m>B'=(x-\epsilon, x+\epsilon)-\{x\}</m>, all of whose elements lie outside of <m>K</m>. This shows <m>x\notin K^\circ</m>, and hence <m>K^\circ=\emptyset</m>.
+        </p>
+        <p>
+          Next, I claim that <m>K</m> is closed in the <m>K</m>-topology, from whence it follows that <m>K=\overline{K}</m>. (Use (2) from <xref ref="th_equivalent_interior_closure"/>.) To prove the claim, we must show, using <xref ref="lemma_basis_closed"/> that for any <m>x\notin K</m> there is a basis element (in the <m>K</m>-topology) containing <m>x</m> and contained in <m>K^c</m>. There are two cases: <m>x\ne 0</m> and <m>x=0</m>. If <m>x\ne 0</m>, we can find an open interval <m>(a,b)</m> such that <m>x\in (a,b)</m> and <m>(a,b)\cap K=\emptyset</m>. Since open intervals are basis elements in the <m>K</m>-topology, we are done in this case. Next, assume
+          <m>x=0</m>. In this case the basis element <m>B=(-1,1)-K</m> satisfies <m>x\in B\subseteq K^c</m>. Having exhausted the cases, we conclude <m>K</m> is closed, and hence <m>\overline{K}=K</m>.
+        </p>
+      </li>
+    </ol></p>
+  </solution>
+</example>
+<example>
+  <title>Interior and closure in cofinite topology</title>
+  <statement>
+    <p>
+      Let <m>X</m> be a set endowed with the cofinite topology. For <m>A\subseteq X</m> describe <m>A^\circ</m> and <m>\overline{A}</m>. Use cases.
+    </p>
+  </statement>
+  <solution>
+    <p>
+
+    </p>
+  </solution>
+</example>
+
+</section>

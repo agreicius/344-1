@@ -234,9 +234,9 @@
       Let <m>d, d'</m> be two metrics on the set <m>X</m>, and let <m>\mathcal{T},\mathcal{T}'</m> be the topologies they induce. We let <m>B_{\epsilon}(x)</m> and <m>B_{\epsilon}'(x)</m> denote <m>d</m>- and <m>d'</m>-metric balls of radius <m>\epsilon</m> centered at <m>x</m>, respectively.</p>
       <p>
         We have <m>\mathcal{T}\subseteq \mathcal{T}'</m> if and only if for every <m>x\in X</m> and <m>\epsilon &gt; 0</m>, there exists a <m>\delta &gt; 0</m> such that 
-      <me>
+      <men xml:id="eq_compare_metrics">
         B_{\delta}'(x)\subseteq B_{\epsilon}(x)
-      </me>.
+      </men>.
       In other words <m>\mathcal{T}\subseteq \mathcal{T}'</m> if and only if for every <m>x\in X</m>, every <m>d</m>-metric ball centered at <m>x</m> contains a <m>d'</m>-metric ball centered at <m>x</m>. 
     </p>
   </statement>
@@ -245,9 +245,16 @@
       We show both implications separately. 
     </p>
     <case>
-      <title>Implication: <m>\implies</m></title>
+      <title>Implication: <m>(\implies)</m></title>
       <p>
-       If <m>\mathcal{T}\subseteq\mathcal{T}'</m>,  then any <m>d</m>-metric ball <m>B_\epsilon(x)</m> is open in <m>\mathcal{T}'</m>. Since <m>d'</m>-metric balls generate <m>\mathcal{T}'</m> and since <m>x\in B_\epsilon(x)</m>, it follows from <xref ref="lemma_metric"/>that there is a <m>\delta &gt; 0</m> such that <m>x\in B_\delta'(x)\subseteq B_\epsilon (x)</m>. 
+       If <m>\mathcal{T}\subseteq\mathcal{T}'</m>,  then any <m>d</m>-metric ball <m>B_\epsilon(x)</m> is open in <m>\mathcal{T}'</m>. Since <m>d'</m>-metric balls generate <m>\mathcal{T}'</m> and since <m>x\in B_\epsilon(x)</m>, it follows from <xref ref="eq_metric_open2"/> that there is a <m>\delta &gt; 0</m> such that <m>x\in B_\delta'(x)\subseteq B_\epsilon (x)</m>. 
+      </p>
+      
+    </case>
+    <case>
+      <title>Implication: <m>(\impliedby)</m></title>
+      <p>
+       Assume the condition described by <xref ref="eq_compare_metrics"/> holds. Take an open set <m>U\in \mathcal{T}</m>. By <xref ref="eq_metric_open2"/> there is an <m>\epsilon &gt; 0</m> such that <m>x\in B_{\epsilon}(x)\subseteq U</m>. By the condition, there is a <m>\delta&gt; 0</m> such that <m>x\in B_\delta'(x)\subseteq B_\epsilon(x)\subseteq U</m>. It follows again by <xref ref="eq_metric_open2"/> that <m>U\in \mathcal{T}'</m>. 
       </p>
       
     </case>
