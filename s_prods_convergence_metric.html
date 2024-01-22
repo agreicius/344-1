@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Convergence in product spaces</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Math 344-1">
+<meta property="book:author" content="Aaron Greicius">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "https://pretextbook.org/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.33/pretext_search.js"></script><link href="https://pretextbook.org/css/0.83/pretext_search.css" rel="stylesheet" type="text/css">
+<script>js_version = 0.33</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.33/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.33/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.33/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+<link href="https://pretextbook.org/css/0.83/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/shell_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
+<h1 class="heading"><a href="kursobjekt.html"><span class="title">Math 344-1:</span> <span class="subtitle">Kursobjekt</span></a></h1>
+<p class="byline">Aaron Greicius</p>
+</div>
+</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><a class="index-button button" href="kursobjekt-6-6.html" title="Index"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span><span class="name">Index</span></a><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="s_product2.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="c_top_spaces.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="kursobjekt-6.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\Z}{{\mathbb Z}}
+  \newcommand{\Q}{{\mathbb Q}}
+  \newcommand{\R}{{\mathbb R}}
+  \newcommand{\C}{{\mathbb C}}
+  \newcommand{\T}{{\mathbb T}}
+  \newcommand{\F}{{\mathbb F}}
+  \newcommand{\PP}{{\mathbb P}}
+  \newcommand{\HH}{{\mathbb H}}
+  \newcommand{\compose}{\circ}
+  \newcommand{\bolda}{{\mathbf a}}
+  \newcommand{\boldb}{{\mathbf b}}
+  \newcommand{\boldc}{{\mathbf c}}
+  \newcommand{\boldd}{{\mathbf d}}
+  \newcommand{\bolde}{{\mathbf e}}
+  \newcommand{\boldi}{{\mathbf i}}
+  \newcommand{\boldj}{{\mathbf j}}
+  \newcommand{\boldk}{{\mathbf k}}
+  \newcommand{\boldn}{{\mathbf n}}
+  \newcommand{\boldp}{{\mathbf p}}
+  \newcommand{\boldq}{{\mathbf q}}
+  \newcommand{\boldr}{{\mathbf r}}
+  \newcommand{\bolds}{{\mathbf s}}
+  \newcommand{\boldt}{{\mathbf t}}
+  \newcommand{\boldu}{{\mathbf u}}
+  \newcommand{\boldv}{{\mathbf v}}
+  \newcommand{\boldw}{{\mathbf w}}
+  \newcommand{\boldx}{{\mathbf x}}
+  \newcommand{\boldy}{{\mathbf y}}
+  \newcommand{\boldz}{{\mathbf z}}
+  \newcommand{\boldzero}{{\mathbf 0}}
+  \newcommand{\boldmod}{\boldsymbol{ \bmod }}
+  \newcommand{\boldT}{{\mathbf T}}
+  \newcommand{\boldN}{{\mathbf N}}
+  \newcommand{\boldB}{{\mathbf B}}
+  \newcommand{\boldF}{{\mathbf F}}
+  \newcommand{\boldS}{{\mathbf S}}
+  \newcommand{\boldE}{{\mathbf E}}
+  \newcommand{\boldG}{{\mathbf G}}
+  \newcommand{\boldK}{{\mathbf K}}
+  \newcommand{\boldL}{{\mathbf L}}
+  \DeclareMathOperator{\lns}{lns}
+  \DeclareMathOperator{\lcm}{lcm}
+  \DeclareMathOperator{\Span}{span}
+  \DeclareMathOperator{\tr}{tr}
+  \DeclareMathOperator{\NS}{null}
+  \DeclareMathOperator{\RS}{row}
+  \DeclareMathOperator{\CS}{col}
+  \DeclareMathOperator{\im}{im}
+  \DeclareMathOperator{\range}{range}
+  \DeclareMathOperator{\rank}{rank}
+  \DeclareMathOperator{\nullity}{nullity}
+  \DeclareMathOperator{\sign}{sign}
+  \DeclareMathOperator{\Fix}{Fix}
+  \DeclareMathOperator{\Aff}{Aff}
+  \DeclareMathOperator{\Frac}{Frac}
+  \DeclareMathOperator{\Ann}{Ann}
+  \DeclareMathOperator{\Tor}{Tor}
+  \DeclareMathOperator{\id}{id}
+  \DeclareMathOperator{\mdeg}{mdeg}
+  \DeclareMathOperator{\Lt}{Lt}
+  \DeclareMathOperator{\Lc}{Lc}
+  \DeclareMathOperator{\disc}{disc}
+  \DeclareMathOperator{\Frob}{Frob}
+  \DeclareMathOperator{\adj}{adj}
+  \DeclareMathOperator{\curl}{curl}
+  \DeclareMathOperator{\grad}{grad}
+  \DeclareMathOperator{\diver}{div}
+  \DeclareMathOperator{\flux}{flux}
+  \DeclareMathOperator{\Hom}{Hom}
+  \DeclareMathOperator{\ab}{ab}
+
+
+  \newcommand{\surjects}{\twoheadrightarrow}
+  \newcommand{\injects}{\hookrightarrow}
+  \newcommand{\bijects}{\leftrightarrow}
+  \newcommand{\isomto}{\overset{\sim}{\rightarrow}}
+  \newcommand{\floor}[1]{\lfloor#1\rfloor}
+  \newcommand{\ceiling}[1]{\left\lceil#1\right\rceil}
+  \newcommand{\mclass}[2][m]{[#2]_{#1}}
+  \newcommand{\val}[2][]{\left\lvert #2\right\rvert_{#1}}
+  \newcommand{\abs}[2][]{\left\lvert #2\right\rvert_{#1}}
+  \newcommand{\valuation}[2][]{\left\lvert #2\right\rvert_{#1}}
+  \newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+  \newcommand{\anpoly}{a_nx^n+a_{n-1}x^{n-1}\cdots +a_1x+a_0}
+  \newcommand{\anmonic}{x^n+a_{n-1}x^{n-1}\cdots +a_1x+a_0}
+  \newcommand{\bmpoly}{b_mx^m+b_{m-1}x^{m-1}\cdots +b_1x+b_0}
+  \newcommand{\pder}[2]{\frac{\partial#1}{\partial#2}}
+  \newcommand{\normalin}{\trianglelefteq}
+  \newcommand{\angvec}[1]{\langle #1\rangle}
+  \newcommand{\varpoly}[2]{#1_{#2}x^{#2}+#1_{#2-1}x^{#2-1}\cdots +#1_1x+#1_0}
+  \newcommand{\varpower}[1][a]{#1_0+#1_1x+#1_1x^2+\cdots}
+  \newcommand{\limasto}[2][x]{\lim_{#1\rightarrow #2}}
+  \newenvironment{linsys}[2][m]{
+  \begin{array}[#1]{@{}*{#2}{rc}r@{}}
+  }{
+  \end{array}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural contains-active toc-item-list">
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="meta_frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="c_foundations.html" class="internal"><span class="codenumber">0</span> <span class="title">Foundations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_sets_functions.html" class="internal"><span class="codenumber">0.1</span> <span class="title">Sets and functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_sets_functions.html#ss_sets" class="internal"><span class="title">Sets</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_sets_functions.html#ss_functions" class="internal"><span class="title">Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_sets_functions.html#subsec-" class="internal"><span class="title">Cardinality and countability</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_logic.html" class="internal"><span class="codenumber">0.2</span> <span class="title">Logic</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_logic.html#ss_propositional_calculus" class="internal"><span class="title">Propositional logic</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_logic.html#ss_predicate_logic" class="internal"><span class="title">Predicate logic</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_proof_technique.html" class="internal"><span class="codenumber">0.3</span> <span class="title">Proof techniques</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="s_proof_technique.html#ss_logical_structure" class="internal"><span class="title">Logical structure</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_implication" class="internal"><span class="title">Implication</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_disjunction" class="internal"><span class="title">Disjunction</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_equivalence" class="internal"><span class="title">Equivalence</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_logical_chains" class="internal"><span class="title">Chains of implications/equivalences</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_proof_by_contradiction" class="internal"><span class="title">Proof by contradiction</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="s_proof_technique.html#ss_Equalities" class="internal"><span class="title">Equalities</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_chain_equalities" class="internal"><span class="title">Chain of equalities</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="s_proof_technique.html#ss_set_properties" class="internal"><span class="title">Basic set properties</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_set_inclusion" class="internal"><span class="title">Set inclusion</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_set_equality" class="internal"><span class="title">Set equality</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="s_proof_technique.html#ss_function_properties" class="internal"><span class="title">Basic function properties</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_function_equality" class="internal"><span class="title">Function equality</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_injective_surjective_bijective" class="internal"><span class="title">Injective, surjective, bijective</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="s_proof_technique.html#ss_mathematical_induction" class="internal"><span class="title">Mathematical induction</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_weak_induction" class="internal"><span class="title">Proof by induction</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_strong_induction" class="internal"><span class="title">Proof by strong induction</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="c_top_spaces.html" class="internal"><span class="codenumber">1</span> <span class="title">Point-set topology</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_top_spaces.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Topological spaces</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_bases_top.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Topological basis</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_metric1.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Metric spaces</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_closed_closure_interior.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Closed sets, closure, and interior</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_limitpoints_hausdorff.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Limit points and the Hausdorff property</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_subspace_finite_products.html" class="internal"><span class="codenumber">1.6</span> <span class="title">Subspaces and finite products</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_subspace_finite_products.html#ss_subspace" class="internal"><span class="title">Subspaces</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_subspace_finite_products.html#ss_finite_products" class="internal"><span class="title">Finite product spaces</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_product2.html" class="internal"><span class="codenumber">1.7</span> <span class="title">Arbitrary products</span></a></div></li>
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="s_prods_convergence_metric.html" class="internal"><span class="codenumber">1.8</span> <span class="title">Convergence in product spaces</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="kursobjekt-6.html" class="internal"><span class="title">Back Matter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-notation.html" class="internal"><span class="codenumber">A</span> <span class="title">Notation</span></a></div></li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-defs.html" class="internal"><span class="codenumber">B</span> <span class="title">Definitions</span></a></div></li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-thms.html" class="internal"><span class="codenumber">C</span> <span class="title">Theory</span></a></div></li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-specimens.html" class="internal"><span class="codenumber">D</span> <span class="title">Topological specimens</span></a></div></li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-egs.html" class="internal"><span class="codenumber">E</span> <span class="title">Examples</span></a></div></li>
+<li class="toc-item toc-index"><div class="toc-title-box"><a href="kursobjekt-6-6.html" class="internal"><span class="title">Index</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="s_prods_convergence_metric"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">1.8</span><span class="space"> </span><span class="title">Convergence in product spaces</span>
+</h2>
+<section class="introduction" id="s_prods_convergence_metric-2"><div class="para" id="s_prods_convergence_metric-2-1">The relative virtues of the product and box topologies begin to come to light as we look at issues of convergence and metrics in product spaces. In particular, we see in the context of the spaces <span class="process-math">\(\R^\omega\)</span> and <span class="process-math">\(\R^\R\)</span> that different topologies on these product sets give rise to different and valuable notions of function convergence for real-valued functions.</div></section><article class="definition definition-like" id="d_pointwise_convergence"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.8.1</span><span class="period">.</span><span class="space"> </span><span class="title">Pointwise convergence.</span>
+</h3> <div class="para logical" id="d_pointwise_convergence-2-1">
+<div class="para">Let <span class="process-math">\(\{X_i\}_{i\in I}\)</span> be a collection of topological spaces, let <span class="process-math">\(X=\prod_{i\in I}X_i\text{,}\)</span> and let <span class="process-math">\((f_n)_{n=1}^\infty\)</span> be a sequence of elements of <span class="process-math">\(X\text{:}\)</span> i.e., using tuple notation, for each <span class="process-math">\(n\in \Z_+\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f_n=(x_{n,i})_{i\in I}\text{,}
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(x_{n,i}=f_n(i)\in X_i\text{.}\)</span> The sequence <span class="process-math">\((f_n)_{n=1}^\infty\)</span> <dfn class="terminology">converges pointwise</dfn> to an element <span class="process-math">\(f=(x_i)\in X\)</span> if for all <span class="process-math">\(i\in I\)</span> we have <span class="process-math">\(x_{n,i}\rightarrow x_i\text{:}\)</span> i.e., <span class="process-math">\(f_n(i)\rightarrow f(i)\text{.}\)</span>
+</div>
+</div></article><article class="remark remark-like" id="rm_pointwise_convergence"><h3 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.8.2</span><span class="period">.</span><span class="space"> </span><span class="title">Pointwise convergence.</span>
+</h3> <div class="para" id="rm_pointwise_convergence-2-1">Observe that the definition of pointwise convergence makes no reference to any topology on <span class="process-math">\(X=\prod_{i\in I}X_i\text{.}\)</span> Below we investigate how it relates to convergence in the box and product topologies.</div></article><article class="example example-like" id="s_prods_convergence_metric-5"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.8.3</span><span class="period">.</span><span class="space"> </span><span class="title">Sequences in <span class="process-math">\(\R^\omega\)</span> and <span class="process-math">\(\R^\R\)</span>.</span>
+</h3>
+<div class="para" id="s_prods_convergence_metric-5-2-1">Our understanding of tuples in product spaces as functions pays real dividends when investigating convergence of sequences in these spaces.</div> <div class="para" id="s_prods_convergence_metric-5-2-2">For example, if a tuple <span class="process-math">\((x_i)_{i=1}^\infty\)</span> in <span class="process-math">\(\R^\omega\)</span> is just a function <span class="process-math">\(f=\Z_+\rightarrow \R\text{,}\)</span> the graph of which in the real plane is easily visualized: namely, a discrete collection of plotted points <span class="process-math">\((n, f(n))\)</span> for <span class="process-math">\(n\in \{1,2,3,\dots\}\text{.}\)</span>
+</div> <div class="para" id="s_prods_convergence_metric-5-2-3">Similarly, a tuple <span class="process-math">\((x_\alpha)_{\alpha\in \R}\)</span> in <span class="process-math">\(\R^\R\)</span> is just a function <span class="process-math">\(f\colon \R\rightarrow\R\text{,}\)</span> which is easily visualized via a graph.</div> <div class="para" id="s_prods_convergence_metric-5-2-4">In both cases, sequences of tuples are easily visualized as sequences of functions <span class="process-math">\((f_n)_{n=1}^\infty\)</span> (via their graphs). Furthermore, for the sequence to converge pointwise pointwise at a given index <span class="process-math">\(i\)</span> (<span class="process-math">\(n\in \Z_+\)</span> for <span class="process-math">\(\R^\omega\text{,}\)</span> and <span class="process-math">\(r\in \R\)</span> for <span class="process-math">\(\R^\R\)</span>) is simply for the sequence of values <span class="process-math">\((f_n(i))_{n=1}^\infty\)</span> to converge.</div></article><article class="theorem theorem-like" id="th_pointwise_convergence"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.8.4</span><span class="period">.</span><span class="space"> </span><span class="title">Pointwise convergence and product topology.</span>
+</h3>
+<div class="para" id="th_pointwise_convergence-2-1">Let <span class="process-math">\(\{(X_i, \mathcal{T}_i)\}_{i\in I}\)</span> be a collection of topologies, let <span class="process-math">\(X=\prod_{i\in I}X_i\)</span> be their product, and let <span class="process-math">\((f_n)_{n=1}^\infty\)</span> be a sequence of elements of <span class="process-math">\(X\text{.}\)</span>
+</div> <ol class="decimal">
+<li id="th_pointwise_convergence-2-2-1"><div class="para" id="th_pointwise_convergence-2-2-1-1">If <span class="process-math">\(f_n\rightarrow f\)</span> in the box or product topology, then <span class="process-math">\(f_n\)</span> converges to <span class="process-math">\(f\)</span> pointwise.</div></li>
+<li id="th_pointwise_convergence-2-2-2"><div class="para logical" id="th_pointwise_convergence-2-2-2-1">
+<div class="para">In the product topology we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f_n\to f \iff f_n \text{ converges to } f \text{ pointwise}\text{.}
+\end{equation*}
+</div>
+</div></li>
+</ol></article><details id="th_pointwise_convergence-3" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para logical" id="th_pointwise_convergence-3-1"><ol class="decimal">
+<li id="th_pointwise_convergence-3-1-1-1"><div class="para" id="th_pointwise_convergence-3-1-1-1-1">Suppose <span class="process-math">\(f_n\rightarrow f\)</span> in either topology. Fix <span class="process-math">\(i\in I\)</span> and let <span class="process-math">\(U_i\ni f(i)\)</span> be any open set containing <span class="process-math">\(f(i)\in X_i\text{.}\)</span> The set <span class="process-math">\(U=U_i\times \prod_{j\ne i}U_j\)</span> is an open neighborhood of <span class="process-math">\(f\)</span> in both topologies. By convergence there is an <span class="process-math">\(N\)</span> such that <span class="process-math">\(f_n\in U\)</span> for all <span class="process-math">\(n\geq N\text{.}\)</span> It follows that <span class="process-math">\(f_n(i)\in U_i\)</span> for all <span class="process-math">\(n\geq N\text{.}\)</span> This proves that <span class="process-math">\(f_n(i)\rightarrow f(i)\)</span> for all <span class="process-math">\(i\in I\text{.}\)</span>
+</div></li>
+<li id="th_pointwise_convergence-3-1-1-2"><div class="para" id="th_pointwise_convergence-3-1-1-2-1">Suppose the sequence <span class="process-math">\((f_n)\)</span> converges to <span class="process-math">\(f\)</span> pointwise. To show <span class="process-math">\(f_n\rightarrow f\)</span> in the product topology it is enough to show that for any base open set of the form <span class="process-math">\(U_{i_1}\times U_{i_2}\times\cdots \times U_{i_m}\times \prod_{k\ne i_k }X_k\)</span> there is an <span class="process-math">\(N\)</span> such that if <span class="process-math">\(n\geq N\text{,}\)</span> then <span class="process-math">\(f_n\in U\text{.}\)</span> Since <span class="process-math">\((f_n)\)</span> converges to <span class="process-math">\(f\)</span> pointwise, for each <span class="process-math">\(i_j\text{,}\)</span> <span class="process-math">\(1\leq j\leq m\)</span> there is an <span class="process-math">\(N_{i_j}\)</span> such that if <span class="process-math">\(n\geq N_{i_j}\text{,}\)</span> then <span class="process-math">\(f_n(i_j)\in U_{i_j}\text{.}\)</span> Setting <span class="process-math">\(N=\max\{ N_{i_j}\}_{j=1}^m\text{,}\)</span> it follows that if <span class="process-math">\(n\geq N\)</span> then <span class="process-math">\(f_n(i_j)\in U_{i_j}\)</span> for <span class="process-math">\(1\leq j\leq m\text{.}\)</span> Since <span class="process-math">\(f_n(j)\in X_j\)</span> for all <span class="process-math">\(j\ne i_j\)</span> we conclude that <span class="process-math">\(f_n\in U\)</span> for all <span class="process-math">\(n\geq N\text{,}\)</span> as desired.</div></li>
+</ol></div></article></details><article class="example example-like" id="s_prods_convergence_metric-7"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.8.5</span><span class="period">.</span><span class="space"> </span><span class="title">Convergent sequences in <span class="process-math">\(\R^\omega\)</span>.</span>
+</h3>
+<div class="para logical" id="s_prods_convergence_metric-7-2-1">
+<div class="para">Let <span class="process-math">\(X=\R^\omega\text{,}\)</span> where <span class="process-math">\(\R\)</span> is equipped with the standard topology, and let <span class="process-math">\((f_n)_{n\in \Z_+}\)</span> be the sequence defined as</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f_n=(1/n, 1/n,1/n,\dots)
+\end{equation*}
+</div>
+<div class="para">for all <span class="process-math">\(n\geq 1\text{.}\)</span>
+</div>
+</div> <ol class="decimal">
+<li id="s_prods_convergence_metric-7-2-2-1"><div class="para" id="s_prods_convergence_metric-7-2-2-1-1">Visualize the sequence <span class="process-math">\((f_n)\)</span> in the real plane.</div></li>
+<li id="s_prods_convergence_metric-7-2-2-2"><div class="para" id="s_prods_convergence_metric-7-2-2-2-1">Decide whether the sequence converges pointwise. If so, what does it converge to?</div></li>
+<li id="s_prods_convergence_metric-7-2-2-3"><div class="para" id="s_prods_convergence_metric-7-2-2-3-1">Decide whether the sequence converges in the product topology, and whether it converges in the box topology.</div></li>
+</ol>
+<div class="solutions"><details id="s_prods_convergence_metric-7-3" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like"><div class="para logical" id="s_prods_convergence_metric-7-3-1">
+<div class="para">It is relatively easy to see that the sequence <span class="process-math">\(f_n\)</span> converges pointwise to <span class="process-math">\(f=(0,0,\dots)\text{.}\)</span> Since <span class="process-math">\(\R\)</span> with the standard topology is Hausdorff, it follows that this pointwise limit is unique. By <a href="" class="xref" data-knowl="./knowl/xref/th_pointwise_convergence.html" title="Theorem 1.8.4: Pointwise convergence and product topology">Theorem 1.8.4</a>, <span class="process-math">\((f_n)\)</span> also converges in the product topology to <span class="process-math">\(f\text{.}\)</span> We claim <span class="process-math">\((f_n)\)</span> does not converge at all in the box topology. First observe, that the only candidate for the limit of this convergence is <span class="process-math">\(f=(0,0,\dots,)\text{,}\)</span> using (1) of <a href="" class="xref" data-knowl="./knowl/xref/th_pointwise_convergence.html" title="Theorem 1.8.4: Pointwise convergence and product topology">Theorem 1.8.4</a>. Now consider the open set</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_pointwise_convergence.html ./knowl/xref/th_pointwise_convergence.html">
+\begin{equation*}
+U=(-1,1)\times (-1/2, 1/2)\times (-1/3,1/3)\times\cdots=\prod_{n=1}^\infty(-1/n, 1/n)\text{.}
+\end{equation*}
+</div>
+<div class="para">We have <span class="process-math">\(f=(0,0,\dots, )\in U\text{,}\)</span> and yet not only is it not the case that the sequence <span class="process-math">\((f_n)\)</span> eventually lies in <span class="process-math">\(U\text{,}\)</span> in fact we have <span class="process-math">\(f_n\notin U\)</span> for all <span class="process-math">\(n\in \Z_+\text{.}\)</span>
+</div>
+</div></div></details></div></article><article class="definition definition-like" id="d_standard_bounded_metric"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.8.6</span><span class="period">.</span><span class="space"> </span><span class="title">Standard bounded metric.</span>
+</h3> <div class="para" id="d_standard_bounded_metric-2-1">Let <span class="process-math">\((X,d)\)</span> be a metric space. The function <span class="process-math">\(\overline{d}(x,y)=\min\{d(x,y), 1\}\)</span> defines a metrix on <span class="process-math">\(X\text{,}\)</span> called the <dfn class="terminology">standard bounded metric</dfn> corresponding to <span class="process-math">\(d\text{.}\)</span> The two metrics <span class="process-math">\(d, \overline{d}\)</span> induce the same topology on <span class="process-math">\(X\)</span>
+</div> <details id="d_standard_bounded_metric-3" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para" id="d_standard_bounded_metric-3-1">See Munkres for a proof that <span class="process-math">\(\overline{d}\)</span> is a metric, and that <span class="process-math">\(d\)</span> and <span class="process-math">\(d'\)</span> induce the same topology.</div></article></details></article><article class="project project-like" id="top_eg_uniform_topology"><h3 class="heading">
+<span class="type">Topological specimen</span><span class="space"> </span><span class="codenumber">11</span><span class="period">.</span><span class="space"> </span><span class="title">Uniform topology.</span>
+</h3> <div class="para logical" id="top_eg_uniform_topology-2">
+<div class="para">Let <span class="process-math">\(X=\R^I\)</span> for some set <span class="process-math">\(I\text{,}\)</span> where <span class="process-math">\(\R\)</span> is equipped with the standard topology. Let <span class="process-math">\(\overline{d}(x,y)=\min\{\abs{x-y},1\}\)</span> for all <span class="process-math">\(x,y\in \R\text{.}\)</span> The function</div>
+<div class="displaymath process-math" id="top_eg_uniform_topology-2-6">
+\begin{align*}
+d_{\operatorname{uni}}\colon X\times X \amp \rightarrow \R\\
+\left((x_i)_{i\in I}, (y_i)_{i\in I}\right) \amp\mapsto  \sup\{\overline{d}(x_i,y_i)\colon i\in I\}
+\end{align*}
+</div>
+<div class="para">is a metric called the <dfn class="terminology">uniform metric</dfn> on <span class="process-math">\(X\text{.}\)</span> The <dfn class="terminology">uniform topology</dfn> is the topology induced by <span class="process-math">\(d_{\operatorname{uni}}\text{.}\)</span>
+</div>
+</div> <details id="top_eg_uniform_topology-3" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para" id="top_eg_uniform_topology-3-1">See Munkres for a proof that <span class="process-math">\(d_{\operatorname{uni}}\)</span> is a metric.</div></article></details></article><article class="theorem theorem-like" id="th_product_uniform_box"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.8.7</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="th_product_uniform_box-1-1">
+<div class="para">Let <span class="process-math">\(X=\R^I\)</span> for some set <span class="process-math">\(I\text{,}\)</span> where <span class="process-math">\(\R\)</span> is equipped with the standard topology, and let <span class="process-math">\(\mathcal{T}_{\operatorname{prod}}, \mathcal{T}_{\operatorname{uni}}, \mathcal{T}_{\operatorname{box}}\)</span> be the product, uniform, and box topologies on <span class="process-math">\(\R\text{.}\)</span> We have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathcal{T}_{\operatorname{prod}}\subseteq \mathcal{T}_{\operatorname{uni}}\subseteq  \mathcal{T}_{\operatorname{box}}\text{.}
+\end{equation*}
+</div>
+<div class="para">When <span class="process-math">\(I\)</span> is infinite these inclusions are all strict.</div>
+</div></article><details id="th_product_uniform_box-2" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para logical" id="th_product_uniform_box-2-1">
+<div class="para">Take any open set <span class="process-math">\(U\)</span> in the product topology and any <span class="process-math">\(x=(x_i)_{i\in I}\)</span> lying in <span class="process-math">\(U\text{.}\)</span> There is an open neighborhood of <span class="process-math">\(x\)</span> lying in <span class="process-math">\(U\)</span> of the form  <span class="process-math">\(B=\prod_{j=1}^n (x_{i_j}-\epsilon_{i_j},x_{i_j}+\epsilon_{i_j})\times \prod_{i\ne i_j}\R\text{,}\)</span> where we may further assume <span class="process-math">\(\epsilon_{i_j}&lt; 1\)</span> for all <span class="process-math">\(1\leq j\leq n\text{.}\)</span> Letting  <span class="process-math">\(\epsilon=\min\{\epsilon_{i_j}\}\text{,}\)</span> I claim we have <span class="process-math">\(B_\epsilon(x)\subseteq B\text{.}\)</span> Indeed, for any <span class="process-math">\(y\in B_{\epsilon}(x)\text{,}\)</span> we have</div>
+<div class="displaymath process-math" id="th_product_uniform_box-2-1-12">
+\begin{align*}
+\sup\{\overline{d}(y_i,x_i)\} &lt; \epsilon \amp \implies \min\{\abs{y_{i_j}-x_{i_j}},1\}&lt;  \epsilon \text{ for all } 1\leq j\leq n \\
+\amp \implies \abs{y_{i_j}-x_{i_j}}&lt;  \epsilon \text{ for all } 1\leq j\leq n \amp (\epsilon &lt; 1)\\
+\amp\implies \abs{y_{i_j}-x_{i_j}}&lt; \epsilon_{i_j} \text{ for all } 1\leq j\leq n \\
+\amp \implies y\in B
+\end{align*}
+</div>
+<div class="para">This proves that <span class="process-math">\(\mathcal{T}_{\operatorname{prod}}\subseteq \mathcal{T}_{\operatorname{uni}}\)</span>
+</div>
+</div> <div class="para logical" id="th_product_uniform_box-2-2">
+<div class="para">For the next inclusion, take any open set <span class="process-math">\(U\)</span> in the uniform topology. For any <span class="process-math">\(x\in U\)</span> we can find <span class="process-math">\(\epsilon &gt; 0\)</span> such that <span class="process-math">\(B_{\epsilon}(x)\subseteq U\text{.}\)</span> Let <span class="process-math">\(V=\prod_{i\in I}(x_i-\epsilon/2, x_i+\epsilon/2)\text{,}\)</span> which is open in the box topology. Given any <span class="process-math">\(y=(y_i)\in V\text{,}\)</span> we have <span class="process-math">\(\overline{d}(y_i, x_i)\leq \abs{y_i-x_i}&lt; \epsilon/2\text{.}\)</span> It follows that in the uniform metric we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+d_{\operatorname{uni}}(y,x)=\sup\{\overline{d}(y_i, x_i)\}\leq \epsilon/2&lt; \epsilon\text{,}
+\end{equation*}
+</div>
+<div class="para">showing that <span class="process-math">\(V\subseteq B_\epsilon(x)\subseteq U\text{.}\)</span> This proves <span class="process-math">\(\mathcal{T}_{\operatorname{uni}}\subseteq  \mathcal{T}_{\operatorname{box}}\text{.}\)</span>
+</div>
+</div> <div class="para" id="th_product_uniform_box-2-3">The fact that both inclusions are strict when <span class="process-math">\(I\)</span> is infinite is left as a homework exercise.</div></article></details><article class="theorem theorem-like" id="th_prod_metric"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.8.8</span><span class="period">.</span><span class="space"> </span><span class="title">Product topology on <span class="process-math">\(\R^\omega\)</span>.</span>
+</h3>
+<div class="para logical" id="th_prod_metric-2-1">
+<div class="para">Let <span class="process-math">\(X=\R^\omega\text{,}\)</span> where <span class="process-math">\(\R\)</span> is equipped with the standard topology, and let <span class="process-math">\(\overline{d}(x,y)=\min\{\abs{x-y},1\}\)</span> for all <span class="process-math">\(x,y\in \R\text{.}\)</span> The function</div>
+<div class="displaymath process-math" id="th_prod_metric-2-1-5">
+\begin{align*}
+D\colon X\times X \amp \rightarrow \R\\
+\left((x_i)_{i=1}^\infty, (y_i)_{i=1}^\infty\right) \amp\mapsto  \sup\left\{\frac{\overline{d}(x_i,y_i)}{i}\colon i\in \Z_+\right\}
+\end{align*}
+</div>
+<div class="para">is a metric on <span class="process-math">\(\R^\omega\)</span> that induces the product topology.</div>
+</div></article><details id="th_prod_metric-3" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para" id="th_prod_metric-3-1">See Munkres. The proof that the product topology is equal to the topology induced by this metric is quite illustrative, and will be a useful model for some of your homework exercises.</div></article></details><article class="remark remark-like" id="rm_prod_metrizable"><h3 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.8.9</span><span class="period">.</span><span class="space"> </span><span class="title">When is the product topology on <span class="process-math">\(\R^I\)</span> metrizable?</span>
+</h3> <div class="para" id="rm_prod_metrizable-2-1">
+<a href="" class="xref" data-knowl="./knowl/xref/th_prod_metric.html" title="Theorem 1.8.8: Product topology on \R^\omega">Theorem 1.8.8</a> shows that the product topology on <span class="process-math">\(\R^\omega\)</span> is metrizable. It turns out that when <span class="process-math">\(I\)</span> is uncountable, this is no longer true. (As we will see later.) In particular, the product topology on <span class="process-math">\(\R^\R\)</span> is not a metric topology. The product topology on <span class="process-math">\(\R^\R\)</span> is valuable to us, since it is the natural setting to study pointwise convergence of functions (<a href="" class="xref" data-knowl="./knowl/xref/th_pointwise_convergence.html" title="Theorem 1.8.4: Pointwise convergence and product topology">1.8.4</a>). Consider this an argument for studying topologies beyond metric topologies.</div></article></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="s_product2.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="kursobjekt-6.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+</div>
+</body>
+</html>
