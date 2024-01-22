@@ -8,7 +8,7 @@
   <subsubsection xml:id="sss_implication">
     <title>Implication</title>
     <p>
-      By <xref ref="d_logical_ops"/> the only time an implication  <m>\mathcal{P}\implies\mathcal{Q}</m> is false is when <m>\mathcal{P}</m> is true and <m>\mathcal{Q}</m> is false. Accordingly, the <em>direct approach</em> to proving an implication <m>\mathcal{P}\implies \mathcal{Q}</m> is to assume <m>\mathcal{P}</m> is true, and use this assumption to prove <m>\mathcal{Q}</m> is true.
+      By <xref ref="d_logical_ops"/> the only time an implication  <m>\mathcal{P}\implies\mathcal{Q}</m> is false is when <m>\mathcal{P}</m> is true and <m>\mathcal{Q}</m> is false. Accordingly, the <em>direct approach</em> to proving an implication <m>\mathcal{P}\implies \mathcal{Q}</m> is to assume <m>\mathcal{P}</m> is true, and use this assumption to prove <m>\mathcal{Q}</m> is true. 
   </p>
   <p>
     A common <em>indirect approach</em> used to prove an implication <m>\mathcal{P}\implies \mathcal{Q}</m> is to prove its <em>contrapositive</em>  <m>\neg\mathcal{Q}\implies \neg \mathcal{P} </m>, which is logically equivalent to the original implication. In this case we assume <m>\mathcal{Q}</m> is not true, and show <m>\mathcal{P}</m> is not true. (Exercise: use a truth table to show the contrapositive is logically equivalent to the original implication.)
