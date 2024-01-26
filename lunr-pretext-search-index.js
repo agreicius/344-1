@@ -1360,6 +1360,96 @@ var ptx_lunr_docs = [
   "body": " When is the product topology on metrizable?    shows that the product topology on is metrizable. It turns out that when is uncountable, this is no longer true. (As we will see later.) In particular, the product topology on is not a metric topology. The product topology on is valuable to us, since it is the natural setting to study pointwise convergence of functions ( ). Consider this an argument for studying topologies beyond metric topologies.   "
 },
 {
+  "id": "s_continuous",
+  "level": "1",
+  "url": "s_continuous.html",
+  "type": "Section",
+  "number": "1.9",
+  "title": "Continuous functions",
+  "body": " Continuous functions   In calculus you learn that a function is defined to be continuous if for all there is a such that for all we have the implication . Now that we have some experience generalizing analysis concepts to topological ones, let's see how best this translates to arbitrary topologies.    Continuous function   Let be topological spaces. A function is continuous if for all open sets , the set is open in . Using logical shorthand: .     Preimage properties   Continuity is defined in terms of preimages of sets under a function . Thankfully, the preimage operation behaves very well with respect to our various set operations. In particular, we have the following identities, which you may make use of without further ado:      Continuous functions: basic examples     Identity function  Given a topological space , the identity function is continuous. Here we take as the topology of both the domain and codomain.    Constant functions  Let be topological spaces. For any fixed the constant function , defined as for all is continuous.    Subspace inclusions  Let be a subspace of . The inclusion map is continuous with respect to the subspace topology on .    Maps from discrete spaces  If is equipped with the discrete topology, then any function to a topological space is continuous.    Maps to trivial spaces  If is equipped with the trivial topology, then any map from a topological space to is continous.      These are all pretty elementary. I'll prove (3). Let be a subspace and let continuous. Given any open set , we have which by definition is open in the subspace topology. Thus is continuous.     Non-continuous inclusion   Show that the identity map is not continuous. Here the topology of the domain is the standard one, and the topology on the codomain is the lower limit topology.    For any we have . If we choose to be any open set of that is not open in the standard topology, it follows that is not open in and hence that is not continuous. We may take for example.  Note: let be two topologies on the set , and for let denote the space with underlying set and topology . The same argument above can be used to show that is continuous if and only if .     Products and projections   Let be a collection of topological spaces, and let . For each define the projection function as . In other words, the -th projection map returns the -th coordinate of an element of .    Prove: if is given the product topology, then is continuous for all .    Prove: given a topology on , we have continuous for all if and only if contains the product topology. Thus, in particular, the product topology is the coarsest topology on making each projection map continuous.      It is enough to prove (2), since it clearly implies (1). The maps are continuous in a topology if and only if for all and open the preimage is open in . Next it clear that is open in for all if and only if is open for any finite set . Since these sets form a basis for the product topology, we conclude that the projections are all continuous if and only if is finer than the product topology.      Let be a function between the topological spaces , and let be a basis for . The following statements are equivalent.     is continuous.    For all , the preimage is open in .      It is clear that (1) implies (2). Assume (2) is true. Given open , we can write with . It follows that is open, since by assumption each is open.     Continuity equivalences   Let be a function between the topological spaces . The following statements are equivalent.      is continuous.    For all , we have .    For all closed sets , the preimage is closed in .    Continuity at  For all and all sets containing , there is an open set containing such that .       . Take . We have for some . If is any open neighborhood of , then since is continuous is an open neighborhood of . Since , there exists . It follows that , showing this intersection is nonempt. We concdlue that , as desited.   . Assume (2) holds of . Given closed let . To show is closed, we will show that . Since , this is equivalent to showing ; but this follows from (2) since , where the last inclusion in this chain follows from the fact that is closed and contains .   . Let , and let be an open neighborhood of . The set is closed, whence is closed. It follows that is an open set containing , and we have .   . We assume (4). Let be an open set. For any , there is by (4) (taking open set ) an open set such that . It follows that . Thus for any there is an open such that . It follows that is open, as desired.      Let be a map between topological spaces. We say that is continuous at x , for , if for all open neighborhoods , there is an open neighborhood such that .     Building continuous functions     Composition  If and are continuous, then the composition is continuous.    Restriction  If is continuous, and is a subspace, then the restriction is continuous.    Expansion  If is continuous and is a subspace of , then the function obtained by composing with the inclusion is continuous.    Local on source (open pasting)  If is a function between topological spaces and there is a collection of open sets such that and the restrictions are continuous, then is continuous.    Closed pasting  Let be topological spaces, and suppose , where are closed sets. Given continuous functions and that satisfy for all , the function defined as is continuous.      Statements (1)-(3) are elementary, and can be found in Munkres.  Statement (4) follows from equivalent condition (4) from . Indeed, take any and open set . Since for some , and since is continuous, there is an open with , such that . Since is open in and is open in , we conclude is open in , as desired.  To prove statement (5) we show that is closed for any closed set . Since if and only if and or and , we have . Since and are closed we have closed in and closed in . Since and are closed, transitivity of closedness implies and are closed in . We conclude is closed, as desired.    "
+},
+{
+  "id": "d_continuous_function",
+  "level": "2",
+  "url": "s_continuous.html#d_continuous_function",
+  "type": "Definition",
+  "number": "1.9.1",
+  "title": "Continuous function.",
+  "body": " Continuous function   Let be topological spaces. A function is continuous if for all open sets , the set is open in . Using logical shorthand: .   "
+},
+{
+  "id": "rm_preimage",
+  "level": "2",
+  "url": "s_continuous.html#rm_preimage",
+  "type": "Remark",
+  "number": "1.9.2",
+  "title": "Preimage properties.",
+  "body": " Preimage properties   Continuity is defined in terms of preimages of sets under a function . Thankfully, the preimage operation behaves very well with respect to our various set operations. In particular, we have the following identities, which you may make use of without further ado:    "
+},
+{
+  "id": "s_continuous-5",
+  "level": "2",
+  "url": "s_continuous.html#s_continuous-5",
+  "type": "Example",
+  "number": "1.9.3",
+  "title": "Continuous functions: basic examples.",
+  "body": " Continuous functions: basic examples     Identity function  Given a topological space , the identity function is continuous. Here we take as the topology of both the domain and codomain.    Constant functions  Let be topological spaces. For any fixed the constant function , defined as for all is continuous.    Subspace inclusions  Let be a subspace of . The inclusion map is continuous with respect to the subspace topology on .    Maps from discrete spaces  If is equipped with the discrete topology, then any function to a topological space is continuous.    Maps to trivial spaces  If is equipped with the trivial topology, then any map from a topological space to is continous.      These are all pretty elementary. I'll prove (3). Let be a subspace and let continuous. Given any open set , we have which by definition is open in the subspace topology. Thus is continuous.   "
+},
+{
+  "id": "s_continuous-6",
+  "level": "2",
+  "url": "s_continuous.html#s_continuous-6",
+  "type": "Example",
+  "number": "1.9.4",
+  "title": "Non-continuous inclusion.",
+  "body": " Non-continuous inclusion   Show that the identity map is not continuous. Here the topology of the domain is the standard one, and the topology on the codomain is the lower limit topology.    For any we have . If we choose to be any open set of that is not open in the standard topology, it follows that is not open in and hence that is not continuous. We may take for example.  Note: let be two topologies on the set , and for let denote the space with underlying set and topology . The same argument above can be used to show that is continuous if and only if .   "
+},
+{
+  "id": "s_continuous-7",
+  "level": "2",
+  "url": "s_continuous.html#s_continuous-7",
+  "type": "Example",
+  "number": "1.9.5",
+  "title": "Products and projections.",
+  "body": " Products and projections   Let be a collection of topological spaces, and let . For each define the projection function as . In other words, the -th projection map returns the -th coordinate of an element of .    Prove: if is given the product topology, then is continuous for all .    Prove: given a topology on , we have continuous for all if and only if contains the product topology. Thus, in particular, the product topology is the coarsest topology on making each projection map continuous.      It is enough to prove (2), since it clearly implies (1). The maps are continuous in a topology if and only if for all and open the preimage is open in . Next it clear that is open in for all if and only if is open for any finite set . Since these sets form a basis for the product topology, we conclude that the projections are all continuous if and only if is finer than the product topology.   "
+},
+{
+  "id": "th_continuity_basis",
+  "level": "2",
+  "url": "s_continuous.html#th_continuity_basis",
+  "type": "Theorem",
+  "number": "1.9.6",
+  "title": "",
+  "body": "  Let be a function between the topological spaces , and let be a basis for . The following statements are equivalent.     is continuous.    For all , the preimage is open in .      It is clear that (1) implies (2). Assume (2) is true. Given open , we can write with . It follows that is open, since by assumption each is open.   "
+},
+{
+  "id": "th_continuous_equivalence",
+  "level": "2",
+  "url": "s_continuous.html#th_continuous_equivalence",
+  "type": "Theorem",
+  "number": "1.9.7",
+  "title": "Continuity equivalences.",
+  "body": " Continuity equivalences   Let be a function between the topological spaces . The following statements are equivalent.      is continuous.    For all , we have .    For all closed sets , the preimage is closed in .    Continuity at  For all and all sets containing , there is an open set containing such that .       . Take . We have for some . If is any open neighborhood of , then since is continuous is an open neighborhood of . Since , there exists . It follows that , showing this intersection is nonempt. We concdlue that , as desited.   . Assume (2) holds of . Given closed let . To show is closed, we will show that . Since , this is equivalent to showing ; but this follows from (2) since , where the last inclusion in this chain follows from the fact that is closed and contains .   . Let , and let be an open neighborhood of . The set is closed, whence is closed. It follows that is an open set containing , and we have .   . We assume (4). Let be an open set. For any , there is by (4) (taking open set ) an open set such that . It follows that . Thus for any there is an open such that . It follows that is open, as desired.   "
+},
+{
+  "id": "d_continuity_at_x",
+  "level": "2",
+  "url": "s_continuous.html#d_continuity_at_x",
+  "type": "Definition",
+  "number": "1.9.8",
+  "title": "",
+  "body": "  Let be a map between topological spaces. We say that is continuous at x , for , if for all open neighborhoods , there is an open neighborhood such that .   "
+},
+{
+  "id": "th_building_continuous_functions",
+  "level": "2",
+  "url": "s_continuous.html#th_building_continuous_functions",
+  "type": "Theorem",
+  "number": "1.9.9",
+  "title": "Building continuous functions.",
+  "body": " Building continuous functions     Composition  If and are continuous, then the composition is continuous.    Restriction  If is continuous, and is a subspace, then the restriction is continuous.    Expansion  If is continuous and is a subspace of , then the function obtained by composing with the inclusion is continuous.    Local on source (open pasting)  If is a function between topological spaces and there is a collection of open sets such that and the restrictions are continuous, then is continuous.    Closed pasting  Let be topological spaces, and suppose , where are closed sets. Given continuous functions and that satisfy for all , the function defined as is continuous.      Statements (1)-(3) are elementary, and can be found in Munkres.  Statement (4) follows from equivalent condition (4) from . Indeed, take any and open set . Since for some , and since is continuous, there is an open with , such that . Since is open in and is open in , we conclude is open in , as desired.  To prove statement (5) we show that is closed for any closed set . Since if and only if and or and , we have . Since and are closed we have closed in and closed in . Since and are closed, transitivity of closedness implies and are closed in . We conclude is closed, as desired.   "
+},
+{
   "id": "appendix-notation",
   "level": "1",
   "url": "appendix-notation.html",
