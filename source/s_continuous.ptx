@@ -122,7 +122,7 @@
 		</solution>
 	</example>
 
-	<example>
+	<example xml:id="eg_cont_projections">
 		<title>Products and projections</title>
 		<statement>
 			<p>

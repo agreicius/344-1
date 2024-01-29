@@ -9,7 +9,7 @@
   <xi:include  href="s_product2.ptx"/>
   <xi:include  href="s_prods_convergence_metric.ptx"/>
   <xi:include  href="s_continuous.ptx"/>
-  <!-- <xi:include  href="s_homeomorphisms.ptx"/> -->
+  <xi:include  href="s_homeomorphisms.ptx"/>
   <!-- <xi:include  href="s_quotients.ptx"/> -->
   <!-- <xi:include  href="s_connected.ptx"/> -->
   <!-- <xi:include  href="s_connected_path.ptx"/> -->
