@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Homeomorphisms</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Math 344-1">
+<meta property="book:author" content="Aaron Greicius">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "https://pretextbook.org/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.33/pretext_search.js"></script><link href="https://pretextbook.org/css/0.83/pretext_search.css" rel="stylesheet" type="text/css">
+<script>js_version = 0.33</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.33/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.33/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.33/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+<link href="https://pretextbook.org/css/0.83/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/shell_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
+<h1 class="heading"><a href="kursobjekt.html"><span class="title">Math 344-1:</span> <span class="subtitle">Kursobjekt</span></a></h1>
+<p class="byline">Aaron Greicius</p>
+</div>
+</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><a class="index-button button" href="kursobjekt-6-6.html" title="Index"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span><span class="name">Index</span></a><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="s_continuous.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="c_top_spaces.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="kursobjekt-6.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\Z}{{\mathbb Z}}
+  \newcommand{\Q}{{\mathbb Q}}
+  \newcommand{\R}{{\mathbb R}}
+  \newcommand{\C}{{\mathbb C}}
+  \newcommand{\T}{{\mathbb T}}
+  \newcommand{\F}{{\mathbb F}}
+  \newcommand{\PP}{{\mathbb P}}
+  \newcommand{\HH}{{\mathbb H}}
+  \newcommand{\compose}{\circ}
+  \newcommand{\bolda}{{\mathbf a}}
+  \newcommand{\boldb}{{\mathbf b}}
+  \newcommand{\boldc}{{\mathbf c}}
+  \newcommand{\boldd}{{\mathbf d}}
+  \newcommand{\bolde}{{\mathbf e}}
+  \newcommand{\boldi}{{\mathbf i}}
+  \newcommand{\boldj}{{\mathbf j}}
+  \newcommand{\boldk}{{\mathbf k}}
+  \newcommand{\boldn}{{\mathbf n}}
+  \newcommand{\boldp}{{\mathbf p}}
+  \newcommand{\boldq}{{\mathbf q}}
+  \newcommand{\boldr}{{\mathbf r}}
+  \newcommand{\bolds}{{\mathbf s}}
+  \newcommand{\boldt}{{\mathbf t}}
+  \newcommand{\boldu}{{\mathbf u}}
+  \newcommand{\boldv}{{\mathbf v}}
+  \newcommand{\boldw}{{\mathbf w}}
+  \newcommand{\boldx}{{\mathbf x}}
+  \newcommand{\boldy}{{\mathbf y}}
+  \newcommand{\boldz}{{\mathbf z}}
+  \newcommand{\boldzero}{{\mathbf 0}}
+  \newcommand{\boldmod}{\boldsymbol{ \bmod }}
+  \newcommand{\boldT}{{\mathbf T}}
+  \newcommand{\boldN}{{\mathbf N}}
+  \newcommand{\boldB}{{\mathbf B}}
+  \newcommand{\boldF}{{\mathbf F}}
+  \newcommand{\boldS}{{\mathbf S}}
+  \newcommand{\boldE}{{\mathbf E}}
+  \newcommand{\boldG}{{\mathbf G}}
+  \newcommand{\boldK}{{\mathbf K}}
+  \newcommand{\boldL}{{\mathbf L}}
+  \DeclareMathOperator{\lns}{lns}
+  \DeclareMathOperator{\lcm}{lcm}
+  \DeclareMathOperator{\Span}{span}
+  \DeclareMathOperator{\tr}{tr}
+  \DeclareMathOperator{\NS}{null}
+  \DeclareMathOperator{\RS}{row}
+  \DeclareMathOperator{\CS}{col}
+  \DeclareMathOperator{\im}{im}
+  \DeclareMathOperator{\range}{range}
+  \DeclareMathOperator{\rank}{rank}
+  \DeclareMathOperator{\nullity}{nullity}
+  \DeclareMathOperator{\sign}{sign}
+  \DeclareMathOperator{\Fix}{Fix}
+  \DeclareMathOperator{\Aff}{Aff}
+  \DeclareMathOperator{\Frac}{Frac}
+  \DeclareMathOperator{\Ann}{Ann}
+  \DeclareMathOperator{\Tor}{Tor}
+  \DeclareMathOperator{\id}{id}
+  \DeclareMathOperator{\mdeg}{mdeg}
+  \DeclareMathOperator{\Lt}{Lt}
+  \DeclareMathOperator{\Lc}{Lc}
+  \DeclareMathOperator{\disc}{disc}
+  \DeclareMathOperator{\Frob}{Frob}
+  \DeclareMathOperator{\adj}{adj}
+  \DeclareMathOperator{\curl}{curl}
+  \DeclareMathOperator{\grad}{grad}
+  \DeclareMathOperator{\diver}{div}
+  \DeclareMathOperator{\flux}{flux}
+  \DeclareMathOperator{\Hom}{Hom}
+  \DeclareMathOperator{\ab}{ab}
+
+
+  \newcommand{\surjects}{\twoheadrightarrow}
+  \newcommand{\injects}{\hookrightarrow}
+  \newcommand{\bijects}{\leftrightarrow}
+  \newcommand{\isomto}{\overset{\sim}{\rightarrow}}
+  \newcommand{\floor}[1]{\lfloor#1\rfloor}
+  \newcommand{\ceiling}[1]{\left\lceil#1\right\rceil}
+  \newcommand{\mclass}[2][m]{[#2]_{#1}}
+  \newcommand{\val}[2][]{\left\lvert #2\right\rvert_{#1}}
+  \newcommand{\abs}[2][]{\left\lvert #2\right\rvert_{#1}}
+  \newcommand{\valuation}[2][]{\left\lvert #2\right\rvert_{#1}}
+  \newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+  \newcommand{\anpoly}{a_nx^n+a_{n-1}x^{n-1}\cdots +a_1x+a_0}
+  \newcommand{\anmonic}{x^n+a_{n-1}x^{n-1}\cdots +a_1x+a_0}
+  \newcommand{\bmpoly}{b_mx^m+b_{m-1}x^{m-1}\cdots +b_1x+b_0}
+  \newcommand{\pder}[2]{\frac{\partial#1}{\partial#2}}
+  \newcommand{\normalin}{\trianglelefteq}
+  \newcommand{\angvec}[1]{\langle #1\rangle}
+  \newcommand{\varpoly}[2]{#1_{#2}x^{#2}+#1_{#2-1}x^{#2-1}\cdots +#1_1x+#1_0}
+  \newcommand{\varpower}[1][a]{#1_0+#1_1x+#1_1x^2+\cdots}
+  \newcommand{\limasto}[2][x]{\lim_{#1\rightarrow #2}}
+  \newenvironment{linsys}[2][m]{
+  \begin{array}[#1]{@{}*{#2}{rc}r@{}}
+  }{
+  \end{array}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural contains-active toc-item-list">
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="meta_frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="c_foundations.html" class="internal"><span class="codenumber">0</span> <span class="title">Foundations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_sets_functions.html" class="internal"><span class="codenumber">0.1</span> <span class="title">Sets and functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_sets_functions.html#ss_sets" class="internal"><span class="title">Sets</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_sets_functions.html#ss_functions" class="internal"><span class="title">Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_sets_functions.html#subsec-" class="internal"><span class="title">Cardinality and countability</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_logic.html" class="internal"><span class="codenumber">0.2</span> <span class="title">Logic</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_logic.html#ss_propositional_calculus" class="internal"><span class="title">Propositional logic</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_logic.html#ss_predicate_logic" class="internal"><span class="title">Predicate logic</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_proof_technique.html" class="internal"><span class="codenumber">0.3</span> <span class="title">Proof techniques</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="s_proof_technique.html#ss_logical_structure" class="internal"><span class="title">Logical structure</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_implication" class="internal"><span class="title">Implication</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_disjunction" class="internal"><span class="title">Disjunction</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_equivalence" class="internal"><span class="title">Equivalence</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_logical_chains" class="internal"><span class="title">Chains of implications/equivalences</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_proof_by_contradiction" class="internal"><span class="title">Proof by contradiction</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="s_proof_technique.html#ss_Equalities" class="internal"><span class="title">Equalities</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_chain_equalities" class="internal"><span class="title">Chain of equalities</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="s_proof_technique.html#ss_set_properties" class="internal"><span class="title">Basic set properties</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_set_inclusion" class="internal"><span class="title">Set inclusion</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_set_equality" class="internal"><span class="title">Set equality</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="s_proof_technique.html#ss_function_properties" class="internal"><span class="title">Basic function properties</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_function_equality" class="internal"><span class="title">Function equality</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_injective_surjective_bijective" class="internal"><span class="title">Injective, surjective, bijective</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="s_proof_technique.html#ss_mathematical_induction" class="internal"><span class="title">Mathematical induction</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_weak_induction" class="internal"><span class="title">Proof by induction</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_strong_induction" class="internal"><span class="title">Proof by strong induction</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="c_top_spaces.html" class="internal"><span class="codenumber">1</span> <span class="title">Point-set topology</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_top_spaces.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Topological spaces</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_bases_top.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Topological basis</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_metric1.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Metric spaces</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_closed_closure_interior.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Closed sets, closure, and interior</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_limitpoints_hausdorff.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Limit points and the Hausdorff property</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_subspace_finite_products.html" class="internal"><span class="codenumber">1.6</span> <span class="title">Subspaces and finite products</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_subspace_finite_products.html#ss_subspace" class="internal"><span class="title">Subspaces</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_subspace_finite_products.html#ss_finite_products" class="internal"><span class="title">Finite product spaces</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_product2.html" class="internal"><span class="codenumber">1.7</span> <span class="title">Arbitrary products</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_prods_convergence_metric.html" class="internal"><span class="codenumber">1.8</span> <span class="title">Convergence in product spaces</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_continuous.html" class="internal"><span class="codenumber">1.9</span> <span class="title">Continuous functions</span></a></div></li>
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="s_homeomorphisms.html" class="internal"><span class="codenumber">1.10</span> <span class="title">Homeomorphisms</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="kursobjekt-6.html" class="internal"><span class="title">Back Matter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-notation.html" class="internal"><span class="codenumber">A</span> <span class="title">Notation</span></a></div></li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-defs.html" class="internal"><span class="codenumber">B</span> <span class="title">Definitions</span></a></div></li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-thms.html" class="internal"><span class="codenumber">C</span> <span class="title">Theory</span></a></div></li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-specimens.html" class="internal"><span class="codenumber">D</span> <span class="title">Topological specimens</span></a></div></li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-egs.html" class="internal"><span class="codenumber">E</span> <span class="title">Examples</span></a></div></li>
+<li class="toc-item toc-index"><div class="toc-title-box"><a href="kursobjekt-6-6.html" class="internal"><span class="title">Index</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="s_homeomorphisms"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">1.10</span><span class="space"> </span><span class="title">Homeomorphisms</span>
+</h2>
+<div class="para" id="s_homeomorphisms-2">Consider the two spaces <span class="process-math">\(X=\{1,2\}\)</span> and <span class="process-math">\(Y=\{3,4\}\text{,}\)</span> both equipped with the discrete topology. As sets they are clearly not equal; and yet considered as topological spaces they are essentially the same. Indeed, we call both spaces the discrete topological space on a set of two elements. The notion of a <em class="emphasis">homeomorphism</em> gives us a rigorous way of determining when two spaces are “essentially the same thing, topologically speaking”.</div>
+<article class="definition definition-like" id="d_homeomorphism"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.10.1</span><span class="period">.</span><span class="space"> </span><span class="title">Homeomorphism.</span>
+</h3> <div class="para logical" id="d_homeomorphism-2-1">
+<div class="para">Let <span class="process-math">\(X\)</span> and <span class="process-math">\(Y\)</span> be topological spaces. A function <span class="process-math">\(f\colon X\rightarrow Y\)</span> is a <dfn class="terminology">homeomorphism</dfn> if the following conditions are satisfied:</div>
+<ol class="decimal">
+<li id="d_homeomorphism-2-1-5-1"><div class="para" id="d_homeomorphism-2-1-5-1-1">
+<span class="process-math">\(f\)</span> is continuous;</div></li>
+<li id="d_homeomorphism-2-1-5-2"><div class="para" id="d_homeomorphism-2-1-5-2-1">
+<span class="process-math">\(f\)</span> is invertible (equivalently, <span class="process-math">\(f\)</span> is bijective);</div></li>
+<li id="d_homeomorphism-2-1-5-3"><div class="para" id="d_homeomorphism-2-1-5-3-1">the inverse function <span class="process-math">\(f^{-1}\colon Y\rightarrow X\)</span> is continuous.</div></li>
+</ol>
+<div class="para">Two spaces are <dfn class="terminology">homeomorphic</dfn> if there is a homeomorphism between them.</div>
+</div></article><article class="remark remark-like" id="rm_homeomorphism"><h3 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.10.2</span><span class="period">.</span><span class="space"> </span><span class="title">Homeomorphism: inverse must be continuous.</span>
+</h3> <div class="para" id="rm_homeomorphism-2">You may have met analogs of the homeomorphism in other areas of mathematics: e.g., in linear algebra or group theory. In category theory it is what is called an <em class="emphasis">isomorphism</em>. The basic idea is that once you decide what the “structure-preserving” maps are between objects (continuous functions for topological spaces, linear transformations for vector spaces, homomorphisms for groups), an isomorphism is essentially just an <em class="emphasis">invertible</em> structure-preserving map: a vector space isomorphism is an invertible linear transformation; a group isomorphism is an invertible group homomorphism. The only subtlety is that you want the inverse of this invertible function to also be structure preserving! For linear transformations and group homomorphisms this is automatic. Not so for continuous functions! The inverse of an invertible continuous function need not be continuous, as the example below illustrates.</div></article><article class="example example-like" id="eg_homeomorphism_not_"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.10.3</span><span class="period">.</span><span class="space"> </span><span class="title">Homeomorphism: inverse must be continuous.</span>
+</h3>
+<div class="para logical" id="eg_homeomorphism_not_-2-1">
+<div class="para">Let <span class="process-math">\(\R_{\operatorname{std}}\)</span> and <span class="process-math">\(\R_{\operatorname{disc}}\)</span> be the spaces obtained by equipping <span class="process-math">\(\R\)</span> with the standard and discrete topologies, respectively. The identity function</div>
+<div class="displaymath process-math" id="eg_homeomorphism_not_-2-1-4">
+\begin{align*}
+\id_\R\colon \R_{\operatorname{disc}}\amp\rightarrow \R_{\operatorname{std}}\\
+x\amp\mapsto x 
+\end{align*}
+</div>
+<div class="para">is clearly continuous and invertible. In fact, we have <span class="process-math">\(\id_\R^{-1}=\id_\R\text{.}\)</span> However, <span class="process-math">\(\id_\R\colon \R_{\operatorname{std}}\rightarrow \R_{\operatorname{disc}}\)</span> is not continuous. Indeed, <span class="process-math">\(U=[0,1)\)</span> is open in <span class="process-math">\(\R_{\operatorname{disc}}\text{,}\)</span> but <span class="process-math">\(\id_\R^{-1}(U)=[0,1)\)</span> is not open in <span class="process-math">\(\R_{\operatorname{std}}\text{.}\)</span> Thus <span class="process-math">\(\id_{\R_{\operatorname{disc}}}\colon \R_{\operatorname{std}}\rightarrow \R\)</span> is an invertible continuous function that is not a homeomorphism.</div>
+</div></article><article class="remark remark-like" id="rm_homeomorphic_equivalence_relation"><h3 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.10.4</span><span class="period">.</span><span class="space"> </span><span class="title">Homeomorphic equivalence relation.</span>
+</h3> <div class="para logical" id="rm_homeomorphic_equivalence_relation-2">
+<div class="para">For topological spaces <span class="process-math">\(X, Y\text{,}\)</span> define the relation <span class="process-math">\(X\sim Y\)</span> to mean <span class="process-math">\(X\)</span> is homeomorphic to <span class="process-math">\(Y\text{.}\)</span> This relation is an equivalence relation. That is, for all topological spaces <span class="process-math">\(X, Y, Z\)</span> we have</div>
+<div class="displaymath process-math" id="rm_homeomorphic_equivalence_relation-2-6">
+\begin{align*}
+X\amp\sim X \amp \text{(reflexive)}\\
+X\sim Y\amp\iff Y\sim X \amp \text{(symmetric)}\\
+X\sim Y \text{ and } Y\sim Z \amp \implies X\sim Z \amp \text{(transitive)}\text{.}
+\end{align*}
+</div>
+<div class="para">These three properties follow from the simple facts that (1) the identity map is a homeomorphism, (2) the inverse of a homeomorphism is a homeomomoprhism, (3) the composition of homeomorphisms is a homeomorphism.</div>
+</div></article><article class="example example-like" id="eg_R_interval"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.10.5</span><span class="period">.</span><span class="space"> </span><span class="title">All open intervals of <span class="process-math">\(\R\)</span> are homeomorphic.</span>
+</h3>
+<div class="para logical" id="eg_R_interval-2-1">
+<div class="para">In the following, all intervals are treated as metric spaces with the Euclidean metric on <span class="process-math">\(\R\text{.}\)</span> Make use of any function whose continuity properties are well known.</div>
+<ol class="decimal">
+<li id="eg_R_interval-2-1-2-1"><div class="para" id="eg_R_interval-2-1-2-1-1">Prove that any finite open interval <span class="process-math">\((a,b)\)</span> is homeomorphic to <span class="process-math">\((0,1)\text{.}\)</span>
+</div></li>
+<li id="eg_R_interval-2-1-2-2"><div class="para" id="eg_R_interval-2-1-2-2-1">Prove that <span class="process-math">\((-\pi/2, \pi/2)\)</span> and <span class="process-math">\(\R\)</span> are homeomorphic.</div></li>
+<li id="eg_R_interval-2-1-2-3"><div class="para" id="eg_R_interval-2-1-2-3-1">Prove that <span class="process-math">\((a,\infty)\)</span> and <span class="process-math">\((-\infty, b)\)</span> are both homeomorphic to <span class="process-math">\(\R\text{.}\)</span>
+</div></li>
+<li id="eg_R_interval-2-1-2-4"><div class="para" id="eg_R_interval-2-1-2-4-1">Explain why we may now conclude that all open intervals of <span class="process-math">\(\R\)</span> are homeomorphic.</div></li>
+</ol>
+</div>
+<div class="solutions"><details id="eg_R_interval-3" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like"><div class="para logical" id="eg_R_interval-3-1"><ol class="decimal">
+<li id="eg_R_interval-3-1-1-1"><div class="para" id="eg_R_interval-3-1-1-1-1">The function <span class="process-math">\(f\colon (0,1)\rightarrow (a,b)\)</span> defined as <span class="process-math">\(f(x)=a+(b-a)x\)</span> is linear (hence continuous) and has continuous inverse <span class="process-math">\(f^{-1}(x)=\frac{x-a}{b-a}\text{.}\)</span>
+</div></li>
+<li id="eg_R_interval-3-1-1-2"><div class="para" id="eg_R_interval-3-1-1-2-1">The function <span class="process-math">\(\tan\colon (-\pi/2,\pi/2)\rightarrow \R\)</span> is continuous and has continuous inverse <span class="process-math">\(f^{-1}(x)=\arctan x\text{.}\)</span>
+</div></li>
+<li id="eg_R_interval-3-1-1-3"><div class="para" id="eg_R_interval-3-1-1-3-1">The functions <span class="process-math">\(f\colon (a,\infty)\rightarrow \R\text{,}\)</span> <span class="process-math">\(f(x)=\ln(x-a)\text{,}\)</span> and <span class="process-math">\(g\colon (-\infty, b)\rightarrow \R\text{,}\)</span> <span class="process-math">\(g(x)=\ln(b-x)\)</span> are continuous and have continuous inverses <span class="process-math">\(f^{-1}(x)=e^x+a\)</span> and <span class="process-math">\(g^{-1}(x)=b-e^{x}\text{.}\)</span>
+</div></li>
+<li id="eg_R_interval-3-1-1-4"><div class="para" id="eg_R_interval-3-1-1-4-1">This is now the result of the fact that being homeomorphic is an equivalence relation. In more detail, from (1) we know that all finite open intervals are homeomorphic; this in conjunction with (2) shows that all finite open intervals are homemorphic to <span class="process-math">\(\R\text{.}\)</span> From (3) we conclude that all half-finite intervals are homeomorphic to <span class="process-math">\(\R\text{.}\)</span> Since any open interval is either finite, half-finite, or equal to <span class="process-math">\(\R\text{,}\)</span> we conclude that all open intervals are homeomorphic.</div></li>
+</ol></div></div></details></div></article><article class="definition definition-like" id="d_open_closed_map"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.10.6</span><span class="period">.</span><span class="space"> </span><span class="title">Open and closed maps.</span>
+</h3> <div class="para logical" id="d_open_closed_map-2-1">
+<div class="para">Let <span class="process-math">\(f\colon X\rightarrow Y\)</span> be a function between topological spaces.</div>
+<ol class="decimal">
+<li id="d_open_closed_map-2-1-2-1"><div class="para" id="d_open_closed_map-2-1-2-1-1">
+<span class="process-math">\(f\)</span> is <dfn class="terminology">open</dfn> if for all open <span class="process-math">\(U\subseteq X\)</span> we have <span class="process-math">\(f(U)\)</span> open in <span class="process-math">\(Y\text{.}\)</span>
+</div></li>
+<li id="d_open_closed_map-2-1-2-2"><div class="para" id="d_open_closed_map-2-1-2-2-1">
+<span class="process-math">\(f\)</span> is <dfn class="terminology">closed</dfn> if for all closed <span class="process-math">\(C\subseteq X\)</span> we have <span class="process-math">\(f(C)\)</span> closed in <span class="process-math">\(Y\text{.}\)</span>
+</div></li>
+</ol>
+</div></article><article class="theorem theorem-like" id="th_homeo_open_closed"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.10.7</span><span class="period">.</span><span class="space"> </span><span class="title">Homeomorphism equivalences.</span>
+</h3>
+<div class="para logical" id="th_homeo_open_closed-2-1">
+<div class="para">Let <span class="process-math">\(f\colon X\rightarrow Y\)</span> be a function between topological spaces. The following statements are equivalent.</div>
+<ol class="decimal">
+<li id="th_homeo_open_closed-2-1-2-1"><div class="para" id="th_homeo_open_closed-2-1-2-1-1">
+<span class="process-math">\(f\)</span> is a homeomorphism.</div></li>
+<li id="th_homeo_open_closed-2-1-2-2"><div class="para" id="th_homeo_open_closed-2-1-2-2-1">
+<span class="process-math">\(f\)</span> is continuous, invertible, and open.</div></li>
+<li id="th_homeo_open_closed-2-1-2-3"><div class="para" id="th_homeo_open_closed-2-1-2-3-1">
+<span class="process-math">\(f\)</span> is continuous, invertible, and closed.</div></li>
+</ol>
+</div></article><details id="th_homeo_open_closed-3" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para" id="th_homeo_open_closed-3-1">Assume <span class="process-math">\(f\)</span> is continous and invertible throughout. To be a homeomorphism we need <span class="process-math">\(g=f^{-1}\)</span> to be continuous. Since <span class="process-math">\(g(y)=x\)</span> if and only if <span class="process-math">\(f(x)=y\text{,}\)</span> we see that <span class="process-math">\(g^{-1}(A)=f(A)\text{.}\)</span> Thus <span class="process-math">\(g\)</span> continuous if and only if <span class="process-math">\(g^{-1}(U)\)</span> is open for all open <span class="process-math">\(U\subseteq X\text{,}\)</span> if and only if <span class="process-math">\(f(U)\)</span> is open for all open <span class="process-math">\(U\subseteq X\text{,}\)</span> if and only if <span class="process-math">\(f\)</span> is open. The same argument with “closed” replacing “open” shows <span class="process-math">\(g\)</span> is continuous if and only if <span class="process-math">\(f\)</span> is closed. The equivalence of (1)-(3) now follows.</div></article></details><article class="remark remark-like" id="rm_open_closed"><h3 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.10.8</span><span class="period">.</span><span class="space"> </span><span class="title">Open and closed maps.</span>
+</h3> <div class="para" id="rm_open_closed-2">Don’t be mislead by <a href="" class="xref" data-knowl="./knowl/xref/th_homeo_open_closed.html" title="Theorem 1.10.7: Homeomorphism equivalences">Theorem 1.10.7</a> into thinking that being an open continuous map is equivalent to being a closed continuous map; we need the additional assumption of invertibility to guarantee equivalence. As an example, consider any constant function from <span class="process-math">\(\R\)</span> to itself: this is clearly continuous and closed, but not open.</div></article><article class="definition definition-like" id="d_topological_properties"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.10.9</span><span class="period">.</span><span class="space"> </span><span class="title">Topological properties.</span>
+</h3> <div class="para" id="d_topological_properties-2-1">Let <span class="process-math">\(\mathcal{P}\)</span> be a property that is either satisfied or not satisfied by any given topological space. We say <span class="process-math">\(\mathcal{P}\)</span> is a <dfn class="terminology">topological property</dfn> if it is invariant under homeomorphisms: i.e., if <span class="process-math">\(X\)</span> and <span class="process-math">\(Y\)</span> are homeomorphic, then <span class="process-math">\(X\)</span> satisfies <span class="process-math">\(\mathcal{P}\)</span> if and only if <span class="process-math">\(Y\)</span> satisfies <span class="process-math">\(\mathcal{P}\text{.}\)</span>
+</div></article><article class="example example-like" id="eg_topological_props"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.10.10</span><span class="period">.</span><span class="space"> </span><span class="title">Topological properties.</span>
+</h3>
+<div class="para" id="eg_topological_props-2-1">It is easy to see that the properties of being discrete, <span class="process-math">\(T_1\text{,}\)</span> Hausdorff, or a metric space are topological.</div></article><article class="theorem theorem-like" id="th_product_universal_prop"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.10.11</span><span class="period">.</span><span class="space"> </span><span class="title">Universal mapping property of product space.</span>
+</h3>
+<div class="para logical" id="th_product_universal_prop-2-1">
+<div class="para">Let <span class="process-math">\(\{X_i, \mathcal{T}_i\}_{i\in I}\)</span> be a collection of topological spaces, and let <span class="process-math">\(X=\prod_{i\in I}X_i\)</span> equipped with the product topology. Let <span class="process-math">\(\pi_i\colon X\rightarrow X_i\)</span> be the <span class="process-math">\(i\)</span>-th projection map: i.e., given <span class="process-math">\(\boldx=(x_j)_{j\in J}\text{,}\)</span> we define <span class="process-math">\(\pi_i(\boldx)=x_i\text{.}\)</span>
+</div>
+<ol class="decimal">
+<li id="th_product_universal_prop-2-1-8-1">
+<span class="heading"><span class="title">Projection maps.</span></span><div class="para" id="th_product_universal_prop-2-1-8-1-2">For each <span class="process-math">\(i\in I\)</span> the projection map <span class="process-math">\(\pi_i\)</span> is continuous, open, and surjective.</div>
+</li>
+<li id="prod_top_universal">
+<span class="heading"><span class="title">Product universal mapping property.</span></span><div class="para" id="prod_top_universal-2">The space <span class="process-math">\(X\)</span> together with its projection maps <span class="process-math">\(\{\pi_i\colon X\rightarrow X_i\}_{i\in I}\)</span> satisfies the following universal mapping property: given any topological space <span class="process-math">\(Y\)</span> and collection <span class="process-math">\(\{f_i\colon Y\rightarrow X_i\}_{i\in I}\)</span> of continuous maps, there is a <em class="emphasis">unique</em> continuous map <span class="process-math">\(f\colon Y\rightarrow X\)</span> satisfying <span class="process-math">\(f_i=\pi_i\circ f\)</span> for all <span class="process-math">\(i\in I\text{.}\)</span> In other words, there is a unique continuous function <span class="process-math">\(f\)</span> making the diagram below commutative for all <span class="process-math">\(i\in I\text{.}\)</span>
+</div>
+<div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="generated/latex-image/im_prod_top_prop.svg" role="img" class="contained" alt="Commutative diagram for product topology"></div>
+<div class="para logical" id="prod_top_universal-4">
+<div class="para">In fact, in this case we must have</div>
+<div class="displaymath process-math" id="eq_prod_top_prop">
+\begin{equation}
+f(y)=\left(f_i(y)\right)_{i\in I}\text{.}\tag{1.10.1}
+\end{equation}
+</div>
+</div>
+</li>
+<li id="th_product_universal_prop-2-1-8-3">
+<span class="heading"><span class="title">Unique up to homeomorphism.</span></span><div class="para" id="th_product_universal_prop-2-1-8-3-2">The universal mapping property characterizes <span class="process-math">\(X\)</span> up to homeomorphism: i.e., if <span class="process-math">\(X'\)</span> is a topological space equipped with a collection of continuous maps <span class="process-math">\(\{ \pi_i'\colon X'\rightarrow X_i\}_{i\in I}\)</span> that together satisfy the <a href="" class="xref" data-knowl="./knowl/xref/prod_top_universal.html" title="Item 2: Product universal mapping property">Product universal mapping property</a>, then <span class="process-math">\(X'\)</span> is homeomorphic to <span class="process-math">\(X\text{.}\)</span>
+</div>
+</li>
+</ol>
+</div></article><details id="th_product_universal_prop-3" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para logical" id="th_product_universal_prop-3-1"><ol class="decimal">
+<li id="th_product_universal_prop-3-1-1-1"><div class="para logical" id="th_product_universal_prop-3-1-1-1-1">
+<div class="para">Fix any <span class="process-math">\(i\in I\text{.}\)</span> We showed <span class="process-math">\(\pi_i\)</span> is continuous in <a href="" class="xref" data-knowl="./knowl/xref/eg_cont_projections.html" title="Example 1.9.5: Products and projections">Example 1.9.5</a>. To see that <span class="process-math">\(\pi_i\)</span> is surjective, given any <span class="process-math">\(x_i\in X_i\text{,}\)</span> we have <span class="process-math">\(\pi_i^{-1}(\{x_i\}=\{x_i\}\times \prod_{j\ne i} X_j\text{,}\)</span> which is nonempty. Lastly, suppose <span class="process-math">\(U\subseteq X\)</span> is open. We wish to show that <span class="process-math">\(\pi_i(U)\)</span> is open in <span class="process-math">\(X_i\text{.}\)</span> To this end, given any <span class="process-math">\(x_i=\pi_i(\boldx)\in \pi_i(U)\text{,}\)</span> we have <span class="process-math">\(x\in B\subseteq U\)</span> for some open base set</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eg_cont_projections.html">
+\begin{equation*}
+B=\prod_{i\in I}U_i\text{,}
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(U_j\)</span> is open in <span class="process-math">\(X_j\)</span> and <span class="process-math">\(U_j=X_j\)</span> for all but finitely many <span class="process-math">\(j\text{.}\)</span> But then <span class="process-math">\(\pi_(\boldx)\in \pi_i(B)=U_i\subseteq \pi_i(U)\text{.}\)</span> Since <span class="process-math">\(U_i\)</span> is open, we have shown that given any <span class="process-math">\(x_i\in \pi_i(U)\text{,}\)</span> there is an open set <span class="process-math">\(U_i\)</span> such that <span class="process-math">\(x\in U_i\subseteq \pi_i(U)\text{.}\)</span> It follows that <span class="process-math">\(\pi_i(U)\)</span> is open, as desired.</div>
+</div></li>
+<li id="th_product_universal_prop-3-1-1-2"><div class="para logical" id="th_product_universal_prop-3-1-1-2-1">
+<div class="para">First observe that equality for elements <span class="process-math">\(\boldx=(x_i)_{i\in I}, \boldy=(y_i)_{i\in I}\)</span> in <span class="process-math">\(X\)</span> can be expressed in terms of the projection maps as follows:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\boldx=]boldy \iff x_i=y_i \text{ for all } i\in I \iff \pi_i(x)=\pi_i(y) \text{ for all } i\in I\text{.}
+\end{equation*}
+</div>
+<div class="para">Using this fact, we see that given a function <span class="process-math">\(f\colon Y\rightarrow X\)</span> we have</div>
+<div class="displaymath process-math" id="th_product_universal_prop-3-1-1-2-1-5">
+\begin{align*}
+f_i=\pi_i\circ f \text{ for all } i\in I \amp \iff f_i(y)=\pi_i(f(y)) \text{ for all } y\in Y, i\in I \\
+\amp \iff f(y)=(f_i(y))_{i\in I} \text{.}
+\end{align*}
+</div>
+<div class="para">Thus the function <span class="process-math">\(f(y)=(f_i(y))_{i\in I}\)</span> is the unique function from <span class="process-math">\(Y\)</span> to <span class="process-math">\(X\)</span> satisfying <span class="process-math">\(f_i=\pi_i\circ f\)</span> for all <span class="process-math">\(i\in I\text{.}\)</span> To see that this <span class="process-math">\(f\)</span> is continuous, we show that <span class="process-math">\(f^{-1}(B)\)</span> is open for any base open set <span class="process-math">\(B\subseteq X\text{.}\)</span> For such a <span class="process-math">\(B\)</span> we have <span class="process-math">\(B=\prod_{j=1}^n U_j\times \prod_{i\ne j}X_i\)</span> for some open sets <span class="process-math">\(U_j\subseteq X_j\text{,}\)</span> <span class="process-math">\(1\leq j\leq n\text{.}\)</span> By definition of <span class="process-math">\(f\)</span> we have <span class="process-math">\(f(y)\in B\)</span> if and only if <span class="process-math">\((f_i(y))_{i\in I}\in B\)</span> if and only if <span class="process-math">\(f_j(y)\in U_j\)</span> for all <span class="process-math">\(1\leq j\leq n\text{.}\)</span> Thus <span class="process-math">\(f^{-1}(U)=\cap_{j=1}^nf_i^{-1}(U_i)\text{.}\)</span> Since each <span class="process-math">\(f_j\)</span> is continuous, we conclude that <span class="process-math">\(f_j^{-1}(U_j)\)</span> is open for all <span class="process-math">\(1\leq j\leq n\text{,}\)</span> and hence <span class="process-math">\(f^{-1}(U)\)</span> is open.</div>
+</div></li>
+<li id="th_product_universal_prop-3-1-1-3"><div class="para logical" id="th_product_universal_prop-3-1-1-3-1">
+<div class="para">Let <span class="process-math">\(X'\)</span> together with continuous maps <span class="process-math">\(\pi_i'\colon X\rightarrow X_i\)</span> be any other space that satisfies <a href="" class="xref" data-knowl="./knowl/xref/prod_top_universal.html" title="Item 2: Product universal mapping property">Product universal mapping property</a>. Letting <span class="process-math">\(Y\)</span> be the space <span class="process-math">\(X'\)</span> together with its maps <span class="process-math">\(\pi_i'\text{,}\)</span> there is a continuous function <span class="process-math">\(f\colon X'\rightarrow X\)</span> satisfying <span class="process-math">\(\pi_i'=\pi_i\circ f\)</span> for all <span class="process-math">\(i\text{.}\)</span> Similarly, since <span class="process-math">\(X'\)</span> also satisfies the product mapping property, taking <span class="process-math">\(Y=X\)</span> along with its projection maps, we see there is a continuous map <span class="process-math">\(g\colon X\rightarrow X'\)</span> satisfying <span class="process-math">\(\pi_i=\pi_i'\circ g\text{.}\)</span> We claim <span class="process-math">\(f\circ g=\id_X\)</span> and <span class="process-math">\(g\circ f=\id_{X'}\text{:}\)</span> i.e., <span class="process-math">\(g=f^{-1}\)</span> is a continuous inverse of <span class="process-math">\(f\text{,}\)</span> and thus <span class="process-math">\(f\)</span> is a homeomorphism between <span class="process-math">\(X'\)</span> and <span class="process-math">\(X\text{.}\)</span> To see why this is true, we use the <em class="emphasis">uniqueness</em> claim in the product mapping property (twice). Indeed, the function <span class="process-math">\(f\circ g\colon X\rightarrow X\)</span> is continuous and satisfies</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prod_top_universal.html">
+\begin{equation*}
+\pi_i\circ (g\circ f)=(\pi_i\circ g)\circ f=\pi_i'\circ f=\pi_i
+\end{equation*}
+</div>
+<div class="para">for all <span class="process-math">\(i\in I\text{.}\)</span> But the function <span class="process-math">\(\id_X\colon X\rightarrow X\)</span> also satisfies <span class="process-math">\(\pi_i=\pi_i\circ\id_X\)</span> for all <span class="process-math">\(i\in I\text{.}\)</span> By the uniqueness claim of the product mapping property, we conclude <span class="process-math">\(\id_X=f\circ g\text{,}\)</span> as desired. The proof that <span class="process-math">\(g\circ f=\id_{X'}\)</span> is nearly identical, now applying the product mapping property to maps into <span class="process-math">\(X'\text{.}\)</span>
+</div>
+</div></li>
+</ol></div></article></details><article class="remark remark-like" id="s_homeomorphisms-14"><h3 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.10.12</span><span class="period">.</span><span class="space"> </span><span class="title">Universal mapping property of product space.</span>
+</h3> <div class="para" id="s_homeomorphisms-14-2">There is quite a bit to unpack in <a href="" class="xref" data-knowl="./knowl/xref/th_product_universal_prop.html" title="Theorem 1.10.11: Universal mapping property of product space">Theorem 1.10.11</a>. The result is useful on a number of levels, some theoretical and some practical.</div> <div class="para logical" id="s_homeomorphisms-14-3">
+<div class="para">On the practical side, the theorem provides us a nice tool for producing continuous functions of the form <span class="process-math">\(f\colon Y\rightarrow \prod_{i\in I}X_i\text{:}\)</span> namely, all you need to do is provide continuous functions <span class="process-math">\(f_i\colon Y\rightarrow X_i\)</span> for each <span class="process-math">\(i\in I\)</span> and define <span class="process-math">\(f(y)=(f_i(y))_{i\in I}\text{.}\)</span> Or similarly, given a function <span class="process-math">\(f\colon Y\rightarrow \prod_{i\in I} X_i\text{,}\)</span> to show <span class="process-math">\(f\)</span> is continuous, it suffices to show that each component function <span class="process-math">\(f_i=\pi_i\circ f\)</span> is continuous. You may have seen this property at work in an analysis or multivariable calculus course. For example, sometimes in these settings a function</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_product_universal_prop.html" id="s_homeomorphisms-14-3-8">
+\begin{align*}
+f\colon \R \amp \rightarrow \R^n\\
+t \amp\mapsto  (f_1(t),f_2(t),\dots, f_n(t)
+\end{align*}
+</div>
+<div class="para">is simply defined to be continuous if the component functions <span class="process-math">\(f_i\colon \R\rightarrow \R\)</span> are continuous for each <span class="process-math">\(i\text{.}\)</span> Thanks to <a href="" class="xref" data-knowl="./knowl/xref/th_product_universal_prop.html" title="Theorem 1.10.11: Universal mapping property of product space">Theorem 1.10.11</a> we understand that this is equivalent to <span class="process-math">\(f\)</span> being continuous with respect to the standard topology on <span class="process-math">\(\R\)</span> and the product topology on <span class="process-math">\(\R^n\)</span> (which is equal to the standard topology on <span class="process-math">\(\R^n\)</span>).</div>
+</div> <div class="para" id="s_homeomorphisms-14-4">On the theoretical side, the theorem identifies precisely what is so special about the product topology. Namely, it is the unique (up to homeomorphism) space satisfying the <a href="" class="xref" data-knowl="./knowl/xref/prod_top_universal.html" title="Item 2: Product universal mapping property">Product universal mapping property</a>.  The property establishes <span class="process-math">\(X\)</span> with the product topology as the <em class="emphasis">category theoretic</em> product of the spaces <span class="process-math">\(X_i\text{.}\)</span> You may have seen analogues of this type of object in other categories (e.g., category of groups or category of rings).</div></article><article class="example example-like" id="s_homeomorphisms-15"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.10.13</span><span class="period">.</span><span class="space"> </span><span class="title">Continuous bijection onto circle.</span>
+</h3>
+<div class="para" id="s_homeomorphisms-15-2-1">Let <span class="process-math">\(X=[0,1)\subseteq \R\)</span> and  <span class="process-math">\(S^1=\{(x,y)\in \R^2\colon x^2+y^2=1\}\subseteq \R^2\text{,}\)</span> and equip each set with the subspace topology inherited from <span class="process-math">\(\R\)</span> (resp. <span class="process-math">\(\R^2\)</span>) with its Euclidean topology.</div> <div class="para" id="s_homeomorphisms-15-2-2">Prove: the function <span class="process-math">\(f\colon X\rightarrow S^1\)</span> defined as <span class="process-math">\(f(t)=(\cos 2\pi t, \sin 2\pi t)\)</span> is continuous and invertible, but not a homeomorphism.</div>
+<div class="solutions"><details id="s_homeomorphisms-15-3" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like">
+<div class="para" id="s_homeomorphisms-15-3-1">Recall first that on <span class="process-math">\(\R^2=\R\times \R\)</span> the product topology, Euclidean metric topology, and box topology are all equal. Since <span class="process-math">\(f_1(x)=\cos 2\pi t\)</span> and <span class="process-math">\(f_2(x)=\sin 2\pi t\)</span> are continuous, it follows from <a href="" class="xref" data-knowl="./knowl/xref/th_product_universal_prop.html" title="Theorem 1.10.11: Universal mapping property of product space">Theorem 1.10.11</a> that the map <span class="process-math">\(g\colon [0,1)\rightarrow \R\times \R=\R^2\)</span> is continuous. Next, since <span class="process-math">\(g=i\circ f\text{,}\)</span> where <span class="process-math">\(i\colon S^1\hookrightarrow \R^2\text{,}\)</span> it follows that <span class="process-math">\(f\)</span> is continuous: indeed, for any open set <span class="process-math">\(U\subseteq S^1\text{,}\)</span> we have <span class="process-math">\(U=U'\cap S^1\)</span> for some open <span class="process-math">\(U'\subseteq \R^2\text{,}\)</span> and <span class="process-math">\(f^{-1}(U)=g^{-1}(U')\text{,}\)</span> which is open since <span class="process-math">\(g\)</span> is continuous.</div> <div class="para" id="s_homeomorphisms-15-3-2">The usual trigonometric arguments show that <span class="process-math">\(f\)</span> is injective and surjective. However, <span class="process-math">\(f\)</span> is not open, and hence not a homeomorphism. Indeed, let <span class="process-math">\(U=[0,1/2)\text{,}\)</span> which is open in <span class="process-math">\([0,1)\text{.}\)</span> The image <span class="process-math">\(f(U)\)</span> is easily seen to be the upper half of the circle minus the point <span class="process-math">\(Q=(-1,0)\text{:}\)</span> in particular, all points <span class="process-math">\(f(U)\)</span> have nonnegative <span class="process-math">\(y\)</span>-coordinates. On the other hand, we have <span class="process-math">\((1,0)\in f(U)\)</span> and with respect to the subspace topology on <span class="process-math">\(S^1\)</span> any open set containing <span class="process-math">\((1,0)\)</span> contains elements of <span class="process-math">\(S^1\)</span> whose <span class="process-math">\(y\)</span>-coordinate is negative. It follows that <span class="process-math">\(f(U)\)</span> is not open.</div>
+</div></details></div></article><div class="para" id="s_homeomorphisms-16">In light of <a href="" class="xref" data-knowl="./knowl/xref/th_product_universal_prop.html" title="Theorem 1.10.11: Universal mapping property of product space">Theorem 1.10.11</a>, it is natural to ask whether given topological spaces <span class="process-math">\((X_i, \mathcal{T}_i)\)</span> there is a space <span class="process-math">\(X\)</span> with continuous maps <span class="process-math">\(X_i\rightarrow X\)</span> that satisfies a dual mapping property to that of the product. Indeed, there is, and we call it the <em class="emphasis">coproduct</em> of the <span class="process-math">\(X_i\text{.}\)</span>
+</div>
+<article class="project project-like" id="top_eg_coproduct"><h3 class="heading">
+<span class="type">Topological specimen</span><span class="space"> </span><span class="codenumber">12</span><span class="period">.</span><span class="space"> </span><span class="title">Coproduct space.</span>
+</h3> <div class="para logical" id="top_eg_coproduct-2">
+<div class="para">Let <span class="process-math">\(\{X_i, \mathcal{T}_i\}_{i\in I}\)</span> be a collection of topological spaces. Let <span class="process-math">\(X\)</span> be the <dfn class="terminology">disjoint union</dfn> <span class="process-math">\(\coprod_{i\in I}X_i\)</span> of the <span class="process-math">\(X_i\text{;}\)</span> in more detail, for each <span class="process-math">\(i\in I\text{,}\)</span> define <span class="process-math">\(\widetilde{X}_i=X_i\times \{i\}\text{,}\)</span> and define</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\coprod_{i\in I}X_i=\bigcup_{i\in I}\widetilde{X}_i\text{.}
+\end{equation*}
+</div>
+<div class="para">For each <span class="process-math">\(i\in I\)</span> the function</div>
+<div class="displaymath process-math" id="top_eg_coproduct-2-10">
+\begin{align*}
+\iota_i\colon X_i \amp \rightarrow \widetilde{X}_i\\
+x \amp \mapsto (x,i)
+\end{align*}
+</div>
+<div class="para">is a bijection between <span class="process-math">\(X_i\)</span> and <span class="process-math">\(\widetilde{X}_i\text{,}\)</span> and it is easy to see that the collection</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\widetilde{\mathcal{T}}_i=\iota_i(\mathcal{T}_i)=\{U\times\{i\}\colon U\in \mathcal{T}_i\}
+\end{equation*}
+</div>
+<div class="para">is a topology on <span class="process-math">\(\widetilde{X}_i\)</span> making the map <span class="process-math">\(\iota_i\colon X_i\rightarrow \widetilde{X}_i\)</span> a homeomorphism.<a class="xref" id="top_eg_coproduct-2-16" href="" data-knowl="./knowl/fn/top_eg_coproduct-2-16.html" title="Footnote 1.10.1"><sup> 1 </sup></a> The <dfn class="terminology">coproduct topology</dfn> on <span class="process-math">\(X=\coprod_{i\in I}X_i\)</span> is the topology <span class="process-math">\(\mathcal{T}\)</span> generated by the basis <span class="process-math">\(\mathcal{B}\)</span> defined as follows:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathcal{B}=\{\iota_i(U)=U\times\{i\} \colon i\in I, U\in \mathcal{T}_i\} \text{.}
+\end{equation*}
+</div>
+<div class="para">We call <span class="process-math">\(X\)</span> together with the topology <span class="process-math">\(\mathcal{T}\)</span> the <dfn class="terminology">coproduct</dfn> of the <span class="process-math">\(X_i\text{.}\)</span>
+</div>
+</div></article><article class="theorem theorem-like" id="th_coproduct_universal_prop"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.10.14</span><span class="period">.</span><span class="space"> </span><span class="title">Universal mapping property of coproduct space.</span>
+</h3>
+<div class="para logical" id="th_coproduct_universal_prop-2-1">
+<div class="para">Let <span class="process-math">\(\{X_i, \mathcal{T}_i\}_{i\in I}\)</span> be a collection of topological spaces, and let <span class="process-math">\(X=\coprod_{i\in I}X_i\)</span> be their coproduct. For each <span class="process-math">\(i\in I\)</span> let <span class="process-math">\(\iota_i\colon X_i\hookrightarrow X\)</span> be the injective function</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/coprod_prop_universal.html">
+\begin{equation*}
+\iota_i\colon X_i\rightarrow \widetilde{X}_i\subseteq X\text{.}
+\end{equation*}
+</div>
+<ol class="decimal">
+<li id="th_coproduct_universal_prop-2-1-6-1">
+<span class="heading"><span class="title">Injection maps.</span></span><div class="para" id="th_coproduct_universal_prop-2-1-6-1-2">For each <span class="process-math">\(i\in I\)</span> the map <span class="process-math">\(\iota_i\colon X_i\rightarrow X\)</span> is continuous, open, closed, and injective.</div>
+</li>
+<li id="coprod_prop_universal">
+<span class="heading"><span class="title">Coproduct universal mapping property.</span></span><div class="para" id="coprod_prop_universal-2">The space <span class="process-math">\(X\)</span> together with the inclusion maps <span class="process-math">\(\{ \iota_i\colon X_i\rightarrow X\}_{i\in I}\)</span> satisfies the following universal mapping property: given any topological space <span class="process-math">\(Y\)</span> and collection <span class="process-math">\(\{f_i\colon X_i\rightarrow Y\}_{i\in I}\)</span> of continuous maps, there is a <em class="emphasis">unique</em> continuous map <span class="process-math">\(f\colon X\rightarrow Y\)</span> satisfying <span class="process-math">\(f_i=f\circ \iota_i\)</span> for all <span class="process-math">\(i\in I\text{.}\)</span> In other words, there is a unique continuous map <span class="process-math">\(f\colon X\rightarrow Y\)</span> making the following diagram commutative for all <span class="process-math">\(i\in I\text{.}\)</span>
+</div>
+<div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="generated/latex-image/im_coprod_top_prop.svg" role="img" class="contained" alt="Commutative diagram for coproduct space"></div>
+</li>
+<li id="th_coproduct_universal_prop-2-1-6-3">
+<span class="heading"><span class="title">Unique up to homeomorphism.</span></span><div class="para" id="th_coproduct_universal_prop-2-1-6-3-2">The universal mapping property characterizes <span class="process-math">\(X\)</span> up to homeomorphism: i.e., if <span class="process-math">\(X'\)</span> is a topological space equipped with a collection of continuous maps <span class="process-math">\(\{ \iota_i'\colon X_i\rightarrow X'\}\)</span> that together satisfy the <a href="" class="xref" data-knowl="./knowl/xref/coprod_prop_universal.html" title="Item 2: Coproduct universal mapping property">Coproduct universal mapping property</a>, then <span class="process-math">\(X'\)</span> is homeomorphic to <span class="process-math">\(X\text{.}\)</span>
+</div>
+</li>
+</ol>
+</div></article><details id="th_coproduct_universal_prop-3" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para" id="th_coproduct_universal_prop-3-1">Mimic the proof of <a href="" class="xref" data-knowl="./knowl/xref/th_product_universal_prop.html" title="Theorem 1.10.11: Universal mapping property of product space">Theorem 1.10.11</a> step by step.</div></article></details></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="s_continuous.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="kursobjekt-6.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+</div>
+</body>
+</html>
