@@ -8,9 +8,12 @@
     <me>
       \mathcal{T}'=\{U\subset Y\colon q^{-1}(U)\in \mathcal{T}\}=\{U\subset Y\colon q^{-1}(U) \text{ open in } X\}
     </me>
-    is a topology on <m>Y</m> called the <term>quotient topology</term> on <m>Y</m> with respect to <m>q</m>, and we call <m>Y</m> a <term>quotient</term> of the space <m>X</m>. 
+    is a topology on <m>Y</m> called the <term>quotient topology</term> on <m>Y</m> with respect to <m>q</m>, and we call <m>Y</m> a <term>quotient</term> of the space <m>X</m>. Furthermore the map <m>q</m> is continuous with respect to <m>\mathcal{T}'</m>. 
   </p>
   <proof>
+    <p>
+      Assuming <m>\mathcal{T}'</m> is a topology, it is easy to see that <m>q</m> is continuous with respect to it. Indeed, by definition <m>q^{-1}(U)\in \mathcal{T}</m> if and only if <m>U\in \mathcal{T}'</m>. (In fact, <m>q</m> satsifies the stonger property of being a <em>quotient map</em>. See <xref ref="d_quotient_map"/>.)
+    </p>
     <p>
       Let's show that <m>\mathcal{T}'</m> is indeed a topology on <m>Y</m>. 
       <ol>
@@ -49,18 +52,18 @@
     <p>
       Let <m>X</m> be a topological space, and suppose an equivalence relation <m>\sim</m> is defined on <m>X</m>. Given <m>x\in X</m>, let 
       <me>
-        [x]=\{y\in X\colon x\sim y\}
+        [x]_\sim=\{y\in X\colon x\sim y\}
       </me>
-      be its equivalence class with respect to <m>\sim</m>, and let <m>X\sim</m> be the set of all equivalence classes of <m>X</m>: <ie/>, 
+      be its equivalence class with respect to <m>\sim</m>, and let <m>X/\sim</m> be the set of all equivalence classes of <m>X</m>: <ie/>, 
       <me>
-        X\sim\,  =\{[x]\colon x\in X\}
+        X/\sim\,  =\{[x]_\sim\, \colon x\in X\}
       </me>.
      The function
       <md>
         <mrow> q\colon X \amp \rightarrow X/\sim </mrow>
-        <mrow>x \amp \mapsto [x]</mrow>
+        <mrow>x \amp \mapsto [x]_\sim</mrow>
       </md>
-      is easily seen to be surjective. The set <m>X/\sim</m> equipped with the quotient topology with respect to <m>q</m> is called the <term>quotient of <m>X</m> by the equivalence relation <m>\sim</m> </term>. 
+      is easily seen to be surjective, and satisfies <m>q(x)=q(x')</m> if and only if <m>x\sim x'</m>. The set <m>X/\sim</m> equipped with the quotient topology with respect to <m>q</m> is called the <term>quotient of <m>X</m> by the equivalence relation <m>\sim</m> </term>. We call <m>q</m> the <term>defining quotient map</term> of <m>X^*</m>.  
     </p>
   </statement>
 </definition>
@@ -71,7 +74,7 @@
     <me>
       x\sim x' \iff q(x)=q(x')
     </me>,
-    and it easy to show (at least, once we can make use of some of the theoretical tools developed below) that <m>X/\sim</m> is homeomorphic to <m>Y</m> with its quotient topology.  
+    and it easy to show (at least, once we can make use of some of the theoretical tools developed below) that <m>X/\sim</m> is homeomorphic to <m>Y</m> with its quotient topology.  See <xref ref="eg_quot_equiv"/>.
   </p>
 </remark>
 <example xml:id="eg_quotient_no_proof">
@@ -123,6 +126,9 @@
     </p>
   </solution>
 </example>
+<p>
+  In order to prove our claims in <xref ref="eg_quotient_no_proof"/> we want an easy way to produce a homeomorphism from a quotient space to some other (familiar) topological space. It turns out that the key to doing so lies in identifying a universal mapping property of the map <m>q\colon X\rightarrow X^*</m>. The map <m>q</m> is a special type of map called a <em>quotient map</em>; and as described in <xref ref="th_quotientmap_mappingprop"/> and <xref ref="cor_quotientspace_props"/>, quotient maps enjoy a very useful mapping property that we can exploit to produce homeomorphisms.   
+</p>
 <definition xml:id="d_quotient_map">
 <title>Quotient map</title>
   <statement>
@@ -136,7 +142,7 @@
         </li>
         <li>
           <p>
-            <m>V\subseteq Y</m> is open if and only if <m>f^{-1}(V)\subseteq X</m> is open.
+            <m>U\subseteq Y</m> is open if and only if <m>f^{-1}(U)\subseteq X</m> is open.
           </p>
         </li>
       </ol>
@@ -144,16 +150,34 @@
     </p>
   </statement>
 </definition>
+
 <theorem xml:id="th_quot_map_space">
   <title>Quotient maps and quotient spaces</title>
   <statement>
     <p>
-      Let <m>(X,\mathcal{T})</m> be a topological space, let <m>Y</m> be a set, and let <m>q\colon X\rightarrow Y</m> be a surjective function. The quotient topology on <m>Y</m> with respect to <m>q</m> is the coarsest topology with respect to which <m>q</m> is a quotient map. 
+      Let <m>f\colon X\rightarrow Y</m> be a surjective map between two topological spaces, and let <m>\mathcal{T}_Y</m> be the topology on <m>Y</m>. The following are equivalent. 
+      <ol>
+        <li>
+          <p>
+            <m>q</m> is a quotient map. 
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\mathcal{T}_Y</m> is the quotient topology on <m>Y</m> with respect to <m>q</m>. 
+          </p>
+        </li>
+      </ol>
     </p>
   </statement>
   <proof>
     <p>
-      Let <m>\mathcal{T}_{q}</m> be the quotient topology on <m>Y</m> and suppose <m>\mathcal{T}'</m> with respect to which <m>q</m> is a quotient map. 
+      Let <m>\mathcal{T}_X</m> be the topology on <m>X</m>. We have 
+      <md>
+        <mrow>\mathcal{T}_Y \text{ the quotient topology} \amp \iff \mathcal{T}_Y=\{U\colon q^{-1}(U)\in \mathcal{T}_X \}</mrow>
+        <mrow> \amp \iff U\in \mathcal{T}_Y \text{ if and only if } q^{-1}(U)\in \mathcal{T}</mrow>
+        <mrow> \amp \iff q \text{ a quotient map}</mrow>
+      </md>.
     </p>
   </proof>
 </theorem>
@@ -162,16 +186,34 @@
   <title>Saturated sets</title>
   <statement>
     <p>
-      Let <m>f\colon X\rightarrow Y</m>.
-            A set <m>A\subseteq X</m> is saturated with respect to <m>f</m> if <m>f^{-1}(f(A))=A</m>. Equivalently, <m>A</m> is saturated if if whenever <m>x\in A</m> we have <m>f^{-1}(\{f(x)\})\subseteq A</m>.
+      Let <m>f\colon X\rightarrow Y</m> be a function.
+            A set <m>A\subseteq X</m> is <term>saturated</term> with respect to <m>f</m> if any one of the following equivalent properties holds:
+            <ul>
+              <li>
+                <p>
+                  <m>f^{-1}(f(A))=A</m>.
+                </p>
+              </li>
+              <li>
+                <p>
+                  For all <m>a\in A</m>, we have <m>f^{-1}(\{f(a)\})\subseteq A</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>A=f^{-1}(B)</m> for some <m>B\subseteq Y</m>. 
+                </p>
+              </li>
+            </ul>  
     </p>
   </statement>
 </definition>
 <theorem xml:id="th_quotientmap_props">
   <title>Quotient map properties</title>
   <statement>
-    <ol>
-      <li>
+    <p>
+      <ol>
+      <li xml:id="quot_props_equiv">
         <p>
           Let <m>f\colon X\rightarrow Y</m> be a continuous surjective function. The following statements are equivalent.
           <ol>
@@ -193,24 +235,27 @@
           </ol>
         </p>
       </li>
-      <li>
+      <li xml:id="quot_props_open_closed">
         <p>
-          Let <m>f</m> be continuous and surjective. If <m>f</m> is open or closed, then it is a quotient map.
+          Let <m>f</m> be continuous and surjective. If <m>f</m> is an open map  or a closed map, then it is a quotient map.
         </p>
       </li>
-      <li>
+      <li xml:id="quot_props_comp">
         <p>
           The composition of two quotient maps is a quotient map.
         </p>
       </li>
     </ol>
-  </statement>
-  <p>
-    Statement (3) is straightforward. Statement (2) follows easily from (1) using equivalent statements (b) and (c), respectively.
   </p>
+  </statement>
+  
   <proof>
-
-    <title>Proof of (1)</title>
+    <p>
+      Statement (3) is straightforward. Statement (2) follows easily from (1) using equivalent statements (b) and (c), respectively.
+    </p>
+    <proof>
+      <title>Proof of (1)</title>
+     
     <p>
       We prove <m>(a)\iff (b)</m> and <m>(b)\iff (c)</m>.
     </p>
@@ -229,7 +274,29 @@
       <m>(c)\implies (b)</m>. This argument is essentially identical to the one above.
     </p>
   </proof>
-
+</proof>
+</theorem>
+<p>
+  The following theorem is often useful when investigating the <em>restriction</em> of a quotient map to a subspace. You find its proof in Munkres. 
+</p>
+<theorem xml:id="th_quot_subspace">
+  <statement>
+    <p>
+      Let <m>q\colon X\rightarrow Y</m> be a quotient map, let <m>Z\subseteq X</m> be saturated with respect to <m>q</m>, and consider the restriction <m>q\vert_Z\colon Z\rightarrow q(Z)</m>, where <m>Z</m> and <m>q(Z)</m> are endowed with subspace topologies. 
+    <ol>
+      <li>
+        <p>
+          If <m>Z</m> is open or closed, then <m>q\vert_Z</m> is a quotient map. 
+        </p>
+      </li>
+      <li>
+        <p>
+          If <m>q</m> is an open map or a closed map, then <m>q\vert_Z</m> is a quotient map.  
+        </p>
+      </li>
+    </ol>
+    </p>
+  </statement>
 </theorem>
 
 <theorem xml:id="th_quotientmap_mappingprop">
@@ -370,30 +437,55 @@
   </proof>
 
 </corollary>
-<!-- <p>
-  Lastly, the following result is also helpful when dealing with quotient spaces. I omit the proof, which you can find in Munkres.
-</p>
-<theorem xml:id="th_quotient_subspace">
-  <title>Quotients and subspaces</title>
+
+<example xml:id="eg_quot_equiv">
+  <title>Quotient by an equivalence relation</title>
+  <p>
+    Let <m>X</m> be a topological space, let <m>q\colon X\rightarrow Y</m> be a surjective function, and let <m>\sim</m> be the equivalence relation defined on <m>X</m> as <m>x\sim x'</m> if and only if <m>q(x)=q(x')</m>. 
+  </p>
+  <p>
+    Prove: <m>X/\sim</m> is homeomorphic to <m>Y</m> with its quotient topology. 
+  </p>
+  <solution>
+    <p>
+      Let <m>p\colon X\rightarrow X^*</m> be the defining quotient map of <m>X^*</m>: by definition, we have <m>p(x)=[x]_\sim=\{x'\colon p(x)=p(x')\}</m>. 
+    </p>
+  </solution>
+</example>
+<example xml:id="eg_quot_prod">
+  <title>Quotient of product space</title>
   <statement>
     <p>
-      Let <m>p\colon X\rightarrow Y</m> be a quotient map, and let <m>A\subseteq X</m> be a subspace that is saturated with respect to <m>p</m>. Let <m>q=p\vert_A\colon A\rightarrow p(A)</m> be the restriction of <m>p</m> to <m>A</m>.
+      <m>X=\prod_{i\in I}X_i</m> be the topological product of the spaces <m>\{X_i\}_{i\in I}</m>. Fix <m>i_0\in I</m> and define the equivalence relation <m>\sim</m> on <m>X</m> as follows: given <m>\boldx=(x_i)_{i\in I}</m> and <m>\boldy=(y_i)_{i\in I}</m>, we have 
+      <me>
+        \boldx\sim \boldy \iff x_{i_0}=y_{i_0}
+      </me>.
+      In other words, two tuples are equivalent if their <m>i_0</m>-th coordinates are equal. 
     </p>
-    <ol>
-      <li>
-        <p>
-          If <m>A</m> is either open or closed, then <m>q</m> is a quotient map.
-        </p>
-      </li>
-      <li>
-        <p>
-          If <m>p</m> is either an open or a closed map, then <m>q</m> is a quotient map.
-        </p>
-      </li>
-    </ol>
+    <p>
+      Let <m>X^*=X/\sim</m> with the quotient topology. Prove: <m>X^*</m> is homeomorphic to <m>X_{i_0}</m>. 
+    </p>
   </statement>
-</theorem> -->
-
+  <solution>
+    <p>
+      Let <m>q\colon X\rightarrow X^*</m> be the quotient map for <m>X^*</m>. By definition, we have <m>q(\boldx)=q(\boldy)</m> if and only if <m>\boldx\sim \boldy</m> if and only if the <m>i_0</m>-th coordinates of <m>\boldx</m> and <m>\boldy</m> are equal.
+    </p>
+    <p> Now, let <m>\pi_{i_0}\colon X\rightarrow X_{i_0}</m> be the projection map onto the <m>i_0</m>-th coordinate of <m>X</m>. Since <m>\pi_{i_0}</m> is open and surjective (<xref ref="th_product_universal_prop" text="global"/>), it is a quotient map. Furthermore, given <m>\boldx=(x_i)_{i\in I}</m> and <m>\boldy=(y_i)_{i\in I}</m>, we have 
+      <md>
+        <mrow>\pi_{i_0}(\boldx)=\pi_{i_0}(\boldy) \amp \iff x_{i_0}=y_{i_0}</mrow>
+        <mrow> \amp \iff \boldx\sim \boldy </mrow>
+        <mrow> \amp \iff q(\boldx)=q(\boldy)</mrow>
+      </md>.
+      We conclude from <xref ref="cor_quotientspace_props"/> that the map 
+      <md>
+        <mrow> p\colon X^* \amp \rightarrow X_{i_0} </mrow>
+        <mrow>[\boldx] \amp \mapsto \pi_{i_0}(\boldx)</mrow>
+      </md>
+      is a homeomorphism between <m>X^*</m> and <m>X_{i_0}</m>. 
+    </p>
+  </solution>
+  
+</example>
 <example xml:id="eg_RmodZ">
   <title>The circle as a quotient space</title>
   <statement>
