@@ -81,7 +81,7 @@
   <statement>
     <p>
       For each quotient space <m>X^*=X/\sim</m> give an explicit description of the equivalence classes and identify (without proof) what familiar space the quotient might be homeomorphic to.
-    </p>
+    
     <ol>
       <li>
         <p>
@@ -104,6 +104,7 @@
         </p>
       </li>
     </ol>
+  </p>
   </statement>
   <solution>
     <p>
@@ -127,7 +128,7 @@
   </solution>
 </example>
 <p>
-  In order to prove our claims in <xref ref="eg_quotient_no_proof"/> we want an easy way to produce a homeomorphism from a quotient space to some other (familiar) topological space. It turns out that the key to doing so lies in identifying a universal mapping property of the map <m>q\colon X\rightarrow X^*</m>. The map <m>q</m> is a special type of map called a <em>quotient map</em>; and as described in <xref ref="th_quotientmap_mappingprop"/> and <xref ref="cor_quotientspace_props"/>, quotient maps enjoy a very useful mapping property that we can exploit to produce homeomorphisms.   
+  In order to prove our claims in <xref ref="eg_quotient_no_proof"/> we want an easy way to produce a homeomorphism from a quotient space to some other (familiar) topological space. It turns out that the key to doing so lies in identifying a universal mapping property of the map <m>q\colon X\rightarrow X^*</m>. The map <m>q</m> is a special type of map called a <em>quotient map</em>; and as described in <xref ref="th_quot_univ_map"/>, quotient maps enjoy a very useful mapping property that we can exploit to produce homeomorphisms.   
 </p>
 <definition xml:id="d_quotient_map">
 <title>Quotient map</title>
@@ -237,7 +238,7 @@
       </li>
       <li xml:id="quot_props_open_closed">
         <p>
-          Let <m>f</m> be continuous and surjective. If <m>f</m> is an open map  or a closed map, then it is a quotient map.
+          Let <m>f</m> be continuous and surjective. If <m>f</m> is an open map  or a closed map, then it is a quotient map. In particular, homeomorphisms are quotient maps. 
         </p>
       </li>
       <li xml:id="quot_props_comp">
@@ -255,7 +256,6 @@
     </p>
     <proof>
       <title>Proof of (1)</title>
-     
     <p>
       We prove <m>(a)\iff (b)</m> and <m>(b)\iff (c)</m>.
     </p>
@@ -298,25 +298,71 @@
     </p>
   </statement>
 </theorem>
-
-<theorem xml:id="th_quotientmap_mappingprop">
-  <title>Mapping property of quotient maps</title>
+<definition xml:id="d_fibers_agree">
+  <title>Fibers of maps</title>
   <statement>
     <p>
-      Let <m>p\colon X\rightarrow Y</m> be a quotient map. Given any continuous function <m>g\colon X\rightarrow Z</m> satisfying
+      For any function <m>f\colon X\rightarrow Y</m> between sets and element <m>y\in Y</m>, we call <m>f^{-1}(\{y\})</m> the <term>fiber of <m>f</m> lying over <m>y</m></term>. We say a function <m>g\colon X\rightarrow Z</m> <term>agrees on fibers</term> of <m>f</m> if
+      <me>
+        f(x)=f(x')\implies g(x)=g(x')
+      </me>
+      for all <m>x,x'\in X</m>. 
+    </p>
+  </statement>
+</definition>
+<theorem xml:id="th_quot_univ_map">
+  <title>Universal mapping property of quotient maps</title>
+  <statement>
+    <p>
+      Let <m>q\colon X\rightarrow Y</m> be a quotient map. Assume <m>g\colon X\rightarrow Z</m> is a continuous function that agrees on fibers of <m>q</m>: <ie/>, we have 
       <men xml:id="eq_agree_on_fibers">
-        p(x)=p(x') \implies g(x)=g(x')
+        q(x)=q(x') \implies g(x)=g(x')
       </men>
-      for all <m>x, x'\in X</m> there is a unique continuous function <m>f\colon Y\rightarrow Z</m> satisfying <m>g=f\circ p</m>.
-      <image xml:id="im_quotientmap_pros" width="25%">
-      <latex-image>
-        \begin{tikzcd}
-           X \arrow[rd, "g"] \arrow[d, twoheadrightarrow,"p"']\amp \\
-          Y \arrow[r,dotted,"\exists! f"'] \amp Z
-        \end{tikzcd}
-      </latex-image>
-      Furthermore, the function <m>f</m> is a projection map if and only if <m>g</m> is a projection map.
-      </image>
+      for all <m>x, x'\in X</m>.
+      <ol>
+        <li xml:id="quot_univ_map">
+          <p>
+            There is a unique continuous function <m>f\colon Y\rightarrow Z</m> satisfying <m>g=f\circ q</m>.
+            <image xml:id="im_quotientmap_pros" width="25%">
+            <latex-image>
+              \begin{tikzcd}
+                 X \arrow[rd, "g"] \arrow[d, twoheadrightarrow,"q"']\amp \\
+                Y \arrow[r,dotted,"\exists! f"'] \amp Z
+              \end{tikzcd}
+            </latex-image>
+          </image>
+            Indeed, the function <m>f</m> must be defined as 
+            <men xml:id="eq_th_quot_univ_map">
+              f(y)=g(x)
+            </men>,
+            where <m>x</m> is any element of <m>X</m> satisfying <m>q(x)=y</m>. 
+          </p>
+        </li>
+        <li xml:id="quot_univ_map_inj">
+          <p>
+            The function <m>f</m> is injective if and only if <m>g</m> satisfies 
+            <me>
+              g(x)=g(x') \iff q(x)=q(x')
+            </me>
+            for all <m>x, x'\in X</m>.
+          </p>
+        </li>
+        <li xml:id="quot_univ_map_quot">
+          <p>
+            The function <m>f</m> is a quotient map if and only if <m>g</m> is a quotient map. 
+          </p>
+        </li>
+        <li xml:id="quot_univ_map_homeo">
+          <p>
+            The function <m>f</m> is a homeomorphism if and only if <m>g</m> is a quotient map and satisfies
+            <me>
+              g(x)=g(x') \iff q(x)=q(x')
+            </me>
+            for all <m>x, x'\in X</m>.
+          </p>
+        </li>
+
+      </ol> 
     </p>
   </statement>
   <proof>
@@ -347,96 +393,9 @@
   </proof>
 
 </theorem>
-<definition xml:id="d_fibers_agree">
-  <title>Fibers of maps</title>
-  <statement>
-    <p>
-      For any function <m>f\colon X\rightarrow Y</m> between sets and element <m>y\in Y</m>, we call <m>f^{-1}(\{y\})</m> the <term>fiber of <m>f</m> lying over <m>y</m></term>. We say a function <m>g\colon X\rightarrow Z</m> <term>agrees on fibers</term> of <m>f</m> if
-      <me>
-        f(x)=f(x')\implies g(x)=g(x')
-      </me>.
-    </p>
-  </statement>
-</definition>
-<corollary xml:id="cor_quotientspace_props">
-  <title>Mapping property of quotients</title>
-  <statement>
-    <p>
-      Let <m>X^*</m> be the quotient space of <m>X</m> by the equivalence relation <m>\sim</m>, and let <m>q\colon X\rightarrow X^*</m> be the corresponding quotient map. Let <m>g\colon X\rightarrow Z</m> be a continuous function that agrees on fibers of <m>q</m> (<ie />, <m>x\sim x'\implies g(x)=g(x')</m>).
-      <ol>
-        <li>
-          <p>
-            There is a unique continuous function <m>f</m> satisfying <m>g=f\circ q</m>; and <m>f</m> is a quotient map if and only if <m>g</m> is a quotient map.
-            <image xml:id="im_quotientspace_prop" width="25%">
-            <latex-image>
-              \begin{tikzcd}
-                 X \arrow[rd, twoheadrightarrow,"g"] \arrow[d, twoheadrightarrow,"p"']\amp \\
-                X^* \arrow[r,dotted,"\exists! f"'] \amp Y
-              \end{tikzcd}
-            </latex-image>
-          </image>
-          </p>
-        </li>
-        <li>
-          <p>
-            The function <m>f</m> is a homeomorphism if and only if <m>g</m> is a quotient map and satisfies
-            <me>
-              g(x)=g(x') \iff x\sim x' (\text{equivalently, } g(x)=g(x')\iff q(x)=q(x'))
-            </me>
-            for all <m>x, x'\in X</m>.
-          </p>
-        </li>
-      </ol>
-    </p>
-  </statement>
-  <proof>
-    <ol>
-      <li>
-        <p>
-          The statement is a direct consequence of <xref ref="th_quotientmap_mappingprop"/> by setting <m>Y=X^*</m> and <m>p=q</m>, and understanding that the implication <m>x\sim x'\implies g(x)=g(x')</m> is equivalent to <m>p(x)=p(x')\implies g(x)=g(x')</m>.
-        </p>
-      </li>
-      <li>
-        <p>
-          The condition <m>x\sim x' \iff g(x)=g(x')</m> guarantees that the function <m>f\colon X^*\rightarrow Y</m> is injective. The condition of <m>g</m> being a quotient map is equivalent to <m>f</m> being a quotient map according to <xref ref="th_quotientmap_mappingprop"/>. Thus the two conditions taken together are equivalent to <m>f</m> being a bijective quotient map. This in turn is equivalent to being a homeomorphism by equivalent statement 1.b of <xref ref="th_continuous_equivalence"/>, since <em>all</em> subsets of <m>X</m> are saturated with respect to an invertible function <m>f</m>.
-        </p>
-      </li>
-    </ol>
 
-  </proof>
 
-</corollary>
-<corollary xml:id="cor_quotient_factor">
-  <title>Factoring maps through a quotient</title>
-  <statement>
-    <p>
-      Let <m>g\colon X\rightarrow Y</m> be a surjective continuous map, and let <m>X^*</m> be the quotient obtained from <m>X</m> by treating each fiber <m>g^{-1}(\{y\})</m>, <m>y\in Y</m>,  as a single point: <ie />, the equivalence relation is <m>x\sim x'\iff g(x)=g(x')</m>.
-    </p>
-    <ol>
-      <li>
-        <p>
-          There is a unique bijective continuous function <m>f\colon X^*\rightarrow Y</m> satisfying <m>g=f\circ q</m>.
-        </p>
-      </li>
-      <li>
-        <p>
-          The function <m>f</m> is a homeomorphism if and only if <m>g</m> is a quotient map.
-        </p>
-      </li>
-      <li>
-        <p>
-          If <m>Y</m> is Hausdorff, then <m>X^*</m> is Hausdorff.
-        </p>
-      </li>
-    </ol>
-  </statement>
-  <proof>
-    <p>
-      With the exception of (3), this corollary follows essentially directly from <xref ref="cor_quotientspace_props"/>. Statement (3) follows directly from (1). In fact, more generally, if <m>f\colon X\rightarrow Y</m> is a bijective continuous map, and <m>Y</m> is Hausdorff, then <m>X</m> is Hausdorff.
-    </p>
-  </proof>
 
-</corollary>
 
 <example xml:id="eg_quot_equiv">
   <title>Quotient by an equivalence relation</title>
@@ -476,7 +435,7 @@
         <mrow> \amp \iff \boldx\sim \boldy </mrow>
         <mrow> \amp \iff q(\boldx)=q(\boldy)</mrow>
       </md>.
-      We conclude from <xref ref="cor_quotientspace_props"/> that the map 
+      We conclude from <xref ref="th_quot_univ_map"/> that the map 
       <md>
         <mrow> p\colon X^* \amp \rightarrow X_{i_0} </mrow>
         <mrow>[\boldx] \amp \mapsto \pi_{i_0}(\boldx)</mrow>
@@ -486,21 +445,42 @@
   </solution>
   
 </example>
+<example xml:id="eg_line_double_origin">
+  <title>Line with doubled origin</title>
+  <p>
+    Let <m>X</m> be the disjoint union of two copies of <m>\R</m>, with the coproduct topology. Concretely, labeling the two copies of <m>\R</m> as <m>\R\times \{A\}</m> and <m>\R\times \{B\}</m>, we have 
+    <me>
+      X=\{(x,A)\colon x\in \R\}\cup \{(x,B)\colon x\in \R \}
+    </me>, and the coproduct topology has as a basis the collection 
+    <me>
+      \mathcal{B}=\{U\times \{A\}\colon U \text{ open in } \R\}\bigcup \{U\times \{B\}\colon U \text{ open in } \R\}
+    </me>.
+    Let <m>X^*</m> be the quotient obtained from <m>X</m> by identifying <m>(x,A)</m> and <m>(x,B)</m> for all <m>x\ne 0</m>, and let <m>q\colon X\rightarrow X^*</m> be its defining quotient map. 
+  </p>
+  <p>
+    Prove: <m>X</m> is Hausdorff, but <m>X^*</m> is not Hausdorff. 
+  </p>
+  <solution>
+    <p>
+      
+    </p>
+  </solution>
+</example>
 <example xml:id="eg_RmodZ">
   <title>The circle as a quotient space</title>
   <statement>
     <p>
-      Let <m>X^*</m> denote the quotient obtained from <m>X=[0,1]</m> after identifying <m>0</m> and <m>1</m>, and let <m>\R/\Z</m> denote the quotient of <m>\R</m> by the equivalence relation <m>x\sim y</m> if and only if <m>x=y+n</m> for some <m>n\in Z</m>. Prove that <m>\R/\Z</m> is homeomorphic to <m>S^1=\{(x,y)\colon x^2+y^2=1\}</m>.
+      Let <m>X^*</m> denote the quotient obtained from <m>X=[0,1]</m> after identifying <m>0</m> and <m>1</m>, and let <m>\R/\Z</m> denote the quotient of <m>\R</m> by the equivalence relation <m>x\sim y</m> if and only if <m>x=y+n</m> for some <m>n\in Z</m>. Prove that both <m>X^*</m> and <m>\R/\Z</m> are homeomorphic to <m>S^1=\{(x,y)\colon x^2+y^2=1\}</m> as follows.
     </p>
     <ol>
       <li>
         <p>
-          Prove: <m>X^*\cong \R/\Z</m>
+          Prove that <m>X^*</m> is homeomorphic to <m>\R/\Z</m>. 
         </p>
       </li>
       <li>
         <p>
-          Prove: <m>X^*\cong \R/\Z\cong S^1</m>.
+          Prove that <m>\R/\Z</m> is homeomorphic to <m>S^1</m>. 
         </p>
       </li>
     </ol>
@@ -521,7 +501,7 @@
             </latex-image>
           </image>
           where <m>q</m> is the quotient map from <m>\R</m> to <m>\R/\Z</m>.
-          It is easy to see that <m>g</m> is surjective and satisfies <m>g(t)=g(t')</m> if and only if <m>t=t'</m> or <m>t,t'\in \{0,1\}</m>. From <xref ref="cor_quotientspace_props"/> we conclude that <m>g</m> gives rise to a bijective continuous function <m>f\colon X^*\rightarrow \R/\Z</m>. Concretely, <m>f</m> takes an equivalence class <m>[t]\in X^*</m> and maps it to the equivalence class <m>\{t+n\colon n\in \Z\}</m> in <m>\R/\Z</m>. Furthermore, to show <m>f</m> is a homeomorphism it is enough to prove that <m>g\colon [0,1]\rightarrow \R/\Z</m>
+          It is easy to see that <m>g</m> is surjective and satisfies <m>g(t)=g(t')</m> if and only if <m>t=t'</m> or <m>t,t'\in \{0,1\}</m>. From <xref ref="th_quot_univ_map"/> we conclude that <m>g</m> gives rise to a bijective continuous function <m>f\colon X^*\rightarrow \R/\Z</m>. Concretely, <m>f</m> takes an equivalence class <m>[t]\in X^*</m> and maps it to the equivalence class <m>\{t+n\colon n\in \Z\}</m> in <m>\R/\Z</m>. Furthermore, to show <m>f</m> is a homeomorphism it is enough to prove that <m>g\colon [0,1]\rightarrow \R/\Z</m>
           is a quotient map. In fact, we can show that <m>g</m> is a closed map. Take a closed set <m>C\subseteq [0,1]</m>. To show its image <m>g(C)</m> is closed in <m>\R/Z</m>, we need only show, using the fact that <m>q</m> is a quotient map, that <m>q^{-1}(g(C))</m> is closed in <m>\R/\Z</m>. We have <m>q^{-1}(g(C))=C+\Z=\{c+n\colon c\in C, n\in \Z\}</m>. This set is the result of starting with our original closed set <m>C\subseteq [0,1]</m> and taking the union of translated copies of the form <m>C+n\subseteq [n,n+1]</m>, where <m>n\in \Z</m>.
           It is easy to see that each translate <m>C+n</m> is closed; since furthermore <m>C+n\subseteq [n,n+1]</m>, it follows that the union is also closed. I'll leave the details to you.
         </p>
@@ -537,7 +517,7 @@
               \end{tikzcd}
             </latex-image>
           </image>
-          where <m>g(t)=(\cos 2\pi t, \sin 2\pi t)</m>. It is easy to see that <m>g</m> is continuous, surjective, and satisfies <m>g(t_1)=g(t_2)\iff t_1=t_2+n</m> for some <m>n\in \Z</m>. It follows from <xref ref="cor_quotientspace_props"/> that the map <m>f</m> is bijective and continuous. Furthermore, by the same result, we can show <m>f</m> is a homeomorphism as long as we can show <m>g</m> is a quotient map. I'll show that in fact <m>g\colon \R\rightarrow S^1</m> is open, and hence a projection map.
+          where <m>g(t)=(\cos 2\pi t, \sin 2\pi t)</m>. It is easy to see that <m>g</m> is continuous, surjective, and satisfies <m>g(t_1)=g(t_2)\iff t_1=t_2+n</m> for some <m>n\in \Z</m>. It follows from <xref ref="th_quot_univ_map"/> that the map <m>f</m> is bijective and continuous. Furthermore, by the same result, we can show <m>f</m> is a homeomorphism as long as we can show <m>g</m> is a quotient map. I'll show that in fact <m>g\colon \R\rightarrow S^1</m> is open, and hence a projection map.
         </p>
         <p>
         To this end let <m>U\subseteq \R</m> be any open set, and let <m>P\in f(U)</m>, so that <m>P=g(t)</m> for some <m>t\in U</m>. We will find an open interval <m>I</m> satisfying <m>t\in I\subseteq U</m> such that <m>f(I)</m> is open. Since <m>P\in f(I)\subseteq f(U)</m> and <m>P\in f(U)</m> was arbitrary, this will show that <m>f(U)</m> is open.

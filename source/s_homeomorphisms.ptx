@@ -302,6 +302,47 @@
     On the theoretical side, the theorem identifies precisely what is so special about the product topology. Namely, it is the unique (up to homeomorphism) space satisfying the <xref ref="prod_top_universal" text="title"/>.  The property establishes <m>X</m> with the product topology as the <em>category theoretic</em> product of the spaces <m>X_i</m>. You may have seen analogues of this type of object in other categories (<eg/>, category of groups or category of rings). 
   </p>
 </remark>
+<example xml:id="eg_polar_coor">
+  <title>Polar transformation</title>
+  <p>
+    Call the map 
+    <md>
+      <mrow>f\colon \R^2\amp\rightarrow \R^2  </mrow>
+      <mrow> (r,\theta) \amp\mapsto (r\cos\theta, r\sin\theta) </mrow>
+    </md>
+    the <em>polar transformation</em>. 
+  <ol>
+    <li>
+      <p>
+       Let <m>U\subseteq \R^2</m> be the infinite horizontal strip <m>U=\{(r,\theta)\in \R^2\colon r&gt; 0, -\pi &lt; \theta &lt; \pi\}</m>, and let <m>V=\R^2- \{(x,0)\colon x\leq 0\}</m>, the plane with the nonpositive real axis deleted. 
+      </p>
+      <p>
+        Prove that <m>f\vert_U\colon U\rightarrow V</m> is a homeomorphism. 
+      </p>
+    </li>
+    <li>
+      <p>
+       Let <m>U'\subseteq \R^2</m> be the infinite horizontal strip <m>U'=\{(r,\theta)\in \R^2\colon r&gt; 0, 0 &lt; \theta &lt; 2\pi\}</m>, and let <m>V'=\R^2- \{(x,0)\colon x\geq 0\}</m>, the plane with the nonnegative real axis deleted. 
+      </p>
+      <p>
+        Prove that <m>f\vert_U'\colon U'\rightarrow V'</m> is a homeomorphism. 
+      </p>
+    </li>
+    <li>
+      <p>
+        Conclude that <q>open polar rectangles</q> are open in <m>\R^2-\{(0,0)\}</m>. In other words, given any <m>r_1,r_2,\theta_1,\theta_2\in \R</m> satisfying <m>0&lt; r_1&lt; r_2</m> and <m>\theta_1&lt; \theta_2</m>, the region <m>R\subseteq \R^2</m> consisting of all points with polar coordinates <m>(r,\theta)</m> satisfying
+        <md>
+          <mrow>r_1 \amp&lt; r &lt; r_2  </mrow>
+          <mrow>\theta_1 \amp &lt; \theta &lt; \theta_2</mrow>
+        </md>
+        is open. In fact, you can show that such polar rectangles form a basis for <m>\R^2-\{(0,0)\}</m>. 
+      </p>
+    </li>
+  </ol>
+</p>
+  
+  
+</example>
 <example>
   <title>Continuous bijection onto circle</title>
   <statement>
