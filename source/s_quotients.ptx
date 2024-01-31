@@ -148,27 +148,12 @@
   <title>Quotient maps and quotient spaces</title>
   <statement>
     <p>
-      Let <m>f\colon X\rightarrow Y</m> be a surjective map between two topological spaces, and let <m>\mathcal{T}_Y</m> be the topology on <m>Y</m>. The following are equivalent. 
-      <ol>
-        <li>
-          <p>
-            <m>q</m> is a quotient map. 
-          </p>
-        </li>
-        <li>
-          <p>
-            <m>\mathcal{T}_Y</m> is the quotient topology on <m>Y</m> with respect to <m>q</m>. 
-          </p>
-        </li>
-      </ol>
+      Let <m>(X,\mathcal{T})</m> be a topological space, let <m>Y</m> be a set, and let <m>q\colon X\rightarrow Y</m> be a surjective function. The quotient topology on <m>Y</m> with respect to <m>q</m> is the coarsest topology with respect to which <m>q</m> is a quotient map. 
     </p>
   </statement>
   <proof>
     <p>
-      We have 
-      <md>
-        <mrow>q \text{ a quotient map} \amp \iff q^{-1}(U)\in \mathcal{T}_X \text{ for all</mrow>
-      </md>
+      Let <m>\mathcal{T}_{q}</m> be the quotient topology on <m>Y</m> and suppose <m>\mathcal{T}'</m> with respect to which <m>q</m> is a quotient map. 
     </p>
   </proof>
 </theorem>
