@@ -111,16 +111,27 @@
       <ol>
         <li>
           <p>
-            The equivalence classes of <m>X^*</m> are described as follows:
-            <me>
-              X^*=\{\{x\}\colon 0&lt; x&lt; 1\}\cup \{0,1\}
-            </me>.
-            The quotient <m>X^*</m> is homeomorphic to the circle <m>S^1\subseteq \R^2</m>. 
+            Let <m>\sim</m> be the equivalence relation described. For any <m>x\in [0,1]</m>, its equivalence class <m>[x]_\sim</m> is either <m>\{x\}</m>, if <m>x\notin \{0,1\}</m>, or <m>\{0,1\}</m>, if <m>x\in \{0,1\}</m>. 
+            We imagine making the identification of <m>0</m> and <m>1</m> as taking a line segment and connecting the two endpoints. Since that object is loop-like, we guess that the quotient <m>X^*</m> is homeomorphic to the circle <m>S^1=\{(x,y)\in \R^2\colon x^2+y^2=1\}</m>. 
           </p>
         </li>
         <li>
           <p>
-            
+            For any <m>x\in \R</m> its corresponding equivalence class is 
+            <me>
+              [x]_\sim=\{x+n\colon n\in \Z\}
+            </me>.
+            It is easy to see that every <m>x\in \R</m> is equivalent to an element <m>x'\in [0,1]</m>, so that under this identification <m>\R</m> is first <q>collapsed</q> to the interval <m>[0,1]</m>. Since furthermore <m>0\sim 1</m>, we guess that <m>X^*</m> is homeomorphic to the quotient space in (a), and hence also to <m>S^1</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            For <m>(x,y)\in [0,1]\times [0,1]</m>, its equivalence class <m>[(x,y)]_\sim</m> is either <m>\{(x,y)\}</m>, if <m>x\notin \{0,1\}</m>, and <m>\{(0,y), (1,y)\}</m> if <m>x\in \{0,1\}</m>. Geometrically this is like taking the square <m>[0,1]\times [0,1]</m> and glueing its two vertical sides together, where we take care to match up the top corners with the top corners and bottom corners with bottom corners. The result of such an operation is a cylinder, our guess for what <m>X^*</m> is homeomorphic to.  
+          </p>
+        </li>
+        <li>
+          <p>
+            For <m>(x,y)\in [0,1]\times [0,1]</m>, its equivalence class <m>[(x,y)]_\sim</m> is either <m>\{(x,y)\}</m>, if <m>\{x,y\}\cap\{0,1\}=\emptyset</m>, <m>\{(0,y), (1,y)\}</m> if <m>\{x,y\}\cap \{0,1\}=\{x\}</m>, <m>\{(x,0), (x,1)\}</m> if <m>\{x,y\}\cap \{0,1\}=\{y\}</m>, and <m>\{(0,0),(0,1),(1,0),(1,1)\}</m> if <m>\{x,y\}\cap \{0,1\}=\{0,1\}</m>. Geometrically this is like taking the square <m>[0,1]\times [0,1]</m>, first glueing its two vertical sides together to get a cylinder, and then glueing the top and bottom edges of this cylinder together to get a doughnut, or torus. Thus we expect <m>X^*</m> is homeomorphic to a torus in <m>\R^3</m>. 
           </p>
         </li>
       </ol>
@@ -233,6 +244,11 @@
                 <m>f(C)</m> is closed for all closed saturated subsets <m>C\subseteq X</m>.
               </p>
             </li>
+            <li>
+              <p>
+                <m>C\subseteq Y</m> is closed in <m>Y</m> if and only if <m>f^{-1}(C)</m> is closed in <m>X</m>.
+              </p>
+            </li>
           </ol>
         </p>
       </li>
@@ -257,21 +273,42 @@
     <proof>
       <title>Proof of (1)</title>
     <p>
-      We prove <m>(a)\iff (b)</m> and <m>(b)\iff (c)</m>.
+      We prove the cycle of implications 
+      <me>
+        (a)\implies (b)\implies (c)\implies (d)\implies (a)
+      </me>.
     </p>
     <p>
-      <m>(a)\implies (b)</m>. Assume <m>f</m> is a quotient map. Let <m>U\subseteq X</m> be open and saturated. Since <m>f</m> is a quotient map, to show <m>V=f(U)</m> is open, it is enough to show <m>f^{-1}(V)=f^{-1}(f(U))</m> is open. I claim <m>f^{-1}(f(U))=U</m>, whence the claim follows. In general for any function of sets we have <m>f^{-1}(f(U))\supseteq U</m>. (Check for yourself.) Since <m>U</m> is saturated, the reverse inclusion also holds. Indeed, if <m>x\in f^{-1}(f(U))</m>, then <m>f(x)\in f(U)</m> and thus <m>f(x)=f(u)</m> for some <m>u\in U</m>; since <m>U</m> is saturated, we have <m>x\in U</m>.
+      <m>(a)\implies (b)</m>. Assume <m>f</m> is a quotient map. Let <m>U\subseteq X</m> be open and saturated. Since <m>U</m> is saturated, we have <m>U=f^{-1}(V)</m> for some set <m>V\subseteq Y</m>. Since <m>f</m> is a quotient map and <m>U</m> is open, the set <m>V</m> is open. Lastly, since <m>f</m> is surjective we have 
+      <me>
+        f(U)=f(f^{-1}(V))=V
+      </me>.
+      This proves that <m>f(U)</m> is open for any open <m>U\subseteq X</m>. 
     </p>
     <p>
-      <m>(b)\implies (a)</m>. Assume <m>U=f^{-1}(V)</m> be open for <m>V\subseteq Y</m>. We wish to show that <m>V</m> is open in <m>Y</m>. First observe that <m>f^{-1}(V)</m> is saturated: if <m>x\in f^{-1}(V)</m>, then <m>f^{-1}(\{f(x)\})\subseteq f^{-1}(V)</m>. Since <m>f</m> satisfies <m>(b)</m> and <m>U</m> is an open saturated set, we have <m>f(U)</m> open. I claim <m>f(U)=f(f^{-1}(V))=V</m>, showing <m>V</m> is open. In general we always have
-      <m>f(f^{-1}(V))\subseteq V</m> for any function of sets. For the other inclusion, given <m>y\in V</m>, there is an <m>x\in X</m> such that <m>f(x)=y</m>; then <m>x\in f^{-1}(V)</m> and <m>f(x)=y</m>, showing <m>y\in f(f^{-1}(V))</m>.
+      <m>(b)\implies (c)</m>. Assume <m>C\subseteq X</m> is closed and saturated. Since <m>C</m> is saturated, we have <m>C=f^{-1}(B)</m> for some <m>B\subseteq Y</m>. Let <m>U=C^c</m>, an open set. Furthermore, since  
+      <me>
+        U=C^c=(f^{-1}(B))^c=f^{-1}(B^c)
+      </me>,
+      we see that <m>U</m> is saturated. Using (2), we may conclude that <m>f(U)</m> is open. Again, using the fact that <m>f</m> is surjective, we have 
+      <me>
+        f(U)=f(f^{-1}(B^c))=B^c
+      </me>.
+      It follows that <m>B^c</m> is open, and hence <m>B</m> is closed. Since
+      <me>
+        f(C)=f(f^{-1}(B))=B
+      </me>,
+      we conclude that <m>f(C)</m> is closed, as desired. 
     </p>
     <p>
-      <m>(b)\implies (c)</m>. Let <m>C</m> be a saturated closed map. First I claim that the open set <m>U=X-C</m> is saturated. To see why, suppose <m>y=f(x)</m> for some <m>x\in U</m>. Since <m>x\notin C</m> and <m>C</m> is saturated, we must have <m>f^{-1}(\{y\})\cap C=\emptyset</m>. Thus <m>f^{-1}(\{y\})\subseteq U</m>, as desired. Next, I claim <m>f(U)=Y-f(C)</m>. We have already seen that if <m>y\in f(U)</m>, then <m>f^{-1}(\{y\})\cap C=\emptyset</m>,
-      and hence <m>y\notin f(C)</m>. This proves <m>f(U)\subseteq Y-f(C)</m>. For the other inclusion, given any <m>y\in Y-f(C)</m>, by surjectivity there is some <m>x\in X</m> such that <m>f(x)=y</m>; since <m>y\notin f(C)</m> we must have <m>x\in U</m>; thus <m>y\in f(U)</m>. This proves <m>f(U)=X-f(C)</m>. Since <m>f</m> satisfies (b), <m>f(U)</m> is open. We conclude that <m>f(C)</m> is closed, as desired.
+      <m>(c)\implies (d)</m>. Since <m>f</m> is assumed to be continuous, we need only show that if <m>f^{-1}(C)</m> is closed, then <m>C</m> is closed. If <m>C'=f^{-1}(C)</m> is closed, then it is a closed saturated set. By (c), we conclude that <m>f(C')</m> is closed. But since <m>f</m> is surjective, we have 
+      <me>
+        f(C')=f(f^{-1}(C))=C
+      </me>.
+      Thus <m>C</m> is closed, as desired. 
     </p>
     <p>
-      <m>(c)\implies (b)</m>. This argument is essentially identical to the one above.
+      <m>(d)\implies (a)</m>. Since <m>f</m> is assumed to be continuous, we need only show that if <m>f^{-1}(U)</m> is open, then <m>U</m> is open. If <m>V=f^{-1}(U)</m> is open, then <m>V^c=f^{-1}(U^c)</m> is closed. Using (d), we conclude that <m>U^c</m> is closed and hence <m>U</m> is open, as desired. 
     </p>
   </proof>
 </proof>
@@ -367,28 +404,50 @@
   </statement>
   <proof>
     <p>
-      Assume we have <m>g\colon X\rightarrow Z</m> as described. Define <m>f\colon Y\rightarrow Z</m> via the following recipe: given <m>y\in Y</m>, pick any <m>x\in X</m> such that <m>p(x)=y</m> (possible since <m>p</m> is surjective); now define <m>f(y)=g(x)</m>. Two comments:
       <ol>
         <li>
           <p>
-            To make sure <m>f</m> as described is well-defined, we must make sure that the definition of <m>f(y)</m> does not depend on the choice of <m>x</m> involve: <ie />, if you happen to pick another <m>x'</m> such that <m>p(x')=y</m>, we must make sure that <m>g(x)=g(x')</m>. This is precisely what is guaranteed by the condition that <m>p(x)=p(x')\implies g(x)=g(x')</m>.
+            Assume we have <m>g\colon X\rightarrow Z</m> as described. Define <m>f\colon Y\rightarrow Z</m> via the following recipe: given <m>y\in Y</m>, pick any <m>x\in X</m> such that <m>q(x)=y</m> (possible since <m>q</m> is surjective); now define <m>f(y)=g(x)</m>. Two comments:
+      <ol>
+        <li>
+          <p>
+            To make sure <m>f</m> as described is well-defined, we must make sure that the definition of <m>f(y)</m> does not depend on the choice of <m>x</m> involve: <ie />, if you happen to pick another <m>x'</m> such that <m>q(x')=y</m>, we must make sure that <m>g(x)=g(x')</m>. This is precisely what is guaranteed by the condition that <m>q(x)=q(x')\implies g(x)=g(x')</m>.
           </p>
         </li>
         <li>
           <p>
-            Since we want <m>g=f\circ p</m>, this definition of <m>f</m> is forced upon us: given <m>y=p(x)</m>, we must have <m>f(y)=f(p(x))=g(x)</m>. Thus <m>f</m> is unique.
+            Since we want <m>g=f\circ p</m>, this definition of <m>f</m> is forced upon us: given <m>y=q(x)</m>, we must have <m>f(y)=f(q(x))=g(x)</m>. Thus <m>f</m> is unique.
           </p>
         </li>
       </ol>
-      Now we must show <m>f</m> is continuous. We must show, given any open <m>V\subseteq Z</m> the set <m>U=f^{-1}(V)</m> is open. To do so we use the fact that <m>p</m> is a quotient map: that is, we need only show that <m>p^{-1}(U)</m> is open in <m>X</m>. But we have
+      Now we must show <m>f</m> is continuous. Given any open <m>V\subseteq Z</m>, to show that the set <m>U=f^{-1}(V)</m> is open, we will make use of the fact that <m>q</m> is a quotient map: namely, it suffices to show that <m>q{-1}(U)</m> is open in <m>X</m>. But we have
       <me>
-        p^{-1}(U)=p^{-1}(f^{-1}(V))=(f\circ p)^{-1}(V)=g^{-1}(V),
+        q^{-1}(U)=q^{-1}(f^{-1}(V))=(f\circ q)^{-1}(V)=g^{-1}(V),
       </me>
-      since <m>g=f\circ p</m>. Since <m>g</m> is continuous, we conclude that <m>p^{-1}(U)=g^{-1}(V)</m> is open, as desired.
+      since <m>g=f\circ q</m>. Since <m>g</m> is continuous, we conclude that <m>q^{-1}(U)=g^{-1}(V)</m> is open, as desired.
     </p>
-    <p>
-      Lastly, we look at when <m>f</m> is a quotient map. If <m>f</m> is a quotient map, then so is the composition <m>g=f\circ p</m> by statement (3) of <xref ref="th_quotientmap_props"/>. Assume <m>g</m> is a quotient map. Since <m>g</m> is surjective and <m>g=f\circ p</m>, it follows that <m>f</m> must be surjective. Now suppose <m>U=f^{-1}(V)</m> is open in <m>Y</m>. Since <m>p</m> is continuous, <m>p^{-1}(U)</m> is open in <m>X</m>. As we saw above, <m>p^{-1}(U)=g^{-1}(V)</m>, which is a saturated open set of <m>X</m>. Since <m>g</m> is a quotient map, the set <m>g(g^{-1}(V))</m>
-       is open. But again, because <m>g</m> is surejective, we have <m>g(g^{-1}(V))=V</m>.
+    
+        </li>
+        <li>
+          <p>
+            Assume <m>f</m> is injective. Since <m>g=f\circ q</m>, given any <m>x,x'\in X</m> with <m>g(x)=g(x')</m>, we have <m>f(q(x))=f(q'(x))</m>. Since <m>f</m> is injective, we conclude <m>q(x)=q(x')</m>, as desired. 
+          </p>
+          <p>
+            Assume <m>g(x)=g(x')\implies q(x)=q(x')</m> for all <m>x,x'\in X</m>. We will show <m>f</m> is injective. To this end suppose <m>f(y)=f(y')</m> for some <m>y=q(x)</m> and <m>y'=q(x')</m>. Since <m>g=f\circ q</m> it follows that <m>g(x)=g(x')</m>, and hence, using our assumption, <m>y=q(x)=q(x')=y'</m>, as desired. 
+          </p>
+        </li>
+        <li>
+          <p>
+             If <m>f</m> is a quotient map, then so is the composition <m>g=f\circ q</m> by statement (3) of <xref ref="th_quotientmap_props"/>. Assume <m>g</m> is a quotient map. We know from (1) of the theorem that <m>f</m> is continuous. Furthermore, since <m>g</m> is surjective and <m>g=f\circ q</m>, it follows that <m>f</m> must be surjective. Now suppose <m>U=f^{-1}(V)</m> is open in <m>Y</m>. Since <m>q</m> is continuous, the set <m>W=q^{-1}(U)</m> is open in <m>X</m>. We have 
+             <me>
+              W=q^{-1}(U)=q^{-1}(f^{-1}(V))=(f\circ q)^{-1}(V)=g^{-1}(V)
+             </me>.
+             This shows <m>W</m> is an open saturated set with respect to <m>g</m>. Since <m>g</m> is a quotient map, it follows that <m>g(W)</m> is open (<xref ref="th_quotientmap_props"/>).
+             As we saw above, <m>p^{-1}(U)=g^{-1}(V)</m>, which is a saturated open set of <m>X</m>. Since <m>g</m> is a quotient map, the set <m>g(g^{-1}(V))</m>
+             is open. But again, because <m>g</m> is surjective, we have <m>g(g^{-1}(V))=V</m>.
+                </p>
+        </li>
+      </ol>
     </p>
   </proof>
 
@@ -406,9 +465,9 @@
     Prove: <m>X/\sim</m> is homeomorphic to <m>Y</m> with its quotient topology. 
   </p>
   <solution>
-    <p>
+    <!-- <p>
       Let <m>p\colon X\rightarrow X^*</m> be the defining quotient map of <m>X^*</m>: by definition, we have <m>p(x)=[x]_\sim=\{x'\colon p(x)=p(x')\}</m>. 
-    </p>
+    </p> -->
   </solution>
 </example>
 <example xml:id="eg_quot_prod">
@@ -426,7 +485,7 @@
     </p>
   </statement>
   <solution>
-    <p>
+    <!-- <p>
       Let <m>q\colon X\rightarrow X^*</m> be the quotient map for <m>X^*</m>. By definition, we have <m>q(\boldx)=q(\boldy)</m> if and only if <m>\boldx\sim \boldy</m> if and only if the <m>i_0</m>-th coordinates of <m>\boldx</m> and <m>\boldy</m> are equal.
     </p>
     <p> Now, let <m>\pi_{i_0}\colon X\rightarrow X_{i_0}</m> be the projection map onto the <m>i_0</m>-th coordinate of <m>X</m>. Since <m>\pi_{i_0}</m> is open and surjective (<xref ref="th_product_universal_prop" text="global"/>), it is a quotient map. Furthermore, given <m>\boldx=(x_i)_{i\in I}</m> and <m>\boldy=(y_i)_{i\in I}</m>, we have 
@@ -441,7 +500,7 @@
         <mrow>[\boldx] \amp \mapsto \pi_{i_0}(\boldx)</mrow>
       </md>
       is a homeomorphism between <m>X^*</m> and <m>X_{i_0}</m>. 
-    </p>
+    </p> -->
   </solution>
   
 </example>
@@ -489,7 +548,8 @@
     </p>
   </statement>
   <solution>
-    <ol>
+    <!-- <p>
+      <ol>
       <li>
         <p>
           Consider the map <m>g</m> defined by composition
@@ -527,7 +587,8 @@
           It is now easy to see that <m>g(I)=\{(x,y)\colon x\in (c,d), y=+\sqrt{1-x^2}\}=S^1\cap \left((c,d)\times \R\right)</m>, which is open.
         </p>
       </li>
-    </ol>
+    </ol> -->
+  <!-- </p> -->
 
   </solution>
 </example>
