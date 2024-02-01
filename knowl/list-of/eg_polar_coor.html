@@ -13,7 +13,8 @@
 <body class="ignore-math">
 <article class="example example-like"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.10.13</span><span class="period">.</span><span class="space"> </span><span class="title">Polar transformation.</span>
-</h3> <div class="para logical">
+</h3>
+<div class="para logical">
 <div class="para">Call the map</div>
 <div class="displaymath process-math">
 \begin{align*}
@@ -43,6 +44,23 @@ r_1 \amp&lt; r &lt; r_2  \\
 </div>
 </div></li>
 </ol>
-</div></article><span class="incontext"><a class="internal" href="s_homeomorphisms.html#eg_polar_coor">in-context</a></span>
+</div>
+<div class="solutions"><details class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like"><div class="para logical">
+<div class="para">We leave most of this as an exercise. Note that to show <span class="process-math">\(f\)</span> is continuous, by <a href="" class="xref" data-knowl="./knowl/xref/th_product_universal_prop.html" title="Theorem 1.10.11: Universal mapping property of product space">Theorem 1.10.11</a> we need only show that the two “component functions”</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_product_universal_prop.html">
+\begin{align*}
+f_1=\pi_1\circ f\colon \R^2\amp \rightarrow \R \amp f_2=\pi_2\circ f\colon \R^2\amp \rightarrow \R \\
+(r,\theta)\amp \mapsto r\cos\theta \amp (r,\theta)\amp \mapsto r\sin\theta 
+\end{align*}
+</div>
+<div class="para">are continuous. To see that <span class="process-math">\(f_1\)</span> is continuous, note that we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_product_universal_prop.html">
+\begin{equation*}
+f_1=m\circ g
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(g\colon \R^2\rightarrow \R^2 \)</span> is the function <span class="process-math">\(g(r,\theta)=(r,\cos \theta)\)</span> and <span class="process-math">\(m\colon \R^2\rightarrow \R\)</span> is the multiplication map <span class="process-math">\(m(x,y)=xy\text{.}\)</span> Both <span class="process-math">\(g\)</span> and <span class="process-math">\(m\)</span> are continuous: the two component functions of <span class="process-math">\(g\)</span> are <span class="process-math">\(\pi_1\circ g=\pi_1\)</span> and <span class="process-math">\(\pi_2\circ g=\cos\circ \pi_2\text{,}\)</span> both of which are continuous; we showed in homework that more generally scalar multiplication <span class="process-math">\(m\colon \R\times \R^n\rightarrow \R^n\)</span> is continuous for any <span class="process-math">\(n\text{.}\)</span>
+</div>
+</div></div></details></div></article><span class="incontext"><a class="internal" href="s_homeomorphisms.html#eg_polar_coor">in-context</a></span>
 </body>
 </html>
