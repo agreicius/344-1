@@ -465,9 +465,9 @@
     Prove: <m>X/\sim</m> is homeomorphic to <m>Y</m> with its quotient topology. 
   </p>
   <solution>
-    <!-- <p>
-      Let <m>p\colon X\rightarrow X^*</m> be the defining quotient map of <m>X^*</m>: by definition, we have <m>p(x)=[x]_\sim=\{x'\colon p(x)=p(x')\}</m>. 
-    </p> -->
+    <p>
+      Let <m>p\colon X\rightarrow X^*</m> be the defining quotient map of <m>X^*</m>: by definition, we have <m>p(x)=[x]_\sim=\{x'\colon q(x)=q(x')\}</m>, and thus <m>p(x)=p(x')\iff q(x)=q(x')</m>. Since furthermore <m>q</m> is a quotient map, by <xref ref="quot_univ_map_homeo"/> the map <m>f\colon X^*\rightarrow Y</m> defined as <m>f([x]_\sim)=q(x)</m> is a homeomorphism.   
+    </p>
   </solution>
 </example>
 <example xml:id="eg_quot_prod">
@@ -485,7 +485,7 @@
     </p>
   </statement>
   <solution>
-    <!-- <p>
+    <p>
       Let <m>q\colon X\rightarrow X^*</m> be the quotient map for <m>X^*</m>. By definition, we have <m>q(\boldx)=q(\boldy)</m> if and only if <m>\boldx\sim \boldy</m> if and only if the <m>i_0</m>-th coordinates of <m>\boldx</m> and <m>\boldy</m> are equal.
     </p>
     <p> Now, let <m>\pi_{i_0}\colon X\rightarrow X_{i_0}</m> be the projection map onto the <m>i_0</m>-th coordinate of <m>X</m>. Since <m>\pi_{i_0}</m> is open and surjective (<xref ref="th_product_universal_prop" text="global"/>), it is a quotient map. Furthermore, given <m>\boldx=(x_i)_{i\in I}</m> and <m>\boldy=(y_i)_{i\in I}</m>, we have 
@@ -500,7 +500,7 @@
         <mrow>[\boldx] \amp \mapsto \pi_{i_0}(\boldx)</mrow>
       </md>
       is a homeomorphism between <m>X^*</m> and <m>X_{i_0}</m>. 
-    </p> -->
+    </p>
   </solution>
   
 </example>
@@ -515,14 +515,40 @@
       \mathcal{B}=\{U\times \{A\}\colon U \text{ open in } \R\}\bigcup \{U\times \{B\}\colon U \text{ open in } \R\}
     </me>.
     Let <m>X^*</m> be the quotient obtained from <m>X</m> by identifying <m>(x,A)</m> and <m>(x,B)</m> for all <m>x\ne 0</m>, and let <m>q\colon X\rightarrow X^*</m> be its defining quotient map. 
-  </p>
-  <p>
-    Prove: <m>X</m> is Hausdorff, but <m>X^*</m> is not Hausdorff. 
-  </p>
+  
+  <ol>
+    <li>
+      <p>
+        Let <m>Y=\R-\{0\} \cup \{0_A\} \cup \{0_B\}</m>: i.e., <m>Y</m> is the punctured real line together with two additional distinct points. The following collection is easily shown to be a topology on <m>Y</m>:
+        <me>
+          \mathcal{T}=\{U-\{0\}\colon U \text{ open in } \R\}\bigcup \{\{0_A\}\cup U-\{0\}\colon 0\in U, U \text{ open in } \R\} \cup \{\{0_B\}\cup U-\{0\}\colon 0\in U, U \text{ open in } \R \}
+        </me>.
+        Prove: <m>X^*</m> is homeomorphic to <m>Y</m>. 
+      </p>
+    </li>
+    <li>
+      <p>
+        Prove: <m>X</m> is Hausdorff, but <m>X^*</m> is not Hausdorff. 
+      </p>
+    </li>
+  </ol>
+</p>
   <solution>
-    <p>
-      
-    </p>
+    <ol>
+      <li>
+        <p>
+         Left as an exercise.
+        </p>
+      </li>
+      <li>
+        <p>
+          In fact, in much more generality, given a collection of spaces <m>\{X_i\}_{i\in I}</m>, the coproduct <m>X=\coprod_{i\in I} X_i</m> is Hausdorff if and only if <m>X_i</m> is Hausdorff for all <m>i\in I</m>. Proof left as an exercise. 
+         </p>
+         <p>
+           Since <m>X^*</m> is homeomorphic to <m>Y</m>, it suffices to show that <m>Y</m> is not Hausdorff. To see this, notice that any open containing <m>0_A</m> is of the form <m>U_1=\{0_A\}\cup U-\{0\}</m> for some open set <m>U\subseteq \R</m> containing <m>0</m>, and similarly, any open set containing <m>0_B</m> is of the form <m>U_2=\{0_B\}\cup V-\{0\}</m> for some open set <m>V\subseteq \R</m> containing <m>0</m>. Since <m>U\cap V</m> contains a set of the form <m>(-\epsilon, \epsilon)</m> for some <m>\epsilon &gt; 0</m>, we see that <m>(-\epsilon, \epsilon)-\{0\}\subseteq U_1\cap U_2</m>. In particular, we have <m>U_1\cap U_2\ne \emptyset</m>. Thus <m>Y</m> is not Hausdorff.  
+         </p>
+      </li>
+    </ol>
   </solution>
 </example>
 <example xml:id="eg_RmodZ">
@@ -548,7 +574,7 @@
     </p>
   </statement>
   <solution>
-    <!-- <p>
+    <p>
       <ol>
       <li>
         <p>
@@ -562,8 +588,11 @@
           </image>
           where <m>q</m> is the quotient map from <m>\R</m> to <m>\R/\Z</m>.
           It is easy to see that <m>g</m> is surjective and satisfies <m>g(t)=g(t')</m> if and only if <m>t=t'</m> or <m>t,t'\in \{0,1\}</m>. From <xref ref="th_quot_univ_map"/> we conclude that <m>g</m> gives rise to a bijective continuous function <m>f\colon X^*\rightarrow \R/\Z</m>. Concretely, <m>f</m> takes an equivalence class <m>[t]\in X^*</m> and maps it to the equivalence class <m>\{t+n\colon n\in \Z\}</m> in <m>\R/\Z</m>. Furthermore, to show <m>f</m> is a homeomorphism it is enough to prove that <m>g\colon [0,1]\rightarrow \R/\Z</m>
-          is a quotient map. In fact, we can show that <m>g</m> is a closed map. Take a closed set <m>C\subseteq [0,1]</m>. To show its image <m>g(C)</m> is closed in <m>\R/Z</m>, we need only show, using the fact that <m>q</m> is a quotient map, that <m>q^{-1}(g(C))</m> is closed in <m>\R/\Z</m>. We have <m>q^{-1}(g(C))=C+\Z=\{c+n\colon c\in C, n\in \Z\}</m>. This set is the result of starting with our original closed set <m>C\subseteq [0,1]</m> and taking the union of translated copies of the form <m>C+n\subseteq [n,n+1]</m>, where <m>n\in \Z</m>.
-          It is easy to see that each translate <m>C+n</m> is closed; since furthermore <m>C+n\subseteq [n,n+1]</m>, it follows that the union is also closed. I'll leave the details to you.
+          is a quotient map. In fact, we can show that <m>g</m> is a closed map. Take a closed set <m>C\subseteq [0,1]</m>. Since <m>q\colon \R\rightarrow \R/\Z</m> is a quotient map, to show its image <m>g(C)</m> is closed in <m>\R/\Z</m> we need only show that <m>q^{-1}(g(C))</m> is closed in <m>\R/\Z</m>. We have 
+          <me>
+            q^{-1}(g(C))=\{c+n\colon c\in C, n\in \Z\}=\bigcup_{n\in \Z}n+C
+          </me>,
+          where for any <m>n\in \Z</m> we define <m>n+C=\{n+c\colon c\in C\}</m>, the <em>translation</em> of <m>C</m> by <m>n</m>. Since the map <m>x\mapsto n+x</m> defines a homeomorphism from <m>\R</m> to <m>\R</m>, we see that each <m>n+C</m> is closed. Although in general unions of closed sets are not necessarily closed, using the fact that <m>n+C\subseteq [n,n+1]</m>, it is not difficult to show in this case that <m>\bigcup_{n\in \Z}n+C</m> is closed. I'll leave the details to you.
         </p>
       </li>
       <li>
@@ -577,19 +606,21 @@
               \end{tikzcd}
             </latex-image>
           </image>
-          where <m>g(t)=(\cos 2\pi t, \sin 2\pi t)</m>. It is easy to see that <m>g</m> is continuous, surjective, and satisfies <m>g(t_1)=g(t_2)\iff t_1=t_2+n</m> for some <m>n\in \Z</m>. It follows from <xref ref="th_quot_univ_map"/> that the map <m>f</m> is bijective and continuous. Furthermore, by the same result, we can show <m>f</m> is a homeomorphism as long as we can show <m>g</m> is a quotient map. I'll show that in fact <m>g\colon \R\rightarrow S^1</m> is open, and hence a projection map.
-        </p>
-        <p>
-        To this end let <m>U\subseteq \R</m> be any open set, and let <m>P\in f(U)</m>, so that <m>P=g(t)</m> for some <m>t\in U</m>. We will find an open interval <m>I</m> satisfying <m>t\in I\subseteq U</m> such that <m>f(I)</m> is open. Since <m>P\in f(I)\subseteq f(U)</m> and <m>P\in f(U)</m> was arbitrary, this will show that <m>f(U)</m> is open.
-        </p>
-        <p>
-          Let <m>g(t)=P=(x,y)</m>. Since we cannot have <m>x=y=0</m>, we have four cases: <m>y&gt;0</m> or <m>y&lt; 0</m> or <m>x&gt; 0</m> or <m>x&lt; 0</m>. I will treat the first case; my argument is easily adapted to the other cases. Assume <m>y&gt; 0</m>. Since the set <m>V=S^1\cap \left(\R\times (0,\infty)\right)</m> is open in <m>S^1</m>, we can find an open interval <m>I=(a,b)\ni t</m> contained in <m>U</m> such <m>g(I)\subseteq V </m>: <ie />, all points in <m>g(I)</m> lie in the the upper half plane. Elementary trigonometric properties tell us that the function <m>h(t)=\cos 2\pi t</m> is strictly decreasing on <m>I</m>, and hence that <m>h(I)</m> is the open interval <m>(\cos 2\pi b, \cos 2\pi a)=(c,d)</m>.
-          It is now easy to see that <m>g(I)=\{(x,y)\colon x\in (c,d), y=+\sqrt{1-x^2}\}=S^1\cap \left((c,d)\times \R\right)</m>, which is open.
+          where <m>g(t)=(\cos 2\pi t, \sin 2\pi t)</m>. It is easy to see that <m>g</m> is continuous, surjective, and satisfies <m>g(t_1)=g(t_2)\iff t_1=t_2+n</m> for some <m>n\in \Z</m>. It follows from <xref ref="th_quot_univ_map"/> that the map <m>f</m> is bijective and continuous. Furthermore, by the same result, we can show <m>f</m> is a homeomorphism as long as we can show <m>g</m> is a quotient map. In fact, the map <m>g</m> is open, and hence a quotient map. Given any open set <m>U\subseteq \R</m> and element <m>t_0\in U</m>, we can find an <m>0&lt; \epsilon &lt; 1/4 </m> such that <m>(t_0-\epsilon, t_0+\epsilon)\subseteq U</m>, in which case 
+          <me>
+            V=g((t_0-\epsilon,t_0+\epsilon))=\{(\cos \theta,\sin\theta)\colon 2\pi t_0-2\pi\epsilon &lt; \theta &lt; 2\pi t_0+2\pi \epsilon\}\subseteq g(U)
+          </me>.
+          But then <m>V=g((t_0-\epsilon,t_0+\epsilon))</m> is the intersection of <m>S^1</m> with an  <q>open polar rectangle</q> consisting of points <m>P</m> with polar coordinates satisfying 
+          <md>
+            <mrow> 1/2 \amp &lt; r &lt; 3/2</mrow>
+            <mrow> t_0-2\pi\epsilon \amp &lt;  \theta &lt; t_0+2\pi\epsilon  </mrow>
+          </md>.
+          We showed such open polar rectangles are indeed open in <m>\R^2</m> in <xref ref="eg_polar_coor"/>. It follows that <m>V</m> is an open subset of <m>S^1</m>. Thus for every <m>P=g(t_0)\in g(U)</m> we can find an open set <m>V</m> satisfying <m>P=g(t_0)\in V\subseteq g(U)</m>. It follows that <m>g(U)</m> is open, as desired. 
         </p>
       </li>
-    </ol> -->
-  <!-- </p> -->
-
+    
+    </ol>
+  </p>
   </solution>
 </example>
 

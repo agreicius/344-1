@@ -309,7 +309,7 @@
             </p>
           </solution>
         </example>
-        <!-- <p>
+        <p>
           The <em>Zariski topology</em> on <m>\R^n</m> is an important example of a non-Hausdorff topology. This topology plays an important role in algebraic geometry.
         </p>
         <project>
@@ -330,7 +330,7 @@
               Proved in homework for <m>n=2</m>. The general proof is not much different.
             </p>
           </proof>
-        </project> -->
+        </project>
         
         <definition xml:id="d_convergent_sequence">
           <title>Convergent sequence</title>
@@ -386,7 +386,7 @@
               <me>
                 U-B=U\cap B^c
               </me>
-              is open. Taking <m>B=A-\{x\}</m>, we see that <m>V=U-B</m> is open, contains <m>x</m>, and satisfies <m>V\cap A\subseteq \{x\}</m>. It follows that <m>x</m> is not a limit of point of <m>A</m>, as desired. 
+              is open. Taking <m>B=U\cap A-\{x\}</m>, we see that <m>V=U-B</m> is open, contains <m>x</m>, and satisfies <m>V\cap A\subseteq \{x\}</m>. It follows that <m>x</m> is not a limit of point of <m>A</m>, as desired. 
             </p>
           </proof>
 
