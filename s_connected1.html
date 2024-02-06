@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Connected spaces</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Math 344-1">
+<meta property="book:author" content="Aaron Greicius">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "https://pretextbook.org/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.33/pretext_search.js"></script><link href="https://pretextbook.org/css/0.83/pretext_search.css" rel="stylesheet" type="text/css">
+<script>js_version = 0.33</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.33/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.33/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.33/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+<link href="https://pretextbook.org/css/0.83/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/shell_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
+<h1 class="heading"><a href="kursobjekt.html"><span class="title">Math 344-1:</span> <span class="subtitle">Kursobjekt</span></a></h1>
+<p class="byline">Aaron Greicius</p>
+</div>
+</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><a class="index-button button" href="kursobjekt-6-6.html" title="Index"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span><span class="name">Index</span></a><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="s_quotients.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="c_top_spaces.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="kursobjekt-6.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\Z}{{\mathbb Z}}
+  \newcommand{\Q}{{\mathbb Q}}
+  \newcommand{\R}{{\mathbb R}}
+  \newcommand{\C}{{\mathbb C}}
+  \newcommand{\T}{{\mathbb T}}
+  \newcommand{\F}{{\mathbb F}}
+  \newcommand{\PP}{{\mathbb P}}
+  \newcommand{\HH}{{\mathbb H}}
+  \newcommand{\compose}{\circ}
+  \newcommand{\bolda}{{\mathbf a}}
+  \newcommand{\boldb}{{\mathbf b}}
+  \newcommand{\boldc}{{\mathbf c}}
+  \newcommand{\boldd}{{\mathbf d}}
+  \newcommand{\bolde}{{\mathbf e}}
+  \newcommand{\boldi}{{\mathbf i}}
+  \newcommand{\boldj}{{\mathbf j}}
+  \newcommand{\boldk}{{\mathbf k}}
+  \newcommand{\boldn}{{\mathbf n}}
+  \newcommand{\boldp}{{\mathbf p}}
+  \newcommand{\boldq}{{\mathbf q}}
+  \newcommand{\boldr}{{\mathbf r}}
+  \newcommand{\bolds}{{\mathbf s}}
+  \newcommand{\boldt}{{\mathbf t}}
+  \newcommand{\boldu}{{\mathbf u}}
+  \newcommand{\boldv}{{\mathbf v}}
+  \newcommand{\boldw}{{\mathbf w}}
+  \newcommand{\boldx}{{\mathbf x}}
+  \newcommand{\boldy}{{\mathbf y}}
+  \newcommand{\boldz}{{\mathbf z}}
+  \newcommand{\boldzero}{{\mathbf 0}}
+  \newcommand{\boldmod}{\boldsymbol{ \bmod }}
+  \newcommand{\boldT}{{\mathbf T}}
+  \newcommand{\boldN}{{\mathbf N}}
+  \newcommand{\boldB}{{\mathbf B}}
+  \newcommand{\boldF}{{\mathbf F}}
+  \newcommand{\boldS}{{\mathbf S}}
+  \newcommand{\boldE}{{\mathbf E}}
+  \newcommand{\boldG}{{\mathbf G}}
+  \newcommand{\boldK}{{\mathbf K}}
+  \newcommand{\boldL}{{\mathbf L}}
+  \DeclareMathOperator{\lns}{lns}
+  \DeclareMathOperator{\lcm}{lcm}
+  \DeclareMathOperator{\Span}{span}
+  \DeclareMathOperator{\tr}{tr}
+  \DeclareMathOperator{\NS}{null}
+  \DeclareMathOperator{\RS}{row}
+  \DeclareMathOperator{\CS}{col}
+  \DeclareMathOperator{\im}{im}
+  \DeclareMathOperator{\range}{range}
+  \DeclareMathOperator{\rank}{rank}
+  \DeclareMathOperator{\nullity}{nullity}
+  \DeclareMathOperator{\sign}{sign}
+  \DeclareMathOperator{\Fix}{Fix}
+  \DeclareMathOperator{\Aff}{Aff}
+  \DeclareMathOperator{\Frac}{Frac}
+  \DeclareMathOperator{\Ann}{Ann}
+  \DeclareMathOperator{\Tor}{Tor}
+  \DeclareMathOperator{\id}{id}
+  \DeclareMathOperator{\mdeg}{mdeg}
+  \DeclareMathOperator{\Lt}{Lt}
+  \DeclareMathOperator{\Lc}{Lc}
+  \DeclareMathOperator{\disc}{disc}
+  \DeclareMathOperator{\Frob}{Frob}
+  \DeclareMathOperator{\adj}{adj}
+  \DeclareMathOperator{\curl}{curl}
+  \DeclareMathOperator{\grad}{grad}
+  \DeclareMathOperator{\diver}{div}
+  \DeclareMathOperator{\flux}{flux}
+  \DeclareMathOperator{\Hom}{Hom}
+  \DeclareMathOperator{\ab}{ab}
+
+
+  \newcommand{\surjects}{\twoheadrightarrow}
+  \newcommand{\injects}{\hookrightarrow}
+  \newcommand{\bijects}{\leftrightarrow}
+  \newcommand{\isomto}{\overset{\sim}{\rightarrow}}
+  \newcommand{\floor}[1]{\lfloor#1\rfloor}
+  \newcommand{\ceiling}[1]{\left\lceil#1\right\rceil}
+  \newcommand{\mclass}[2][m]{[#2]_{#1}}
+  \newcommand{\val}[2][]{\left\lvert #2\right\rvert_{#1}}
+  \newcommand{\abs}[2][]{\left\lvert #2\right\rvert_{#1}}
+  \newcommand{\valuation}[2][]{\left\lvert #2\right\rvert_{#1}}
+  \newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+  \newcommand{\anpoly}{a_nx^n+a_{n-1}x^{n-1}\cdots +a_1x+a_0}
+  \newcommand{\anmonic}{x^n+a_{n-1}x^{n-1}\cdots +a_1x+a_0}
+  \newcommand{\bmpoly}{b_mx^m+b_{m-1}x^{m-1}\cdots +b_1x+b_0}
+  \newcommand{\pder}[2]{\frac{\partial#1}{\partial#2}}
+  \newcommand{\normalin}{\trianglelefteq}
+  \newcommand{\angvec}[1]{\langle #1\rangle}
+  \newcommand{\varpoly}[2]{#1_{#2}x^{#2}+#1_{#2-1}x^{#2-1}\cdots +#1_1x+#1_0}
+  \newcommand{\varpower}[1][a]{#1_0+#1_1x+#1_1x^2+\cdots}
+  \newcommand{\limasto}[2][x]{\lim_{#1\rightarrow #2}}
+  \newenvironment{linsys}[2][m]{
+  \begin{array}[#1]{@{}*{#2}{rc}r@{}}
+  }{
+  \end{array}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural contains-active toc-item-list">
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="meta_frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="c_foundations.html" class="internal"><span class="codenumber">0</span> <span class="title">Foundations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_sets_functions.html" class="internal"><span class="codenumber">0.1</span> <span class="title">Sets and functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_sets_functions.html#ss_sets" class="internal"><span class="title">Sets</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_sets_functions.html#ss_functions" class="internal"><span class="title">Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_sets_functions.html#subsec-" class="internal"><span class="title">Cardinality and countability</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_logic.html" class="internal"><span class="codenumber">0.2</span> <span class="title">Logic</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_logic.html#ss_propositional_calculus" class="internal"><span class="title">Propositional logic</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_logic.html#ss_predicate_logic" class="internal"><span class="title">Predicate logic</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_proof_technique.html" class="internal"><span class="codenumber">0.3</span> <span class="title">Proof techniques</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="s_proof_technique.html#ss_logical_structure" class="internal"><span class="title">Logical structure</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_implication" class="internal"><span class="title">Implication</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_disjunction" class="internal"><span class="title">Disjunction</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_equivalence" class="internal"><span class="title">Equivalence</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_logical_chains" class="internal"><span class="title">Chains of implications/equivalences</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_proof_by_contradiction" class="internal"><span class="title">Proof by contradiction</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="s_proof_technique.html#ss_Equalities" class="internal"><span class="title">Equalities</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_chain_equalities" class="internal"><span class="title">Chain of equalities</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="s_proof_technique.html#ss_set_properties" class="internal"><span class="title">Basic set properties</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_set_inclusion" class="internal"><span class="title">Set inclusion</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_set_equality" class="internal"><span class="title">Set equality</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="s_proof_technique.html#ss_function_properties" class="internal"><span class="title">Basic function properties</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_function_equality" class="internal"><span class="title">Function equality</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_injective_surjective_bijective" class="internal"><span class="title">Injective, surjective, bijective</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="s_proof_technique.html#ss_mathematical_induction" class="internal"><span class="title">Mathematical induction</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_weak_induction" class="internal"><span class="title">Proof by induction</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_strong_induction" class="internal"><span class="title">Proof by strong induction</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="c_top_spaces.html" class="internal"><span class="codenumber">1</span> <span class="title">Point-set topology</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_top_spaces.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Topological spaces</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_bases_top.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Topological basis</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_metric1.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Metric spaces</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_closed_closure_interior.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Closed sets, closure, and interior</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_limitpoints_hausdorff.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Limit points and the Hausdorff property</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_subspace_finite_products.html" class="internal"><span class="codenumber">1.6</span> <span class="title">Subspaces and finite products</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_subspace_finite_products.html#ss_subspace" class="internal"><span class="title">Subspaces</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_subspace_finite_products.html#ss_finite_products" class="internal"><span class="title">Finite product spaces</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_product2.html" class="internal"><span class="codenumber">1.7</span> <span class="title">Arbitrary products</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_prods_convergence_metric.html" class="internal"><span class="codenumber">1.8</span> <span class="title">Convergence in product spaces</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_continuous.html" class="internal"><span class="codenumber">1.9</span> <span class="title">Continuous functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_homeomorphisms.html" class="internal"><span class="codenumber">1.10</span> <span class="title">Homeomorphisms</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_quotients.html" class="internal"><span class="codenumber">1.11</span> <span class="title">Quotients</span></a></div></li>
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="s_connected1.html" class="internal"><span class="codenumber">1.12</span> <span class="title">Connected spaces</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="kursobjekt-6.html" class="internal"><span class="title">Back Matter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-notation.html" class="internal"><span class="codenumber">A</span> <span class="title">Notation</span></a></div></li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-defs.html" class="internal"><span class="codenumber">B</span> <span class="title">Definitions</span></a></div></li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-thms.html" class="internal"><span class="codenumber">C</span> <span class="title">Theory</span></a></div></li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-specimens.html" class="internal"><span class="codenumber">D</span> <span class="title">Topological specimens</span></a></div></li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-egs.html" class="internal"><span class="codenumber">E</span> <span class="title">Examples</span></a></div></li>
+<li class="toc-item toc-index"><div class="toc-title-box"><a href="kursobjekt-6-6.html" class="internal"><span class="title">Index</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="s_connected1"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">1.12</span><span class="space"> </span><span class="title">Connected spaces</span>
+</h2>
+<article class="definition definition-like" id="d_connected_space"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.12.1</span><span class="period">.</span>
+</h3>
+<div class="para" id="d_connected_space-1-1">A <dfn class="terminology">separation</dfn> of a topological space <span class="process-math">\(X\)</span> is a pair of disjoint open sets <span class="process-math">\(U_1, U_2\)</span> satisfying <span class="process-math">\(X=U_1\cup U_2\text{.}\)</span> Call a separation <span class="process-math">\(X=U_1\cup U_2\)</span> <dfn class="terminology">trivial</dfn> if <span class="process-math">\(\{U_1, U_2\}=\{\emptyset, X\}\text{,}\)</span> and <dfn class="terminology">nontrivial</dfn> otherwise. A space <span class="process-math">\(X\)</span> is <dfn class="terminology">connected</dfn> if it is nonempty and   all separations of <span class="process-math">\(X\)</span> are trivial; it is <dfn class="terminology">disconnected</dfn> otherwise.</div> <div class="para" id="d_connected_space-1-2">A subset <span class="process-math">\(Y\subseteq X\)</span> is <dfn class="terminology">connected</dfn> (resp., <dfn class="terminology">disconnected</dfn>) if it is connected (resp., disconnected) with respect to the subspace topology.</div></article><article class="remark remark-like" id="s_connected1-3"><h3 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.12.2</span><span class="period">.</span><span class="space"> </span><span class="title">Conventions.</span>
+</h3> <div class="para logical" id="s_connected1-3-2">
+<div class="para">Our defined terms in <a href="" class="xref" data-knowl="./knowl/xref/d_connected_space.html" title="Definition 1.12.1">Definition 1.12.1</a> differ from Munkres in two regards.</div>
+<ol class="decimal">
+<li id="s_connected1-3-2-2-1"><div class="para" id="s_connected1-3-2-2-1-1">Munkres takes as a separation what we call a <em class="emphasis">nontrivial</em> separation. We choose the weaker notion so that we have a convenient term for a disjoint cover of a space by two open sets.</div></li>
+<li id="s_connected1-3-2-2-2"><div class="para" id="s_connected1-3-2-2-2-1">Munkres does not insist that a space be nonempty to be connected. There does not seem to be much consensus on whether to include this as a necessary condition. However, when discussing connected components later on, we would like to be able to say simply that a space is connected if and only if it has exactly one connected component. This is reason enough for us to go with the nonempty condition.</div></li>
+</ol>
+</div></article><article class="example example-like" id="s_connected1-4"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.12.3</span><span class="period">.</span><span class="space"> </span><span class="title">Examples.</span>
+</h3>
+<div class="para logical" id="s_connected1-4-2-1"><ol class="decimal">
+<li id="s_connected1-4-2-1-1-1"><div class="para" id="s_connected1-4-2-1-1-1-1">If <span class="process-math">\(\abs{X}\geq 2\text{,}\)</span> then <span class="process-math">\(X\)</span> is not connected with respect to the discrete topology.</div></li>
+<li id="s_connected1-4-2-1-1-2"><div class="para" id="s_connected1-4-2-1-1-2-1">If <span class="process-math">\(X\)</span> is infinite, then <span class="process-math">\(X\)</span> is connected with respect to the cofinite topology.</div></li>
+<li id="s_connected1-4-2-1-1-3"><div class="para" id="s_connected1-4-2-1-1-3-1">Let <span class="process-math">\(L\)</span> be the graph of the equation <span class="process-math">\(y=0\)</span> and let <span class="process-math">\(C\)</span> be the graph of the equation <span class="process-math">\(y=1/(1+x^2)\text{.}\)</span> The subset <span class="process-math">\(X=L\cup C\subseteq \R^2\)</span> is disconnected.</div></li>
+<li id="s_connected1-4-2-1-1-4"><div class="para" id="s_connected1-4-2-1-1-4-1">
+<span class="process-math">\(Q\subseteq \R\)</span> is not connected. In fact if <span class="process-math">\(A\subseteq \R\)</span> is any set that is <em class="emphasis">not</em> an interval, then <span class="process-math">\(A\)</span> is not connected. (Define an interval of <span class="process-math">\(\R\)</span> to be a set <span class="process-math">\(I\)</span> satisfying the following property: if <span class="process-math">\(a,b\in I\)</span> and <span class="process-math">\(a &lt; b\text{,}\)</span> then <span class="process-math">\([a,b]\subseteq I\text{.}\)</span> This definition includes singletons and the empty set as sort of <em class="emphasis">degenerate</em> intervals.)</div></li>
+</ol></div>
+<div class="solutions"><details id="s_connected1-4-3" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like"><div class="para" id="s_connected1-4-3-1"></div></div></details></div></article><article class="theorem theorem-like" id="th_connected_intervals"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.12.4</span><span class="period">.</span><span class="space"> </span><span class="title">Connected subsets of <span class="process-math">\(\R\)</span>.</span>
+</h3>
+<div class="para" id="th_connected_intervals-2-1">Consider <span class="process-math">\(\R\)</span> with the standard topology. The connected subsets of <span class="process-math">\(\R\)</span> are precisely the nonempty intervals of <span class="process-math">\(\R\)</span> (including “infinite intervals” like <span class="process-math">\((a,\infty)\)</span> or <span class="process-math">\([b,\infty)\)</span>): i.e., <span class="process-math">\(Y\subseteq \R\)</span> is connected if and only if <span class="process-math">\(Y\)</span> is a nonempty interval.</div> <div class="para logical" id="th_connected_intervals-2-2">
+<div class="para">More generally, if <span class="process-math">\(X\)</span> is a space equipped with an order topology, then a subset <span class="process-math">\(Y\subseteq X\)</span> is connected if and only if</div>
+<ol class="lower-roman">
+<li id="th_connected_intervals-2-2-3-1"><div class="para" id="th_connected_intervals-2-2-3-1-1">
+<span class="process-math">\(Y\)</span> satisfies the least upper bound principle (i.e., every bounded subset of <span class="process-math">\(Y\)</span> has a supremum in <span class="process-math">\(Y\)</span>), and</div></li>
+<li id="th_connected_intervals-2-2-3-2"><div class="para" id="th_connected_intervals-2-2-3-2-1">if <span class="process-math">\(x,y\in Y\)</span> and <span class="process-math">\(x&lt; y\text{,}\)</span> then there exists <span class="process-math">\(z\in Y\)</span> satisfying <span class="process-math">\(x&lt; z&lt; y\text{.}\)</span>
+</div></li>
+</ol>
+</div></article><details id="th_connected_intervals-3" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para" id="th_connected_intervals-3-1">See Munkres.</div></article></details><article class="theorem theorem-like" id="th_connected_equiv"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.12.5</span><span class="period">.</span><span class="space"> </span><span class="title">Connectedness equivalences.</span>
+</h3>
+<div class="para" id="th_connected_equiv-2-1">The following statements are equivalent for a topological space <span class="process-math">\(X\text{.}\)</span>
+</div> <div class="para logical" id="th_connected_equiv-2-2"><ol class="decimal">
+<li id="th_connected_equiv-2-2-1-1"><div class="para" id="th_connected_equiv-2-2-1-1-1">
+<span class="process-math">\(X\)</span> is connected.</div></li>
+<li id="th_connected_equiv-2-2-1-2"><div class="para" id="th_connected_equiv-2-2-1-2-1">There is no pair of disjoint nonempty closed sets <span class="process-math">\(C_1, C_2\)</span> satisfying <span class="process-math">\(X=C_1\cup C_2\text{.}\)</span>
+</div></li>
+<li id="th_connected_equiv-2-2-1-3"><div class="para" id="th_connected_equiv-2-2-1-3-1">If <span class="process-math">\(U\subseteq X\)</span> is open and closed, then <span class="process-math">\(U\in \{\emptyset, X\}\text{.}\)</span>
+</div></li>
+<li id="th_connected_equiv-2-2-1-4"><div class="para" id="th_connected_equiv-2-2-1-4-1">There is no pair of nonempty disjoint sets <span class="process-math">\(A, B\text{,}\)</span> neither of which contains limit points of the other, satisfying <span class="process-math">\(X=A\cup B\text{.}\)</span>
+</div></li>
+</ol></div></article><details id="th_connected_equiv-3" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para" id="th_connected_equiv-3-1">
+<span class="process-math">\((1)\iff (2) \iff (3)\text{.}\)</span> It is clear that a separation <span class="process-math">\(X=U\cup V\)</span> by open sets is the same thing as a separation as described in (2), since <span class="process-math">\(U=V^c\)</span> and <span class="process-math">\(V=U^c\)</span> are both open and closed. Similarly, we see that there is a separation <span class="process-math">\(X=U\cup V\)</span> if and only if and only if there is a nonempty open set <span class="process-math">\(U\)</span> whose complement <span class="process-math">\(U^c\)</span> is open and nonempty, if and only if there is a nontrival <span class="process-math">\(U\)</span> that is open and closed.</div> <div class="para" id="th_connected_equiv-3-2">
+<span class="process-math">\((2)\iff (4)\text{.}\)</span> This equivalence follows from the observation that we have <span class="process-math">\(X=A\cup B\)</span> with <span class="process-math">\(A, B\)</span> as described in (4) if and only if <span class="process-math">\(A=\overline{A}\)</span> and <span class="process-math">\(B=\overline{B}\text{,}\)</span> if and only if <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are disjoint and closed.</div></article></details><article class="theorem theorem-like" id="th_connected_subspace"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.12.6</span><span class="period">.</span><span class="space"> </span><span class="title">Connectedness and subspaces.</span>
+</h3>
+<div class="para logical" id="th_connected_subspace-2-1">
+<div class="para">Let <span class="process-math">\(X\)</span> be a topological space.</div>
+<ol class="decimal">
+<li id="th_connected_subspace-2-1-2-1"><div class="para" id="th_connected_subspace-2-1-2-1-1">If <span class="process-math">\(Y\)</span> is a connected subspace of <span class="process-math">\(X\text{,}\)</span> and if <span class="process-math">\(X=U_1\cup U_2\)</span> is a separation of <span class="process-math">\(X\text{,}\)</span> then <span class="process-math">\(Y\subseteq U_1\)</span> or <span class="process-math">\(Y\subseteq U_2\text{.}\)</span>
+</div></li>
+<li id="th_connected_subspace-2-1-2-2"><div class="para" id="th_connected_subspace-2-1-2-2-1">If <span class="process-math">\(\{Y_i\}_{i\in I}\)</span> is a collection of connected subspaces of <span class="process-math">\(X\)</span> and <span class="process-math">\(\bigcap_{i\in I}Y_i\ne\emptyset\text{,}\)</span> then <span class="process-math">\(Y=\bigcup_{i\in I}Y_i\)</span> is connected.</div></li>
+<li id="th_connected_subspace-2-1-2-3"><div class="para" id="th_connected_subspace-2-1-2-3-1">If <span class="process-math">\(Y\subseteq X\)</span> is connected, then any <span class="process-math">\(Y'\)</span> satisfying <span class="process-math">\(Y\subseteq Y'\subseteq \overline{Y}\)</span> is connected.</div></li>
+</ol>
+</div></article><details id="s_connected1-8" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para logical" id="s_connected1-8-1"><ol class="decimal">
+<li id="s_connected1-8-1-1-1"><div class="para" id="s_connected1-8-1-1-1-1">Given a separation <span class="process-math">\(X=U_1\cup U_2\text{,}\)</span> we have the separation <span class="process-math">\(Y=U_1'\cup U_2'\text{,}\)</span> where  <span class="process-math">\(U_i'=U_i\cap Y\text{.}\)</span> Since <span class="process-math">\(Y\)</span> is connected, we must have <span class="process-math">\(Y\subseteq U_1'\)</span> or <span class="process-math">\(Y\subseteq U_2'\text{.}\)</span> It follows that <span class="process-math">\(Y\subseteq U_1\)</span> or <span class="process-math">\(Y\subseteq U_2\text{.}\)</span>
+</div></li>
+<li id="s_connected1-8-1-1-2"><div class="para" id="s_connected1-8-1-1-2-1">Let  <span class="process-math">\(Y=U_1\cup U_2\)</span> be a separation. Take any <span class="process-math">\(y\in \bigcap_{i\in I}Y_i\text{.}\)</span> We may assume without loss of generality that <span class="process-math">\(y\in U_1\text{.}\)</span> Now since <span class="process-math">\(Y_i\)</span> is connected for all <span class="process-math">\(i\)</span> we must have <span class="process-math">\(Y_i\subseteq U_1\)</span> or <span class="process-math">\(Y\subseteq U_2\)</span> by (1). Since <span class="process-math">\(y\in Y_i\)</span> and <span class="process-math">\(y\in U_1\text{,}\)</span> it follows that <span class="process-math">\(Y_i\subseteq U_1\)</span> for all <span class="process-math">\(i\in I\text{.}\)</span> Thus <span class="process-math">\(Y=\bigcup_{i\in I}Y_i\subseteq U_1\text{.}\)</span> We conclude that <span class="process-math">\(U_1=Y\text{,}\)</span> showing that <span class="process-math">\(Y\)</span> has no nontrivial separations. Thus <span class="process-math">\(Y\)</span> is connected.</div></li>
+<li id="s_connected1-8-1-1-3"><div class="para" id="s_connected1-8-1-1-3-1">Assume <span class="process-math">\(Y\subseteq Y'\subseteq \overline{Y}\text{,}\)</span> where <span class="process-math">\(Y\)</span> is connected. Let <span class="process-math">\(Y'=C\cup D\text{,}\)</span> where <span class="process-math">\(C\)</span> and <span class="process-math">\(D\)</span> are disjoint closed sets in <span class="process-math">\(Y'\text{.}\)</span> By (1) we have <span class="process-math">\(Y\subseteq C\)</span> or <span class="process-math">\(Y\subseteq D\text{.}\)</span> Assume without loss of generality that <span class="process-math">\(Y\subseteq C\text{.}\)</span> Since <span class="process-math">\(C\)</span> is closed, the closure of <span class="process-math">\(Y\)</span> in <span class="process-math">\(Y'\)</span> is contained in <span class="process-math">\(C\text{.}\)</span> But as we have seen in an earlier homework, the closure of <span class="process-math">\(Y\)</span> in <span class="process-math">\(Y'\)</span> is <span class="process-math">\(Y'\cap \overline{Y}=Y'\text{.}\)</span> Thus <span class="process-math">\(Y'\subseteq C\text{,}\)</span> or equivalently, <span class="process-math">\(C=Y'\text{.}\)</span> We conclude that <span class="process-math">\(Y'\)</span> is connected.</div></li>
+</ol></div></article></details><article class="theorem theorem-like" id="th_connected_continuous"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.12.7</span><span class="period">.</span><span class="space"> </span><span class="title">Connectedness and continuity.</span>
+</h3>
+<div class="para" id="th_connected_continuous-2-1">If <span class="process-math">\(f\colon X\rightarrow Y\)</span> is continuous and <span class="process-math">\(X\)</span> is connected, then <span class="process-math">\(f(X)\)</span> is connected.</div></article><details id="th_connected_continuous-3" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para" id="th_connected_continuous-3-1">We identify <span class="process-math">\(f\)</span> with the map <span class="process-math">\(f\colon X\rightarrow f(X)\)</span> obtained by restricting the codomain, which is continuous <em class="emphasis">and</em> surjective. If <span class="process-math">\(U_1, U_2\)</span> are disjoint open sets satisfying <span class="process-math">\(f(X)=U_1\cup U_2\text{,}\)</span> then we have <span class="process-math">\(X=f^{-1}(f(X))=f^{-1}(U_1)\cup f^{-1}(U_2)\text{.}\)</span> Since the sets <span class="process-math">\(f^{-1}(U_i)\)</span> are open and disjoint, we have <span class="process-math">\(X=f^{-1}(U_1)\)</span> or <span class="process-math">\(X=f^{-1}(U_2)\text{.}\)</span> Since <span class="process-math">\(f\)</span> is surjective, we have <span class="process-math">\(f(f^{-1}(U_i))=U_i\)</span> for <span class="process-math">\(1\leq i\leq 2\text{.}\)</span> It follows that <span class="process-math">\(U_1=f(X)\)</span> or <span class="process-math">\(U_2=f(X)\text{.}\)</span> We conclude <span class="process-math">\(f(X)\)</span> is connected.</div></article></details><article class="corollary theorem-like" id="cor_graph_connected"><h3 class="heading">
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">1.12.8</span><span class="period">.</span><span class="space"> </span><span class="title">Graphs of continuous functions.</span>
+</h3>
+<div class="para" id="cor_graph_connected-2-1">Let <span class="process-math">\(f\colon X\rightarrow Y\)</span> and let <span class="process-math">\(\Gamma_f=\{(x,f(x))\in X\times Y\colon x\in X\}\text{,}\)</span> the graph of <span class="process-math">\(f\text{.}\)</span> If <span class="process-math">\(f\)</span> is continuous, then <span class="process-math">\(\Gamma_f\)</span> is connected.</div></article><details id="cor_graph_connected-3" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para" id="cor_graph_connected-3-1">Define <span class="process-math">\(F\colon X \rightarrow X\times Y\)</span> as <span class="process-math">\(F(x)=(\id_X(x),f(x))=(x,f(x))\text{.}\)</span> Since the two component functions <span class="process-math">\(\id_X\colon X\rightarrow X\)</span> and <span class="process-math">\(f\colon X\rightarrow Y\)</span> are continuous, so is <span class="process-math">\(F\text{.}\)</span> From <a href="" class="xref" data-knowl="./knowl/xref/th_connected_continuous.html" title="Theorem 1.12.7: Connectedness and continuity">Theorem 1.12.7</a>, we conclude that <span class="process-math">\(F(X)=\Gamma_f\)</span> is continuous.</div></article></details><article class="theorem theorem-like" id="th_connected_products"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.12.9</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="th_connected_products-1-1">
+<div class="para">Let <span class="process-math">\(\{X_i\}_{i\in I}\)</span> be a collection of topological spaces, where <span class="process-math">\(I\)</span> is nonempty, and let <span class="process-math">\(X=\prod_{i\in I}X_i\)</span> be equipped with the product topology.</div>
+<ol class="decimal">
+<li id="th_connected_products-1-1-4-1"><div class="para" id="th_connected_products-1-1-4-1-1">If <span class="process-math">\(X\)</span> is connected, then <span class="process-math">\(X_i\)</span> is connected for all <span class="process-math">\(i\in I\text{.}\)</span>
+</div></li>
+<li id="th_connected_products-1-1-4-2"><div class="para" id="th_connected_products-1-1-4-2-1">If <span class="process-math">\(I\)</span> is finite or countable then <span class="process-math">\(X\)</span> is connected if and only if <span class="process-math">\(X_i\)</span> is connected for all <span class="process-math">\(i\in I\text{.}\)</span>
+</div></li>
+<li id="th_connected_products-1-1-4-3"><div class="para" id="th_connected_products-1-1-4-3-1">Assuming the axiom of choice, <span class="process-math">\(X\)</span> is connected if and only if <span class="process-math">\(X_i\)</span> is connected for all <span class="process-math">\(i\in I\text{.}\)</span>
+</div></li>
+</ol>
+</div></article><details id="th_connected_products-2" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para logical" id="th_connected_products-2-1">
+<div class="para">We prove only (1) and (2). Proofs of (3) can be found in the literature: transfinite induction is often used.</div>
+<ol class="decimal">
+<li id="th_connected_products-2-1-1-1"><div class="para" id="th_connected_products-2-1-1-1-1">Since each the projection map <span class="process-math">\(\pi_i\)</span> is continuous for all <span class="process-math">\(i\in I\text{,}\)</span> and since <span class="process-math">\(X_i=\pi_i(X_i)\text{,}\)</span> we see using <a href="" class="xref" data-knowl="./knowl/xref/th_connected_continuous.html" title="Theorem 1.12.7: Connectedness and continuity">Theorem 1.12.7</a> that if <span class="process-math">\(X\)</span> is connected, then <span class="process-math">\(X_i\)</span> is connected.</div></li>
+<li id="th_connected_products-2-1-1-2"><div class="para" id="p-derived-th_connected_products-2-1-1-2">
+<article class="case" id="th_connected_products-2-1-1-2-1"><h4 class="heading">Finite products.</h4> <div class="para" id="th_connected_products-2-1-1-2-1-2">Using induction it suffices to show that if <span class="process-math">\(X, Y\)</span> are connected, then <span class="process-math">\(X\times Y\)</span> is connected. First, choose any <span class="process-math">\(x_0\in X\)</span> and note that the subspace <span class="process-math">\(\{x_0\}\times Y\text{,}\)</span> being homeomorphic to <span class="process-math">\(Y\text{,}\)</span> is connected. Similarly, for any <span class="process-math">\(y_0\in Y\text{,}\)</span> the subspace <span class="process-math">\(X\times \{y_0\}\)</span> is connected. It follows from (2) of <a href="" class="xref" data-knowl="./knowl/xref/th_connected_subspace.html" title="Theorem 1.12.6: Connectedness and subspaces">Theorem 1.12.6</a> that the set <span class="process-math">\(T_{x_0,y_0}=\{x_0\}\times Y\cup X\times \{y_0\}\)</span> is connected for any <span class="process-math">\((x_0,y_0)\in X\times Y\text{.}\)</span> Lastly, since <span class="process-math">\(T_{x,y_0}\cap T_{x',y_0}\supseteq X\times\{y_0\}\ne \emptyset\)</span> for any <span class="process-math">\(x,x'\in X\text{,}\)</span> the union <span class="process-math">\(\bigcup_{x\in X}T_{x,y_0}\)</span> is connected. But this union is <span class="process-math">\(X\)</span> itself.</div></article> <article class="case" id="th_connected_products-2-1-1-2-2"><h4 class="heading">Countable product.</h4> <div class="para logical" id="th_connected_products-2-1-1-2-2-2">
+<div class="para">Let <span class="process-math">\(X=\prod_{n=1}^\infty X_n\)</span> where <span class="process-math">\(X_n\)</span> is connected for all <span class="process-math">\(n\text{.}\)</span> Fix any element <span class="process-math">\(x=(x_1,x_2,\dots, )\in X\text{.}\)</span> For each <span class="process-math">\(N\)</span> the set</div>
+<div class="displaymath process-math">
+\begin{equation*}
+X_N=\prod_{n=1}^NX_i\times \prod_{n=N+1}^\infty \{x_n\}\text{,}
+\end{equation*}
+</div>
+<div class="para">being homeomorphic to a finite product of connected spaces, is connected. Since <span class="process-math">\(X_N\cap X_{M}\ne \emptyset\)</span> for all <span class="process-math">\(N, M\text{,}\)</span> we conclude that <span class="process-math">\(Y=\bigcup_{N=1}^\infty X_N\)</span> is connected.</div>
+</div> <div class="para" id="th_connected_products-2-1-1-2-2-3">Next, I claim that <span class="process-math">\(X=\overline{Y}\text{.}\)</span> Indeed, given any <span class="process-math">\(z=(z_1,z_2,\dots, )\)</span> and any open base element <span class="process-math">\(U=\prod_{n=1}^NU_n\times \prod_{n=N+1}^\infty X_n\)</span> containing <span class="process-math">\(z\text{,}\)</span> we have <span class="process-math">\((z_1,z_2,\dots, z_N, x_{N+1},x_{N+2},\dots)\in U\cap X_N\subseteq Y\text{.}\)</span> Since connectedness is preserved under closure, we conclude that <span class="process-math">\(X\)</span> is connected.</div></article>
+</div></li>
+</ol>
+</div></article></details></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="s_quotients.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="kursobjekt-6.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+</div>
+</body>
+</html>
