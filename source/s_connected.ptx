@@ -195,7 +195,7 @@
   <title>Graphs of continuous functions</title>
   <statement>
     <p>
-      Let <m>f\colon X\rightarrow Y</m> and let <m>\Gamma_f=\{(x,f(x))\in X\times Y\colon x\in X\}</m>, the graph of <m>f</m>. If <m>f</m> is continuous, then <m>\Gamma_f</m> is connected.
+      Let <m>f\colon X\rightarrow Y</m> be continuous and let <m>\Gamma_f=\{(x,f(x))\in X\times Y\colon x\in X\}</m>, the graph of <m>f</m>. If <m>X</m> is connected, then <m>\Gamma_f</m> is connected.
     </p>
   </statement>
   <proof>
