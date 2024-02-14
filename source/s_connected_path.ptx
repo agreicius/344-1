@@ -256,7 +256,7 @@
           </li>
           <li>
             <p>
-              Suppose <m>A</m> is connected. If <m>A\cap C\ne\emptyset</m>, then <m>A\cup C</m> is connected by. Since <m>C</m> is maximally connected, we have <m>A\cup C=C</m>. Thus <m>A\subseteq C</m>. A similar argument applies to path-connected components. 
+              Suppose <m>A</m> is connected. If <m>A\cap C\ne\emptyset</m>, then <m>A\cup C</m> is connected by <xref ref="th_connected_subspace"/>. Since <m>C</m> is maximally connected, we have <m>A\cup C=C</m>. Thus <m>A\subseteq C</m>. A similar argument applies to path-connected components. 
             </p>
           </li>
           <li>
