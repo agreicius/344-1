@@ -1,7 +1,7 @@
 <section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_compact_metric">
   <title>Compactness in metric spaces</title>
   <p>
-    As useful as the Heine-Borel theorem is in characterizing compactness in <m>\R^n</m>, it relies in part on a <em>non-topological property</em>: namely, boundedness with respect to the Euclidean, box, or taxicab norm. In this section we investigate the relation of compactness to various related topological properties: <eg/>, limit point compactness, sequential compactness, countable compactness, etc. We will see that in the setting of metric spaces these properties are all equivalent.    
+    As useful as the Heine-Borel theorem is in characterizing compactness in <m>\R^n</m>, it relies in part on a <em>non-topological property</em>: namely, boundedness with respect to the Euclidean, box, or taxicab norm. In this section we investigate the relation of compactness to various related topological properties that turn out to be equivalent to compactness in the setting of metric spaces. First we meet our new compact-like properties.     
   </p>
   <definition xml:id="d_limit_point_compact">
     <title>Limit point compact</title>
@@ -11,14 +11,7 @@
         </p>
     </statement>
   </definition>
-  <theorem xml:id="th_compact_implies_limitpoint">
-    <title>Compact implies limit point compact</title>
-    <statement>
-        <p>
-        If <m>X</m> is compact, then <m>X</m> is limit point compact. 
-        </p>
-    </statement>
-  </theorem>
+  
   <definition xml:id="d_sequentially_compact">
     <title>Sequentially compact</title>
     <statement>
@@ -27,6 +20,9 @@
         </p>
     </statement>
   </definition>
+  <p>
+    <xref ref="th_compact_metric"/> asserts that compactness, limit point compactness, and sequential compactness are equivalent in the setting of metric spaces. 
+  </p>
   <theorem xml:id="th_compact_metric">
     <title>Compactness in metric spaces</title>
     <statement>
@@ -52,6 +48,163 @@
         </p>
     </statement>
   </theorem>
+  <p>
+    Our proof of <xref ref="th_compact_metric"/> will involve a series of results that articulate which implications hold between these three concepts in full generality, and highlight what extra conditions are required to obtain equivalences. Before embarking on this investigation we look at two examples that illustrate two different uses of <xref ref="th_compact_metric"/>: namely, (a) deciding whether a given subset of a metric space is compact, and (b) showing that a given space is not a metric space. 
+  </p>
+  <example>
+    
+  </example>
+  <theorem xml:id="th_compact_implies_limitpoint">
+    <title>Compact implies limit point compact</title>
+    <statement>
+        <p>
+        If <m>X</m> is compact, then <m>X</m> is limit point compact. 
+        </p>
+    </statement>
+    <proof>
+      <p>
+        Let <m>A</m> be an infinite subset of <m>X</m>, and let <m>A'=\{x_1,x_2,\dots\}</m> be any countable infinite subset of <m>A</m>. We will show that <m>A'</m> has a limit point. Assume by contradiction that <m>A'</m> has no limit point. Since in general the closure of a set is obtained by adding all limit points, we see that <m>A'</m> is closed. Since <m>X</m> is compact, we conclude that <m>A'</m> is compact. On the other hand, since no element of <m>A'</m> is a limit point of <m>A'</m> is a limit point of <m>A'</m>, it is easy to see that all singletons of <m>A'</m> are open in the subspace topology. This contradicts the compactness of <m>A'</m> since the open covering <m>A'=\bigcup_{n=1}^{\infty}\{x_n\}</m> has no finite subcover. 
+      </p>
+    </proof>
+  </theorem>
+  <remark xml:id="rm_countably_compact">
+    <title>Countably compact space</title>
+    <p>
+      A close look at our proof of <xref ref="th_compact_implies_limitpoint"/> reveals that limit point compactness follows from a slightly weaker notion of compactness: namely, <em>countable compactness</em>. A space is <term>countably compact</term> if every countable open subcover has a finite subcover. We have the following implications:
+      <me>
+        X \text{ compact} \implies X \text{ countably compact} \implies X \text{ limit point compact}
+      </me>.
+      It can be shown that none of these implications is in fact an equivalence. However, if <m>X</m> is further assumed to be <m>T_1</m>, then limit point compactness implies countable compactness. We record this fact schematically as follows: 
+      <me>
+        X \text{ limit point compact} \underset{(T_1)}{\implies} X \text{ countably compact}
+      </me>.
+    </p>
+  </remark>
+  <theorem xml:id="th_seqcompact_implies_limitpoint_compact">
+    <title>Sequential compactness implies limit point compactness</title>
+    <statement>
+      <p>
+        If <m>X</m> is sequentially compact, then <m>X</m> is limit point compactness. 
+      </p>
+    </statement>
+    <proof>
+      <p>
+        We will show that sequential compactness implies countable compactness. The result then follows from <xref ref="rm_countably_compact"/>. Suppose by contradiction that the open covering <m>X=\bigcup_{n=1}^\infty U_n</m> has no finite subcover. It follows that we can construct a sequence <m>(x_n)_{n=1}^\infty</m> satisfying <m>x_n\notin U_1\cup U_2\cup \cdots \cup U_n</m>. By sequential compactness there is a convergent subsequence <m>x_{n_m}\rightarrow x</m>. Since <m>\{U_n\}_{n=1}^\infty</m> is a covering, we have <m>x\in U_{N}</m> for some <m>N</m>. But by construction there is an <m>M</m> such that <m>x_{n_m}\notin U_N</m> for all <m>m\geq M</m>. A contradiction. Thus there must be a finite subcover of <m>\{U_n\}_{n=1}^\infty</m>.  
+      </p>
+    </proof>
+  </theorem>
+  <p>
+    At this point we have the following logical diagram for a general topological space. Without further assumptions on <m>X</m> none of the implications below is an equivalence. 
+  </p>
+  <figure xml:id="fig_compactness_I">
+    <caption>Compactness implications</caption>
+    <image xml:id="im_compactness_I">
+      <shortdescription>Compactness implications</shortdescription>
+      <latex-image>
+        \begin{tikzcd}
+X \text{ compact} \arrow[rd,Rightarrow] \amp \amp X\text{ sequentially compact} \arrow[ld,Rightarrow] \\
+\amp X\text{ countably compact} \arrow[d, Rightarrow] \\ 
+\amp X\text{ limit point compact}  
+\end{tikzcd}
+      </latex-image>
+    </image>
+  </figure>
+  <definition xml:id="d_neighborhood_basis">
+    <title>Local basis</title>
+    <statement>
+        <p>
+           Let <m>X</m> be a topological space. Given <m>x\in X</m>, a <term>local basis</term> at <m>x</m> is a collection <m>\mathcal{B}_x</m> of open neighborhoods of <m>x</m> such that for all open <m>U</m> containing <m>x</m> there is a <m>B\in \mathcal{B}_x</m> such that <m>B\subseteq U</m>.  
+        </p>
+    </statement>
+</definition>
+<definition xml:id="d_first_countable">
+    <title>First countable</title>
+    <statement>
+        <p>
+          A topological space <m>X</m> is <term>first countable</term> if every <m>x\in X</m> has a countable local basis.   
+        </p>
+    </statement>
+</definition>
+  <theorem xml:id="th_limitpoint_implies_sequential">
+    <statement>
+      <title>Limit point compact+<m>T_1</m>+first countable implies sequentially compact</title>
+      <p>
+        Assume <m>X</m> is <m>T_1</m> and first countable. If <m>X</m> is limit point compact, then <m>X</m> is sequentially compact. 
+      </p>
+    </statement>
+  </theorem>
+  <definition xml:id="d_second_countable">
+    <statement>
+      <p>
+      A topological space <m>X</m> is <term>second countable</term> if it has a countable basis.         
+      </p>
+    </statement>
+  </definition>
+  
+  <theorem xml:id="th_sequential_implies_compact">
+    <title>Sequentially compact+second countable implies compact</title>
+    <statement>
+      <p>
+        Let <m>X</m> be a second countable space. If <m>X</m> is sequentially compact, then <m>X</m> is compact. 
+      </p>
+    </statement>
+  </theorem>
+  <p>
+    At this point we now have the following logical diagram. 
+  </p>
+  <figure xml:id="fig_compactness_II">
+    <caption>Compactness implications</caption>
+    <image xml:id="im_compactness_II">
+      <shortdescription>Compactness implications</shortdescription>
+      <latex-image>
+        \begin{tikzcd}
+X \text{ compact} \arrow[rd,Rightarrow] \amp \amp X\text{ sequentially compact} \arrow[ld,Rightarrow] \arrow[ll, Rightarrow, bend right=20, "(\operatorname{second\ count.})"']\\
+\amp X\text{ countably compact} \arrow[d, Rightarrow] \\ 
+\amp X\text{ limit point compact} \arrow[u, Rightarrow, bend right=50, "(T_1)"'] \arrow[uur, Rightarrow, bend right=50, "(T_1+\operatorname{first\ count.})"']
+\end{tikzcd}
+      </latex-image>
+    </image>
+  </figure>
+  <p>
+    <xref ref="cor_compact_limitpoint_sequential"/> now follows from a diagram chase and the fact that second countable implies first countable. 
+  </p>
+  <corollary xml:id="cor_compact_limitpoint_sequential">
+    <title>Compactness equivalences</title>
+    <statement>
+      <p>
+        Let <m>X</m> be <m>T_1</m> and second countable. The following are equivalent. 
+        <ol>
+          <li>
+              <p>
+              <m>X</m> is compact.        
+              </p>
+          </li>
+          <li>
+              <p>
+              <m>X</m> is limit point compact. 
+              </p>
+          </li>
+          <li>
+              <p>
+              <m>X</m> is sequentially compact. 
+              </p>
+          </li>
+         </ol> 
+      </p>
+    </statement>
+  </corollary>
+  <p>
+    Finally, we are ready to prove <xref ref="th_compact_metric"/>. Since any metric space <m>X</m> is <m>T_1</m> and first countable, we have <m>(1)\implies (2)\implies (3)</m>. To show <m>(3)\implies (1)</m> it suffices to prove that any sequentially compact metric space is second countable. This is the result of our last theorem. 
+  </p>
+  <theorem xml:id="th_metric_sequential_second_countable">
+    <title>Metrizable+sequentially compact implies second countable</title>
+    <statement>
+      <p>
+        Let <m>X</m> be a metric space. If <m>X</m> is sequentially compact, then <m>X</m> is second countable. 
+      </p>
+    </statement>
+  </theorem>
+  
   <project>
     <title>Cantor set</title>
     <p>
