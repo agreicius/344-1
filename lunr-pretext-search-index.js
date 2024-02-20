@@ -1879,7 +1879,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.13",
   "title": "Path-connected spaces",
-  "body": " Path-connected spaces   Path   A path in (or to) a topological space is a continuous function , where is a closed interval. We call the start point (or initial point ) and the end point (or terminal point ) of the path .     Path-connected space   Let be a topological space. Two elements are connected by a path in if there is a path such that and . The space is path connected if any two elements of are connected by a path.     Path-connected implies connected   If is path connected, then is connected. Using logical shorthand:     Assume by contradiction that is a separation of . We can find points . Let be a path connecting . By , the image is connected. By we must have or . This contradicts the fact that and . Thus there can be no separation of , and we conclude that it is connected.     Path-connectedness and continuity   If is continuous and is path connected, then is path connected.    Given and , let be a path connecting and . The composition is then a path connecting and .     Balls in   Let be Euclidean -space. For all and any , the open ball is connected, as is the closed ball defined as     It is easy to see that the straight line path defined as is a continuous function connecting any two points in . For our current purposes, we wish to show that if , then so is , for any . To this end, note that . This proves that the open ball is path connected, and hence connected. Next, it is easy to see that the closed ball is in fact the closure of the open ball. Since connectedness is preserved under closure, we conclude that the closed ball is connected.     Punctured Euclidean space :   Let be Euclidean -space, where . The subspace is connected.    Take any . If the two vectors are not scalar multiples of one another, then the straight line path connecting them is guaranteed to lie in , using a linear independence argument. If , then since , we can find a vector that is not a scalar multiple of either vector. We can then construct a polygonal path lieing in that first connects to via a straight line path, and then connects to via a straight line path.     for   Prove: if , then there is no homeomorphism from to .    Assume by contradiction that is a homeomorphism for some . It follows that the restriction is a homeomorphism. This a contradiction since is not connected ( is open and closed in ), but is connected.     The -sphere   Fix . The -sphere is defined as . Prove: is connected for all .    Fix and consider the map defined as , where as usual . This map is continuous (homework exercise!) and surjective. Since is connected, we see that is the image of a connected set under a continuous function, hence connected.     Topologist's sine curve  Define as for all . Let , the graph of .    The set is connected.    The set is not path connected. More specifically, we can show that and are not connected by a path in .         Since is connected and is continuous, its graph is connected by . Since closure preserves connectedness, we conclude that is connected.    Suppose is a path connecting and . We can write where the component functions are both continuous. The set is closed, since is continuous. Set (guaranteed to exist since is closed), and let . Note that since , and that for all we have and hence . Take . We will show that there is no -ball around such that , contradicting the continuity of .  For any any , is an interval since is continuous and is connected. This means that contains an interval of the form for some . Due to the highly oscillatory nature of , we can find points satisfying . Since these points are in the image of , we have and for some . But then . Since , we cannot have , and thus , as claimed.        Connected components   Let be a topological space. The connected component of an element is the set defined as the union of all connected subsets of containing . Similarly, the path-connected component of $x$ is the set $C_p(x)$ defined as the union of all path connected subspaces of containing . A subspace is maximally connected (resp., maximally path connected ) if is connected (resp. path connected), and if for all connected (resp. path connected) sets , if , then .     Connected components   Let be a topological space.   For all the component is the unique maximally connected set containing , and is the unique maximally path connected set containing .    The collection of all connected components is a partition of by closed, maximally connected sets. In other words:    .     for all .     is maximally connected for all .     is closed for all .       Similarly, the collection of all path-connected components of is a partition of by maximally path-connected sets.    If is connected (resp. path connected) and is a connected component (resp. path connected component) of , then either or .    For all we have , and in fact is a partition of by path-connected components.          Let us prove that is maximally connected. It is connected as it is the union of connected sets containing . If and is connected, then since , we have by definition . Thus is maximally connected. Lastly, if is a maximally connected set containing , then by definition we have ; and since is maximally connected we conclude that . This proves is the unique maximally connected set containing .  The proof that is the unique maximally path-connected set containing proceeds in exactly the same manner. We use the fact (not made official, but easy to show) that a union of path-path connected sets with a common intersection point is path connected.    It is clear that , since for all . Furthermore, we know is maximally connected by . Since is connected and , we must have . Thus is closed.  Lastly, to see that the components are disjoint, we will show that . If , then is a connected set containing and . Since is maximally connected, we must have , and thus . The same argument shows . Thus .    The proof here is exactly as with connected components. Again, we use the fact that the union of path-connected sets sharing a common point is path connected.    Suppose is connected. If , then is connected by. Since is maximally connected, we have . Thus . A similar argument applies to path-connected components.    Since is connected and is the union of all connected sets containing , we have . Since for all , we further have for all . It follows easily that . That this union is disjoint follows from (3).       "
+  "body": " Path-connected spaces   Path   A path in (or to) a topological space is a continuous function , where is a closed interval. We call the start point (or initial point ) and the end point (or terminal point ) of the path .     Path-connected space   Let be a topological space. Two elements are connected by a path in if there is a path such that and . The space is path connected if any two elements of are connected by a path.     Path-connected implies connected   If is path connected, then is connected. Using logical shorthand:     Assume by contradiction that is a separation of . We can find points . Let be a path connecting . By , the image is connected. By we must have or . This contradicts the fact that and . Thus there can be no separation of , and we conclude that it is connected.     Path-connectedness and continuity   If is continuous and is path connected, then is path connected.    Given and , let be a path connecting and . The composition is then a path connecting and .     Balls in   Let be Euclidean -space. For all and any , the open ball is connected, as is the closed ball defined as     It is easy to see that the straight line path defined as is a continuous function connecting any two points in . For our current purposes, we wish to show that if , then so is , for any . To this end, note that . This proves that the open ball is path connected, and hence connected. Next, it is easy to see that the closed ball is in fact the closure of the open ball. Since connectedness is preserved under closure, we conclude that the closed ball is connected.     Punctured Euclidean space :   Let be Euclidean -space, where . The subspace is connected.    Take any . If the two vectors are not scalar multiples of one another, then the straight line path connecting them is guaranteed to lie in , using a linear independence argument. If , then since , we can find a vector that is not a scalar multiple of either vector. We can then construct a polygonal path lieing in that first connects to via a straight line path, and then connects to via a straight line path.     for   Prove: if , then there is no homeomorphism from to .    Assume by contradiction that is a homeomorphism for some . It follows that the restriction is a homeomorphism. This a contradiction since is not connected ( is open and closed in ), but is connected.     The -sphere   Fix . The -sphere is defined as . Prove: is connected for all .    Fix and consider the map defined as , where as usual . This map is continuous (homework exercise!) and surjective. Since is connected, we see that is the image of a connected set under a continuous function, hence connected.     Topologist's sine curve  Define as for all . Let , the graph of .    The set is connected.    The set is not path connected. More specifically, we can show that and are not connected by a path in .         Since is connected and is continuous, its graph is connected by . Since closure preserves connectedness, we conclude that is connected.    Suppose is a path connecting and . We can write where the component functions are both continuous. The set is closed, since is continuous. Set (guaranteed to exist since is closed), and let . Note that since , and that for all we have and hence . Take . We will show that there is no -ball around such that , contradicting the continuity of .  For any any , is an interval since is continuous and is connected. This means that contains an interval of the form for some . Due to the highly oscillatory nature of , we can find points satisfying . Since these points are in the image of , we have and for some . But then . Since , we cannot have , and thus , as claimed.        Connected components   Let be a topological space. The connected component of an element is the set defined as the union of all connected subsets of containing . Similarly, the path-connected component of $x$ is the set $C_p(x)$ defined as the union of all path connected subspaces of containing . A subspace is maximally connected (resp., maximally path connected ) if is connected (resp. path connected), and if for all connected (resp. path connected) sets , if , then .     Connected components   Let be a topological space.   For all the component is the unique maximally connected set containing , and is the unique maximally path connected set containing .    The collection of all connected components is a partition of by closed, maximally connected sets. In other words:    .     for all .     is maximally connected for all .     is closed for all .       Similarly, the collection of all path-connected components of is a partition of by maximally path-connected sets.    If is connected (resp. path connected) and is a connected component (resp. path connected component) of , then either or .    For all we have , and in fact is a partition of by path-connected components.          Let us prove that is maximally connected. It is connected as it is the union of connected sets containing . If and is connected, then since , we have by definition . Thus is maximally connected. Lastly, if is a maximally connected set containing , then by definition we have ; and since is maximally connected we conclude that . This proves is the unique maximally connected set containing .  The proof that is the unique maximally path-connected set containing proceeds in exactly the same manner. We use the fact (not made official, but easy to show) that a union of path-path connected sets with a common intersection point is path connected.    It is clear that , since for all . Furthermore, we know is maximally connected by . Since is connected and , we must have . Thus is closed.  Lastly, to see that the components are disjoint, we will show that . If , then is a connected set containing and . Since is maximally connected, we must have , and thus . The same argument shows . Thus .    The proof here is exactly as with connected components. Again, we use the fact that the union of path-connected sets sharing a common point is path connected.    Suppose is connected. If , then is connected by . Since is maximally connected, we have . Thus . A similar argument applies to path-connected components.    Since is connected and is the union of all connected sets containing , we have . Since for all , we further have for all . It follows easily that . That this union is disjoint follows from (3).       "
 },
 {
   "id": "d_path",
@@ -1978,7 +1978,628 @@ var ptx_lunr_docs = [
   "type": "Theorem",
   "number": "1.13.10",
   "title": "Connected components.",
-  "body": " Connected components   Let be a topological space.   For all the component is the unique maximally connected set containing , and is the unique maximally path connected set containing .    The collection of all connected components is a partition of by closed, maximally connected sets. In other words:    .     for all .     is maximally connected for all .     is closed for all .       Similarly, the collection of all path-connected components of is a partition of by maximally path-connected sets.    If is connected (resp. path connected) and is a connected component (resp. path connected component) of , then either or .    For all we have , and in fact is a partition of by path-connected components.          Let us prove that is maximally connected. It is connected as it is the union of connected sets containing . If and is connected, then since , we have by definition . Thus is maximally connected. Lastly, if is a maximally connected set containing , then by definition we have ; and since is maximally connected we conclude that . This proves is the unique maximally connected set containing .  The proof that is the unique maximally path-connected set containing proceeds in exactly the same manner. We use the fact (not made official, but easy to show) that a union of path-path connected sets with a common intersection point is path connected.    It is clear that , since for all . Furthermore, we know is maximally connected by . Since is connected and , we must have . Thus is closed.  Lastly, to see that the components are disjoint, we will show that . If , then is a connected set containing and . Since is maximally connected, we must have , and thus . The same argument shows . Thus .    The proof here is exactly as with connected components. Again, we use the fact that the union of path-connected sets sharing a common point is path connected.    Suppose is connected. If , then is connected by. Since is maximally connected, we have . Thus . A similar argument applies to path-connected components.    Since is connected and is the union of all connected sets containing , we have . Since for all , we further have for all . It follows easily that . That this union is disjoint follows from (3).      "
+  "body": " Connected components   Let be a topological space.   For all the component is the unique maximally connected set containing , and is the unique maximally path connected set containing .    The collection of all connected components is a partition of by closed, maximally connected sets. In other words:    .     for all .     is maximally connected for all .     is closed for all .       Similarly, the collection of all path-connected components of is a partition of by maximally path-connected sets.    If is connected (resp. path connected) and is a connected component (resp. path connected component) of , then either or .    For all we have , and in fact is a partition of by path-connected components.          Let us prove that is maximally connected. It is connected as it is the union of connected sets containing . If and is connected, then since , we have by definition . Thus is maximally connected. Lastly, if is a maximally connected set containing , then by definition we have ; and since is maximally connected we conclude that . This proves is the unique maximally connected set containing .  The proof that is the unique maximally path-connected set containing proceeds in exactly the same manner. We use the fact (not made official, but easy to show) that a union of path-path connected sets with a common intersection point is path connected.    It is clear that , since for all . Furthermore, we know is maximally connected by . Since is connected and , we must have . Thus is closed.  Lastly, to see that the components are disjoint, we will show that . If , then is a connected set containing and . Since is maximally connected, we must have , and thus . The same argument shows . Thus .    The proof here is exactly as with connected components. Again, we use the fact that the union of path-connected sets sharing a common point is path connected.    Suppose is connected. If , then is connected by . Since is maximally connected, we have . Thus . A similar argument applies to path-connected components.    Since is connected and is the union of all connected sets containing , we have . Since for all , we further have for all . It follows easily that . That this union is disjoint follows from (3).      "
+},
+{
+  "id": "s_compact_def",
+  "level": "1",
+  "url": "s_compact_def.html",
+  "type": "Section",
+  "number": "1.14",
+  "title": "Compact spaces",
+  "body": " Compact spaces   Covering   Let be a subset of the topological space . A collection is a covering of if . As a shorthand, we will often say in this case that is a covering.  Given a property of subsets ( , open, closed, ), a covering is said to satisfy this property if does for all .     Compact space   A topological space is compact if every open covering of has a finite subcovering: , if is an open covering, then there is a finite set such that .  A subset is compact if it is compact with respect to the subspace topology. Equivalently, is compact if any covering by open sets of has a finite subcovering.     Compactness is a topological property  If is a homeomorphism, then is compact if and only if is compact. Indeed defines a bijection between open covers of and open covers of ; and furthermore, this maps finite subcovers of to finite subcovers of .    Elementary examples     Any finite set is compact.    Any space with the trivial topology is compact.    A discrete space is compact if and only if it is finite.     is not compact. Consequently, since compactness is a topological property ( , preserved by homeomorphisms), no open interval is compact.       is compact  Show that is a compact subset of .     Finite closed intervals are compact   Finite closed intervals are compact in .    Let be an open covering of . Define to be the set of all such that has a finite subcovering. Note that is nonempty, since clearly . I will show further that is open and closed in . Since is connected, it will follows that , and hence that has a finite subcovering, as desired.   is open  Suppose . By definition of there is a finite subcover . Without loss of generality, we may assume that . Since is open, we can find an such that . But then clearly for all , showing that admits a finite subcovering for all such , and hence that . This proves is open.    is closed  Take . Since is a cover of , we have for some . Since is open, we can find an such that . But then for all we have : indeed, if for such an we had a finite subcovering , then would be a finite subcovering of , contradicting the fact that .      Compact implies closed in Hausdorff spaces   Let be a compact subset of the topological space .    is closed.    Given any there are disjoint open sets such that and .       (1) follows directly from (2). To prove the latter, note that for each we can find disjoint open neighborhoods of and , respectively. Since is an open covering of , there is a finite subcovering . The open sets satisfy the desired conditions.     Compactness inherited by closed subspaces   Let be a closed subset of the topological space . If is compact, then is compact.    Let be an open covering of by open sets of . Since is closed, the collection is an open covering of .     Compactness preserved under continuous image   Let be a continuous function. If is compact, then is compact.    If is an open covering of , then is an open covering of . Since is compact, there is a finite subcover . It follows that is a finite subcover of our original covering .     Compactness and closed maps   Let be continuous. If is compact and is Hausdorff, then is a closed map.   Let be closed. Since is compact, is compact. By , is compact. By , since is Hausdorff, is closed.    Compactness and homeomorphisms   Let be continuous and bijective. If is compact and is Hausdorff, then is a homeomorphism.    By , the map is closed, hence a homeomorphism.     Finite intersection property   A collection of subsets of satisfies the finite intersection property if every finite subcollection has non trivial intersection: , .      Let be a topological space. The following statements are equivalent.    is compact.    If is a collection of closed sets that satisfies the finite intersection property, then .        Nested closed sets in compact space   Let be a compact space. Given a nested sequence of nonempty closed subsets , we have .    "
+},
+{
+  "id": "d_covering",
+  "level": "2",
+  "url": "s_compact_def.html#d_covering",
+  "type": "Definition",
+  "number": "1.14.1",
+  "title": "Covering.",
+  "body": " Covering   Let be a subset of the topological space . A collection is a covering of if . As a shorthand, we will often say in this case that is a covering.  Given a property of subsets ( , open, closed, ), a covering is said to satisfy this property if does for all .   "
+},
+{
+  "id": "d_compact",
+  "level": "2",
+  "url": "s_compact_def.html#d_compact",
+  "type": "Definition",
+  "number": "1.14.2",
+  "title": "Compact space.",
+  "body": " Compact space   A topological space is compact if every open covering of has a finite subcovering: , if is an open covering, then there is a finite set such that .  A subset is compact if it is compact with respect to the subspace topology. Equivalently, is compact if any covering by open sets of has a finite subcovering.   "
+},
+{
+  "id": "rm_compactness_topological",
+  "level": "2",
+  "url": "s_compact_def.html#rm_compactness_topological",
+  "type": "Remark",
+  "number": "1.14.3",
+  "title": "Compactness is a topological property.",
+  "body": " Compactness is a topological property  If is a homeomorphism, then is compact if and only if is compact. Indeed defines a bijection between open covers of and open covers of ; and furthermore, this maps finite subcovers of to finite subcovers of .  "
+},
+{
+  "id": "eg_elementary_compact",
+  "level": "2",
+  "url": "s_compact_def.html#eg_elementary_compact",
+  "type": "Example",
+  "number": "1.14.4",
+  "title": "Elementary examples.",
+  "body": " Elementary examples     Any finite set is compact.    Any space with the trivial topology is compact.    A discrete space is compact if and only if it is finite.     is not compact. Consequently, since compactness is a topological property ( , preserved by homeomorphisms), no open interval is compact.     "
+},
+{
+  "id": "eg_K_compact",
+  "level": "2",
+  "url": "s_compact_def.html#eg_K_compact",
+  "type": "Example",
+  "number": "1.14.5",
+  "title": "<span class=\"process-math\">\\(K\\cup\\{0\\}\\)<\/span> is compact.",
+  "body": " is compact  Show that is a compact subset of .   "
+},
+{
+  "id": "th_compact_R",
+  "level": "2",
+  "url": "s_compact_def.html#th_compact_R",
+  "type": "Theorem",
+  "number": "1.14.6",
+  "title": "Finite closed intervals are compact.",
+  "body": " Finite closed intervals are compact   Finite closed intervals are compact in .    Let be an open covering of . Define to be the set of all such that has a finite subcovering. Note that is nonempty, since clearly . I will show further that is open and closed in . Since is connected, it will follows that , and hence that has a finite subcovering, as desired.   is open  Suppose . By definition of there is a finite subcover . Without loss of generality, we may assume that . Since is open, we can find an such that . But then clearly for all , showing that admits a finite subcovering for all such , and hence that . This proves is open.    is closed  Take . Since is a cover of , we have for some . Since is open, we can find an such that . But then for all we have : indeed, if for such an we had a finite subcovering , then would be a finite subcovering of , contradicting the fact that .    "
+},
+{
+  "id": "th_compact_Haus_closed",
+  "level": "2",
+  "url": "s_compact_def.html#th_compact_Haus_closed",
+  "type": "Theorem",
+  "number": "1.14.7",
+  "title": "Compact implies closed in Hausdorff spaces.",
+  "body": " Compact implies closed in Hausdorff spaces   Let be a compact subset of the topological space .    is closed.    Given any there are disjoint open sets such that and .       (1) follows directly from (2). To prove the latter, note that for each we can find disjoint open neighborhoods of and , respectively. Since is an open covering of , there is a finite subcovering . The open sets satisfy the desired conditions.   "
+},
+{
+  "id": "th_closed_in_compact",
+  "level": "2",
+  "url": "s_compact_def.html#th_closed_in_compact",
+  "type": "Theorem",
+  "number": "1.14.8",
+  "title": "Compactness inherited by closed subspaces.",
+  "body": " Compactness inherited by closed subspaces   Let be a closed subset of the topological space . If is compact, then is compact.    Let be an open covering of by open sets of . Since is closed, the collection is an open covering of .   "
+},
+{
+  "id": "th_compactness_continuous",
+  "level": "2",
+  "url": "s_compact_def.html#th_compactness_continuous",
+  "type": "Theorem",
+  "number": "1.14.9",
+  "title": "Compactness preserved under continuous image.",
+  "body": " Compactness preserved under continuous image   Let be a continuous function. If is compact, then is compact.    If is an open covering of , then is an open covering of . Since is compact, there is a finite subcover . It follows that is a finite subcover of our original covering .   "
+},
+{
+  "id": "th_compactness_closed_map",
+  "level": "2",
+  "url": "s_compact_def.html#th_compactness_closed_map",
+  "type": "Theorem",
+  "number": "1.14.10",
+  "title": "Compactness and closed maps.",
+  "body": " Compactness and closed maps   Let be continuous. If is compact and is Hausdorff, then is a closed map.   Let be closed. Since is compact, is compact. By , is compact. By , since is Hausdorff, is closed.  "
+},
+{
+  "id": "cor_compact_homeomorphism",
+  "level": "2",
+  "url": "s_compact_def.html#cor_compact_homeomorphism",
+  "type": "Corollary",
+  "number": "1.14.11",
+  "title": "Compactness and homeomorphisms.",
+  "body": " Compactness and homeomorphisms   Let be continuous and bijective. If is compact and is Hausdorff, then is a homeomorphism.    By , the map is closed, hence a homeomorphism.   "
+},
+{
+  "id": "d_finite_intersection_property",
+  "level": "2",
+  "url": "s_compact_def.html#d_finite_intersection_property",
+  "type": "Definition",
+  "number": "1.14.12",
+  "title": "Finite intersection property.",
+  "body": " Finite intersection property   A collection of subsets of satisfies the finite intersection property if every finite subcollection has non trivial intersection: , .   "
+},
+{
+  "id": "th_compact_equivalence",
+  "level": "2",
+  "url": "s_compact_def.html#th_compact_equivalence",
+  "type": "Theorem",
+  "number": "1.14.13",
+  "title": "",
+  "body": "  Let be a topological space. The following statements are equivalent.    is compact.    If is a collection of closed sets that satisfies the finite intersection property, then .      "
+},
+{
+  "id": "cor_finite_intersection",
+  "level": "2",
+  "url": "s_compact_def.html#cor_finite_intersection",
+  "type": "Corollary",
+  "number": "1.14.14",
+  "title": "Nested closed sets in compact space.",
+  "body": " Nested closed sets in compact space   Let be a compact space. Given a nested sequence of nonempty closed subsets , we have .   "
+},
+{
+  "id": "s_compact_Rn",
+  "level": "1",
+  "url": "s_compact_Rn.html",
+  "type": "Section",
+  "number": "1.15",
+  "title": "Compactness in <span class=\"process-math\">\\(\\R^n\\)<\/span>",
+  "body": " Compactness in  Before investigating the notion of compactness in the setting of , we first drop a real whopper of a theorem. Tychonoff's theorem states simply that arbitrary products of compact topological spaces are compact with respect to the product topology. The proof of this most general result requires the axiom of choice; in fact, as we will show, it is equivalent to the axiom of choice. We will provide a full proof of Tychonoff's theorem later using the concept of nets . In the meantime, we will officially state the result, make use of the result in all its generality henceforth, and provide a proof for the case where we have a finite product.   Tychonoff theorem   Given any collection of compact topological spaces, the product space is compact with respect to the product topology.    For now we only prove the result for finite products. It suffices, by induction, to show that the product of two compact spaces is compact, and for this case we will use , which is quite useful in its own right.  Let and be compact topological spaces, and suppose we have an open covering of . For any the subspace is homeomorphic to and hence compact. Since is a covering of , there is a finite set such that . Since is compact, it follows by the tube lemma that there is an open set such that . Since and is compact, there are elements such that . We claim that , in which case is a finite subcovering of , as desired.  Let's see why holds: given any , we have for some , in which case as desired. The reverse inclusion is automatic.     Tube lemma   Let be topological spaces, and assume is compact. Given any and open set containing , there is an open set such that .    If is an open set satisfying , then for all , there exists open sets and such that and and . Since is an open covering of and is compact, we have for some elements . Let . Clearly we have . Furthermore, given any we have for some . Since , we conclude that . This proves , as desired.     Boxes and balls in   Show that the following subsets of are compact.   A closed solid box .    A closed ball .       The box is compact by the (finite version) of Tychonoff's theorem, since any closed interval is compact.  The closed ball is homeomorphic to , which in turn is homeomorphic to the box via the map .     Bounded, diameter, and distance to sets   Let be a metric space and let be a subspace of .  We say is bounded if there is a positive number such that for all . If is nonempty, we define the diameter of , denoted , as .  The distance  from to is defined as .     Heine-Borel theorem   Let . For any the following conditions are equivalent.    is compact.     is closed and bounded with respect to (equivalently, with respect to ).       It is clear that the empty set is compact, closed, and bounded. Henceforth, we assume is nonempty.  Assume is compact. Since is Hausdorff, we know from that is closed. We now show that is bounded. Pick any . We have . Since is compact, we have for some . It follows that for all , in which case .  Now assume is closed. If furthermore , then is a closed subset     Extreme value theorem   Let be continuous. If is compact, then there exist points such that and .     Lebesgue number   Let be a metric space. A Lebesgue number for an open covering is a positive real number satisfying the following condition: if , then for some .     Lebesgue number   If is a compact metric space, then any open covering of has a Lebesgue number.     Compact: continuous implies uniformly continuous   Let be a continuous function between the metric spaces and . If is compact, then is uniformly continuous: , for all there exists a such that if , then .    "
+},
+{
+  "id": "th_Tychonoff",
+  "level": "2",
+  "url": "s_compact_Rn.html#th_Tychonoff",
+  "type": "Theorem",
+  "number": "1.15.1",
+  "title": "Tychonoff theorem.",
+  "body": " Tychonoff theorem   Given any collection of compact topological spaces, the product space is compact with respect to the product topology.    For now we only prove the result for finite products. It suffices, by induction, to show that the product of two compact spaces is compact, and for this case we will use , which is quite useful in its own right.  Let and be compact topological spaces, and suppose we have an open covering of . For any the subspace is homeomorphic to and hence compact. Since is a covering of , there is a finite set such that . Since is compact, it follows by the tube lemma that there is an open set such that . Since and is compact, there are elements such that . We claim that , in which case is a finite subcovering of , as desired.  Let's see why holds: given any , we have for some , in which case as desired. The reverse inclusion is automatic.   "
+},
+{
+  "id": "lem_tube",
+  "level": "2",
+  "url": "s_compact_Rn.html#lem_tube",
+  "type": "Lemma",
+  "number": "1.15.2",
+  "title": "Tube lemma.",
+  "body": " Tube lemma   Let be topological spaces, and assume is compact. Given any and open set containing , there is an open set such that .    If is an open set satisfying , then for all , there exists open sets and such that and and . Since is an open covering of and is compact, we have for some elements . Let . Clearly we have . Furthermore, given any we have for some . Since , we conclude that . This proves , as desired.   "
+},
+{
+  "id": "s_compact_Rn-5",
+  "level": "2",
+  "url": "s_compact_Rn.html#s_compact_Rn-5",
+  "type": "Example",
+  "number": "1.15.3",
+  "title": "Boxes and balls in <span class=\"process-math\">\\(\\R^n\\)<\/span>.",
+  "body": " Boxes and balls in   Show that the following subsets of are compact.   A closed solid box .    A closed ball .       The box is compact by the (finite version) of Tychonoff's theorem, since any closed interval is compact.  The closed ball is homeomorphic to , which in turn is homeomorphic to the box via the map .   "
+},
+{
+  "id": "d_bounded_diam_distance",
+  "level": "2",
+  "url": "s_compact_Rn.html#d_bounded_diam_distance",
+  "type": "Definition",
+  "number": "1.15.4",
+  "title": "Bounded, diameter, and distance to sets.",
+  "body": " Bounded, diameter, and distance to sets   Let be a metric space and let be a subspace of .  We say is bounded if there is a positive number such that for all . If is nonempty, we define the diameter of , denoted , as .  The distance  from to is defined as .   "
+},
+{
+  "id": "th_Heine_Borel",
+  "level": "2",
+  "url": "s_compact_Rn.html#th_Heine_Borel",
+  "type": "Theorem",
+  "number": "1.15.5",
+  "title": "Heine-Borel theorem.",
+  "body": " Heine-Borel theorem   Let . For any the following conditions are equivalent.    is compact.     is closed and bounded with respect to (equivalently, with respect to ).       It is clear that the empty set is compact, closed, and bounded. Henceforth, we assume is nonempty.  Assume is compact. Since is Hausdorff, we know from that is closed. We now show that is bounded. Pick any . We have . Since is compact, we have for some . It follows that for all , in which case .  Now assume is closed. If furthermore , then is a closed subset   "
+},
+{
+  "id": "cor_extreme_value_theorem",
+  "level": "2",
+  "url": "s_compact_Rn.html#cor_extreme_value_theorem",
+  "type": "Corollary",
+  "number": "1.15.6",
+  "title": "Extreme value theorem.",
+  "body": " Extreme value theorem   Let be continuous. If is compact, then there exist points such that and .   "
+},
+{
+  "id": "d_Lebesgue_number",
+  "level": "2",
+  "url": "s_compact_Rn.html#d_Lebesgue_number",
+  "type": "Definition",
+  "number": "1.15.7",
+  "title": "Lebesgue number.",
+  "body": " Lebesgue number   Let be a metric space. A Lebesgue number for an open covering is a positive real number satisfying the following condition: if , then for some .   "
+},
+{
+  "id": "cor_Lebesgue_number",
+  "level": "2",
+  "url": "s_compact_Rn.html#cor_Lebesgue_number",
+  "type": "Corollary",
+  "number": "1.15.8",
+  "title": "Lebesgue number.",
+  "body": " Lebesgue number   If is a compact metric space, then any open covering of has a Lebesgue number.   "
+},
+{
+  "id": "cor_continuous_uniformcontinuous",
+  "level": "2",
+  "url": "s_compact_Rn.html#cor_continuous_uniformcontinuous",
+  "type": "Corollary",
+  "number": "1.15.9",
+  "title": "Compact: continuous implies uniformly continuous.",
+  "body": " Compact: continuous implies uniformly continuous   Let be a continuous function between the metric spaces and . If is compact, then is uniformly continuous: , for all there exists a such that if , then .   "
+},
+{
+  "id": "s_compact_metric",
+  "level": "1",
+  "url": "s_compact_metric.html",
+  "type": "Section",
+  "number": "1.16",
+  "title": "Compactness in metric spaces",
+  "body": " Compactness in metric spaces  As useful as the Heine-Borel theorem is in characterizing compactness in , it relies in part on a non-topological property : namely, boundedness with respect to the Euclidean, box, or taxicab norm. In this section we investigate the relation of compactness to various related topological properties that turn out to be equivalent to compactness in the setting of metric spaces. First we meet our new compact-like properties.   Limit point compact   A topological space is limit point compact if all infinite subsets of have a limit point.     Sequentially compact   A topological space is sequentially compact if every sequences of elements of has a convergent subsequence.     asserts that compactness, limit point compactness, and sequential compactness are equivalent in the setting of metric spaces.   Compactness in metric spaces   Let be a metric space. The following statements are equivalent.    is compact.     is limit point compact.     is sequentially compact.       Our proof of will involve a series of results that articulate which implications hold between these three concepts in full generality, and highlight what extra conditions are required to obtain equivalences. Before embarking on this investigation we look at two examples that illustrate two different uses of : namely, (a) deciding whether a given subset of a metric space is compact, and (b) showing that a given space is not a metric space.     Compact implies limit point compact   If is compact, then is limit point compact.    Let be an infinite subset of , and let be any countable infinite subset of . We will show that has a limit point. Assume by contradiction that has no limit point. Since in general the closure of a set is obtained by adding all limit points, we see that is closed. Since is compact, we conclude that is compact. On the other hand, since no element of is a limit point of is a limit point of , it is easy to see that all singletons of are open in the subspace topology. This contradicts the compactness of since the open covering has no finite subcover.     Countably compact space  A close look at our proof of reveals that limit point compactness follows from a slightly weaker notion of compactness: namely, countable compactness . A space is countably compact if every countable open subcover has a finite subcover. We have the following implications: . It can be shown that none of these implications is in fact an equivalence. However, if is further assumed to be , then limit point compactness implies countable compactness. We record this fact schematically as follows: .    Sequential compactness implies limit point compactness   If is sequentially compact, then is limit point compactness.    We will show that sequential compactness implies countable compactness. The result then follows from . Suppose by contradiction that the open covering has no finite subcover. It follows that we can construct a sequence satisfying . By sequential compactness there is a convergent subsequence . Since is a covering, we have for some . But by construction there is an such that for all . A contradiction. Thus there must be a finite subcover of .    At this point we have the following logical diagram for a general topological space. Without further assumptions on none of the implications below is an equivalence.   Compactness implications   Compactness implications      Local basis   Let be a topological space. Given , a local basis at is a collection of open neighborhoods of such that for all open containing there is a such that .     First countable   A topological space is first countable if every has a countable local basis.      Limit point compact+ +first countable implies sequentially compact  Assume is and first countable. If is limit point compact, then is sequentially compact.    Assume is , second countable, and limit point compact. Let be a sequence in and let , the set of entries of . If is finite, then it is easy to see that there is a constant subsequence of , and such a subsequence clearly converges. If is infinite, then since is limit point compact, there is a limit point of . Let be a countable local basis at . Replacing with , we may assume that for all .      A topological space is second countable if it has a countable basis.     Sequentially compact+second countable implies compact   Let be a second countable space. If is sequentially compact, then is compact.    Assume is second countable, and let . As we will show in , since is second countable, there is a countable subcovering , where for some . If the countable covering had no finite subcovering, then we could construct a sequence satisfying for all . Since is sequentially compact, the sequence would have a convergent subsequence . We must have for some . But by construction for all , whence it follows that eventually. A contradiction. We conclude that , and hence has a finite subcovering, as desired.    The following logical diagram summarizes what we know thus far. (We leave as an exercise the proof that if is and limit point compact, then it is countably compact.)   Compactness implications   Compactness implications      now follows from a diagram chase and the fact that second countable implies first countable. (See .)   Compactness equivalences   Let be and second countable. The following are equivalent.    is compact.     is limit point compact.     is sequentially compact.       Finally, we are ready to prove . Since any metric space is and first countable, we have . To show it suffices to prove that any sequentially compact metric space is second countable. This is the result of our last theorem.   Metrizable+sequentially compact implies second countable   Let be a metric space. If is sequentially compact, then is second countable.    We show first that if is a sequentially compact metric space, then it is totally bounded: , given any , we have for some elements . Indeed, suppose by contradiction that there is an for which this is not true. Construct a sequence as follows: choose any ; since , we can find an element ; in general, given choices , choose . Since is sequentially compact the the sequence has a convergent subsequence . This is a contradiction since this sequence would not be Cauchy: indeed by construction, for any and with , we have .  Since is totally bounded, for each we have . Let , a countable set. It is easy to see that is dense in : , . As we will show in , any metric space containing a countable dense subset is second countable.     "
+},
+{
+  "id": "d_limit_point_compact",
+  "level": "2",
+  "url": "s_compact_metric.html#d_limit_point_compact",
+  "type": "Definition",
+  "number": "1.16.1",
+  "title": "Limit point compact.",
+  "body": " Limit point compact   A topological space is limit point compact if all infinite subsets of have a limit point.   "
+},
+{
+  "id": "d_sequentially_compact",
+  "level": "2",
+  "url": "s_compact_metric.html#d_sequentially_compact",
+  "type": "Definition",
+  "number": "1.16.2",
+  "title": "Sequentially compact.",
+  "body": " Sequentially compact   A topological space is sequentially compact if every sequences of elements of has a convergent subsequence.   "
+},
+{
+  "id": "th_compact_metric",
+  "level": "2",
+  "url": "s_compact_metric.html#th_compact_metric",
+  "type": "Theorem",
+  "number": "1.16.3",
+  "title": "Compactness in metric spaces.",
+  "body": " Compactness in metric spaces   Let be a metric space. The following statements are equivalent.    is compact.     is limit point compact.     is sequentially compact.      "
+},
+{
+  "id": "s_compact_metric-8",
+  "level": "2",
+  "url": "s_compact_metric.html#s_compact_metric-8",
+  "type": "Example",
+  "number": "1.16.4",
+  "title": "",
+  "body": " "
+},
+{
+  "id": "th_compact_implies_limitpoint",
+  "level": "2",
+  "url": "s_compact_metric.html#th_compact_implies_limitpoint",
+  "type": "Theorem",
+  "number": "1.16.5",
+  "title": "Compact implies limit point compact.",
+  "body": " Compact implies limit point compact   If is compact, then is limit point compact.    Let be an infinite subset of , and let be any countable infinite subset of . We will show that has a limit point. Assume by contradiction that has no limit point. Since in general the closure of a set is obtained by adding all limit points, we see that is closed. Since is compact, we conclude that is compact. On the other hand, since no element of is a limit point of is a limit point of , it is easy to see that all singletons of are open in the subspace topology. This contradicts the compactness of since the open covering has no finite subcover.   "
+},
+{
+  "id": "rm_countably_compact",
+  "level": "2",
+  "url": "s_compact_metric.html#rm_countably_compact",
+  "type": "Remark",
+  "number": "1.16.6",
+  "title": "Countably compact space.",
+  "body": " Countably compact space  A close look at our proof of reveals that limit point compactness follows from a slightly weaker notion of compactness: namely, countable compactness . A space is countably compact if every countable open subcover has a finite subcover. We have the following implications: . It can be shown that none of these implications is in fact an equivalence. However, if is further assumed to be , then limit point compactness implies countable compactness. We record this fact schematically as follows: .  "
+},
+{
+  "id": "th_seqcompact_implies_limitpoint_compact",
+  "level": "2",
+  "url": "s_compact_metric.html#th_seqcompact_implies_limitpoint_compact",
+  "type": "Theorem",
+  "number": "1.16.7",
+  "title": "Sequential compactness implies limit point compactness.",
+  "body": " Sequential compactness implies limit point compactness   If is sequentially compact, then is limit point compactness.    We will show that sequential compactness implies countable compactness. The result then follows from . Suppose by contradiction that the open covering has no finite subcover. It follows that we can construct a sequence satisfying . By sequential compactness there is a convergent subsequence . Since is a covering, we have for some . But by construction there is an such that for all . A contradiction. Thus there must be a finite subcover of .   "
+},
+{
+  "id": "fig_compactness_I",
+  "level": "2",
+  "url": "s_compact_metric.html#fig_compactness_I",
+  "type": "Figure",
+  "number": "1.16.8",
+  "title": "",
+  "body": " Compactness implications   Compactness implications    "
+},
+{
+  "id": "d_neighborhood_basis",
+  "level": "2",
+  "url": "s_compact_metric.html#d_neighborhood_basis",
+  "type": "Definition",
+  "number": "1.16.9",
+  "title": "Local basis.",
+  "body": " Local basis   Let be a topological space. Given , a local basis at is a collection of open neighborhoods of such that for all open containing there is a such that .   "
+},
+{
+  "id": "d_first_countable",
+  "level": "2",
+  "url": "s_compact_metric.html#d_first_countable",
+  "type": "Definition",
+  "number": "1.16.10",
+  "title": "First countable.",
+  "body": " First countable   A topological space is first countable if every has a countable local basis.   "
+},
+{
+  "id": "th_limitpoint_implies_sequential",
+  "level": "2",
+  "url": "s_compact_metric.html#th_limitpoint_implies_sequential",
+  "type": "Theorem",
+  "number": "1.16.11",
+  "title": "",
+  "body": "  Limit point compact+ +first countable implies sequentially compact  Assume is and first countable. If is limit point compact, then is sequentially compact.    Assume is , second countable, and limit point compact. Let be a sequence in and let , the set of entries of . If is finite, then it is easy to see that there is a constant subsequence of , and such a subsequence clearly converges. If is infinite, then since is limit point compact, there is a limit point of . Let be a countable local basis at . Replacing with , we may assume that for all .   "
+},
+{
+  "id": "d_second_countable",
+  "level": "2",
+  "url": "s_compact_metric.html#d_second_countable",
+  "type": "Definition",
+  "number": "1.16.12",
+  "title": "",
+  "body": "  A topological space is second countable if it has a countable basis.   "
+},
+{
+  "id": "th_sequential_implies_compact",
+  "level": "2",
+  "url": "s_compact_metric.html#th_sequential_implies_compact",
+  "type": "Theorem",
+  "number": "1.16.13",
+  "title": "Sequentially compact+second countable implies compact.",
+  "body": " Sequentially compact+second countable implies compact   Let be a second countable space. If is sequentially compact, then is compact.    Assume is second countable, and let . As we will show in , since is second countable, there is a countable subcovering , where for some . If the countable covering had no finite subcovering, then we could construct a sequence satisfying for all . Since is sequentially compact, the sequence would have a convergent subsequence . We must have for some . But by construction for all , whence it follows that eventually. A contradiction. We conclude that , and hence has a finite subcovering, as desired.   "
+},
+{
+  "id": "fig_compactness_II",
+  "level": "2",
+  "url": "s_compact_metric.html#fig_compactness_II",
+  "type": "Figure",
+  "number": "1.16.14",
+  "title": "",
+  "body": " Compactness implications   Compactness implications    "
+},
+{
+  "id": "cor_compact_limitpoint_sequential",
+  "level": "2",
+  "url": "s_compact_metric.html#cor_compact_limitpoint_sequential",
+  "type": "Corollary",
+  "number": "1.16.15",
+  "title": "Compactness equivalences.",
+  "body": " Compactness equivalences   Let be and second countable. The following are equivalent.    is compact.     is limit point compact.     is sequentially compact.      "
+},
+{
+  "id": "th_metric_sequential_second_countable",
+  "level": "2",
+  "url": "s_compact_metric.html#th_metric_sequential_second_countable",
+  "type": "Theorem",
+  "number": "1.16.16",
+  "title": "Metrizable+sequentially compact implies second countable.",
+  "body": " Metrizable+sequentially compact implies second countable   Let be a metric space. If is sequentially compact, then is second countable.    We show first that if is a sequentially compact metric space, then it is totally bounded: , given any , we have for some elements . Indeed, suppose by contradiction that there is an for which this is not true. Construct a sequence as follows: choose any ; since , we can find an element ; in general, given choices , choose . Since is sequentially compact the the sequence has a convergent subsequence . This is a contradiction since this sequence would not be Cauchy: indeed by construction, for any and with , we have .  Since is totally bounded, for each we have . Let , a countable set. It is easy to see that is dense in : , . As we will show in , any metric space containing a countable dense subset is second countable.   "
+},
+{
+  "id": "s_locally",
+  "level": "1",
+  "url": "s_locally.html",
+  "type": "Section",
+  "number": "1.17",
+  "title": "Locally compact spaces and compactification",
+  "body": " Locally compact spaces and compactification   Locally compact space   A topological space is locally compact at if there is a compact neighborhood of : , if there is a compact set and open set containing such that . The space is locally compact if it is locally compact at all points .     Local compactness equivalence   Let be a topological space. The following are equivalent.    is locally compact Hausdorff.    For all , and for all open sets containing , there is an open neighborhood of such that and is compact.       It is clear that (2) implies (1): for any , taking , we get an open neighborhood such that is compact. Thus is a compact neighborhood of .  We now show (1) implies (2). Fix an and open set containing . Since is locally compact, we have for some open set and compact set . Taking we may assume further that . The set is a closed subset of the compact set , hence compact. Since is Hausdorff, we can find disjoint open sets containing and , respectively. (See .) Let . Since is a closed subset of a compact set, it is compact. Furthermore, since is disjoint from , we must have .     Embedding   An embedding between topological spaces and is an injective continuous function such that is a homeomorphism (with respect to the subspace topology on ).  An embedding is open (resp., closed ) if is an open (resp. closed) subset of : equivalently, if the embedding is an open (resp., a closed) map.     One-point compactification  Let be a topological space, and let be a disjoint union of and a single element that is not an element of . The collection defines a topology on with respect to which the inclusion map is an open immersion. We call along with the the inclusion map the Alexandroff extension of . When is locally compact Hausdorff, we call the one-point compactification of .     A compactification of a topological space is an embedding , where is compact and .  A compactification is a one-point compactification if is a single point.     One-point compactification   Let be a topological space, and let the Alexandroff extension of as defined in .    is a topology, and the inclusion map is an open immersion with respect to this topology.     is compact.    The following statements are equivalent.    is open in .     is not dense in      is compact.       The following statements are equivalent.    is Hausdorff.     is locally compact Hausdorff and not compact.           One-point compactification   Let be locally compact Hausdorff.   The inclusion map is a one-point compactification of , and is Hausdorff.    If is a one-point compactification and is Hausdorff, then there exists a unique homeomorphism such that .        Locally compact Hausdorff spaces   Let be a Hausdorff space. The following statements are equivalent.    is locally compact.     is a homeomorphic to an open subspace of a compact Hausdorff space.       That (1) implies (2) follows from . For the converse, assume is homeomorphic to the open set , where is compact and Hausdorff. We may use the homeomorphism to identify with : thus we think of as an open subspace of . Now, since is compact, it is locally compact. Hence by , given any we can find an open such that and is compact. This shows that every has a compact neighborhood , as desired.     One-point compactification of   We consider with the standard topology.   Produce a one-point compactification of where is a familiar space.    Produce a one-point compactification of where is a familiar space.    Use (2) to identify the one-point compactification of as a subspace of a familiar space.          The map defined as is an open embedding of onto . Thus this is a realization of the one-point compactification of .    Since is a homeomorphism, the map defined as the composition is an open embedding of onto , providing a realization of the one-point compactification of . Note that we have by definition .    Since the inclusion is a closed embedding, the restriction is an embedding (neither open nor closed) of into . Restricting the codomain to the closed (hence compact) subset we get a one-point compactification .        Stereographic projection  Let , the north pole of . Given any the line passing through and intersects the -plane in the unique point . The corresponding map can easily be shown to be a homeomorphism, with inverse . The map is called the stereographic projection onto . The open embedding realizes as the one-point compactification of .  Not surprisingly, this result generalizes easily to . There is a homeomorphism from to mapping to , whose inverse realizes as the one-point compactification of .   "
+},
+{
+  "id": "d_locally_compact",
+  "level": "2",
+  "url": "s_locally.html#d_locally_compact",
+  "type": "Definition",
+  "number": "1.17.1",
+  "title": "Locally compact space.",
+  "body": " Locally compact space   A topological space is locally compact at if there is a compact neighborhood of : , if there is a compact set and open set containing such that . The space is locally compact if it is locally compact at all points .   "
+},
+{
+  "id": "th_locally_compact_equivalence",
+  "level": "2",
+  "url": "s_locally.html#th_locally_compact_equivalence",
+  "type": "Theorem",
+  "number": "1.17.2",
+  "title": "Local compactness equivalence.",
+  "body": " Local compactness equivalence   Let be a topological space. The following are equivalent.    is locally compact Hausdorff.    For all , and for all open sets containing , there is an open neighborhood of such that and is compact.       It is clear that (2) implies (1): for any , taking , we get an open neighborhood such that is compact. Thus is a compact neighborhood of .  We now show (1) implies (2). Fix an and open set containing . Since is locally compact, we have for some open set and compact set . Taking we may assume further that . The set is a closed subset of the compact set , hence compact. Since is Hausdorff, we can find disjoint open sets containing and , respectively. (See .) Let . Since is a closed subset of a compact set, it is compact. Furthermore, since is disjoint from , we must have .   "
+},
+{
+  "id": "d_embedding",
+  "level": "2",
+  "url": "s_locally.html#d_embedding",
+  "type": "Definition",
+  "number": "1.17.3",
+  "title": "Embedding.",
+  "body": " Embedding   An embedding between topological spaces and is an injective continuous function such that is a homeomorphism (with respect to the subspace topology on ).  An embedding is open (resp., closed ) if is an open (resp. closed) subset of : equivalently, if the embedding is an open (resp., a closed) map.   "
+},
+{
+  "id": "top_eg_onepoint_compact",
+  "level": "2",
+  "url": "s_locally.html#top_eg_onepoint_compact",
+  "type": "Topological specimen",
+  "number": "16",
+  "title": "One-point compactification.",
+  "body": " One-point compactification  Let be a topological space, and let be a disjoint union of and a single element that is not an element of . The collection defines a topology on with respect to which the inclusion map is an open immersion. We call along with the the inclusion map the Alexandroff extension of . When is locally compact Hausdorff, we call the one-point compactification of .  "
+},
+{
+  "id": "d_compactification",
+  "level": "2",
+  "url": "s_locally.html#d_compactification",
+  "type": "Definition",
+  "number": "1.17.4",
+  "title": "",
+  "body": "  A compactification of a topological space is an embedding , where is compact and .  A compactification is a one-point compactification if is a single point.   "
+},
+{
+  "id": "th_onepoint_compactification",
+  "level": "2",
+  "url": "s_locally.html#th_onepoint_compactification",
+  "type": "Theorem",
+  "number": "1.17.5",
+  "title": "One-point compactification.",
+  "body": " One-point compactification   Let be a topological space, and let the Alexandroff extension of as defined in .    is a topology, and the inclusion map is an open immersion with respect to this topology.     is compact.    The following statements are equivalent.    is open in .     is not dense in      is compact.       The following statements are equivalent.    is Hausdorff.     is locally compact Hausdorff and not compact.         "
+},
+{
+  "id": "cor_onepoint_compact",
+  "level": "2",
+  "url": "s_locally.html#cor_onepoint_compact",
+  "type": "Corollary",
+  "number": "1.17.6",
+  "title": "One-point compactification.",
+  "body": " One-point compactification   Let be locally compact Hausdorff.   The inclusion map is a one-point compactification of , and is Hausdorff.    If is a one-point compactification and is Hausdorff, then there exists a unique homeomorphism such that .      "
+},
+{
+  "id": "cor_locallycompact_char",
+  "level": "2",
+  "url": "s_locally.html#cor_locallycompact_char",
+  "type": "Corollary",
+  "number": "1.17.7",
+  "title": "Locally compact Hausdorff spaces.",
+  "body": " Locally compact Hausdorff spaces   Let be a Hausdorff space. The following statements are equivalent.    is locally compact.     is a homeomorphic to an open subspace of a compact Hausdorff space.       That (1) implies (2) follows from . For the converse, assume is homeomorphic to the open set , where is compact and Hausdorff. We may use the homeomorphism to identify with : thus we think of as an open subspace of . Now, since is compact, it is locally compact. Hence by , given any we can find an open such that and is compact. This shows that every has a compact neighborhood , as desired.   "
+},
+{
+  "id": "eg_onepoint_compact_in_R",
+  "level": "2",
+  "url": "s_locally.html#eg_onepoint_compact_in_R",
+  "type": "Example",
+  "number": "1.17.8",
+  "title": "One-point compactification of <span class=\"process-math\">\\(\\R\\)<\/span>.",
+  "body": " One-point compactification of   We consider with the standard topology.   Produce a one-point compactification of where is a familiar space.    Produce a one-point compactification of where is a familiar space.    Use (2) to identify the one-point compactification of as a subspace of a familiar space.          The map defined as is an open embedding of onto . Thus this is a realization of the one-point compactification of .    Since is a homeomorphism, the map defined as the composition is an open embedding of onto , providing a realization of the one-point compactification of . Note that we have by definition .    Since the inclusion is a closed embedding, the restriction is an embedding (neither open nor closed) of into . Restricting the codomain to the closed (hence compact) subset we get a one-point compactification .      "
+},
+{
+  "id": "top_eg_stereographic_projection",
+  "level": "2",
+  "url": "s_locally.html#top_eg_stereographic_projection",
+  "type": "Topological specimen",
+  "number": "17",
+  "title": "Stereographic projection.",
+  "body": " Stereographic projection  Let , the north pole of . Given any the line passing through and intersects the -plane in the unique point . The corresponding map can easily be shown to be a homeomorphism, with inverse . The map is called the stereographic projection onto . The open embedding realizes as the one-point compactification of .  Not surprisingly, this result generalizes easily to . There is a homeomorphism from to mapping to , whose inverse realizes as the one-point compactification of .  "
+},
+{
+  "id": "s_countability_axioms",
+  "level": "1",
+  "url": "s_countability_axioms.html",
+  "type": "Section",
+  "number": "1.18",
+  "title": "Countability axioms",
+  "body": " Countability axioms   Local basis   Let be a topological space. Given , a local basis at is a collection of open neighborhoods of such that for all open containing there is a such that .     First countable   A topological space is first countable if every has a countable local basis.     Countability properties  Since we will be dealing with countability questions, it will be useful to record some important countability properties. You may use the following facts in your arguments without any justification.   A countable union of countable sets is countable.    A finite product of countable sets is countable.    If is countable, then the set of all finite subsets of is countable.    If is countable and is a surjection, then is countable.       Metric spaces are first countable  Let be a metric space. For any the collection is a countable local basis at . Thus is first countable.    First countable cofinite spaces   Let be a topological space with the cofinite topology. Prove: is first countable if and only if is countable.    Assume is countable. A nonempty open set of is of the form for some . It follows that the nonempty open sets of are in bijection with the set of all finite subsets of . By , this collection is countable. Thus has countably many open sets. Thus for any the set of all open sets containing is countable.  Assume is first countable. Take any and let be a countable local basis at . By definition we have finite for each , in which case is countable, being a countable union of countable sets. I claim , proving is countable. Indeed, take any . The set is an open set containing . Thus we have for some , in which case , or equivalently, , as desired.     Sequentially closed\/continuous   Let and be topological spaces.  Given a set , its sequential closure is the set of all for which there is a a sequence of elements of with . The set is sequentially closed if .  A function is sequentially continuous if it maps convergent sequences to convergent sequences: , if in , then in .     First countable and sequential properties   Let be a first countable space.   For any there is a nested countable local basis : , for all we have .    A set is closed if and only if it is sequentially closed.    A function is continuous if and only if it is sequentially continuous.          Given let be a countable local basis at . For each , define . (Note that since .) We have for all . Furthermore, given any open , we have . Thus forms a nested local basis.    First, it is easy to see that in any space we have . Thus in any topological space, if is closed, then we have , and thus is sequentially closed. Now assume is sequentially closed, and take . Using (1), we pick a a local basis at that is nested: , for all , . Now, for each pick an element . We have : indeed, if is any open set containing , then for some , in which case for all . Since is sequentially compact, we have . Thus , and we conclude that .    The forward direction is true in any topological space, as we have shown before. Let's prove the reverse direction. Assume is sequentially continuous. Fix any and open set containing . Assume by way of contradiction that there is no open set such that . Let be a nested local basis at . Since for all , we can find an such that . The sequence converges to : indeed, given any open containing there is an such that . Since the local basis is nested, we have for all , and hence for all . However, it is clear that does not converge to , since by construction no lies in the open set . This contradicts the fact that is sequentially compact. We conclude that is continuous.        Second countable, Lindelöf, separable   Let be a topological space. A set is dense if .    is second countable if it has a countable basis.     is Lindelöf if every open cover of has a countable subcover.     is separable if it has a countable dense subset.        The four countability axioms  We will call the properties of being first countable, second countable, Lindelöf, and separable the {\\em four countablity axioms}.    Second countable: strongest countability axiom   Let be a topological space.   If is second countable, then is first countable, Lindelöf, and separable.    If is a metric space, then being second countable, Lindelöf, and separable are all equivalent properties.          Assume is second countable and let be a countable basis.  For each , the set is easily seen to be a countable local basis at . This proves is first countable.  Let be an open cover of . For each we have for some . Since the cover , we obtain the countable subcover . This proves is Lindelöf.  For each pick . Since is a basis, it follows that is dense: indeed, given any and open set , we have for some , in which case .    This is a (classic) homework exercise. Enjoy!        is second countable   Prove that is second countable with respect to the Euclidean topology.    First observe that the set of all -tuples is countable. According to (2) of it would suffice to show that is dense in . We take the hard route and show directly that has a countable basis.  For each , let . The set , being a countable union of countable sets, is countable. I claim it is a basis. It suffices to show that given any and , we can find a such that . To this end pick such that and pick such that , so that . It follows that , as desired.     is not metrizable   Let . Show that is first countable, Lindelöf, separable, but not second countable. Conclude that is not metrizable.    For each , the set forms a countable local basis at . Thus is first countable.  It is easy to see further that is dense with respect to the left limit topology.  To see that is not second countable, consider any basis of . For each , we can find a basis element such that . Note that since for such a , the map defines an injection of into : . This proves that is uncountable.  At this point, by (2) of we know that is not metrizable, since it is separable but not second countable. See Munkres for a proof that is also Lindelöf.     First\/second countable: subspaces, images, and products      If is first countable (resp. second countable) and is a subspace, then is first countable (resp. second countable).    If is open, continuous and surjective, then if is first countable (resp. second countable), is first countable (resp. second countable).    Let be a product of topological spaces. The following statements are equivalent.    is first countable (resp. second countable).     is first countable (resp. second countable) for all and the set of all such that does not have the trivial topology is countable.   As a result, a countable product of first countable (resp. second countable) spaces is first countable.          This is an easy consequence of the fact that for any basis (or local basis) of the corresponding set is a basis (or local basis) in .    It is easy to see that such a function maps bases (or local bases) in to bases (or local bases) in .    Homework exercise. Enjoy!        First countable: continuous image   Give an example of a first countable space and continuous function such that is not first countable.     is not metrizable.  Let . Show that is not metrizable.   "
+},
+{
+  "id": "d_neighborhood_basis",
+  "level": "2",
+  "url": "s_countability_axioms.html#d_neighborhood_basis",
+  "type": "Definition",
+  "number": "1.18.1",
+  "title": "Local basis.",
+  "body": " Local basis   Let be a topological space. Given , a local basis at is a collection of open neighborhoods of such that for all open containing there is a such that .   "
+},
+{
+  "id": "d_first_countable",
+  "level": "2",
+  "url": "s_countability_axioms.html#d_first_countable",
+  "type": "Definition",
+  "number": "1.18.2",
+  "title": "First countable.",
+  "body": " First countable   A topological space is first countable if every has a countable local basis.   "
+},
+{
+  "id": "rm_countable",
+  "level": "2",
+  "url": "s_countability_axioms.html#rm_countable",
+  "type": "Remark",
+  "number": "1.18.3",
+  "title": "Countability properties.",
+  "body": " Countability properties  Since we will be dealing with countability questions, it will be useful to record some important countability properties. You may use the following facts in your arguments without any justification.   A countable union of countable sets is countable.    A finite product of countable sets is countable.    If is countable, then the set of all finite subsets of is countable.    If is countable and is a surjection, then is countable.     "
+},
+{
+  "id": "eg_metric_first_countable",
+  "level": "2",
+  "url": "s_countability_axioms.html#eg_metric_first_countable",
+  "type": "Example",
+  "number": "1.18.4",
+  "title": "Metric spaces are first countable.",
+  "body": " Metric spaces are first countable  Let be a metric space. For any the collection is a countable local basis at . Thus is first countable.  "
+},
+{
+  "id": "eg_cofinite_first_countable",
+  "level": "2",
+  "url": "s_countability_axioms.html#eg_cofinite_first_countable",
+  "type": "Example",
+  "number": "1.18.5",
+  "title": "First countable cofinite spaces.",
+  "body": " First countable cofinite spaces   Let be a topological space with the cofinite topology. Prove: is first countable if and only if is countable.    Assume is countable. A nonempty open set of is of the form for some . It follows that the nonempty open sets of are in bijection with the set of all finite subsets of . By , this collection is countable. Thus has countably many open sets. Thus for any the set of all open sets containing is countable.  Assume is first countable. Take any and let be a countable local basis at . By definition we have finite for each , in which case is countable, being a countable union of countable sets. I claim , proving is countable. Indeed, take any . The set is an open set containing . Thus we have for some , in which case , or equivalently, , as desired.   "
+},
+{
+  "id": "d_sequentially_closed_continuous",
+  "level": "2",
+  "url": "s_countability_axioms.html#d_sequentially_closed_continuous",
+  "type": "Definition",
+  "number": "1.18.6",
+  "title": "Sequentially closed\/continuous.",
+  "body": " Sequentially closed\/continuous   Let and be topological spaces.  Given a set , its sequential closure is the set of all for which there is a a sequence of elements of with . The set is sequentially closed if .  A function is sequentially continuous if it maps convergent sequences to convergent sequences: , if in , then in .   "
+},
+{
+  "id": "th_first_countable_sequences",
+  "level": "2",
+  "url": "s_countability_axioms.html#th_first_countable_sequences",
+  "type": "Theorem",
+  "number": "1.18.7",
+  "title": "First countable and sequential properties.",
+  "body": " First countable and sequential properties   Let be a first countable space.   For any there is a nested countable local basis : , for all we have .    A set is closed if and only if it is sequentially closed.    A function is continuous if and only if it is sequentially continuous.          Given let be a countable local basis at . For each , define . (Note that since .) We have for all . Furthermore, given any open , we have . Thus forms a nested local basis.    First, it is easy to see that in any space we have . Thus in any topological space, if is closed, then we have , and thus is sequentially closed. Now assume is sequentially closed, and take . Using (1), we pick a a local basis at that is nested: , for all , . Now, for each pick an element . We have : indeed, if is any open set containing , then for some , in which case for all . Since is sequentially compact, we have . Thus , and we conclude that .    The forward direction is true in any topological space, as we have shown before. Let's prove the reverse direction. Assume is sequentially continuous. Fix any and open set containing . Assume by way of contradiction that there is no open set such that . Let be a nested local basis at . Since for all , we can find an such that . The sequence converges to : indeed, given any open containing there is an such that . Since the local basis is nested, we have for all , and hence for all . However, it is clear that does not converge to , since by construction no lies in the open set . This contradicts the fact that is sequentially compact. We conclude that is continuous.      "
+},
+{
+  "id": "d_second_countable",
+  "level": "2",
+  "url": "s_countability_axioms.html#d_second_countable",
+  "type": "Definition",
+  "number": "1.18.8",
+  "title": "Second countable, Lindelöf, separable.",
+  "body": " Second countable, Lindelöf, separable   Let be a topological space. A set is dense if .    is second countable if it has a countable basis.     is Lindelöf if every open cover of has a countable subcover.     is separable if it has a countable dense subset.      "
+},
+{
+  "id": "rm_4_countable_axioms",
+  "level": "2",
+  "url": "s_countability_axioms.html#rm_4_countable_axioms",
+  "type": "Remark",
+  "number": "1.18.9",
+  "title": "The four countability axioms.",
+  "body": " The four countability axioms  We will call the properties of being first countable, second countable, Lindelöf, and separable the {\\em four countablity axioms}.  "
+},
+{
+  "id": "th_second_countable",
+  "level": "2",
+  "url": "s_countability_axioms.html#th_second_countable",
+  "type": "Theorem",
+  "number": "1.18.10",
+  "title": "Second countable: strongest countability axiom.",
+  "body": " Second countable: strongest countability axiom   Let be a topological space.   If is second countable, then is first countable, Lindelöf, and separable.    If is a metric space, then being second countable, Lindelöf, and separable are all equivalent properties.          Assume is second countable and let be a countable basis.  For each , the set is easily seen to be a countable local basis at . This proves is first countable.  Let be an open cover of . For each we have for some . Since the cover , we obtain the countable subcover . This proves is Lindelöf.  For each pick . Since is a basis, it follows that is dense: indeed, given any and open set , we have for some , in which case .    This is a (classic) homework exercise. Enjoy!      "
+},
+{
+  "id": "eg_Euclidean_second_countable",
+  "level": "2",
+  "url": "s_countability_axioms.html#eg_Euclidean_second_countable",
+  "type": "Example",
+  "number": "1.18.11",
+  "title": "<span class=\"process-math\">\\(\\R^n\\)<\/span> is second countable.",
+  "body": " is second countable   Prove that is second countable with respect to the Euclidean topology.    First observe that the set of all -tuples is countable. According to (2) of it would suffice to show that is dense in . We take the hard route and show directly that has a countable basis.  For each , let . The set , being a countable union of countable sets, is countable. I claim it is a basis. It suffices to show that given any and , we can find a such that . To this end pick such that and pick such that , so that . It follows that , as desired.   "
+},
+{
+  "id": "eg_Leftlimit_nonmetrizable",
+  "level": "2",
+  "url": "s_countability_axioms.html#eg_Leftlimit_nonmetrizable",
+  "type": "Example",
+  "number": "1.18.12",
+  "title": "<span class=\"process-math\">\\(\\R_\\ell\\)<\/span> is not metrizable.",
+  "body": " is not metrizable   Let . Show that is first countable, Lindelöf, separable, but not second countable. Conclude that is not metrizable.    For each , the set forms a countable local basis at . Thus is first countable.  It is easy to see further that is dense with respect to the left limit topology.  To see that is not second countable, consider any basis of . For each , we can find a basis element such that . Note that since for such a , the map defines an injection of into : . This proves that is uncountable.  At this point, by (2) of we know that is not metrizable, since it is separable but not second countable. See Munkres for a proof that is also Lindelöf.   "
+},
+{
+  "id": "th_first_second_countable_subspace_product",
+  "level": "2",
+  "url": "s_countability_axioms.html#th_first_second_countable_subspace_product",
+  "type": "Theorem",
+  "number": "1.18.13",
+  "title": "First\/second countable: subspaces, images, and products.",
+  "body": " First\/second countable: subspaces, images, and products      If is first countable (resp. second countable) and is a subspace, then is first countable (resp. second countable).    If is open, continuous and surjective, then if is first countable (resp. second countable), is first countable (resp. second countable).    Let be a product of topological spaces. The following statements are equivalent.    is first countable (resp. second countable).     is first countable (resp. second countable) for all and the set of all such that does not have the trivial topology is countable.   As a result, a countable product of first countable (resp. second countable) spaces is first countable.          This is an easy consequence of the fact that for any basis (or local basis) of the corresponding set is a basis (or local basis) in .    It is easy to see that such a function maps bases (or local bases) in to bases (or local bases) in .    Homework exercise. Enjoy!      "
+},
+{
+  "id": "eg_first_countable_continuous_image",
+  "level": "2",
+  "url": "s_countability_axioms.html#eg_first_countable_continuous_image",
+  "type": "Example",
+  "number": "1.18.14",
+  "title": "First countable: continuous image.",
+  "body": " First countable: continuous image   Give an example of a first countable space and continuous function such that is not first countable.   "
+},
+{
+  "id": "eg_uncountable_product",
+  "level": "2",
+  "url": "s_countability_axioms.html#eg_uncountable_product",
+  "type": "Example",
+  "number": "1.18.15",
+  "title": "<span class=\"process-math\">\\(\\R^\\R\\)<\/span> is not metrizable..",
+  "body": " is not metrizable.  Let . Show that is not metrizable.  "
 },
 {
   "id": "appendix-notation",

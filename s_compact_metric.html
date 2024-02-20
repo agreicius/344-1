@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Compactness in metric spaces</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Math 344-1">
+<meta property="book:author" content="Aaron Greicius">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "https://pretextbook.org/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.33/pretext_search.js"></script><link href="https://pretextbook.org/css/0.83/pretext_search.css" rel="stylesheet" type="text/css">
+<script>js_version = 0.33</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.33/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.33/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.33/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+<link href="https://pretextbook.org/css/0.83/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/shell_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
+<h1 class="heading"><a href="kursobjekt.html"><span class="title">Math 344-1:</span> <span class="subtitle">Kursobjekt</span></a></h1>
+<p class="byline">Aaron Greicius</p>
+</div>
+</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><a class="index-button button" href="kursobjekt-6-6.html" title="Index"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span><span class="name">Index</span></a><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="s_compact_Rn.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="c_top_spaces.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="s_locally.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\Z}{{\mathbb Z}}
+  \newcommand{\Q}{{\mathbb Q}}
+  \newcommand{\R}{{\mathbb R}}
+  \newcommand{\C}{{\mathbb C}}
+  \newcommand{\T}{{\mathbb T}}
+  \newcommand{\F}{{\mathbb F}}
+  \newcommand{\PP}{{\mathbb P}}
+  \newcommand{\HH}{{\mathbb H}}
+  \newcommand{\compose}{\circ}
+  \newcommand{\bolda}{{\mathbf a}}
+  \newcommand{\boldb}{{\mathbf b}}
+  \newcommand{\boldc}{{\mathbf c}}
+  \newcommand{\boldd}{{\mathbf d}}
+  \newcommand{\bolde}{{\mathbf e}}
+  \newcommand{\boldi}{{\mathbf i}}
+  \newcommand{\boldj}{{\mathbf j}}
+  \newcommand{\boldk}{{\mathbf k}}
+  \newcommand{\boldn}{{\mathbf n}}
+  \newcommand{\boldp}{{\mathbf p}}
+  \newcommand{\boldq}{{\mathbf q}}
+  \newcommand{\boldr}{{\mathbf r}}
+  \newcommand{\bolds}{{\mathbf s}}
+  \newcommand{\boldt}{{\mathbf t}}
+  \newcommand{\boldu}{{\mathbf u}}
+  \newcommand{\boldv}{{\mathbf v}}
+  \newcommand{\boldw}{{\mathbf w}}
+  \newcommand{\boldx}{{\mathbf x}}
+  \newcommand{\boldy}{{\mathbf y}}
+  \newcommand{\boldz}{{\mathbf z}}
+  \newcommand{\boldzero}{{\mathbf 0}}
+  \newcommand{\boldmod}{\boldsymbol{ \bmod }}
+  \newcommand{\boldT}{{\mathbf T}}
+  \newcommand{\boldN}{{\mathbf N}}
+  \newcommand{\boldB}{{\mathbf B}}
+  \newcommand{\boldF}{{\mathbf F}}
+  \newcommand{\boldS}{{\mathbf S}}
+  \newcommand{\boldE}{{\mathbf E}}
+  \newcommand{\boldG}{{\mathbf G}}
+  \newcommand{\boldK}{{\mathbf K}}
+  \newcommand{\boldL}{{\mathbf L}}
+  \DeclareMathOperator{\lns}{lns}
+  \DeclareMathOperator{\lcm}{lcm}
+  \DeclareMathOperator{\Span}{span}
+  \DeclareMathOperator{\tr}{tr}
+  \DeclareMathOperator{\NS}{null}
+  \DeclareMathOperator{\RS}{row}
+  \DeclareMathOperator{\CS}{col}
+  \DeclareMathOperator{\im}{im}
+  \DeclareMathOperator{\range}{range}
+  \DeclareMathOperator{\rank}{rank}
+  \DeclareMathOperator{\nullity}{nullity}
+  \DeclareMathOperator{\sign}{sign}
+  \DeclareMathOperator{\Fix}{Fix}
+  \DeclareMathOperator{\Aff}{Aff}
+  \DeclareMathOperator{\Frac}{Frac}
+  \DeclareMathOperator{\Ann}{Ann}
+  \DeclareMathOperator{\Tor}{Tor}
+  \DeclareMathOperator{\id}{id}
+  \DeclareMathOperator{\mdeg}{mdeg}
+  \DeclareMathOperator{\Lt}{Lt}
+  \DeclareMathOperator{\Lc}{Lc}
+  \DeclareMathOperator{\disc}{disc}
+  \DeclareMathOperator{\Frob}{Frob}
+  \DeclareMathOperator{\adj}{adj}
+  \DeclareMathOperator{\curl}{curl}
+  \DeclareMathOperator{\grad}{grad}
+  \DeclareMathOperator{\diver}{div}
+  \DeclareMathOperator{\flux}{flux}
+  \DeclareMathOperator{\Hom}{Hom}
+  \DeclareMathOperator{\ab}{ab}
+
+
+  \newcommand{\surjects}{\twoheadrightarrow}
+  \newcommand{\injects}{\hookrightarrow}
+  \newcommand{\bijects}{\leftrightarrow}
+  \newcommand{\isomto}{\overset{\sim}{\rightarrow}}
+  \newcommand{\floor}[1]{\lfloor#1\rfloor}
+  \newcommand{\ceiling}[1]{\left\lceil#1\right\rceil}
+  \newcommand{\mclass}[2][m]{[#2]_{#1}}
+  \newcommand{\val}[2][]{\left\lvert #2\right\rvert_{#1}}
+  \newcommand{\abs}[2][]{\left\lvert #2\right\rvert_{#1}}
+  \newcommand{\valuation}[2][]{\left\lvert #2\right\rvert_{#1}}
+  \newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+  \newcommand{\anpoly}{a_nx^n+a_{n-1}x^{n-1}\cdots +a_1x+a_0}
+  \newcommand{\anmonic}{x^n+a_{n-1}x^{n-1}\cdots +a_1x+a_0}
+  \newcommand{\bmpoly}{b_mx^m+b_{m-1}x^{m-1}\cdots +b_1x+b_0}
+  \newcommand{\pder}[2]{\frac{\partial#1}{\partial#2}}
+  \newcommand{\normalin}{\trianglelefteq}
+  \newcommand{\angvec}[1]{\langle #1\rangle}
+  \newcommand{\varpoly}[2]{#1_{#2}x^{#2}+#1_{#2-1}x^{#2-1}\cdots +#1_1x+#1_0}
+  \newcommand{\varpower}[1][a]{#1_0+#1_1x+#1_1x^2+\cdots}
+  \newcommand{\limasto}[2][x]{\lim_{#1\rightarrow #2}}
+  \newenvironment{linsys}[2][m]{
+  \begin{array}[#1]{@{}*{#2}{rc}r@{}}
+  }{
+  \end{array}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural contains-active toc-item-list">
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="meta_frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="c_foundations.html" class="internal"><span class="codenumber">0</span> <span class="title">Foundations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_sets_functions.html" class="internal"><span class="codenumber">0.1</span> <span class="title">Sets and functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_sets_functions.html#ss_sets" class="internal"><span class="title">Sets</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_sets_functions.html#ss_functions" class="internal"><span class="title">Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_sets_functions.html#subsec-" class="internal"><span class="title">Cardinality and countability</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_logic.html" class="internal"><span class="codenumber">0.2</span> <span class="title">Logic</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_logic.html#ss_propositional_calculus" class="internal"><span class="title">Propositional logic</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_logic.html#ss_predicate_logic" class="internal"><span class="title">Predicate logic</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_proof_technique.html" class="internal"><span class="codenumber">0.3</span> <span class="title">Proof techniques</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="s_proof_technique.html#ss_logical_structure" class="internal"><span class="title">Logical structure</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_implication" class="internal"><span class="title">Implication</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_disjunction" class="internal"><span class="title">Disjunction</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_equivalence" class="internal"><span class="title">Equivalence</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_logical_chains" class="internal"><span class="title">Chains of implications/equivalences</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_proof_by_contradiction" class="internal"><span class="title">Proof by contradiction</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="s_proof_technique.html#ss_Equalities" class="internal"><span class="title">Equalities</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_chain_equalities" class="internal"><span class="title">Chain of equalities</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="s_proof_technique.html#ss_set_properties" class="internal"><span class="title">Basic set properties</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_set_inclusion" class="internal"><span class="title">Set inclusion</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_set_equality" class="internal"><span class="title">Set equality</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="s_proof_technique.html#ss_function_properties" class="internal"><span class="title">Basic function properties</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_function_equality" class="internal"><span class="title">Function equality</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_injective_surjective_bijective" class="internal"><span class="title">Injective, surjective, bijective</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="s_proof_technique.html#ss_mathematical_induction" class="internal"><span class="title">Mathematical induction</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_weak_induction" class="internal"><span class="title">Proof by induction</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_strong_induction" class="internal"><span class="title">Proof by strong induction</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="c_top_spaces.html" class="internal"><span class="codenumber">1</span> <span class="title">Point-set topology</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_top_spaces.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Topological spaces</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_bases_top.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Topological basis</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_metric1.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Metric spaces</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_closed_closure_interior.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Closed sets, closure, and interior</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_limitpoints_hausdorff.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Limit points and the Hausdorff property</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_subspace_finite_products.html" class="internal"><span class="codenumber">1.6</span> <span class="title">Subspaces and finite products</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_subspace_finite_products.html#ss_subspace" class="internal"><span class="title">Subspaces</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_subspace_finite_products.html#ss_finite_products" class="internal"><span class="title">Finite product spaces</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_product2.html" class="internal"><span class="codenumber">1.7</span> <span class="title">Arbitrary products</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_prods_convergence_metric.html" class="internal"><span class="codenumber">1.8</span> <span class="title">Convergence in product spaces</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_continuous.html" class="internal"><span class="codenumber">1.9</span> <span class="title">Continuous functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_homeomorphisms.html" class="internal"><span class="codenumber">1.10</span> <span class="title">Homeomorphisms</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_quotients.html" class="internal"><span class="codenumber">1.11</span> <span class="title">Quotients</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_connected1.html" class="internal"><span class="codenumber">1.12</span> <span class="title">Connected spaces</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_connected_path.html" class="internal"><span class="codenumber">1.13</span> <span class="title">Path-connected spaces</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_compact_def.html" class="internal"><span class="codenumber">1.14</span> <span class="title">Compact spaces</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_compact_Rn.html" class="internal"><span class="codenumber">1.15</span> <span class="title">Compactness in <span class="process-math">\(\R^n\)</span></span></a></div></li>
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="s_compact_metric.html" class="internal"><span class="codenumber">1.16</span> <span class="title">Compactness in metric spaces</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_locally.html" class="internal"><span class="codenumber">1.17</span> <span class="title">Locally compact spaces and compactification</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_countability_axioms.html" class="internal"><span class="codenumber">1.18</span> <span class="title">Countability axioms</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="kursobjekt-6.html" class="internal"><span class="title">Back Matter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-notation.html" class="internal"><span class="codenumber">A</span> <span class="title">Notation</span></a></div></li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-defs.html" class="internal"><span class="codenumber">B</span> <span class="title">Definitions</span></a></div></li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-thms.html" class="internal"><span class="codenumber">C</span> <span class="title">Theory</span></a></div></li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-specimens.html" class="internal"><span class="codenumber">D</span> <span class="title">Topological specimens</span></a></div></li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-egs.html" class="internal"><span class="codenumber">E</span> <span class="title">Examples</span></a></div></li>
+<li class="toc-item toc-index"><div class="toc-title-box"><a href="kursobjekt-6-6.html" class="internal"><span class="title">Index</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="s_compact_metric"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">1.16</span><span class="space"> </span><span class="title">Compactness in metric spaces</span>
+</h2>
+<div class="para" id="s_compact_metric-2">As useful as the Heine-Borel theorem is in characterizing compactness in <span class="process-math">\(\R^n\text{,}\)</span> it relies in part on a <em class="emphasis">non-topological property</em>: namely, boundedness with respect to the Euclidean, box, or taxicab norm. In this section we investigate the relation of compactness to various related topological properties that turn out to be equivalent to compactness in the setting of metric spaces. First we meet our new compact-like properties.</div>
+<article class="definition definition-like" id="d_limit_point_compact"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.16.1</span><span class="period">.</span><span class="space"> </span><span class="title">Limit point compact.</span>
+</h3> <div class="para" id="d_limit_point_compact-2-1">A topological space <span class="process-math">\(X\)</span> is <dfn class="terminology">limit point compact</dfn> if all infinite subsets of <span class="process-math">\(X\)</span> have a limit point.</div></article><article class="definition definition-like" id="d_sequentially_compact"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.16.2</span><span class="period">.</span><span class="space"> </span><span class="title">Sequentially compact.</span>
+</h3> <div class="para" id="d_sequentially_compact-2-1">A topological space <span class="process-math">\(X\)</span> is <dfn class="terminology">sequentially compact</dfn> if every sequences of elements of  <span class="process-math">\(X\)</span> has a convergent subsequence.</div></article><div class="para" id="s_compact_metric-5">
+<a href="" class="xref" data-knowl="./knowl/xref/th_compact_metric.html" title="Theorem 1.16.3: Compactness in metric spaces">Theorem 1.16.3</a> asserts that compactness, limit point compactness, and sequential compactness are equivalent in the setting of metric spaces.</div>
+<article class="theorem theorem-like" id="th_compact_metric"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.16.3</span><span class="period">.</span><span class="space"> </span><span class="title">Compactness in metric spaces.</span>
+</h3>
+<div class="para logical" id="th_compact_metric-2-1">
+<div class="para">Let <span class="process-math">\((X,d)\)</span> be a metric space. The following statements are equivalent.</div>
+<ol class="decimal">
+<li id="th_compact_metric-2-1-2-1"><div class="para" id="th_compact_metric-2-1-2-1-1">
+<span class="process-math">\(X\)</span> is compact.</div></li>
+<li id="th_compact_metric-2-1-2-2"><div class="para" id="th_compact_metric-2-1-2-2-1">
+<span class="process-math">\(X\)</span> is limit point compact.</div></li>
+<li id="th_compact_metric-2-1-2-3"><div class="para" id="th_compact_metric-2-1-2-3-1">
+<span class="process-math">\(X\)</span> is sequentially compact.</div></li>
+</ol>
+</div></article><div class="para" id="s_compact_metric-7">Our proof of <a href="" class="xref" data-knowl="./knowl/xref/th_compact_metric.html" title="Theorem 1.16.3: Compactness in metric spaces">Theorem 1.16.3</a> will involve a series of results that articulate which implications hold between these three concepts in full generality, and highlight what extra conditions are required to obtain equivalences. Before embarking on this investigation we look at two examples that illustrate two different uses of <a href="" class="xref" data-knowl="./knowl/xref/th_compact_metric.html" title="Theorem 1.16.3: Compactness in metric spaces">Theorem 1.16.3</a>: namely, (a) deciding whether a given subset of a metric space is compact, and (b) showing that a given space is not a metric space.</div>
+<article class="example example-like" id="s_compact_metric-8"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.16.4</span><span class="period">.</span>
+</h3></article><article class="theorem theorem-like" id="th_compact_implies_limitpoint"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.16.5</span><span class="period">.</span><span class="space"> </span><span class="title">Compact implies limit point compact.</span>
+</h3>
+<div class="para" id="th_compact_implies_limitpoint-2-1">If <span class="process-math">\(X\)</span> is compact, then <span class="process-math">\(X\)</span> is limit point compact.</div></article><details id="th_compact_implies_limitpoint-3" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para" id="th_compact_implies_limitpoint-3-1">Let <span class="process-math">\(A\)</span> be an infinite subset of <span class="process-math">\(X\text{,}\)</span> and let <span class="process-math">\(A'=\{x_1,x_2,\dots\}\)</span> be any countable infinite subset of <span class="process-math">\(A\text{.}\)</span> We will show that <span class="process-math">\(A'\)</span> has a limit point. Assume by contradiction that <span class="process-math">\(A'\)</span> has no limit point. Since in general the closure of a set is obtained by adding all limit points, we see that <span class="process-math">\(A'\)</span> is closed. Since <span class="process-math">\(X\)</span> is compact, we conclude that <span class="process-math">\(A'\)</span> is compact. On the other hand, since no element of <span class="process-math">\(A'\)</span> is a limit point of <span class="process-math">\(A'\)</span> is a limit point of <span class="process-math">\(A'\text{,}\)</span> it is easy to see that all singletons of <span class="process-math">\(A'\)</span> are open in the subspace topology. This contradicts the compactness of <span class="process-math">\(A'\)</span> since the open covering <span class="process-math">\(A'=\bigcup_{n=1}^{\infty}\{x_n\}\)</span> has no finite subcover.</div></article></details><article class="remark remark-like" id="rm_countably_compact"><h3 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.16.6</span><span class="period">.</span><span class="space"> </span><span class="title">Countably compact space.</span>
+</h3> <div class="para logical" id="rm_countably_compact-2">
+<div class="para">A close look at our proof of <a href="" class="xref" data-knowl="./knowl/xref/th_compact_implies_limitpoint.html" title="Theorem 1.16.5: Compact implies limit point compact">Theorem 1.16.5</a> reveals that limit point compactness follows from a slightly weaker notion of compactness: namely, <em class="emphasis">countable compactness</em>. A space is <dfn class="terminology">countably compact</dfn> if every countable open subcover has a finite subcover. We have the following implications:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_compact_implies_limitpoint.html">
+\begin{equation*}
+X \text{ compact} \implies X \text{ countably compact} \implies X \text{ limit point compact}\text{.}
+\end{equation*}
+</div>
+<div class="para">It can be shown that none of these implications is in fact an equivalence. However, if <span class="process-math">\(X\)</span> is further assumed to be <span class="process-math">\(T_1\text{,}\)</span> then limit point compactness implies countable compactness. We record this fact schematically as follows:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_compact_implies_limitpoint.html">
+\begin{equation*}
+X \text{ limit point compact} \underset{(T_1)}{\implies} X \text{ countably compact}\text{.}
+\end{equation*}
+</div>
+</div></article><article class="theorem theorem-like" id="th_seqcompact_implies_limitpoint_compact"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.16.7</span><span class="period">.</span><span class="space"> </span><span class="title">Sequential compactness implies limit point compactness.</span>
+</h3>
+<div class="para" id="th_seqcompact_implies_limitpoint_compact-2-1">If <span class="process-math">\(X\)</span> is sequentially compact, then <span class="process-math">\(X\)</span> is limit point compactness.</div></article><details id="th_seqcompact_implies_limitpoint_compact-3" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para" id="th_seqcompact_implies_limitpoint_compact-3-1">We will show that sequential compactness implies countable compactness. The result then follows from <a href="" class="xref" data-knowl="./knowl/xref/rm_countably_compact.html" title="Remark 1.16.6: Countably compact space">Remark 1.16.6</a>. Suppose by contradiction that the open covering <span class="process-math">\(X=\bigcup_{n=1}^\infty U_n\)</span> has no finite subcover. It follows that we can construct a sequence <span class="process-math">\((x_n)_{n=1}^\infty\)</span> satisfying <span class="process-math">\(x_n\notin U_1\cup U_2\cup \cdots \cup U_n\text{.}\)</span> By sequential compactness there is a convergent subsequence <span class="process-math">\(x_{n_m}\rightarrow x\text{.}\)</span> Since <span class="process-math">\(\{U_n\}_{n=1}^\infty\)</span> is a covering, we have <span class="process-math">\(x\in U_{N}\)</span> for some <span class="process-math">\(N\text{.}\)</span> But by construction there is an <span class="process-math">\(M\)</span> such that <span class="process-math">\(x_{n_m}\notin U_N\)</span> for all <span class="process-math">\(m\geq M\text{.}\)</span> A contradiction. Thus there must be a finite subcover of <span class="process-math">\(\{U_n\}_{n=1}^\infty\text{.}\)</span>
+</div></article></details><div class="para" id="s_compact_metric-12">At this point we have the following logical diagram for a general topological space. Without further assumptions on <span class="process-math">\(X\)</span> none of the implications below is an equivalence.</div>
+<figure class="figure figure-like" id="fig_compactness_I"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="generated/latex-image/im_compactness_I.svg" role="img" class="contained" alt="Compactness implications"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.16.8<span class="period">.</span></span><span class="space"> </span>Compactness implications</figcaption></figure><article class="definition definition-like" id="d_neighborhood_basis"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.16.9</span><span class="period">.</span><span class="space"> </span><span class="title">Local basis.</span>
+</h3> <div class="para" id="d_neighborhood_basis-2-1">Let <span class="process-math">\(X\)</span> be a topological space. Given <span class="process-math">\(x\in X\text{,}\)</span> a <dfn class="terminology">local basis</dfn> at <span class="process-math">\(x\)</span> is a collection <span class="process-math">\(\mathcal{B}_x\)</span> of open neighborhoods of <span class="process-math">\(x\)</span> such that for all open <span class="process-math">\(U\)</span> containing <span class="process-math">\(x\)</span> there is a <span class="process-math">\(B\in \mathcal{B}_x\)</span> such that <span class="process-math">\(B\subseteq U\text{.}\)</span>
+</div></article><article class="definition definition-like" id="d_first_countable"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.16.10</span><span class="period">.</span><span class="space"> </span><span class="title">First countable.</span>
+</h3> <div class="para" id="d_first_countable-2-1">A topological space <span class="process-math">\(X\)</span> is <dfn class="terminology">first countable</dfn> if every <span class="process-math">\(x\in X\)</span> has a countable local basis.</div></article><article class="theorem theorem-like" id="th_limitpoint_implies_sequential"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.16.11</span><span class="period">.</span>
+</h3> <div class="para" id="th_limitpoint_implies_sequential-1-2">Assume <span class="process-math">\(X\)</span> is <span class="process-math">\(T_1\)</span> and first countable. If <span class="process-math">\(X\)</span> is limit point compact, then <span class="process-math">\(X\)</span> is sequentially compact.</div></article><details id="th_limitpoint_implies_sequential-2" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para" id="th_limitpoint_implies_sequential-2-1">Assume <span class="process-math">\(X\)</span> is <span class="process-math">\(T_1\text{,}\)</span> second countable, and limit point compact. Let <span class="process-math">\((x_n)_{n\in \Z_+}\)</span> be a sequence in <span class="process-math">\(X\)</span> and let <span class="process-math">\(A=\{x_n\colon n\in \Z_+\}\text{,}\)</span> the set of entries of <span class="process-math">\((x_n)_{n\in \Z_+\}\text{.}\)</span> If <span class="process-math">\(A\)</span> is finite, then it is easy to see that there is a <em class="emphasis">constant</em> subsequence of <span class="process-math">\((x_n)_{n\in \Z_+}\text{,}\)</span> and such a subsequence clearly converges. If <span class="process-math">\(A\)</span> is infinite, then since <span class="process-math">\(X\)</span> is limit point compact, there is a limit point <span class="process-math">\(x\)</span> of <span class="process-math">\(A\text{.}\)</span> Let <span class="process-math">\(\mathcal{B}=\{B_n\colon n\in \Z_+\}\)</span> be a countable local basis at <span class="process-math">\(x\text{.}\)</span> Replacing <span class="process-math">\(B_n\)</span> with <span class="process-math">\(\bigcap_{i=1}^n B_n\text{,}\)</span> we may assume that <span class="process-math">\(B_n\supseteq B_{n+1}\)</span> for all <span class="process-math">\(n\text{.}\)</span>
+</div></article></details><article class="definition definition-like" id="d_second_countable"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.16.12</span><span class="period">.</span>
+</h3>
+<div class="para" id="d_second_countable-1-1">A topological space <span class="process-math">\(X\)</span> is <dfn class="terminology">second countable</dfn> if it has a countable basis.</div></article><article class="theorem theorem-like" id="th_sequential_implies_compact"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.16.13</span><span class="period">.</span><span class="space"> </span><span class="title">Sequentially compact+second countable implies compact.</span>
+</h3>
+<div class="para" id="th_sequential_implies_compact-2-1">Let <span class="process-math">\(X\)</span> be a second countable space. If <span class="process-math">\(X\)</span> is sequentially compact, then <span class="process-math">\(X\)</span> is compact.</div></article><details id="th_sequential_implies_compact-3" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para" id="th_sequential_implies_compact-3-1">Assume <span class="process-math">\(X\)</span> is second countable, and let <span class="process-math">\(X=\bigcup_{i\in I}U_i\text{.}\)</span> As we will show in <a href="" class="xref" data-knowl="./knowl/xref/th_second_countable.html" title="Theorem 1.18.10: Second countable: strongest countability axiom">Theorem 1.18.10</a>, since <span class="process-math">\(X\)</span> is second countable, there is a <em class="emphasis">countable</em> subcovering <span class="process-math">\(X=\bigcup_{j=1}^\infty V_j\text{,}\)</span> where  <span class="process-math">\(V_j=U_i_{j}\)</span> for some <span class="process-math">\(i_j\in I\text{.}\)</span> If the countable covering <span class="process-math">\(\{V_j\}_{j=1}^\infty\)</span> had no finite subcovering, then we could construct a sequence <span class="process-math">\((x_n)_{n=1}^\infty\)</span> satisfying <span class="process-math">\(x_n\notin U_1\cup U_2\cup \cdots\cup U_n\)</span> for all <span class="process-math">\(n\in \Z_+\text{.}\)</span> Since <span class="process-math">\(X\)</span> is sequentially compact, the sequence would have a convergent subsequence <span class="process-math">\(x_{n_k}\rightarrow x\text{.}\)</span> We must have <span class="process-math">\(x\in V_N\)</span> for some <span class="process-math">\(N\text{.}\)</span> But by construction <span class="process-math">\(x_{n}\notin V_N\)</span> for all <span class="process-math">\(n\geq N\text{,}\)</span> whence it follows that <span class="process-math">\(x_{n_k}\notin V_n\)</span> eventually. A contradiction. We conclude that <span class="process-math">\(\{V_n\}_{n\in \Z_+}\text{,}\)</span> and hence <span class="process-math">\(\{U_i\}_{i\in I}\)</span> has a finite subcovering, as desired.</div></article></details><div class="para" id="s_compact_metric-19">The following logical diagram summarizes what we know thus far. (We leave as an exercise the proof that if <span class="process-math">\(X\)</span> is <span class="process-math">\(T_1\)</span> and limit point compact, then it is countably compact.)</div>
+<figure class="figure figure-like" id="fig_compactness_II"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="generated/latex-image/im_compactness_II.svg" role="img" class="contained" alt="Compactness implications"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.16.14<span class="period">.</span></span><span class="space"> </span>Compactness implications</figcaption></figure><div class="para" id="s_compact_metric-21">
+<a href="" class="xref" data-knowl="./knowl/xref/cor_compact_limitpoint_sequential.html" title="Corollary 1.16.15: Compactness equivalences">Corollary 1.16.15</a> now follows from a diagram chase and the fact that second countable implies first countable. (See <a href="" class="xref" data-knowl="./knowl/xref/th_second_countable.html" title="Theorem 1.18.10: Second countable: strongest countability axiom">Theorem 1.18.10</a>.)</div>
+<article class="corollary theorem-like" id="cor_compact_limitpoint_sequential"><h3 class="heading">
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">1.16.15</span><span class="period">.</span><span class="space"> </span><span class="title">Compactness equivalences.</span>
+</h3>
+<div class="para logical" id="cor_compact_limitpoint_sequential-2-1">
+<div class="para">Let <span class="process-math">\(X\)</span> be <span class="process-math">\(T_1\)</span> and second countable. The following are equivalent.</div>
+<ol class="decimal">
+<li id="cor_compact_limitpoint_sequential-2-1-3-1"><div class="para" id="cor_compact_limitpoint_sequential-2-1-3-1-1">
+<span class="process-math">\(X\)</span> is compact.</div></li>
+<li id="cor_compact_limitpoint_sequential-2-1-3-2"><div class="para" id="cor_compact_limitpoint_sequential-2-1-3-2-1">
+<span class="process-math">\(X\)</span> is limit point compact.</div></li>
+<li id="cor_compact_limitpoint_sequential-2-1-3-3"><div class="para" id="cor_compact_limitpoint_sequential-2-1-3-3-1">
+<span class="process-math">\(X\)</span> is sequentially compact.</div></li>
+</ol>
+</div></article><div class="para" id="s_compact_metric-23">Finally, we are ready to prove <a href="" class="xref" data-knowl="./knowl/xref/th_compact_metric.html" title="Theorem 1.16.3: Compactness in metric spaces">Theorem 1.16.3</a>. Since any metric space <span class="process-math">\(X\)</span> is <span class="process-math">\(T_1\)</span> and first countable, we have <span class="process-math">\((1)\implies (2)\implies (3)\text{.}\)</span> To show <span class="process-math">\((3)\implies (1)\)</span> it suffices to prove that any sequentially compact metric space is second countable. This is the result of our last theorem.</div>
+<article class="theorem theorem-like" id="th_metric_sequential_second_countable"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.16.16</span><span class="period">.</span><span class="space"> </span><span class="title">Metrizable+sequentially compact implies second countable.</span>
+</h3>
+<div class="para" id="th_metric_sequential_second_countable-2-1">Let <span class="process-math">\(X\)</span> be a metric space. If <span class="process-math">\(X\)</span> is sequentially compact, then <span class="process-math">\(X\)</span> is second countable.</div></article><details id="th_metric_sequential_second_countable-3" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para logical" id="th_metric_sequential_second_countable-3-1">
+<div class="para">We show first that if <span class="process-math">\(X\)</span> is a sequentially compact metric space, then it is totally bounded: i.e., given any <span class="process-math">\(\epsilon &gt; 0\text{,}\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+X=\bigcup_{i=1}^n B_\epsilon(x_i)
+\end{equation*}
+</div>
+<div class="para">for some elements <span class="process-math">\(\{x_i\colon 1\leq i\leq n\}\text{.}\)</span> Indeed, suppose by contradiction that there is an <span class="process-math">\(\epsilon\)</span> for which this is not true. Construct a sequence as follows: choose any <span class="process-math">\(x_1\in X\text{;}\)</span> since <span class="process-math">\(B_\epsilon(x_1)\ne X\text{,}\)</span> we can find an element <span class="process-math">\(x_2\notin B_\epsilon(x_2)\text{;}\)</span> in general, given choices <span class="process-math">\(x_1,x_2,\dots, x_n\text{,}\)</span> choose</div>
+<div class="displaymath process-math">
+\begin{equation*}
+x_{n+1}\notin B_\epsilon(x_1)\cup B_{\epsilon}(x_2)\cup\cdots \cup B_{\epsilon}(x_n)\text{.}
+\end{equation*}
+</div>
+<div class="para">Since <span class="process-math">\(X\)</span> is sequentially compact the the sequence <span class="process-math">\((x_n)_{n\in \Z_+}\)</span> has a convergent subsequence <span class="process-math">\((x_{n_k})_{k\in \Z_+}\text{.}\)</span> This is a contradiction since this sequence would not be Cauchy: indeed by construction, for any <span class="process-math">\(n_j\)</span> and <span class="process-math">\(n_k\)</span> with <span class="process-math">\(n_k &gt; n_j\text{,}\)</span> we have <span class="process-math">\(x_{n_k}\notin B_\epsilon(n_j)\text{.}\)</span>
+</div>
+</div> <div class="para logical" id="th_metric_sequential_second_countable-3-2">
+<div class="para">Since <span class="process-math">\(X\)</span> is totally bounded, for each <span class="process-math">\(n\in \Z_+\)</span> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_second_countable.html">
+\begin{equation*}
+X=\bigcup_{i=1}^_{m_n} B_{1/n}(x_{n,i})\text{.}
+\end{equation*}
+</div>
+<div class="para">Let <span class="process-math">\(Q=\{x_{n,i}\colon n\in \Z_+, 1\leq i\leq m_n\}\text{,}\)</span> a countable set. It is easy to see that <span class="process-math">\(Q\)</span> is dense in <span class="process-math">\(X\text{:}\)</span> i.e., <span class="process-math">\(\overline{Q}=X\text{.}\)</span> As we will show in <a href="" class="xref" data-knowl="./knowl/xref/th_second_countable.html" title="Theorem 1.18.10: Second countable: strongest countability axiom">Theorem 1.18.10</a>, any metric space containing a countable dense subset is second countable.</div>
+</div></article></details></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="s_compact_Rn.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="s_locally.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+</div>
+</body>
+</html>
