@@ -17,8 +17,8 @@
   <xi:include  href="s_compact_def.ptx"/>
   <xi:include  href="s_compact_Rn.ptx"/>
   <xi:include  href="s_compact_metric.ptx"/>
-  <!-- <xi:include  href="s_compact_locally.ptx"/> -->
-  <!-- <xi:include  href="s_countability_axioms.ptx"/> -->
+  <xi:include  href="s_compact_locally.ptx"/>
+  <xi:include  href="s_countability_axioms.ptx"/>
   <!-- <xi:includ e  href="s_regular.ptx"/> -->
   <!-- <xi:include  href="s_normal.ptx"/> -->
   <!-- <xi:include  href="s_Urysohn_lemma.ptx"/> -->

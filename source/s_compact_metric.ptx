@@ -132,6 +132,11 @@ X \text{ compact} \arrow[rd,Rightarrow] \amp \amp X\text{ sequentially compact} 
         Assume <m>X</m> is <m>T_1</m> and first countable. If <m>X</m> is limit point compact, then <m>X</m> is sequentially compact. 
       </p>
     </statement>
+    <proof>
+      <p>
+        Assume <m>X</m> is <m>T_1</m>, second countable, and limit point compact. Let <m>(x_n)_{n\in \Z_+}</m> be a sequence in <m>X</m> and let <m>A=\{x_n\colon n\in \Z_+\}</m>, the set of entries of <m>(x_n)_{n\in \Z_+\}</m>. If <m>A</m> is finite, then it is easy to see that there is a <em>constant</em> subsequence of <m>(x_n)_{n\in \Z_+}</m>, and such a subsequence clearly converges. If <m>A</m> is infinite, then since <m>X</m> is limit point compact, there is a limit point <m>x</m> of <m>A</m>. Let <m>\mathcal{B}=\{B_n\colon n\in \Z_+\}</m> be a countable local basis at <m>x</m>. Replacing <m>B_n</m> with <m>\bigcap_{i=1}^n B_n</m>, we may assume that <m>B_n\supseteq B_{n+1}</m> for all <m>n</m>. 
+      </p>
+    </proof>
   </theorem>
   <definition xml:id="d_second_countable">
     <statement>
@@ -148,9 +153,14 @@ X \text{ compact} \arrow[rd,Rightarrow] \amp \amp X\text{ sequentially compact} 
         Let <m>X</m> be a second countable space. If <m>X</m> is sequentially compact, then <m>X</m> is compact. 
       </p>
     </statement>
+    <proof>
+      <p>
+        Assume <m>X</m> is second countable, and let <m>X=\bigcup_{i\in I}U_i</m>. As we will show in <xref ref="th_second_countable"/>, since <m>X</m> is second countable, there is a <em>countable</em> subcovering <m>X=\bigcup_{j=1}^\infty V_j</m>, where  <m>V_j=U_i_{j}</m> for some <m>i_j\in I</m>. If the countable covering <m>\{V_j\}_{j=1}^\infty</m> had no finite subcovering, then we could construct a sequence <m>(x_n)_{n=1}^\infty</m> satisfying <m>x_n\notin U_1\cup U_2\cup \cdots\cup U_n</m> for all <m>n\in \Z_+</m>. Since <m>X</m> is sequentially compact, the sequence would have a convergent subsequence <m>x_{n_k}\rightarrow x</m>. We must have <m>x\in V_N</m> for some <m>N</m>. But by construction <m>x_{n}\notin V_N</m> for all <m>n\geq N</m>, whence it follows that <m>x_{n_k}\notin V_n</m> eventually. A contradiction. We conclude that <m>\{V_n\}_{n\in \Z_+}</m>, and hence <m>\{U_i\}_{i\in I}</m> has a finite subcovering, as desired.   
+      </p>
+    </proof>
   </theorem>
   <p>
-    At this point we now have the following logical diagram. 
+    The following logical diagram summarizes what we know thus far. (We leave as an exercise the proof that if <m>X</m> is <m>T_1</m> and limit point compact, then it is countably compact.)
   </p>
   <figure xml:id="fig_compactness_II">
     <caption>Compactness implications</caption>
@@ -166,7 +176,7 @@ X \text{ compact} \arrow[rd,Rightarrow] \amp \amp X\text{ sequentially compact} 
     </image>
   </figure>
   <p>
-    <xref ref="cor_compact_limitpoint_sequential"/> now follows from a diagram chase and the fact that second countable implies first countable. 
+    <xref ref="cor_compact_limitpoint_sequential"/> now follows from a diagram chase and the fact that second countable implies first countable. (See <xref ref="th_second_countable"/>.) 
   </p>
   <corollary xml:id="cor_compact_limitpoint_sequential">
     <title>Compactness equivalences</title>
@@ -203,9 +213,27 @@ X \text{ compact} \arrow[rd,Rightarrow] \amp \amp X\text{ sequentially compact} 
         Let <m>X</m> be a metric space. If <m>X</m> is sequentially compact, then <m>X</m> is second countable. 
       </p>
     </statement>
+    <proof>
+      <p>
+        We show first that if <m>X</m> is a sequentially compact metric space, then it is totally bounded: <ie/>, given any <m>\epsilon &gt; 0</m>, we have
+        <me>
+          X=\bigcup_{i=1}^n B_\epsilon(x_i)
+        </me>
+        for some elements <m>\{x_i\colon 1\leq i\leq n\}</m>. Indeed, suppose by contradiction that there is an <m>\epsilon</m> for which this is not true. Construct a sequence as follows: choose any <m>x_1\in X</m>; since <m>B_\epsilon(x_1)\ne X</m>, we can find an element <m>x_2\notin B_\epsilon(x_2)</m>; in general, given choices <m>x_1,x_2,\dots, x_n</m>, choose 
+        <me>x_{n+1}\notin B_\epsilon(x_1)\cup B_{\epsilon}(x_2)\cup\cdots \cup B_{\epsilon}(x_n)</me>.
+        Since <m>X</m> is sequentially compact the the sequence <m>(x_n)_{n\in \Z_+}</m> has a convergent subsequence <m>(x_{n_k})_{k\in \Z_+}</m>. This is a contradiction since this sequence would not be Cauchy: indeed by construction, for any <m>n_j</m> and <m>n_k</m> with <m>n_k &gt; n_j</m>, we have <m>x_{n_k}\notin B_\epsilon(n_j)</m>. 
+      </p>
+      <p>
+        Since <m>X</m> is totally bounded, for each <m>n\in \Z_+</m> we have 
+        <me>
+          X=\bigcup_{i=1}^_{m_n} B_{1/n}(x_{n,i})
+        </me>.
+        Let <m>Q=\{x_{n,i}\colon n\in \Z_+, 1\leq i\leq m_n\}</m>, a countable set. It is easy to see that <m>Q</m> is dense in <m>X</m>: <ie/>, <m>\overline{Q}=X</m>. As we will show in <xref ref="th_second_countable"/>, any metric space containing a countable dense subset is second countable. 
+      </p>
+    </proof>
   </theorem>
   
-  <project>
+  <!-- <project>
     <title>Cantor set</title>
     <p>
       There is a unique family  <m>\{C_n\}_{n=0}^\infty</m> of closed sets of <m>[0,1]</m> of of <m>[0,1]</m> satisfying the following properties: 
@@ -258,10 +286,10 @@ X \text{ compact} \arrow[rd,Rightarrow] \amp \amp X\text{ sequentially compact} 
         We show that <m>\mathcal{C}</m> is perfect. We know already that <m>\mathcal{C}</m> is closed. Given any <m>x\in \mathcal{C}</m> and <m>\epsilon &gt; 0</m>, pick <m>N\in \Z_+</m> such that <m>1/3^N&lt; \epsilon</m>. Since <m>x\in C_{N}</m>, we have <m>x\in I=[a_k/3^N, (a_k+1)/3^N]</m> for some <m>a_k\in \{0,1,\dots, 3^N-1\}</m>. Let <m>J, K</m> be the two subintervals of <m>I</m> remaining after deleting its middle third. Assume without loss of generality that <m>x\in J</m>. The collection <m>\{C_n\cap K\}_{n=1}^\infty</m> is itself a family of nested, closed and nonempty subsets of <m>[0,1]</m>. Again by compactness, there is an element <m>y\in \bigcap_{n=0}^\infty (C_n\cap K)\subseteq \mathcal{C}</m>. Since <m>x,y\in I</m>, we have <m>d(x,y)\leq 1/3^N&lt; \epsilon</m>. Since <m>x\in J</m> and <m>y\in K</m>, and since <m>J\cap K=\emptyset</m>, we have <m>x\ne y</m>. 
       </p>
       <p>
-        We prove <m>\mathcal{C}</m> is totally disconnected. Let <m>A</m> be any subset of <m>\mathcal{C}</m> containing two distinct elements <m>x</m> and <m>y</m>. We will find a separation of <m>A</m>. Since <m>x\ne y</m>, we can find an <m>n</m> and disjoint intervals <m>I_{n,j}=[a_j/3^n, (a_j+1)/3^n], I_{n,k}=[a_k/3^n, (a_k+1)/3^n]</m> such that <m>x\in I_{n,j}</m> and <m>y\in I_{n,k}</m>: otherwise we would have <m>d(x,y)\leq 1/3^n</m> for all <m>n</m>, which would imply <m>d(x,y)=0</m>. Assume without loss of generality that <m>a_j&lt; a_k</m>, and let <m>b</m> be any element between <m>a_j</m> and <m>a_k</m> that does not lie in <m>C_n</m>. The open sets <m>U=A\cap [0,b)</m> and <m>V=A\cap (b,1]</m> form a separation of <m>A</m>, proving it is not connected. We conclude that the only connected subsets of <m>\mathcal{C}</m> are singletons, and thus that the connected components are singletons.  
+        We prove <m>\mathcal{C}</m> is totally disconnected. Let <m>A</m> be any subset of <m>\mathcal{C}</m> containing two distinct elements <m>x</m> and <m>y</m>. We will find a nontrivial separation of <m>A</m>. Since <m>x\ne y</m>, we can find an <m>n</m> and disjoint intervals <m>I_{n,j}=[a_j/3^n, (a_j+1)/3^n], I_{n,k}=[a_k/3^n, (a_k+1)/3^n]</m> such that <m>x\in I_{n,j}</m> and <m>y\in I_{n,k}</m>: otherwise we would have <m>d(x,y)\leq 1/3^n</m> for all <m>n</m>, which would imply <m>d(x,y)=0</m>. Assume without loss of generality that <m>a_j&lt; a_k</m>, and let <m>b</m> be any element between <m>a_j</m> and <m>a_k</m> that does not lie in <m>C_n</m>. The open sets <m>U=A\cap [0,b)</m> and <m>V=A\cap (b,1]</m> form a separation of <m>A</m>, proving it is not connected. We conclude that the only connected subsets of <m>\mathcal{C}</m> are singletons, and thus that the connected components are singletons.  
       </p>
     </proof>
     
-  </project>
+  </project> -->
   
   </section>
