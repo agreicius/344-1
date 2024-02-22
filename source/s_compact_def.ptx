@@ -192,6 +192,7 @@
     </statement>
 </definition>
 <theorem xml:id="th_compact_equivalence">
+    <title>Closed formulation of compactness</title>
     <statement>
         <p>
             Let <m>X</m> be a topological space. The following statements are equivalent. 

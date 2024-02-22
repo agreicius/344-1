@@ -109,6 +109,9 @@ X \text{ compact} \arrow[rd,Rightarrow] \amp \amp X\text{ sequentially compact} 
       </latex-image>
     </image>
   </figure>
+  <p>
+    We now set about elaborating on <xref ref="fig_compactness_I"/> by adding additional properties to <m>X</m>. It turns out that some of the so-called <em>countability axioms</em> play a useful role in this regard. We will take these topics up in earnest in <xref ref="s_countability_axioms"/>, but will introduce here, somewhat prematurely, two of these notions (viz., the first and second countable axioms). 
+  </p>
   <definition xml:id="d_neighborhood_basis">
     <title>Local basis</title>
     <statement>
