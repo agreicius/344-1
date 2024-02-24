@@ -2593,6 +2593,177 @@ var ptx_lunr_docs = [
   "body": " is not metrizable.  Let . Show that is not metrizable.   According to (3) of an uncountable product of nontrivial spaces is not first countable. Thus is not first countable, in which case it is also not metrizable.  "
 },
 {
+  "id": "s_regular",
+  "level": "1",
+  "url": "s_regular.html",
+  "type": "Section",
+  "number": "1.19",
+  "title": "Regular and normal spaces",
+  "body": " Regular and normal spaces   Separated by open sets   Let be a topological space. Subsets are separated by open sets if there exist disjoint open sets such that and .     Regular and normal spaces   Let be a topological space.    is regular if is , and given any closed set and any , the sets and can be separated by open sets.     is normal if is , and any two disjoint closed sets of can be separated by open sets.        Separation axioms  The properties of being , Hausdorff, regular, or normal are called separation axioms as they articulate how various subsets can be separated by open sets. Below you find the descriptions of these properties using the Trennungsaxiom schema. A further remark about the use of regular and normal in the literature: some texts do not include the condition in these notions, and describe the properties we define as regular Hausdorff and normal regular . There is considerably less ambiguity in the literature when using the descriptions, but you should still be careful.    Trennungsaxiom implications  It is easy to see that . Furthermore, your argument for the first two implications will reveal why the condition is needed.    Elementary examples      Discrete spaces are regular and normal.    An infinite space with the cofinite topology is neither regular nor normal.       (1) is clear since all sets are both open and closed. (2) follows from the fact that in this space any two nonempty open sets intersect nontrivially.     Metric spaces are normal   If is a metric space, then is normal.    Let be disjoint closed subsets of . For each we can find an such that . Similarly for each we can find an such that . I claim the open sets are disjoint, proving and are separated by open sets. Indeed if , then for some and . Without loss of generality we may assume that . But then we would have . This is a contradiction since we assumed .     is not regular   Prove: is Hausdorff, but not regular.    Since the -topology is finer than the standard topology on , is Hausdorff. To see that it is not regular, recall that is closed. I'll show that we cannot separate and with open sets. Indeed, suppose we have open disjoint sets containing respectively. Since is open, it must contain an open basis element containing ; and since , this basis element can be chosen of the form . Now choose such that . Since we can find a basis element of the form that is contained in . Furthermore, shrinking if necessary, we can assume that . But then clearly , and hence also . Contradiction!     Regular and normal equivalences   Let be a -space.    is regular if and only if for every and every open set containing , there is an open set satisfying .     is normal if and only if for every closed subset and open set containing , there is an open set satisfying .          First, assume is regular. Given and as described, we can separate and the closed set by open sets and . It follows that : indeed, given any , the open set contains and does not intersect with .  Conversely, assume for all and open sets we can find an open set satisfying . Given any closed set and element , letting , we see that there is an open set satisfying . The open sets and are then easily seen to separate and .    This proof is very similar to the last. Essenially you need only replace with a closed set throughout.        Locally compact implies regular   If is locally compact Hausdorff, then is regular.    This is an easy consequence of and .     Locally compact and non-normal  Yes, there are examples of locally compact Hausdorff spaces that are not normal. They are not particularly easy to build, however. Look it up!    is regular   Prove: is regular.    Since has a finer topology than , it is . We will use the equivalence (1) from . Given any and open set , we can find such that . But is closed! (Prove this.) Thus we have found an open containing such that .     Basis of clopen sets  The argument from is easily generalized to show that any -space that has a basis consisting of sets that are both open and closed ( , clopen sets) is regular.    Regularity: subspace and product properties      Subspaces of regular spaces are regular.    Products of regular spaces are regular.          Assume is a subspace of the regular space . We know already that subspaces of -spaces are , so is . Next take any and any set not containing that is closed in . We have for some closed set . Since and is regular, we can find disjoint open sets that separate and in . The disjoint open (in ) sets and are then a separation of and in .    We use (1) from . Given and open set containing , choose a basis element of the form containing . Since each is regular, we can find open sets satisfying . Letting , we have .        Interestingly, neither of the statements of are true if regular is replaced with normal . It is worthwhile to examine what goes wrong in our arguments above if the element is replaced with a closed set throughout.    is normal   Prove: is normal.    Let be disjoint closed subsets of . We can find open coverings satisfying for all . First observe that for all . Indeed, otherwise we'd have , in which case either or : both are impossible since and . We conclude that , proving that and can be separated by open sets.     is not normal   Prove: is not normal.    See Munkres for the full proof. I'll content myself with a discussion of some of the key elements. First, let . This set is closed in , and hence closed in , since the left limit product topology is finer than the standard topology. Next, as we saw on a previous homework, is discrete as a subspace of : if follows that every subset of , being itself closed in , is closed in , using transitivity. In particular the two sets . By what we said above, the disjoint sets and are closed in , but as it turns out you cannot separate them by open sets. The proof is not terribly difficult, but will seem somewhat convoluted without knowing about the Baire category theorem. As such, I omit it. (Munkres doesn't use this approach, choosing instead a proof by contradiction, but he outlines a proof in one of his exercises.)     Regular+second countable normal   If is regular and second countable, then is normal.    Assume is regular and second countable. Let be a countable basis for . Let and be disjoint closed sets. By regularity, for each we can find disjoint open sets containing and respectively. Since is a basis, we can find a basis element such that . The set of all such is a countable subset of , giving rise to a countable cover satisfying for all . Similarly, we can construct an open covering satisfying for all . The corresponding open sets are not necessarily disjoint. However the sets and , where , still cover and respectively, are still open, and are disjoint.     Compact+Hausdorff normal   If is a compact Hausdorff space, then is normal.    Since is compact Hausdorff, it is locally compact Hausdorff, and hence regular by . We use the equivalent condition of normality from . To this end, let be closed, and let be any open set containing . Since is regular, for all we can find an open set containing such that . We have . Since is compact and is closed, is compact. Hence there is a finite subcovering . We have , as desired.    "
+},
+{
+  "id": "d_separated",
+  "level": "2",
+  "url": "s_regular.html#d_separated",
+  "type": "Definition",
+  "number": "1.19.1",
+  "title": "Separated by open sets.",
+  "body": " Separated by open sets   Let be a topological space. Subsets are separated by open sets if there exist disjoint open sets such that and .   "
+},
+{
+  "id": "d_regular_normal",
+  "level": "2",
+  "url": "s_regular.html#d_regular_normal",
+  "type": "Definition",
+  "number": "1.19.2",
+  "title": "Regular and normal spaces.",
+  "body": " Regular and normal spaces   Let be a topological space.    is regular if is , and given any closed set and any , the sets and can be separated by open sets.     is normal if is , and any two disjoint closed sets of can be separated by open sets.      "
+},
+{
+  "id": "rm_separated",
+  "level": "2",
+  "url": "s_regular.html#rm_separated",
+  "type": "Remark",
+  "number": "1.19.3",
+  "title": "Separation axioms.",
+  "body": " Separation axioms  The properties of being , Hausdorff, regular, or normal are called separation axioms as they articulate how various subsets can be separated by open sets. Below you find the descriptions of these properties using the Trennungsaxiom schema. A further remark about the use of regular and normal in the literature: some texts do not include the condition in these notions, and describe the properties we define as regular Hausdorff and normal regular . There is considerably less ambiguity in the literature when using the descriptions, but you should still be careful.  "
+},
+{
+  "id": "s_regular-5",
+  "level": "2",
+  "url": "s_regular.html#s_regular-5",
+  "type": "Remark",
+  "number": "1.19.4",
+  "title": "Trennungsaxiom implications.",
+  "body": " Trennungsaxiom implications  It is easy to see that . Furthermore, your argument for the first two implications will reveal why the condition is needed.  "
+},
+{
+  "id": "eg_regular",
+  "level": "2",
+  "url": "s_regular.html#eg_regular",
+  "type": "Example",
+  "number": "1.19.5",
+  "title": "Elementary examples.",
+  "body": " Elementary examples      Discrete spaces are regular and normal.    An infinite space with the cofinite topology is neither regular nor normal.       (1) is clear since all sets are both open and closed. (2) follows from the fact that in this space any two nonempty open sets intersect nontrivially.   "
+},
+{
+  "id": "th_metrizable_implies_normal",
+  "level": "2",
+  "url": "s_regular.html#th_metrizable_implies_normal",
+  "type": "Theorem",
+  "number": "1.19.6",
+  "title": "Metric spaces are normal.",
+  "body": " Metric spaces are normal   If is a metric space, then is normal.    Let be disjoint closed subsets of . For each we can find an such that . Similarly for each we can find an such that . I claim the open sets are disjoint, proving and are separated by open sets. Indeed if , then for some and . Without loss of generality we may assume that . But then we would have . This is a contradiction since we assumed .   "
+},
+{
+  "id": "eg_RK_not_regular",
+  "level": "2",
+  "url": "s_regular.html#eg_RK_not_regular",
+  "type": "Example",
+  "number": "1.19.7",
+  "title": "<span class=\"process-math\">\\(\\R_K\\)<\/span> is not regular.",
+  "body": " is not regular   Prove: is Hausdorff, but not regular.    Since the -topology is finer than the standard topology on , is Hausdorff. To see that it is not regular, recall that is closed. I'll show that we cannot separate and with open sets. Indeed, suppose we have open disjoint sets containing respectively. Since is open, it must contain an open basis element containing ; and since , this basis element can be chosen of the form . Now choose such that . Since we can find a basis element of the form that is contained in . Furthermore, shrinking if necessary, we can assume that . But then clearly , and hence also . Contradiction!   "
+},
+{
+  "id": "th_regular_normal_equivalence",
+  "level": "2",
+  "url": "s_regular.html#th_regular_normal_equivalence",
+  "type": "Theorem",
+  "number": "1.19.8",
+  "title": "Regular and normal equivalences.",
+  "body": " Regular and normal equivalences   Let be a -space.    is regular if and only if for every and every open set containing , there is an open set satisfying .     is normal if and only if for every closed subset and open set containing , there is an open set satisfying .          First, assume is regular. Given and as described, we can separate and the closed set by open sets and . It follows that : indeed, given any , the open set contains and does not intersect with .  Conversely, assume for all and open sets we can find an open set satisfying . Given any closed set and element , letting , we see that there is an open set satisfying . The open sets and are then easily seen to separate and .    This proof is very similar to the last. Essenially you need only replace with a closed set throughout.      "
+},
+{
+  "id": "th_locally_compact_regular",
+  "level": "2",
+  "url": "s_regular.html#th_locally_compact_regular",
+  "type": "Theorem",
+  "number": "1.19.9",
+  "title": "Locally compact implies regular.",
+  "body": " Locally compact implies regular   If is locally compact Hausdorff, then is regular.    This is an easy consequence of and .   "
+},
+{
+  "id": "s_regular-11",
+  "level": "2",
+  "url": "s_regular.html#s_regular-11",
+  "type": "Remark",
+  "number": "1.19.10",
+  "title": "Locally compact and non-normal.",
+  "body": " Locally compact and non-normal  Yes, there are examples of locally compact Hausdorff spaces that are not normal. They are not particularly easy to build, however. Look it up!  "
+},
+{
+  "id": "eg_Rl_regular",
+  "level": "2",
+  "url": "s_regular.html#eg_Rl_regular",
+  "type": "Example",
+  "number": "1.19.11",
+  "title": "<span class=\"process-math\">\\(\\R_\\ell\\)<\/span> is regular.",
+  "body": " is regular   Prove: is regular.    Since has a finer topology than , it is . We will use the equivalence (1) from . Given any and open set , we can find such that . But is closed! (Prove this.) Thus we have found an open containing such that .   "
+},
+{
+  "id": "rm_regular_open_closed_basis",
+  "level": "2",
+  "url": "s_regular.html#rm_regular_open_closed_basis",
+  "type": "Remark",
+  "number": "1.19.12",
+  "title": "Basis of clopen sets.",
+  "body": " Basis of clopen sets  The argument from is easily generalized to show that any -space that has a basis consisting of sets that are both open and closed ( , clopen sets) is regular.  "
+},
+{
+  "id": "th_regular_props",
+  "level": "2",
+  "url": "s_regular.html#th_regular_props",
+  "type": "Theorem",
+  "number": "1.19.13",
+  "title": "Regularity: subspace and product properties.",
+  "body": " Regularity: subspace and product properties      Subspaces of regular spaces are regular.    Products of regular spaces are regular.          Assume is a subspace of the regular space . We know already that subspaces of -spaces are , so is . Next take any and any set not containing that is closed in . We have for some closed set . Since and is regular, we can find disjoint open sets that separate and in . The disjoint open (in ) sets and are then a separation of and in .    We use (1) from . Given and open set containing , choose a basis element of the form containing . Since each is regular, we can find open sets satisfying . Letting , we have .      "
+},
+{
+  "id": "s_regular-15",
+  "level": "2",
+  "url": "s_regular.html#s_regular-15",
+  "type": "Remark",
+  "number": "1.19.14",
+  "title": "",
+  "body": " Interestingly, neither of the statements of are true if regular is replaced with normal . It is worthwhile to examine what goes wrong in our arguments above if the element is replaced with a closed set throughout.  "
+},
+{
+  "id": "eg_Rl_normal",
+  "level": "2",
+  "url": "s_regular.html#eg_Rl_normal",
+  "type": "Example",
+  "number": "1.19.15",
+  "title": "<span class=\"process-math\">\\(\\R_\\ell\\)<\/span> is normal.",
+  "body": " is normal   Prove: is normal.    Let be disjoint closed subsets of . We can find open coverings satisfying for all . First observe that for all . Indeed, otherwise we'd have , in which case either or : both are impossible since and . We conclude that , proving that and can be separated by open sets.   "
+},
+{
+  "id": "s_regular-17",
+  "level": "2",
+  "url": "s_regular.html#s_regular-17",
+  "type": "Example",
+  "number": "1.19.16",
+  "title": "<span class=\"process-math\">\\(R_\\ell\\times R_\\ell\\)<\/span> is not normal.",
+  "body": " is not normal   Prove: is not normal.    See Munkres for the full proof. I'll content myself with a discussion of some of the key elements. First, let . This set is closed in , and hence closed in , since the left limit product topology is finer than the standard topology. Next, as we saw on a previous homework, is discrete as a subspace of : if follows that every subset of , being itself closed in , is closed in , using transitivity. In particular the two sets . By what we said above, the disjoint sets and are closed in , but as it turns out you cannot separate them by open sets. The proof is not terribly difficult, but will seem somewhat convoluted without knowing about the Baire category theorem. As such, I omit it. (Munkres doesn't use this approach, choosing instead a proof by contradiction, but he outlines a proof in one of his exercises.)   "
+},
+{
+  "id": "th_regular_separable_normal",
+  "level": "2",
+  "url": "s_regular.html#th_regular_separable_normal",
+  "type": "Theorem",
+  "number": "1.19.17",
+  "title": "Regular+second countable <span class=\"process-math\">\\(\\implies\\)<\/span> normal.",
+  "body": " Regular+second countable normal   If is regular and second countable, then is normal.    Assume is regular and second countable. Let be a countable basis for . Let and be disjoint closed sets. By regularity, for each we can find disjoint open sets containing and respectively. Since is a basis, we can find a basis element such that . The set of all such is a countable subset of , giving rise to a countable cover satisfying for all . Similarly, we can construct an open covering satisfying for all . The corresponding open sets are not necessarily disjoint. However the sets and , where , still cover and respectively, are still open, and are disjoint.   "
+},
+{
+  "id": "th_compact_Hausdorff_normal",
+  "level": "2",
+  "url": "s_regular.html#th_compact_Hausdorff_normal",
+  "type": "Theorem",
+  "number": "1.19.18",
+  "title": "Compact+Hausdorff <span class=\"process-math\">\\(\\implies\\)<\/span> normal.",
+  "body": " Compact+Hausdorff normal   If is a compact Hausdorff space, then is normal.    Since is compact Hausdorff, it is locally compact Hausdorff, and hence regular by . We use the equivalent condition of normality from . To this end, let be closed, and let be any open set containing . Since is regular, for all we can find an open set containing such that . We have . Since is compact and is closed, is compact. Hence there is a finite subcovering . We have , as desired.   "
+},
+{
   "id": "appendix-notation",
   "level": "1",
   "url": "appendix-notation.html",
