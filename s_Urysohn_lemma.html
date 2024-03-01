@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Things Urysohn</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Math 344-1">
+<meta property="book:author" content="Aaron Greicius">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "https://pretextbook.org/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.33/pretext_search.js"></script><link href="https://pretextbook.org/css/0.83/pretext_search.css" rel="stylesheet" type="text/css">
+<script>js_version = 0.33</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.33/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.33/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.33/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+<link href="https://pretextbook.org/css/0.83/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/shell_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
+<h1 class="heading"><a href="kursobjekt.html"><span class="title">Math 344-1:</span> <span class="subtitle">Kursobjekt</span></a></h1>
+<p class="byline">Aaron Greicius</p>
+</div>
+</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><a class="index-button button" href="kursobjekt-6-6.html" title="Index"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span><span class="name">Index</span></a><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="s_regular.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="c_top_spaces.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="s_Tietze_extension.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\Z}{{\mathbb Z}}
+  \newcommand{\Q}{{\mathbb Q}}
+  \newcommand{\R}{{\mathbb R}}
+  \newcommand{\C}{{\mathbb C}}
+  \newcommand{\T}{{\mathbb T}}
+  \newcommand{\F}{{\mathbb F}}
+  \newcommand{\PP}{{\mathbb P}}
+  \newcommand{\HH}{{\mathbb H}}
+  \newcommand{\compose}{\circ}
+  \newcommand{\bolda}{{\mathbf a}}
+  \newcommand{\boldb}{{\mathbf b}}
+  \newcommand{\boldc}{{\mathbf c}}
+  \newcommand{\boldd}{{\mathbf d}}
+  \newcommand{\bolde}{{\mathbf e}}
+  \newcommand{\boldi}{{\mathbf i}}
+  \newcommand{\boldj}{{\mathbf j}}
+  \newcommand{\boldk}{{\mathbf k}}
+  \newcommand{\boldn}{{\mathbf n}}
+  \newcommand{\boldp}{{\mathbf p}}
+  \newcommand{\boldq}{{\mathbf q}}
+  \newcommand{\boldr}{{\mathbf r}}
+  \newcommand{\bolds}{{\mathbf s}}
+  \newcommand{\boldt}{{\mathbf t}}
+  \newcommand{\boldu}{{\mathbf u}}
+  \newcommand{\boldv}{{\mathbf v}}
+  \newcommand{\boldw}{{\mathbf w}}
+  \newcommand{\boldx}{{\mathbf x}}
+  \newcommand{\boldy}{{\mathbf y}}
+  \newcommand{\boldz}{{\mathbf z}}
+  \newcommand{\boldzero}{{\mathbf 0}}
+  \newcommand{\boldmod}{\boldsymbol{ \bmod }}
+  \newcommand{\boldT}{{\mathbf T}}
+  \newcommand{\boldN}{{\mathbf N}}
+  \newcommand{\boldB}{{\mathbf B}}
+  \newcommand{\boldF}{{\mathbf F}}
+  \newcommand{\boldS}{{\mathbf S}}
+  \newcommand{\boldE}{{\mathbf E}}
+  \newcommand{\boldG}{{\mathbf G}}
+  \newcommand{\boldK}{{\mathbf K}}
+  \newcommand{\boldL}{{\mathbf L}}
+  \DeclareMathOperator{\lns}{lns}
+  \DeclareMathOperator{\lcm}{lcm}
+  \DeclareMathOperator{\Span}{span}
+  \DeclareMathOperator{\tr}{tr}
+  \DeclareMathOperator{\NS}{null}
+  \DeclareMathOperator{\RS}{row}
+  \DeclareMathOperator{\CS}{col}
+  \DeclareMathOperator{\im}{im}
+  \DeclareMathOperator{\range}{range}
+  \DeclareMathOperator{\rank}{rank}
+  \DeclareMathOperator{\nullity}{nullity}
+  \DeclareMathOperator{\sign}{sign}
+  \DeclareMathOperator{\Fix}{Fix}
+  \DeclareMathOperator{\Aff}{Aff}
+  \DeclareMathOperator{\Frac}{Frac}
+  \DeclareMathOperator{\Ann}{Ann}
+  \DeclareMathOperator{\Tor}{Tor}
+  \DeclareMathOperator{\id}{id}
+  \DeclareMathOperator{\mdeg}{mdeg}
+  \DeclareMathOperator{\Lt}{Lt}
+  \DeclareMathOperator{\Lc}{Lc}
+  \DeclareMathOperator{\disc}{disc}
+  \DeclareMathOperator{\Frob}{Frob}
+  \DeclareMathOperator{\adj}{adj}
+  \DeclareMathOperator{\curl}{curl}
+  \DeclareMathOperator{\grad}{grad}
+  \DeclareMathOperator{\diver}{div}
+  \DeclareMathOperator{\flux}{flux}
+  \DeclareMathOperator{\Hom}{Hom}
+  \DeclareMathOperator{\ab}{ab}
+
+
+  \newcommand{\surjects}{\twoheadrightarrow}
+  \newcommand{\injects}{\hookrightarrow}
+  \newcommand{\bijects}{\leftrightarrow}
+  \newcommand{\isomto}{\overset{\sim}{\rightarrow}}
+  \newcommand{\floor}[1]{\lfloor#1\rfloor}
+  \newcommand{\ceiling}[1]{\left\lceil#1\right\rceil}
+  \newcommand{\mclass}[2][m]{[#2]_{#1}}
+  \newcommand{\val}[2][]{\left\lvert #2\right\rvert_{#1}}
+  \newcommand{\abs}[2][]{\left\lvert #2\right\rvert_{#1}}
+  \newcommand{\valuation}[2][]{\left\lvert #2\right\rvert_{#1}}
+  \newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+  \newcommand{\anpoly}{a_nx^n+a_{n-1}x^{n-1}\cdots +a_1x+a_0}
+  \newcommand{\anmonic}{x^n+a_{n-1}x^{n-1}\cdots +a_1x+a_0}
+  \newcommand{\bmpoly}{b_mx^m+b_{m-1}x^{m-1}\cdots +b_1x+b_0}
+  \newcommand{\pder}[2]{\frac{\partial#1}{\partial#2}}
+  \newcommand{\normalin}{\trianglelefteq}
+  \newcommand{\angvec}[1]{\langle #1\rangle}
+  \newcommand{\varpoly}[2]{#1_{#2}x^{#2}+#1_{#2-1}x^{#2-1}\cdots +#1_1x+#1_0}
+  \newcommand{\varpower}[1][a]{#1_0+#1_1x+#1_1x^2+\cdots}
+  \newcommand{\limasto}[2][x]{\lim_{#1\rightarrow #2}}
+  \newenvironment{linsys}[2][m]{
+  \begin{array}[#1]{@{}*{#2}{rc}r@{}}
+  }{
+  \end{array}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural contains-active toc-item-list">
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="meta_frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="c_foundations.html" class="internal"><span class="codenumber">0</span> <span class="title">Foundations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_sets_functions.html" class="internal"><span class="codenumber">0.1</span> <span class="title">Sets and functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_sets_functions.html#ss_sets" class="internal"><span class="title">Sets</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_sets_functions.html#ss_functions" class="internal"><span class="title">Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_sets_functions.html#subsec-" class="internal"><span class="title">Cardinality and countability</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_logic.html" class="internal"><span class="codenumber">0.2</span> <span class="title">Logic</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_logic.html#ss_propositional_calculus" class="internal"><span class="title">Propositional logic</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_logic.html#ss_predicate_logic" class="internal"><span class="title">Predicate logic</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_proof_technique.html" class="internal"><span class="codenumber">0.3</span> <span class="title">Proof techniques</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="s_proof_technique.html#ss_logical_structure" class="internal"><span class="title">Logical structure</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_implication" class="internal"><span class="title">Implication</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_disjunction" class="internal"><span class="title">Disjunction</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_equivalence" class="internal"><span class="title">Equivalence</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_logical_chains" class="internal"><span class="title">Chains of implications/equivalences</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_proof_by_contradiction" class="internal"><span class="title">Proof by contradiction</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="s_proof_technique.html#ss_Equalities" class="internal"><span class="title">Equalities</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_chain_equalities" class="internal"><span class="title">Chain of equalities</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="s_proof_technique.html#ss_set_properties" class="internal"><span class="title">Basic set properties</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_set_inclusion" class="internal"><span class="title">Set inclusion</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_set_equality" class="internal"><span class="title">Set equality</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="s_proof_technique.html#ss_function_properties" class="internal"><span class="title">Basic function properties</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_function_equality" class="internal"><span class="title">Function equality</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_injective_surjective_bijective" class="internal"><span class="title">Injective, surjective, bijective</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="s_proof_technique.html#ss_mathematical_induction" class="internal"><span class="title">Mathematical induction</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_weak_induction" class="internal"><span class="title">Proof by induction</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_strong_induction" class="internal"><span class="title">Proof by strong induction</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="c_top_spaces.html" class="internal"><span class="codenumber">1</span> <span class="title">Point-set topology</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_top_spaces.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Topological spaces</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_bases_top.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Topological basis</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_metric1.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Metric spaces</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_closed_closure_interior.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Closed sets, closure, and interior</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_limitpoints_hausdorff.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Limit points and the Hausdorff property</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_subspace_finite_products.html" class="internal"><span class="codenumber">1.6</span> <span class="title">Subspaces and finite products</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_subspace_finite_products.html#ss_subspace" class="internal"><span class="title">Subspaces</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_subspace_finite_products.html#ss_finite_products" class="internal"><span class="title">Finite product spaces</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_product2.html" class="internal"><span class="codenumber">1.7</span> <span class="title">Arbitrary products</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_prods_convergence_metric.html" class="internal"><span class="codenumber">1.8</span> <span class="title">Convergence in product spaces</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_continuous.html" class="internal"><span class="codenumber">1.9</span> <span class="title">Continuous functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_homeomorphisms.html" class="internal"><span class="codenumber">1.10</span> <span class="title">Homeomorphisms</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_quotients.html" class="internal"><span class="codenumber">1.11</span> <span class="title">Quotients</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_connected1.html" class="internal"><span class="codenumber">1.12</span> <span class="title">Connected spaces</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_connected_path.html" class="internal"><span class="codenumber">1.13</span> <span class="title">Path-connected spaces</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_compact_def.html" class="internal"><span class="codenumber">1.14</span> <span class="title">Compact spaces</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_compact_Rn.html" class="internal"><span class="codenumber">1.15</span> <span class="title">Compactness in <span class="process-math">\(\R^n\)</span></span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_compact_metric.html" class="internal"><span class="codenumber">1.16</span> <span class="title">Compactness in metric spaces</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_locally.html" class="internal"><span class="codenumber">1.17</span> <span class="title">Locally compact spaces and compactification</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_countability_axioms.html" class="internal"><span class="codenumber">1.18</span> <span class="title">Countability axioms</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_regular.html" class="internal"><span class="codenumber">1.19</span> <span class="title">Regular and normal spaces</span></a></div></li>
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="s_Urysohn_lemma.html" class="internal"><span class="codenumber">1.20</span> <span class="title">Things Urysohn</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_Tietze_extension.html" class="internal"><span class="codenumber">1.21</span> <span class="title">Urysohn offspring</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="kursobjekt-6.html" class="internal"><span class="title">Back Matter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-notation.html" class="internal"><span class="codenumber">A</span> <span class="title">Notation</span></a></div></li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-defs.html" class="internal"><span class="codenumber">B</span> <span class="title">Definitions</span></a></div></li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-thms.html" class="internal"><span class="codenumber">C</span> <span class="title">Theory</span></a></div></li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-specimens.html" class="internal"><span class="codenumber">D</span> <span class="title">Topological specimens</span></a></div></li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-egs.html" class="internal"><span class="codenumber">E</span> <span class="title">Examples</span></a></div></li>
+<li class="toc-item toc-index"><div class="toc-title-box"><a href="kursobjekt-6-6.html" class="internal"><span class="title">Index</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="s_Urysohn_lemma"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">1.20</span><span class="space"> </span><span class="title">Things Urysohn</span>
+</h2>
+<article class="theorem theorem-like" id="th_Urysohn_lemma"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.20.1</span><span class="period">.</span><span class="space"> </span><span class="title">Urysohn lemma.</span>
+</h3>
+<div class="para" id="th_Urysohn_lemma-2-1">Let <span class="process-math">\(X\)</span> be a normal space, and let <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> be two nonempty, closed, and disjoint subsets of <span class="process-math">\(X\text{.}\)</span> Given any interval <span class="process-math">\([a,b]\subseteq \R\text{,}\)</span> there is a continuous function <span class="process-math">\(f\colon X\rightarrow [a,b]\)</span> such that <span class="process-math">\(f(A)=\{a\}\)</span> and <span class="process-math">\(f(B)=\{b\}\text{.}\)</span>
+</div></article><details id="th_Urysohn_lemma-3" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para" id="th_Urysohn_lemma-3-1">It would be difficult to improve upon Munkres’ exposition of this. I give essentially a full proof below nonetheless.</div> <details id="th_Urysohn_lemma-3-2" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="title">Step 1: construction of open sets <span class="process-math">\(U_p\)</span>.</span></h4></summary><article class="hiddenproof"> <div class="para logical" id="th_Urysohn_lemma-3-2-2">
+<div class="para">The first step in the proof is to build a collection of open sets <span class="process-math">\(\{U_q\}_{p\in \Q}\)</span> satisfying</div>
+<div class="displaymath process-math" id="eq_ury_lemma">
+\begin{equation}
+p&lt; q\implies \overline{U_p}\subseteq U_{q}\tag{1.20.1}
+\end{equation}
+</div>
+<div class="para">for all <span class="process-math">\(p,q\in \Q\text{.}\)</span>
+</div>
+</div> <div class="para logical" id="th_Urysohn_lemma-3-2-3">
+<div class="para">Fix an enumeration <span class="process-math">\(\Q=\{q_1,q_2,\dots,\}\)</span> (without repeats) where for convenience <span class="process-math">\(q_1=1\)</span> and <span class="process-math">\(q_2=0\text{.}\)</span> For each <span class="process-math">\(n\geq 1\text{,}\)</span> let <span class="process-math">\(Q_n=\{q_1,q_2,\dots, q_n\}\text{,}\)</span> the first <span class="process-math">\(n\)</span> primes in our enumeration. We will recursively define a collection of open sets</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_ury_lemma_n.html ./knowl/xref/eq_ury_lemma.html">
+\begin{equation*}
+\{U_q\}_{q\in \Q}=\{U_{q_n}\}_{n\in \Z_+}
+\end{equation*}
+</div>
+<div class="para">such that for all <span class="process-math">\(n\geq 1\text{,}\)</span> the finite collection <span class="process-math">\(\mathcal{U}_n=\{U_{p_1}, U_{p_2}, \dots, U_{p_{n}}\}\)</span> satisfies the following condition</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_ury_lemma_n.html ./knowl/xref/eq_ury_lemma.html" id="eq_ury_lemma_n">
+\begin{equation}
+p,q\in Q_n \text{ and } p&lt; q \implies \overline{U_p}\subseteq U_q\text{.}\tag{1.20.2}
+\end{equation}
+</div>
+<div class="para">It is easy to see that if <a href="" class="xref" data-knowl="./knowl/xref/eq_ury_lemma_n.html" title="Equation 1.20.2">(1.20.2)</a> holds for all <span class="process-math">\(n\text{,}\)</span> then <a href="" class="xref" data-knowl="./knowl/xref/eq_ury_lemma.html" title="Equation 1.20.1">(1.20.1)</a> holds for all <span class="process-math">\(p,q\in \Q\text{.}\)</span>
+</div>
+</div> <div class="para logical" id="th_Urysohn_lemma-3-2-4">
+<div class="para">Base cases: first define <span class="process-math">\(U_{q_1}=U_1=X-B\text{.}\)</span> Next, since <span class="process-math">\(A\subseteq U_1\)</span> and <span class="process-math">\(X\)</span> is normal, we can choose <span class="process-math">\(U_{q_2}=U_0\)</span> to be any open set satisfying</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_ury_lemma_n.html">
+\begin{equation*}
+A\subseteq U_{0}\subseteq \overline{U_0}\subseteq U_1\text{.}
+\end{equation*}
+</div>
+<div class="para">It is easy to see that <span class="process-math">\(\mathcal{U}_n\)</span> satisfies <a href="" class="xref" data-knowl="./knowl/xref/eq_ury_lemma_n.html" title="Equation 1.20.2">(1.20.2)</a> for <span class="process-math">\(n\leq 2\text{.}\)</span>
+</div>
+</div> <div class="para logical" id="th_Urysohn_lemma-3-2-5">
+<div class="para">For the recursive step, let <span class="process-math">\(n\geq 2\)</span> and assume that we have chosen open sets <span class="process-math">\(U_{q_1}, U_{q_2},\dots, U_{q_n}\)</span> such that the set <span class="process-math">\(\mathcal{U}_n\)</span> satisfies <a href="" class="xref" data-knowl="./knowl/xref/eq_ury_lemma_n.html" title="Equation 1.20.2">(1.20.2)</a>. We choose <span class="process-math">\(U_{q_{n+1}}\)</span> as follows.</div>
+<ul class="disc">
+<li id="th_Urysohn_lemma-3-2-5-6-1"><div class="para" id="th_Urysohn_lemma-3-2-5-6-1-1">If <span class="process-math">\(q_{n+1}&gt; 1\text{,}\)</span> set <span class="process-math">\(U_{q_{n+1}}=X\text{;}\)</span> if <span class="process-math">\(q_{n+1}&lt; 0\text{,}\)</span> set <span class="process-math">\(U_{q_{n+1}}=\emptyset\text{.}\)</span>
+</div></li>
+<li id="th_Urysohn_lemma-3-2-5-6-2"><div class="para logical" id="th_Urysohn_lemma-3-2-5-6-2-1">
+<div class="para">If <span class="process-math">\(q_{n+1}\in (0,1)\text{,}\)</span> there exist unique elements <span class="process-math">\(p,q\in Q_n\)</span> such that <span class="process-math">\(p\)</span> is the greatest element of <span class="process-math">\(Q_n\)</span> less than <span class="process-math">\(q_{n+1}\text{,}\)</span> and <span class="process-math">\(q\)</span> is the least element of <span class="process-math">\(Q_n\)</span> greater than <span class="process-math">\(q\text{.}\)</span> (Such elements exist since <span class="process-math">\(q_2=0&lt; q_{n+1}&lt; 1=q_1\text{.}\)</span>) Since by induction <span class="process-math">\(\overline{U_{p}}\subseteq U_{q}\text{,}\)</span>  using normality of <span class="process-math">\(X\text{,}\)</span> we can pick <span class="process-math">\(U_{q_{n+1}}\)</span> to be an open set satisfying</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\overline{U_{p}}\subseteq U_{q_{n+1}}\subseteq U_{q_{n+1}}\subseteq \overline{U_{q_{n+1}}}\subseteq U_q\text{.}
+\end{equation*}
+</div>
+</div></li>
+</ul>
+<div class="para">It remains to show that the extended set <span class="process-math">\(\mathcal{U}_{n+1}\)</span> still satisfies <a href="" class="xref" data-knowl="./knowl/xref/eq_ury_lemma_n.html" title="Equation 1.20.2">(1.20.2)</a>. Take any <span class="process-math">\(p,q\in Q_{n+1}\)</span> with <span class="process-math">\(p&lt; q\text{:}\)</span>
+</div>
+<ul class="disc">
+<li id="th_Urysohn_lemma-3-2-5-11-1"><div class="para" id="th_Urysohn_lemma-3-2-5-11-1-1">If <span class="process-math">\(p,q\in Q_n\text{,}\)</span> then <a href="" class="xref" data-knowl="./knowl/xref/eq_ury_lemma_n.html" title="Equation 1.20.2">(1.20.2)</a> is satisfied by the induction hypothesis.</div></li>
+<li id="th_Urysohn_lemma-3-2-5-11-2"><div class="para logical" id="th_Urysohn_lemma-3-2-5-11-2-1">
+<div class="para">Assume <span class="process-math">\(p=q_{n+1}\text{.}\)</span> If <span class="process-math">\(q_{n+1}&lt; 0\text{,}\)</span> we have <span class="process-math">\(U_{q_{n+1}}=\emptyset\)</span> in which case clearly <a href="" class="xref" data-knowl="./knowl/xref/eq_ury_lemma_n.html" title="Equation 1.20.2">(1.20.2)</a> holds. Similarly, if <span class="process-math">\(q_{n+1}&gt; 1\text{,}\)</span> then we must have <span class="process-math">\(U_{q_{n+1}}=U_q=X\text{,}\)</span> in which case again <a href="" class="xref" data-knowl="./knowl/xref/eq_ury_lemma_n.html" title="Equation 1.20.2">(1.20.2)</a> clearly holds. Assume <span class="process-math">\(q\in [0,1]\text{.}\)</span> Let <span class="process-math">\(q'\)</span> be least element of <span class="process-math">\(Q_{n+1}\)</span> that is greater than <span class="process-math">\(q_{n+1}\text{.}\)</span> By definition we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_ury_lemma_n.html ./knowl/xref/eq_ury_lemma_n.html">
+\begin{equation*}
+\overline{U_{q_{n+1}}}\subseteq U_{q'}\subseteq \overline{U_{q'}}\subseteq U_q  \text{,}
+\end{equation*}
+</div>
+<div class="para">as desired.</div>
+</div></li>
+<li id="th_Urysohn_lemma-3-2-5-11-3"><div class="para" id="th_Urysohn_lemma-3-2-5-11-3-1">Assume <span class="process-math">\(q=q_{n+1}\text{.}\)</span> The argument proceeds in much the same way as immediately above.</div></li>
+</ul>
+</div></article></details> <details id="th_Urysohn_lemma-3-3" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="title">Step 2: definition of <span class="process-math">\(f\)</span> and continuity.</span></h4></summary><article class="hiddenproof"> <div class="para" id="th_Urysohn_lemma-3-3-2">Since the homeomorphism <span class="process-math">\(g\colon [0,1]\rightarrow [a,b]\)</span> defined as <span class="process-math">\(g(x)=(b-a)x+a\)</span> satisfies <span class="process-math">\(g(0)=a\)</span> and <span class="process-math">\(g(1)=b\text{,}\)</span> we see that it suffices to show that there is a continuous function <span class="process-math">\(f\colon X\rightarrow [0,1]\)</span> satisfying <span class="process-math">\(f(A)=0\)</span> and <span class="process-math">\(f(B)=1\text{.}\)</span> We endeavor to do so below.</div> <div class="para logical" id="th_Urysohn_lemma-3-3-3">
+<div class="para">Define <span class="process-math">\(f\colon X\rightarrow \R\)</span> as</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f(x)=\inf\{q\in \Q\colon x\in U_q\}\text{.}
+\end{equation*}
+</div>
+<div class="para">The function <span class="process-math">\(f\)</span> satisfies the following properties:</div>
+<div class="displaymath process-math" id="th_Urysohn_lemma-3-3-3-4">
+\begin{align}
+0\amp\leq f(x)\leq 1 \tag{1.20.3}\\
+x\in \overline{U_q}\amp\implies f(x)\leq q \tag{1.20.4}\\
+x\notin U_q \amp \implies f(x)\geq q \text{.}\tag{1.20.5}
+\end{align}
+</div>
+<div class="para">Each of these properties is relatively straightforward to prove using properties of the infinum. For example, we have</div>
+<div class="displaymath process-math" id="th_Urysohn_lemma-3-3-3-5">
+\begin{align*}
+x\in \oveline{U_q} \amp \implies x\in U_p \text{ for all } p\geq q \\
+\amp \{p\colon x\in U_p\}\supseteq \{p\colon p\geq q\}\\
+\amp \implies \inf\{p\colon x\in U_p\}\leq \inf\{p\colon p\geq q\}\\
+\amp \implies f(x)\leq q\text{.}
+\end{align*}
+</div>
+<div class="para">To see that <span class="process-math">\(f\)</span> is continuous, fix any <span class="process-math">\(x\in X\)</span> and open set <span class="process-math">\((a,b)\)</span> containing <span class="process-math">\(y=f(x)\text{.}\)</span>  Choose rational numbers <span class="process-math">\(p, q\)</span> satisfying</div>
+<div class="displaymath process-math">
+\begin{equation*}
+a&lt; p&lt; y &lt; q &lt; b\text{.}
+\end{equation*}
+</div>
+<div class="para">Claim: the set <span class="process-math">\(U=U_q-\overline{U_p}\)</span> is an open set containing <span class="process-math">\(x\)</span> satisfying</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f(U)=f(U_q-\overline{U_p})\subseteq [p,q]\subseteq (a,b)\text{.}
+\end{equation*}
+</div>
+<div class="para">First, it is clear that <span class="process-math">\(U_q-\overline{U_p}\)</span> is open, and it follows easily from the elementary properties of <span class="process-math">\(f\)</span> quoted above that <span class="process-math">\(x\in U_q-\overline{U_p}\text{.}\)</span> Next, given any <span class="process-math">\(x'\in U_q-\overline{U_p}\text{,}\)</span> since <span class="process-math">\(x'\in \overline{U_q}\text{,}\)</span> we have <span class="process-math">\(f(x')\leq q\text{,}\)</span> and since <span class="process-math">\(x'\notin U_p\text{,}\)</span> we have <span class="process-math">\(f(x')\geq p\text{.}\)</span> This concludes the proof.</div>
+</div></article></details></article></details><article class="definition definition-like" id="d_separated_continuous_function"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.20.2</span><span class="period">.</span><span class="space"> </span><span class="title">Separated by a continuous function.</span>
+</h3> <div class="para" id="d_separated_continuous_function-2-1">Let <span class="process-math">\(X\)</span> be a topological space. Subsets <span class="process-math">\(A, B\subseteq X\)</span> are <dfn class="terminology">separated by a continuous function</dfn> if there is a continuous function <span class="process-math">\(f\colon X\rightarrow [0,1]\)</span> such that <span class="process-math">\(f(A)=\{0\}\)</span> and <span class="process-math">\(f(B)=\{1\}\text{.}\)</span>
+</div></article><article class="remark remark-like" id="rm_Urysohn_lemma"><h3 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.20.3</span><span class="period">.</span><span class="space"> </span><span class="title">Separation in normal spaces.</span>
+</h3> <div class="para" id="rm_Urysohn_lemma-2">If the closed sets <span class="process-math">\(A, B\)</span> are separated by the continuous function <span class="process-math">\(f\colon X\rightarrow [0,1]\text{,}\)</span> they are separated by the open sets <span class="process-math">\(U=f^{-1}[0,1/2)\)</span> and <span class="process-math">\(V=f^{-1}(1/2, 1]\text{.}\)</span> The Urysohn lemma tells us that in normal spaces the two notions are equivalent!</div></article><div class="para" id="s_Urysohn_lemma-5">We can explore this idea of “separated by a continuous function” in relation to some of the other <i class="foreign">Trennnungsaxiome</i>. For example, taking the regularity axiom (<span class="process-math">\(T_3\)</span>) and replacing the separated by open sets condition with a separated by a continuous function condition, we obtain the notion of <em class="emphasis">complete regularity</em>.</div>
+<article class="definition definition-like" id="d_completely_regular_normal"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.20.4</span><span class="period">.</span><span class="space"> </span><span class="title">Completely regular.</span>
+</h3> <div class="para" id="d_completely_regular_normal-2-1">A topological space <span class="process-math">\(X\)</span> is <dfn class="terminology">completely regular</dfn> (or <span class="process-math">\(T_{3\frac{1}{2}}\)</span>) if it is <span class="process-math">\(T_1\)</span> and for any closed set <span class="process-math">\(A\)</span> and element <span class="process-math">\(x_0\notin A\text{,}\)</span> there is a continuous function <span class="process-math">\(f\colon X\rightarrow [0,1]\)</span> such that <span class="process-math">\(f(x_0)=1\)</span> and <span class="process-math">\(f(A)=\{0\}\text{.}\)</span>
+</div></article><article class="remark remark-like" id="rm_complete_regularity"><h3 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.20.5</span><span class="period">.</span><span class="space"> </span><span class="title">Complete regularity.</span>
+</h3> <div class="para logical" id="rm_complete_regularity-2">
+<div class="para">With respect to regularity, separation by a continuous function is truly a stronger notion: i.e., there are spaces that are regular but not completely regular. This is in contrast to the situation with normality: by Urysohn’s lemma a space is normal if and only if disjoint closed sets are separated by a continuous function. Note also that by Urysohn’s lemma, any normal space is completely regular. Thus adding <span class="process-math">\(T_{3\frac{1}{2}}\)</span> to our list of <i class="foreign">Trennungsaxiome</i> we still have a list of properties that satisfies <span class="process-math">\(T_n\implies T_m\)</span> if <span class="process-math">\(n\geq m\text{.}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{array}{r|l}
+\text{Name} \amp T_n \\
+\hline 
+T_1 \amp T_1 \\
+\text{Hausdorff} \amp T_2 \\ 
+\text{Regular} \amp T_3 \\ 
+\text{Completely regular} \amp T_{3\frac{1}{2}} \\ 
+\text{Normal} \amp T_4
+\end{array}
+\end{equation*}
+</div>
+</div></article><div class="para" id="s_Urysohn_lemma-8">The notion of complete regularity strikes a nice balance between regularity and normality. In particular, it is stronger than regularity, but still behaves well with respect to subspaces and products.</div>
+<article class="theorem theorem-like" id="th_complete_regularity"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.20.6</span><span class="period">.</span><span class="space"> </span><span class="title">Complete regularity: subspace and product properties.</span>
+</h3>
+<div class="para logical" id="th_complete_regularity-2-1"><ol class="decimal">
+<li id="th_complete_regularity-2-1-1-1"><div class="para" id="th_complete_regularity-2-1-1-1-1">Subspaces of completely regular spaces are completely regular.</div></li>
+<li id="th_complete_regularity-2-1-1-2"><div class="para" id="th_complete_regularity-2-1-1-2-1">Products of completely regular spaces are completely regular.</div></li>
+</ol></div></article><details id="th_complete_regularity-3" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para logical" id="th_complete_regularity-3-1">
+<div class="para">The proof of (1) is elementary. (See text.) The proof of (2) is more interesting. Assume <span class="process-math">\(\{X_i\}_{i\in I}\)</span> is a collection of completely regular spaces, and let <span class="process-math">\(X=\prod_{i\in I}X_i\text{.}\)</span> Let <span class="process-math">\(A\subseteq X\)</span> be a closed set, and let <span class="process-math">\(b=(b_i)_{i\in I}\)</span> be any element not contained in <span class="process-math">\(A\text{.}\)</span> Since <span class="process-math">\(X-A\)</span> is open, we can find a base open neighborhood of <span class="process-math">\(b\)</span> of the form <span class="process-math">\(U=\prod_{k=1}^n U_{i_k}\times \prod_{i\ne i_k}X_i\text{.}\)</span> For each <span class="process-math">\(1\leq k\leq n\)</span> let <span class="process-math">\(f_k\colon X_{i_k}\rightarrow [0,1]\)</span> be a continuous function satisfying <span class="process-math">\(f_k(b_{i_k})=1, f_k(U_{i_k}^c)=\{0\}\text{.}\)</span>  The function</div>
+<div class="displaymath process-math" id="th_complete_regularity-3-1-12">
+\begin{align*}
+f\colon X \amp \rightarrow [0,1]\\
+x=(x_i)_{i\in I} \amp \mapsto \prod_{k=1}^nf_{i_k}(x_{i_k})
+\end{align*}
+</div>
+<div class="para">is continuous (product of continuous functions) and satisfies <span class="process-math">\(f(b)=1\)</span> and <span class="process-math">\(f(A)=\{0\}\text{.}\)</span>
+</div>
+</div></article></details><article class="theorem theorem-like" id="th_Urysohn_metrization"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.20.7</span><span class="period">.</span><span class="space"> </span><span class="title">Urysohn metrization theorem.</span>
+</h3>
+<div class="para" id="th_Urysohn_metrization-2-1">If <span class="process-math">\(X\)</span> is a regular second countable space, then <span class="process-math">\(X\)</span> is metrizable.</div></article><details id="th_Urysohn_metrization-3" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para" id="th_Urysohn_metrization-3-1">The main step in the proof, one that uses <a href="" class="xref" data-knowl="./knowl/xref/th_Urysohn_lemma.html" title="Theorem 1.20.1: Urysohn lemma">Theorem 1.20.1</a>, is the construction of a countable family of continuous functions <span class="process-math">\(\{f_n\colon X\rightarrow [0,1]\}_{n\in \Z_+}\)</span> satisfying the following property: for all <span class="process-math">\(x\in X\)</span> and for all open sets <span class="process-math">\(U\)</span> containing <span class="process-math">\(x\text{,}\)</span> there is an <span class="process-math">\(n\in \Z_+\)</span> such that <span class="process-math">\(f_n(x)&gt;0\)</span> and <span class="process-math">\(f_n(X-U)=\{0\}\text{.}\)</span> It then follows from <a href="" class="xref" data-knowl="./knowl/xref/th_embedding_theorem.html" title="Theorem 1.20.8: Embedding theorem">Theorem 1.20.8</a> that the map <span class="process-math">\(f\colon X\rightarrow \R^\omega\)</span> defined as <span class="process-math">\(f(x)=(f_n(x))_{n\in \Z_+}\)</span> is an embedding into the metric space <span class="process-math">\(\R^\omega\text{.}\)</span> Since subspaces of metric spaces are metric spaces, we conclude that <span class="process-math">\(X\)</span> is metrizable.</div> <div class="para" id="th_Urysohn_metrization-3-2">We now proceed with the construction. Let <span class="process-math">\(\mathcal{B}=\{B_1, B_2,\dots, \}\)</span> be a countable basis of <span class="process-math">\(X\text{.}\)</span> For all <span class="process-math">\(m,n\in \Z_+\)</span> satisfying <span class="process-math">\(\overline{B_m}\subseteq B_n\text{,}\)</span> let <span class="process-math">\(g_{m,n}\colon X\rightarrow [0,1]\)</span> be a continuous function satisfying <span class="process-math">\(g_{m,n}(\overline{B_m})=\{1\}\)</span> and <span class="process-math">\(g_{m,n}(X-B_n)=\{0\}\text{:}\)</span> this guaranteed to exist by <a href="" class="xref" data-knowl="./knowl/xref/th_Urysohn_lemma.html" title="Theorem 1.20.1: Urysohn lemma">Theorem 1.20.1</a> since <span class="process-math">\(X\text{,}\)</span> being regular and second countable, is normal. Since the collection <span class="process-math">\(\{g_{m,n}\}\)</span> is countable we can enumerate it as <span class="process-math">\(\{g_{m,n}\}=\{f_1, f_2,\dots\}\text{.}\)</span> Now, for any <span class="process-math">\(x\)</span> and any open set <span class="process-math">\(U\ni x\text{,}\)</span> we have <span class="process-math">\(x\in B_n\subseteq U\)</span> for some <span class="process-math">\(n\in \Z_+\text{.}\)</span> Since <span class="process-math">\(X\)</span> is regular, we can find a basis element <span class="process-math">\(B_m\)</span> such that <span class="process-math">\(x\in \overline{B_m}\subseteq B_n\text{.}\)</span> We have <span class="process-math">\(g_{m,n}=f_k\)</span> for some <span class="process-math">\(k\in \Z_+\text{,}\)</span> <span class="process-math">\(f_k(x)=1\text{,}\)</span> and <span class="process-math">\(f_k(X-U)\subseteq f_k(X-B_m)=\{0\}\text{,}\)</span> as desired.</div></article></details><article class="theorem theorem-like" id="th_embedding_theorem"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.20.8</span><span class="period">.</span><span class="space"> </span><span class="title">Embedding theorem.</span>
+</h3>
+<div class="para" id="th_embedding_theorem-2-1">Let <span class="process-math">\(X\)</span> be a <span class="process-math">\(T_1\)</span>-space. Given any collection of continuous functions <span class="process-math">\(\{f_i\colon X\rightarrow \R\}_{i\in I}\)</span> satisfying the property that for all <span class="process-math">\(x\in X\)</span> and for all open sets <span class="process-math">\(U\)</span> containing <span class="process-math">\(x\)</span> there is an <span class="process-math">\(i\in I\)</span> such that <span class="process-math">\(f_i(x)&gt; 0\)</span> and <span class="process-math">\(f_i(X-U)=\{0\}\text{,}\)</span> the map <span class="process-math">\(f\colon X\rightarrow \R^I\)</span> defined as <span class="process-math">\(f(x)=(f_i(x))_{i\in I}\)</span> is an embedding into <span class="process-math">\(\R^I\text{.}\)</span>
+</div></article><details id="th_embedding_theorem-3" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><article class="case" id="th_embedding_theorem-3-1"><h4 class="heading">
+<span class="process-math">\(f\)</span> is injective.</h4> <div class="para" id="th_embedding_theorem-3-1-2">Since <span class="process-math">\(X\)</span> is <span class="process-math">\(T_1\text{,}\)</span> given any <span class="process-math">\(x\ne y\in X\)</span> we can find an open set <span class="process-math">\(U\)</span> such that <span class="process-math">\(x\in U\)</span> and <span class="process-math">\(y\notin U\text{.}\)</span> By assumption, there is some <span class="process-math">\(i_0\in I\)</span> such that <span class="process-math">\(f_{i_{0}}(x)&gt; 0\)</span> and <span class="process-math">\(f_{i_0}(X-U)=\{0\}\text{.}\)</span> It follows that <span class="process-math">\(f_{i_{0}}(x)\ne f_{i_0}(y)\)</span> and hence that <span class="process-math">\(f(x)\ne f(y)\text{.}\)</span>
+</div></article> <article class="case" id="th_embedding_theorem-3-2"><h4 class="heading">
+<span class="process-math">\(f\)</span> is continuous.</h4> <div class="para" id="th_embedding_theorem-3-2-2">This follows immediately from <a href="" class="xref" data-knowl="./knowl/xref/th_product_universal_prop.html" title="Theorem 1.10.11: Universal mapping property of product space">Theorem 1.10.11</a> since each <span class="process-math">\(f_i\)</span> is continuous.</div></article> <article class="case" id="th_embedding_theorem-3-3"><h4 class="heading">
+<span class="process-math">\(f\)</span> is embedding.</h4> <div class="para" id="th_embedding_theorem-3-3-2">Lastly, we prove that <span class="process-math">\(f\)</span> is an embedding mapping <span class="process-math">\(X\)</span> homeomorphically onto <span class="process-math">\(f(X)\subseteq \R^I\text{.}\)</span> Let <span class="process-math">\(U\)</span> be an open set containing an element <span class="process-math">\(x\in X\text{,}\)</span> and let <span class="process-math">\(y=f(x)\in f(U)\text{.}\)</span> Pick any <span class="process-math">\(i_0\in I\)</span> such that <span class="process-math">\(f_{i_0}(x)&gt; 0\)</span> and <span class="process-math">\(f_{i_0}(X-U)=\{0\}\text{.}\)</span> Let <span class="process-math">\(\pi_{i_0}\colon \R^I\rightarrow \R\)</span> be the projection map onto the <span class="process-math">\(i_{0}\)</span>-th coordinate, and define <span class="process-math">\(V=f(X)\cap \pi_{i_0}^{-1}((0,\infty))\text{.}\)</span> Since <span class="process-math">\(\pi_{i_0}\)</span> is continuous and <span class="process-math">\((0,\infty)\)</span> is open, the set <span class="process-math">\(V\)</span> is open in the subspace topology of <span class="process-math">\(f(X)\text{.}\)</span> We claim that <span class="process-math">\(y\in V\subseteq f(U)\text{,}\)</span> proving that <span class="process-math">\(f\)</span> is an embedding. Since <span class="process-math">\(\pi_{i_0}(y)=f_{i_0}(x)&gt; 0\text{,}\)</span> we have <span class="process-math">\(y\in \text{.}\)</span> Similarly, if <span class="process-math">\(y'=f(x')\in V\text{,}\)</span> then <span class="process-math">\(\pi_{i_0}(y')=\pi_{i_0}(x')&gt; 0\text{,}\)</span> from whence it follows that <span class="process-math">\(x'\in U\text{:}\)</span> otherwise we’d have <span class="process-math">\(f_{i_0}(x')=0\text{.}\)</span>
+</div></article></article></details><article class="remark remark-like" id="s_Urysohn_lemma-12"><h3 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.20.9</span><span class="period">.</span><span class="space"> </span><span class="title">Urysohn metrization theorem.</span>
+</h3> <div class="para" id="s_Urysohn_lemma-12-2">Munkres gives an alternative proof that shows any regular second countable space can be embedded into <span class="process-math">\(\R^\omega\)</span> with respect to the uniform metric. This argument is then generalized later to prove the Nagata-Smirnov metrization theorem, which states that <span class="process-math">\(X\)</span> is metrizable if and only if it is regular and has countable locally finite basis.</div></article><article class="corollary theorem-like" id="cor_completely_regular_embedding"><h3 class="heading">
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">1.20.10</span><span class="period">.</span>
+</h3>
+<div class="para" id="cor_completely_regular_embedding-1-1">A space <span class="process-math">\(X\)</span> is completely regular if and only if it is homeomorphic to a subspace of <span class="process-math">\([0,1]^I\)</span> for some set <span class="process-math">\(I\text{.}\)</span>
+</div></article><details id="cor_completely_regular_embedding-2" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para" id="cor_completely_regular_embedding-2-1">Implication: <span class="process-math">\((\Rightarrow)\text{.}\)</span> Assume <span class="process-math">\(X\)</span> is completely regular. Recall that in particular this means <span class="process-math">\(X\)</span> is <span class="process-math">\(T_1\text{.}\)</span> Define <span class="process-math">\(I\)</span> to be the set of all pairs <span class="process-math">\((x, U)\)</span> where <span class="process-math">\(x\in X\)</span> and <span class="process-math">\(U\)</span> is an open neighborhood of <span class="process-math">\(x\text{.}\)</span> For each <span class="process-math">\(i=(x,U)\text{,}\)</span> let <span class="process-math">\(f_i\colon X\rightarrow [0,1]\)</span> be a function satisfying <span class="process-math">\(f(x)=1\)</span> and <span class="process-math">\(f(X-U)=\{0\}\text{.}\)</span> (Such a function exists since <span class="process-math">\(X\)</span> is completely regular.) Now, for all <span class="process-math">\(x\in X\)</span> and for all open sets <span class="process-math">\(U\)</span> containing <span class="process-math">\(x\text{,}\)</span> corresponding to the index <span class="process-math">\(i=(x,U)\)</span> we have the function <span class="process-math">\(f_i\)</span> which satisfies <span class="process-math">\(f_i(x)=1&gt; 0\)</span> and <span class="process-math">\(f_i(X-U)=\{0\}\text{.}\)</span> We conclude by <a href="" class="xref" data-knowl="./knowl/xref/th_embedding_theorem.html" title="Theorem 1.20.8: Embedding theorem">Theorem 1.20.8</a> that the map <span class="process-math">\(f(x)=(f_i(x))_{i\in I}\)</span> is an embedding of <span class="process-math">\(X\)</span> into <span class="process-math">\(\R^I\text{,}\)</span> and thus that <span class="process-math">\(X\)</span> is homeomorphic to a subspace of <span class="process-math">\(\R^I\text{.}\)</span>
+</div> <div class="para" id="cor_completely_regular_embedding-2-2">Implication: <span class="process-math">\((\impliedby)\text{.}\)</span> Since <span class="process-math">\(\R\)</span> is completely regular, and since complete regularity is preserved under arbitrary products, the space <span class="process-math">\(\R^I\)</span> is completely regular for any set <span class="process-math">\(I\text{.}\)</span> Furthermore, since complete regularity is inherited by subspaces, any subspace of <span class="process-math">\(\R^I\)</span> is completely regular. Thus, if <span class="process-math">\(X\)</span> embeds into <span class="process-math">\(\R^I\text{,}\)</span> then it is homeomorphic to a subspace of <span class="process-math">\(\R^I\text{,}\)</span> and hence is completely regular.</div></article></details></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="s_regular.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="s_Tietze_extension.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+</div>
+</body>
+</html>
