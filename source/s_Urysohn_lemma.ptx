@@ -15,35 +15,68 @@
             <proof>
                 <title>Step 1: construction of open sets <m>U_p</m></title>
                     <p>
-                      The first crucial step in the proof is to build a collection of open sets <m>\{U_q\}_{p\in \Q}</m> satisfying <m>\overline{U_p}\subseteq U_{q}</m> if <m>p&lt; q</m>. This is done by first 
-                      picking an enumeration of <m>\Q\cap [0,1]=\{q_1,q_2,\dots,\}</m> where for convenience <m>q_1=1</m> and <m>q_2=0</m>. We use the enumeration to define open sets <m>U_q</m> for each <m>q\in \Q</m> recursively as follows. Set <m>U_1=X-B</m>. Since <m>A\subseteq U_1</m>, by <xref ref="th_regular_normal_equivalence"/> we can find an open <m>U_0</m> containing <m>A</m> such that <m>\overline{U}_0\subseteq U_1</m>. Now take any <m>n\geq 2</m> and assume by induction that we have constructed a collection <m>\{U_{q_1}, U_{q_2},\dots, U_{q_n}\}</m> satisfying the desired inclusion conditions. Let <m>q=q_{n+1}</m>. We choose <m>U_{q}</m> as follows: 
-                      <ul>
-                        <li>
-                            <p>
-                                If <m>q&gt; 1</m>, set <m>U_{q}=X</m>; if <m>q&lt; 0</m>, set <m>U_q=\emptyset</m>. 
-                            </p>
-                        </li>
-                        <li>
-                            <p>
-                                Assume <m>q\in (0,1)</m>. There exist unique elements <m>q_{j_0},q_{k_0} \in P=\{q_1,q_2,\dots, q_n\}</m> such that <m>q_{j_0}</m> is the greatest element of <m>P</m> less than <m>q</m>, and <m>q_{k_0}</m> is the least element of <m>P</m> greater than <m>q</m>. Since by induction <m>\overline{U_{q_{j_0}}}\subseteq U_{q_{k_0}}</m>,  using normality of <m>X</m>, we can pick <m>U_{q}</m> to be an open set satisfying 
-                                <me>
-                                  \overline{U_{q_{j_0}}}\subseteq U_{q_{n+1}}\subseteq U_{q_{k_0}}
-                                </me>.
-                            </p>
-                        </li>
-                    </ul>
-                    With this choice, for any <m>p,q\in \{q_1,q_2,\dots, q_n,q_{n+1}\}</m> with <m>p&lt; q</m>, we have the following: 
-                    <md>
-                        <mrow> q\ne q_{n+1}\amp \implies \overline{U_p}\subseteq U_q \amp (\text{by induction}) </mrow>
-                        <mrow> q=q_{n+1} \amp \implies </mrow>
-                    </md>
-                        
-                    We have thus constructed a collection of open sets <m>\{U_q\}_{q\in \Q}</m>. Let's show that it satisfies the desired conditions. 
-                        By induction we have <m>\overline{U_p}\subseteq U_q</m>. Pick <m>U_{p_{n+1}}</m> to be any open set satisfying 
+                      The first step in the proof is to build a collection of open sets <m>\{U_q\}_{p\in \Q}</m> satisfying 
+                      <men xml:id="eq_ury_lemma">
+                        p&lt; q\implies \overline{U_p}\subseteq U_{q}
+                      </men>
+                      for all <m>p,q\in \Q</m>. 
+                    </p>
+                    <p>
+                      Fix an enumeration <m>\Q=\{q_1,q_2,\dots,\}</m> (without repeats) where for convenience <m>q_1=1</m> and <m>q_2=0</m>. For each <m>n\geq 1</m>, let <m>Q_n=\{q_1,q_2,\dots, q_n\}</m>, the first <m>n</m> primes in our enumeration. We will recursively define a collection of open sets 
                       <me>
-                        \overline{U_p}\subseteq U_{p_{n+1}}\subseteq \overline{U_{p_{n+1}}}\subseteq U_q
-                      </me>.
-                      Lastly define <m>U_p=\emptyset</m> for all <m>p&lt; 0</m> and <m>U_p=X</m> for all <m>p&gt; 0</m>. It is easy to see that thus defined, our collection <m>\{U_p\}_{p\in \Q}</m> satisfies the desired inclusion condition. 
+                        \{U_q\}_{q\in \Q}=\{U_{q_n}\}_{n\in \Z_+}
+                    </me> 
+                    such that for all <m>n\geq 1</m>, the finite collection <m>\mathcal{U}_n=\{U_{p_1}, U_{p_2}, \dots, U_{p_{n}}\}</m> satisfies the following condition 
+                       <men xml:id="eq_ury_lemma_n">
+                        p,q\in Q_n \text{ and } p&lt; q \implies \overline{U_p}\subseteq U_q
+                       </men>.
+                       It is easy to see that if <xref ref="eq_ury_lemma_n"/> holds for all <m>n</m>, then <xref ref="eq_ury_lemma"/> holds for all <m>p,q\in \Q</m>. 
+                    </p>
+                    <p>
+                        Base cases: first define <m>U_{q_1}=U_1=X-B</m>. Next, since <m>A\subseteq U_1</m> and <m>X</m> is normal, we can choose <m>U_{q_2}=U_0</m> to be any open set satisfying <me>
+                            A\subseteq U_{0}\subseteq \overline{U_0}\subseteq U_1
+                        </me>.
+                        It is easy to see that <m>\mathcal{U}_n</m> satisfies <xref ref="eq_ury_lemma_n"/> for <m>n\leq 2</m>. 
+                    </p>
+                    <p>
+                        For the recursive step, let <m>n\geq 2</m> and assume that we have chosen open sets <m>U_{q_1}, U_{q_2},\dots, U_{q_n}</m> such that the set <m>\mathcal{U}_n</m> satisfies <xref ref="eq_ury_lemma_n"/>. We choose <m>U_{q_{n+1}}</m> as follows.
+                        <ul>
+                            <li>
+                                <p>
+                                    If <m>q_{n+1}&gt; 1</m>, set <m>U_{q_{n+1}}=X</m>; if <m>q_{n+1}&lt; 0</m>, set <m>U_{q_{n+1}}=\emptyset</m>. 
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    If <m>q_{n+1}\in (0,1)</m>, there exist unique elements <m>p,q\in Q_n</m> such that <m>p</m> is the greatest element of <m>Q_n</m> less than <m>q_{n+1}</m>, and <m>q</m> is the least element of <m>Q_n</m> greater than <m>q</m>. (Such elements exist since <m>q_2=0&lt; q_{n+1}&lt; 1=q_1</m>.) Since by induction <m>\overline{U_{p}}\subseteq U_{q}</m>,  using normality of <m>X</m>, we can pick <m>U_{q_{n+1}}</m> to be an open set satisfying 
+                                    <me>
+                                      \overline{U_{p}}\subseteq U_{q_{n+1}}\subseteq U_{q_{n+1}}\subseteq \overline{U_{q_{n+1}}}\subseteq U_q
+                                    </me>.
+                                </p>
+                            </li>
+                        </ul>  
+                    It remains to show that the extended set <m>\mathcal{U}_{n+1}</m> still satisfies <xref ref="eq_ury_lemma_n"/>. Take any <m>p,q\in Q_{n+1}</m> with <m>p&lt; q</m>: 
+                    <ul>
+                        <li>
+                            <p>
+                                If <m>p,q\in Q_n</m>, then <xref ref="eq_ury_lemma_n"/> is satisfied by the induction hypothesis. 
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                Assume <m>p=q_{n+1}</m>. If <m>q_{n+1}&lt; 0</m>, we have <m>U_{q_{n+1}}=\emptyset</m> in which case clearly <xref ref="eq_ury_lemma_n"/> holds. Similarly, if <m>q_{n+1}&gt; 1</m>, then we must have <m>U_{q_{n+1}}=U_q=X</m>, in which case again <xref ref="eq_ury_lemma_n"/> clearly holds. Assume <m>q\in [0,1]</m>. Let <m>q'</m> be least element of <m>Q_{n+1}</m> that is greater than <m>q_{n+1}</m>. By definition we have 
+                                <me>
+                                    \overline{U_{q_{n+1}}}\subseteq U_{q'}\subseteq \overline{U_{q'}}\subseteq U_q  
+                                </me>,
+                                as desired. 
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                Assume <m>q=q_{n+1}</m>. The argument proceeds in much the same way as immediately above. 
+                            </p>
+                        </li>
+                    </ul> 
                     </p>
                 </proof>
                 <proof>
@@ -53,33 +86,32 @@
                     </p>
                     <p> Define <m>f\colon X\rightarrow \R</m> as 
                     <me>
-                        f(x)=\inf\{p\in \Q\colon x\in U_p\}
+                        f(x)=\inf\{q\in \Q\colon x\in U_q\}
                     </me>.
-                    Some easy properties of <m>f</m>:
-                    <ul>
-                        <li>
-                            <p>
-                                <m>0\leq f(x)\leq 1</m> for all <m>x\in X</m>. 
-                            </p>
-                        </li>
-                        <li>
-                            <p>
-                                <m>f(x)\leq p</m> for all <m>x\in \overline{U_p}</m>.
-                            </p>
-                        </li>
-                        <li>
-                            <p>
-                                <m>f(x)\geq p</m> for all <m>x\notin U_p</m>. 
-                            </p>
-                        </li>
-                    </ul>
-                    We prove continuity by showing that <m>f</m> is continuous at each <m>x</m>. Given <m>x\in X</m> and open set <m>(a,b)</m> containing <m>y=f(x)</m>, choose rational numbers <m>p, q</m> satisfying 
+                    The function <m>f</m> satisfies the following properties:
+                    <mdn>
+                        <mrow xml:id="eq_fprop1"> 
+                            0\amp\leq f(x)\leq 1 </mrow>
+                        <mrow xml:id="eq_fprop2"> 
+                            x\in \overline{U_q}\amp\implies f(x)\leq q 
+                        </mrow>
+                        <mrow xml:id="eq_fprop3"> x\notin U_q \amp \implies f(x)\geq q 
+                        </mrow>
+                    </mdn>.
+                    Each of these properties is relatively straightforward to prove using properties of the infinum. For example, we have 
+                    <md>
+                        <mrow>x\in \oveline{U_q} \amp \implies x\in U_p \text{ for all } p\geq q </mrow>
+                        <mrow> \amp \{p\colon x\in U_p\}\supseteq \{p\colon p\geq q\}</mrow>
+                        <mrow> \amp \implies \inf\{p\colon x\in U_p\}\leq \inf\{p\colon p\geq q\}</mrow>
+                        <mrow> \amp \implies f(x)\leq q</mrow>
+                    </md>.
+                    To see that <m>f</m> is continuous, fix any <m>x\in X</m> and open set <m>(a,b)</m> containing <m>y=f(x)</m>.  Choose rational numbers <m>p, q</m> satisfying 
                     <me>
                         a&lt; p&lt; y &lt; q &lt; b
                     </me>.
-                    I claim <m>U_q-\overline{U_p}</m> is an open set containing <m>x</m> satisfying 
+                    Claim: the set <m>U=U_q-\overline{U_p}</m> is an open set containing <m>x</m> satisfying 
                     <me>
-                        f(U_q-\overline{U_p})\subseteq [p,q]\subseteq (a,b)
+                        f(U)=f(U_q-\overline{U_p})\subseteq [p,q]\subseteq (a,b)
                     </me>. 
                     First, it is clear that <m>U_q-\overline{U_p}</m> is open, and it follows easily from the elementary properties of <m>f</m> quoted above that <m>x\in U_q-\overline{U_p}</m>. Next, given any <m>x'\in U_q-\overline{U_p}</m>, since <m>x'\in \overline{U_q}</m>, we have <m>f(x')\leq q</m>, and since <m>x'\notin U_p</m>, we have <m>f(x')\geq p</m>. This concludes the proof. 
                     

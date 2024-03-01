@@ -101,7 +101,7 @@
         <title>Partition of unity</title>
         <statement>
             <p>
-             Let <m>Y\subseteq \R</m>. The {\bf support} <m>\operatorname{supp} f</m> of a continuous function <m>f\colon X\rightarrow Y</m> is defined as <m>\operatorname{supp} f=\overline{f^{-1}(\{0\})}</m>.    
+             Let <m>Y\subseteq \R</m>. The <term>support</term> <m>\operatorname{supp} f</m> of a continuous function <m>f\colon X\rightarrow Y</m> is defined as <m>\operatorname{supp} f=\overline{f^{-1}(\{0\})}</m>.    
             </p>
             <p>
             A <term>partition of unity dominated by the open cover</term> <m>X=\bigcup_{k=1}^nU_k</m> is a collection of continuous functions <m>\{\phi_k\colon X\rightarrow [0,1]\}_{k=1}^n</m> satisfying (i) <m>\operatorname{supp} \phi_k\subseteq U_k</m> for all <m>1\leq k\leq n</m>, and (ii) <m>\sum_{k=1}^n\phi_k(x)=1</m> for all <m>x\in X</m>. 
