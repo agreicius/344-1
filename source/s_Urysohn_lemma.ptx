@@ -100,8 +100,8 @@
                     </mdn>.
                     Each of these properties is relatively straightforward to prove using properties of the infinum. For example, we have 
                     <md>
-                        <mrow>x\in \oveline{U_q} \amp \implies x\in U_p \text{ for all } p\geq q </mrow>
-                        <mrow> \amp \{p\colon x\in U_p\}\supseteq \{p\colon p\geq q\}</mrow>
+                        <mrow>x\in \overline{U_q} \amp \implies x\in U_p \text{ for all } p\geq q </mrow>
+                        <mrow> \amp \implies \{p\colon x\in U_p\}\supseteq \{p\colon p\geq q\}</mrow>
                         <mrow> \amp \implies \inf\{p\colon x\in U_p\}\leq \inf\{p\colon p\geq q\}</mrow>
                         <mrow> \amp \implies f(x)\leq q</mrow>
                     </md>.
