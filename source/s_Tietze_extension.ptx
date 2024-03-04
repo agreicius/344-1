@@ -65,7 +65,7 @@
       </p>
       
       <proof>
-        <p>
+        <!-- <p>
             Let <m>\mathcal{C}\subseteq [0,1]</m> be the Cantor set, and choose a homeomorphism <m>h\colon \mathcal{C}\rightarrow \{0,1\}^\omega</m>, where <m>\{0,1\}</m> is given the discrete topology and <m>\{0,1\}^\omega</m> is given the product topology. (We proved <m>\mathcal{C}</m> is homeomorphic to <m>\{0,1\}^\omega</m> in discussion.) Now define functions <m>g_1,g_2\colon \{0,1\}\rightarrow [0,1]</m> as 
             <md>
                 <mrow>g_1((a_1,a_2,a_3,\dots))\amp= \frac{a_1}{2}+\frac{a_3}{2^2}+\frac{a_5}{2^3}+\cdots =\sum_{k=1}^\infty \frac{a_{2k-1}}{2^k} </mrow>
@@ -93,7 +93,7 @@
                 <mrow> \amp =(y_1,y_2) \amp \text{(by construction)}</mrow>
             </md>.
             This proves in fact that <m>\phi\vert_\mathcal{C}</m> is surjective. 
-          </p>
+          </p> -->
       </proof>
         
     </project>

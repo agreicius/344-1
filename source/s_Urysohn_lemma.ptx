@@ -98,7 +98,7 @@
                         <mrow xml:id="eq_fprop3"> x\notin U_q \amp \implies f(x)\geq q 
                         </mrow>
                     </mdn>.
-                    Each of these properties is relatively straightforward to prove using properties of the infinum. For example, we have 
+                    Each of these properties is relatively straightforward to prove using properties of the infimum. For example, we have 
                     <md>
                         <mrow>x\in \overline{U_q} \amp \implies x\in U_p \text{ for all } p\geq q </mrow>
                         <mrow> \amp \implies \{p\colon x\in U_p\}\supseteq \{p\colon p\geq q\}</mrow>
