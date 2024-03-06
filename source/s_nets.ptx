@@ -1,5 +1,8 @@
 <section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_nets">
     <title>Nets</title>
+    <p>
+        Nets are a relatively straightforward generalization of a sequence <m>(x_n)_{n\in \Z_+}</m> obtained by replacing the index set <m>\Z_+</m> with the more general notion of a <em>directed set</em>. Our main application of the theory of nets is (a) to give a characterization of compactness in terms of convergence and limit points of nets (<xref ref="th_nets_compactness" text="global"/>), and (b) to use this characterization to prove the <xref ref="th_Tychonoff_general" text="custom">Tychonoff theorem </xref>
+    </p>
 <definition xml:id="d_partial_order">
     <title>Partial ordering axioms</title>  
     <statement>
