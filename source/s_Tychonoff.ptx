@@ -159,13 +159,19 @@
                     <mrow>f \amp \mapsto (f\vert_{S^*}, f(t_0))</mrow>
                 </md>.
                 Let <m>\pi\colon X_{S^*}\times X_{t_0}\rightarrow X_{S^*}</m> be projection onto the first component. The commutative diagram below nicely summarizes the maps in play. 
-                <image xml:id="im_Tych_comm" width="50%">
+                <image xml:id="im_Tych_comm" width="70%">
                     <shortdescription>Commutative projection diagram</shortdescription>
                     <latex-image >
                         \begin{tikzcd}
+                            f \arrow[ddd,mapsto, bend right=20] \arrow[rrr,mapsto, bend left=20] \arrow[dr,phantom,sloped, "\in"] \amp[-30] \amp  \amp[-30] (f\vert_{S^*},f(t_0))\arrow[dl,phantom,sloped, "\ni"]\\[-20]
+                             \amp X_{S} \arrow[r,"\phi"] \arrow[d] \amp X_{S^*}\times X_{t_0} \arrow[dl,"\pi"] \amp  \\ [10]
+                             \amp X_{S^*} \\ [-20]
+                             f\vert_{S^*}\arrow[ur,phantom,sloped, "\in"]
+                        \end{tikzcd}
+                        <!-- \begin{tikzcd}
                             f \arrow[d,mapsto] \arrow[r,phantom,description, "\in"]  \amp [-25] X_{S} \arrow[r,"\phi"] \arrow[d] \amp X_{S^*}\times X_{t_0} \arrow[dl,"\pi"] \amp  \\
                             f\vert_{S^*}\arrow[r,phantom,description, "\in"] \amp X_{S^*}
-                        \end{tikzcd}
+                        \end{tikzcd} -->
                     </latex-image>
                 </image>
                 Since <m>X_{t_0}</m> is compact, and since <m>g^*</m> is a limit point of the net <m>(f_i\vert_{S^*})_{i\in I}</m> in <m>X_{S^*}</m>, by <xref ref="lemma_product_nets"/> the net <m>(f_i\vert_{S^*}, f_i(t_0))_{i\in I}</m> in <m>X_{S^*}\times X_{t_0}</m> has a limit point of the form <m>(g^*, x_{t_0})</m>. Since <m>\phi</m> is a homeomorphism, pulling everything back to <m>X_S</m>, we see that the function <m>g\in \pi_{t\in S} X_t</m> defined as
