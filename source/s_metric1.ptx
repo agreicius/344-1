@@ -310,6 +310,9 @@
   </solution>
 </example>
 <definition xml:id="d_trivial_metric">
+  <title>Trivial metric</title>
+  
+  
   <statement>
     <p>
       Given a set <m>X</m> the function <m>d\colon X\times X\rightarrow \R</m> defined as
