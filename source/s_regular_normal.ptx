@@ -85,6 +85,9 @@
     </statement>
     <proof>
         <p>
+            First observe that metric spaces are <m>T_1</m>. 
+        </p>
+        <p>
             Let <m>A,B</m> be disjoint closed subsets of <m>X</m>. For each <m>a\in A</m> we can find an <m>\epsilon_a&gt; 0 </m> such that <m>B_{\epsilon_a}(a)\cap B=\emptyset</m>. Similarly for each <m>b\in B</m> we can find an <m>\epsilon_b&gt; 0</m> such that <m>B_{\epsilon_b}(b)\cap A=\emptyset</m>. I claim the open sets 
             <md>
                 <mrow>U \amp =\bigcup_{a\in A}B_{\epsilon_a/2}(a)</mrow>
@@ -160,7 +163,7 @@
     </proof>
 </theorem>
 <theorem xml:id="th_locally_compact_regular">
-    <title>Locally compact implies regular</title>
+    <title>Locally compact Hausdorff implies regular</title>
     <statement>
         <p>
             If <m>X</m> is locally compact Hausdorff, then <m>X</m> is regular. 
@@ -255,10 +258,10 @@
     </solution>
 </example>
 <example>
-    <title><m>R_\ell\times R_\ell</m> is not normal</title>
+    <title><m>\R_\ell\times \R_\ell</m> is not normal</title>
     <statement>
         <p>
-            Prove: <m>\R_\ell\times \R_\ell</m> is not normal. 
+            The space <m>\R_\ell\times \R_\ell</m> is not normal. 
         </p>
     </statement>
     <solution>
